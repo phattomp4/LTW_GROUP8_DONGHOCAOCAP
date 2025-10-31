@@ -1,3 +1,4 @@
+﻿/* phan script cua Phat -- > */
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -26,3 +27,46 @@ function showSlides(n) {
     slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " active";
 }
+
+
+/* phan script cua Vu */
+        const page2 = document.getElementById('Page2');
+        const viewMoreBtn = document.getElementById('view-more-btn');
+
+        viewMoreBtn.addEventListener('click', () => {
+            if (page2.classList.contains('hidden')) {
+            // Hiện Page2
+            page2.classList.remove('hidden');
+        viewMoreBtn.textContent = 'Thu gọn';
+            } else {
+            // Ẩn Page2
+            page2.classList.add('hidden');
+        viewMoreBtn.textContent = 'Xem thêm sản phẩm';
+        // (Tùy chọn: Cuộn lên đầu Page1 sau khi thu gọn)
+        window.scrollTo({
+            top: document.querySelector('.Outstanding-clocks').offsetTop - 20,
+        behavior: 'smooth'
+                });
+            }
+        });
+
+
+/* phan script cua Vy */
+let scrollAmount = 0;
+const scrollStep = 300;
+
+function scrollSlider(direction) {
+    const slider = document.getElementById("slide-list-img");
+    const maxScroll = slider.scrollWidth - slider.clientWidth;
+
+    scrollAmount += direction * scrollStep;
+
+    if (scrollAmount < 0) scrollAmount = 0;
+    if (scrollAmount > maxScroll) scrollAmount = maxScroll;
+
+    slider.scrollTo({
+        left: scrollAmount,
+        behavior: "smooth"
+    });
+}
+
