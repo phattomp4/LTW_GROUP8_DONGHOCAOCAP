@@ -1,5 +1,7 @@
 ﻿/*Phat*/
-* {box-sizing:border-box}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 body {
     font-family: sans-serif;
     margin: 0;
@@ -148,6 +150,43 @@ body {
     from {opacity: .4}
     to {opacity: 1}
 }
+
+/*Service*/
+.service {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 5px 10px !important;
+}
+
+    .service .icon-box {
+        background: #b4dcf3;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 8px 8px 8px 8px;
+    }
+        .service .icon-box .icon-box-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1b6e76;
+            min-width: 35px;
+            border-radius: 8px 0px 0px 8px;
+        }
+        .service .icon-box .icon-box-text h4 {
+            font-size: 12px;
+            line-height: 14px;
+            margin: 10px;
+            font-weight: 700;
+            font-family: Helvetica Neue, sans-serif;
+        }
+        .service .icon-box .icon-box-text p {
+            font-size: 10px;
+            line-height: 16px;
+            margin: 10px;
+            color: #666;
+        }
+           
 
 /*Vu*/
 
