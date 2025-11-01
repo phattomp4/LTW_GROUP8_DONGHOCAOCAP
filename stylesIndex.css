@@ -67,8 +67,15 @@ body {
 
 /* Slideshow container */
 .slideshow-container {
-    max-width: 100%;
     position: relative;
+}
+/* Dots container */
+.dots-container {
+    /* Quan trọng: Cho phép nó "nổi" */
+    position: absolute;
+    bottom: 15px;
+    text-align: center;
+    width: 100%;
 }
 
 /* Hide the images by default */
@@ -121,15 +128,15 @@ body {
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: #bbb;
+    background-color: aliceblue;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
-    background-color: #717171;
-}
+    .active, .dot:hover {
+        background-color: #1b6e76;
+    }
 
 /* Fading animation */
 .fade {
@@ -220,14 +227,14 @@ body {
     align-items: center;
     gap: 10px;
     text-align: center;
-    margin: 20px auto;
-    width: 90%; /* 🔹 Làm hàng logo trải dài hơn trên màn hình */
+    margin: 20px;
+    width: 100%; /* 🔹 Làm hàng logo trải dài hơn trên màn hình */
 }
 
 
     .logo-container img {
-        max-width: 160px; /* Giới hạn chiều ngang tối đa */
-        max-height: 80px; /* Giới hạn chiều cao tối đa */
+        max-width: 80px; /* Giới hạn chiều ngang tối đa */
+        max-height: 40px; /* Giới hạn chiều cao tối đa */
         object-fit: contain; /* Giữ nguyên tỉ lệ ảnh */
     }
 
@@ -235,8 +242,8 @@ body {
         border: 1px solid #ccc;
         border-radius: 10px;
         padding: 10px;
-        width: 320px; /* 🔹 Tăng chiều ngang của mỗi khung */
-        height: 100px;
+        width: 160px; /* 🔹 Tăng chiều ngang của mỗi khung */
+        height: 50px;
         background-color: white;
         cursor: pointer;
         transition: 0.3s ease;
@@ -272,9 +279,9 @@ body {
     }
 
         .button-container button:hover {
-            color: #FF4500; /* Khi hover -> chữ trắng */
+            color: #1b6e76; /* Khi hover -> chữ trắng */
             background-color: white;
-            border-color: #FF4500;
+            border-color: #1b6e76;
         }
 
 
@@ -361,9 +368,9 @@ body {
     padding: 12px 30px;
     font-size: 16px;
     font-weight: 600;
-    color: #FF4500;
+    color: #1b6e76;
     background-color: #fff;
-    border: 1px solid #FF4500;
+    border: 1px solid #1b6e76;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s ease;
@@ -372,7 +379,7 @@ body {
 
     .ViewMore-Button:hover {
         color: #fff;
-        background-color: #FF4500;
+        background-color: #1b6e76;
     }
 
 .Product img {
@@ -455,55 +462,46 @@ body {
 
 .InformationStore {
     background-color: black;
-    height: 500px;
+    padding: 30px;
     box-sizing: border-box;
+    text-align: center; /* Căn giữa mọi thứ inline bên trong */
 }
 
     .InformationStore .Picture-Brand img {
-        height: 450px;
-        width: 550px;
-        padding: 20px;
-        justify-content: center;
+        height: 280px;
+        width: 380px;
     }
 
     .InformationStore .LogoStore {
-        font-size: 35px;
+        font-size: 3vw;
         color: #fff;
-        margin-left: 800px;
+        
     }
 
     .InformationStore .ReputationBrand {
-        font-size: 30px;
+        font-size: 3vw;
         color: rgb(227, 189, 93);
-        font-size: 35px;
-        margin-left: 600px;
-    }
-
-    .InformationStore .History {
-        font-size: 20px;
-        color: #fff;
-        margin: 50px;
     }
 
 .History-Brand {
     display: flex;
-    margin-top: 10px;
+    align-items: center !important;
 }
 
 .History1 {
     color: #fff;
-    font-size: 20px;
+    font-size: 1vw;
     margin-top: 20px;
 }
 
 .History2 {
     color: #fff;
-    font-size: 20px;
+    font-size: 1vw;
     margin-top: 5px;
 }
 
 .History3 {
     color: #fff;
-    font-size: 20px;
+    font-size: 1vw;
     margin-top: 5px;
 }
