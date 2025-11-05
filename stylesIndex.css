@@ -423,15 +423,76 @@ body {
     border-radius: 8px;
 }
 
-
-
-/*Vu*/
-.slide-img {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
+    /* COLLECTION LUXURY */
+.luxury-title h2 {
+    text-align: center;
+    font-weight:500;
 }
+
+.luxury-gallary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.luxury-gallary img {
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+.luxury-banner {
+    margin: 30px;
+    width: 285px;
+    height: 350px;
+}
+
+    .luxury-banner img {
+        border-radius: 8px;
+    }
+
+.ul-luxury-cards .luxury-card {
+    list-style: none;
+}
+
+.ul-luxury-cards .luxury-card .Product {
+    width: 180px;
+    display: block;
+    padding: 10px;
+    border: 1px solid black;
+    text-decoration: none;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+    transition: 0.2 ease;
+}
+
+    .ul-luxury-cards .luxury-card .Product:hover {
+        border-color: #e3bd5d;
+    }
+
+    .ul-luxury-cards .Product .luxury-card-img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+
+.luxury-cards {
+    display: flex;
+}
+
+  
+
+
+
+
+    /*Vu*/
+    .slide-img {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
 
 #slide-list-img {
     display: flex;
