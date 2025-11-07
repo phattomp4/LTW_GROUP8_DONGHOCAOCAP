@@ -222,101 +222,116 @@ body {
 
 /* Slideshow container */
 .slideshow-container {
-    
+
     max-width: 100%;
     position: relative;
-
+}
     /* Slideshow container */
+
     .slideshow-container {
         position: relative;
     }
-/* Dots container */
-.dots-container {
-    /* Quan trọng: Cho phép nó "nổi" */
-    position: absolute;
-    bottom: 15px;
-    text-align: center;
-    width: 100%;
-}
 
-/* Hide the images by default */
-.mySlides {
-    display: none;
-}
+    /* Dots container */
 
-/* Next & previous buttons */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
+    .dots-container {
+        /* Quan trọng: Cho phép nó "nổi" */
+        position: absolute;
+        bottom: 15px;
+        text-align: center;
+        width: 100%;
+    }
 
-/* Position the "next button" to the right */
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
+    /* Hide the images by default */
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-}
+    .mySlides {
+        display: none;
+    }
 
-/* Caption text */
-.text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-}
+    /* Next & previous buttons */
+
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+
+    .prev:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Caption text */
+
+    .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
 
 
-/* The dots/bullets/indicators */
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: aliceblue;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
+    /* The dots/bullets/indicators */
+
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: aliceblue;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
 
     .active, .dot:hover {
         background-color: #1b6e76;
     }
 
-/* Fading animation */
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
+    /* Fading animation */
 
-@keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-}
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
 
-/*Service*/
-.service {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 5px 10px !important;
-}
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+        to {
+            opacity: 1
+        }
+    }
+
+    /*Service*/
+
+    .service {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 5px 10px !important;
+    }
 
     .service .icon-box {
         background: #b4dcf3;
@@ -324,113 +339,124 @@ body {
         flex-wrap: wrap;
         border-radius: 8px 8px 8px 8px;
     }
-        .service .icon-box .icon-box-img {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #1b6e76;
-            min-width: 35px;
-            border-radius: 8px 0px 0px 8px;
-        }
-        .service .icon-box .icon-box-text h4 {
-            font-size: 12px;
-            line-height: 14px;
-            margin: 10px;
-            font-weight: 700;
-            font-family: Helvetica Neue, sans-serif;
-        }
-        .service .icon-box .icon-box-text p {
-            font-size: 10px;
-            line-height: 16px;
-            margin: 10px;
-            color: #666;
-        }
-         
-/* Khoang cach tren duoi cua cac div trong introduce */
-.introduce-section {
-    margin: 20px 0px 20px 0px;
-}
-/* ĐỒNG HỒ ĐEO TAY CHÍNH HÃNG */
-.introduce-title {
-    text-align: center;
-    align-items: center;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    position: relative;
-    width: 100%;
-}
 
-/* tạo button dùng chung (các button khác ghi đè lên để thay đổi)*/
-.button {
-    background-color: #fff0;
-    border: 1px solid #fff0;
-    border-radius: 0;
-    box-sizing: border-box;
-    color: currentColor;
-    cursor: pointer;
-    display: inline-block;
-    font-size: .97em;
-    font-weight: bolder;
-    letter-spacing: .03em;
-    line-height: 2.4em;
-    margin-right: 1em;
-    margin-top: 0;
-    max-width: 100%;
-    min-height: 2.5em;
-    min-width: 24px;
-    padding: 0 1.2em;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    text-rendering: optimizeLegibility;
-    text-shadow: none;
-    text-transform: uppercase;
-    transition: transform .3s, border .3s, background .3s, box-shadow .3s, opacity .3s, color .3s;
-    vertical-align: middle;
-}
+    .service .icon-box .icon-box-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #1b6e76;
+        min-width: 35px;
+        border-radius: 8px 0px 0px 8px;
+    }
 
-.container-button-introduce {
-    margin: 0px 0px -30px 0px;
-}
+    .service .icon-box .icon-box-text h4 {
+        font-size: 12px;
+        line-height: 14px;
+        margin: 10px;
+        font-weight: 700;
+        font-family: Helvetica Neue, sans-serif;
+    }
 
-.button-flash-sales {
-    background-color: #1b6e76;
-    margin-bottom: 50px;
-    box-shadow: 0px 0px 28px rgb(0 0 0 / .25), 0px 0px 10px rgb(0 0 0 / .1);
-}
+    .service .icon-box .icon-box-text p {
+        font-size: 10px;
+        line-height: 16px;
+        margin: 10px;
+        color: #666;
+    }
+
+    /* Khoang cach tren duoi cua cac div trong introduce */
+
+    .introduce-section {
+        margin: 20px 0px 20px 0px;
+    }
+
+    /* ĐỒNG HỒ ĐEO TAY CHÍNH HÃNG */
+
+    .introduce-title {
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+    }
+
+    /* tạo button dùng chung (các button khác ghi đè lên để thay đổi)*/
+
+    .button {
+        background-color: #fff0;
+        border: 1px solid #fff0;
+        border-radius: 0;
+        box-sizing: border-box;
+        color: currentColor;
+        cursor: pointer;
+        display: inline-block;
+        font-size: .97em;
+        font-weight: bolder;
+        letter-spacing: .03em;
+        line-height: 2.4em;
+        margin-right: 1em;
+        margin-top: 0;
+        max-width: 100%;
+        min-height: 2.5em;
+        min-width: 24px;
+        padding: 0 1.2em;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        text-rendering: optimizeLegibility;
+        text-shadow: none;
+        text-transform: uppercase;
+        transition: transform .3s, border .3s, background .3s, box-shadow .3s, opacity .3s, color .3s;
+        vertical-align: middle;
+    }
+
+    .container-button-introduce {
+        margin: 0px 0px -30px 0px;
+    }
+
+    .button-flash-sales {
+        background-color: #1b6e76;
+        margin-bottom: 50px;
+        box-shadow: 0px 0px 28px rgb(0 0 0 / .25), 0px 0px 10px rgb(0 0 0 / .1);
+    }
 
     .button-flash-sales:hover {
         transform: translateY(-6px);
     }
 
-/* Định dạng dòng 4 ảnh brand */
-.row-brand {
-    display: flex;
-    flex-flow: row wrap;
-    padding: 0 9.8px 19.6px;
-    /* 1. Xếp con theo chiều ngang (đây là mặc định, có thể bỏ) */
-    flex-direction: row;
-    /* 2. Căn giữa các con theo chiều ngang */
-    justify-content: center;
-    /* 3. Căn giữa các con theo chiều dọc (nếu chúng có chiều cao khác nhau) */
-    align-items: center;
-}
+    /* Định dạng dòng 4 ảnh brand */
 
-/* Dòng chữ trên thẻ ảnh brand */
-.text-brand h4 {
-    margin-top: 0;
-    text-align: center;
-    font-weight:lighter;
-}
+    .row-brand {
+        display: flex;
+        flex-flow: row wrap;
+        padding: 0 9.8px 19.6px;
+        /* 1. Xếp con theo chiều ngang (đây là mặc định, có thể bỏ) */
+        flex-direction: row;
+        /* 2. Căn giữa các con theo chiều ngang */
+        justify-content: center;
+        /* 3. Căn giữa các con theo chiều dọc (nếu chúng có chiều cao khác nhau) */
+        align-items: center;
+    }
 
-/* Khoảng cách giữa các ảnh brand, bo góc */
-.img-brand img {
-    margin: 10px;
-    border-radius: 8px;
-}
+    /* Dòng chữ trên thẻ ảnh brand */
+
+    .text-brand h4 {
+        margin-top: 0;
+        text-align: center;
+        font-weight: lighter;
+    }
+
+    /* Khoảng cách giữa các ảnh brand, bo góc */
+
+    .img-brand img {
+        margin: 10px;
+        border-radius: 8px;
+    }
 
     /* COLLECTION LUXURY */
+
 .collection-luxury {
     margin: 15px 5px 15px 5px; 
 }
@@ -439,30 +465,24 @@ body {
     margin: 3px 15px 3px 15px;
 }
 
-.luxury-title h2 {
-    text-align: center;
-    font-weight: 500;
-}
+    .luxury-title h2 {
+        text-align: center;
+        font-weight: 500;
+    }
 
-.luxury-gallary {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-}
+    .luxury-gallary {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
 
-.luxury-gallary img {
-    object-fit: cover;
-    border-radius: 8px;
-}
+    .luxury-gallary img {
+        object-fit: cover;
+        border-radius: 8px;
+    }
 
-
-.luxury-banner {
-    margin-right: 10px;
-    width: 300px;
-    height: 400px;
-}
 
     .luxury-banner img {
         width: 300px;
@@ -504,6 +524,7 @@ body {
     }
 
 
+
 .luxury-cards {
     display: flex;
 }
@@ -514,8 +535,8 @@ body {
 
 
 
-
     /*Vu*/
+
     .slide-img {
         position: relative;
         width: 100%;
@@ -523,52 +544,52 @@ body {
         overflow: hidden;
     }
 
-#slide-list-img {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 10px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
+    #slide-list-img {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding: 10px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
 
     #slide-list-img::-webkit-scrollbar {
         display: none;
     }
 
-.slide-list-img img {
-    width: 300px;
-    height: auto;
-    margin-right: 10px;
-    border-radius: 8px;
-    flex-shrink: 0;
-    object-fit: cover;
-}
+    .slide-list-img img {
+        width: 300px;
+        height: auto;
+        margin-right: 10px;
+        border-radius: 8px;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
 
-.ThuongHieu {
-    text-align: center;
-    font-size: 250%;
-    font-weight: 540;
-    margin-bottom: 5px;
-}
+    .ThuongHieu {
+        text-align: center;
+        font-size: 250%;
+        font-weight: 540;
+        margin-bottom: 5px;
+    }
 
-.CamKet {
-    text-align: center;
-    font-size: 150%;
-    font-weight: 500;
-    margin-top: 10px;
-}
+    .CamKet {
+        text-align: center;
+        font-size: 150%;
+        font-weight: 500;
+        margin-top: 10px;
+    }
 
-.logo-container {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    text-align: center;
-    margin: 20px;
-    width: 100%; /* 🔹 Làm hàng logo trải dài hơn trên màn hình */
-}
+    .logo-container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+        margin: 20px;
+        width: 100%; /* 🔹 Làm hàng logo trải dài hơn trên màn hình */
+    }
 
 
     .logo-container img {
@@ -592,19 +613,19 @@ body {
         margin-bottom: 40px;
     }
 
-.BST {
-    text-align: center;
-    font-size: 230%;
-    font-weight: 540;
-    margin-top: 40px;
-}
+    .BST {
+        text-align: center;
+        font-size: 230%;
+        font-weight: 540;
+        margin-top: 40px;
+    }
 
-.button-bst-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 10px auto;
-}
+    .button-bst-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 10px auto;
+    }
 
     .button-bst-container button {
         padding: 15px 40px;
@@ -617,193 +638,202 @@ body {
         color: #555;
     }
 
-        .button-bst-container button:hover {
-            color: #1b6e76; /* Khi hover -> chữ trắng */
-            background-color: white;
-            border-color: #1b6e76;
-        }
+    .button-bst-container button:hover {
+        color: #1b6e76; /* Khi hover -> chữ trắng */
+        background-color: white;
+        border-color: #1b6e76;
+    }
 
 
-/* Đảm bảo khung ngoài có chiều rộng đầy đủ */
-.Outstanding-clocks {
-    position: relative;
-    padding: 0 40px;
-    overflow: hidden;
-}
+    /* Đảm bảo khung ngoài có chiều rộng đầy đủ */
+
+    .Outstanding-clocks {
+        position: relative;
+        padding: 0 40px;
+        overflow: hidden;
+    }
 
 
-.Product {
-    /* Đặt chiều cao CỐ ĐỊNH để các sản phẩm trong 2 hàng Grid đồng đều */
-    height: 350px; /* 💥 ĐIỀU CHỈNH: Giới hạn chiều cao tổng thể của 1 sản phẩm */
-    padding: 10px; /* Giảm padding để tăng không gian cho nội dung */
-    width: 250px;
-    /* Căn chỉnh nội dung */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Nội dung bắt đầu từ trái */
-    /* justify-content: space-between;  Đẩy giá và thông tin xuống dưới */
-    /* Thiết kế */
-    border: none;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    text-align: left;
-}
+    .Product {
+        /* Đặt chiều cao CỐ ĐỊNH để các sản phẩm trong 2 hàng Grid đồng đều */
+        height: 350px; /* 💥 ĐIỀU CHỈNH: Giới hạn chiều cao tổng thể của 1 sản phẩm */
+        padding: 10px; /* Giảm padding để tăng không gian cho nội dung */
+        width: 250px;
+        /* Căn chỉnh nội dung */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Nội dung bắt đầu từ trái */
+        /* justify-content: space-between;  Đẩy giá và thông tin xuống dưới */
+        /* Thiết kế */
+        border: none;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        text-align: left;
+    }
 
-.Outstanding-clocks {
-        width: 95%; /* Vẫn giữ 95% */
-        margin: 20px auto; /* Căn giữa */
-        position: relative;
-        padding: 0 40px;
-        overflow: visible; /* Không cần ẩn nữa */
-}
+    .Outstanding-clocks {
+        idth: 95%; /* Vẫn giữ 95% */
+        margin: 20px auto; /* Căn giữa */
+        position: relative;
+        padding: 0 40px;
+        overflow: visible; /* Không cần ẩn nữa */
+    }
 
-/* 2. Tạo container cho danh sách sản phẩm (chứa Page1 và Page2) */
-.Product-list-container {
-    display: flex; /* Dùng Flex để các page xếp dọc */
-    flex-direction: column;
-    gap: 20px; /* Khoảng cách giữa Page1 và Page2 */
-    margin: auto;
-}
+    /* 2. Tạo container cho danh sách sản phẩm (chứa Page1 và Page2) */
 
-/* 3. Đặt Grid cho Product-page (Page1, Page2) */
-.Product-page {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 Cột */
-    grid-template-rows: repeat(2, 1fr); /* 2 Hàng */
-    gap: 20px;
-    padding: 10px 0;
-    width: 100%;
-    box-sizing: border-box;
-}
+    .Product-list-container {
+        display: flex; /* Dùng Flex để các page xếp dọc */
+        flex-direction: column;
+        gap: 20px; /* Khoảng cách giữa Page1 và Page2 */
+        margin: auto;
+    }
+
+    /* 3. Đặt Grid cho Product-page (Page1, Page2) */
+
+    .Product-page {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 Cột */
+        grid-template-rows: repeat(2, 1fr); /* 2 Hàng */
+        gap: 20px;
+        padding: 10px 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
 
     /* 4. Thêm class ẩn cho Page2 */
+
     .Product-page.hidden {
         display: none; /* Ẩn hoàn toàn Page2 khi chưa nhấn nút */
     }
 
-/* XÓA HOẶC ĐỔI TÊN class .Page1, .Page2 cũ nếu còn (chúng ta đã đổi thành .Product-page) */
-/* (Bạn có thể giữ nguyên .Page1, .Page2 nhưng thay đổi CSS của chúng thành .Product-page) */
+    /* XÓA HOẶC ĐỔI TÊN class .Page1, .Page2 cũ nếu còn (chúng ta đã đổi thành .Product-page) */
+    /* (Bạn có thể giữ nguyên .Page1, .Page2 nhưng thay đổi CSS của chúng thành .Product-page) */
 
-/* Xóa các CSS không cần thiết của Swiper */
-.Outstanding-clocks .swiper-wrapper,
-.Outstanding-clocks .slider,
-.Page1, .Page2 {
-    /* Đảm bảo các thuộc tính Swiper cũ không còn tồn tại hoặc bị ghi đè */
-    height: auto !important;
-}
+    /* Xóa các CSS không cần thiết của Swiper */
+
+    .Outstanding-clocks .swiper-wrapper,
+    .Outstanding-clocks .slider,
+    .Page1, .Page2 {
+        /* Đảm bảo các thuộc tính Swiper cũ không còn tồn tại hoặc bị ghi đè */
+        height: auto !important;
+    }
 
 
-/* --- THÊM CSS CHO NÚT XEM THÊM --- */
-.ViewMore-Container {
-    text-align: center;
-    margin: 30px auto 60px auto;
-}
+    /* --- THÊM CSS CHO NÚT XEM THÊM --- */
 
-.ViewMore-Button {
-    padding: 12px 30px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #1b6e76;
-    background-color: #fff;
-    border: 1px solid #1b6e76;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s ease;
-    width: 300px;
-}
+    .ViewMore-Container {
+        text-align: center;
+        margin: 30px auto 60px auto;
+    }
+
+    .ViewMore-Button {
+        padding: 12px 30px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #1b6e76;
+        background-color: #fff;
+        border: 1px solid #1b6e76;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        width: 300px;
+    }
 
     .ViewMore-Button:hover {
         color: #fff;
         background-color: #1b6e76;
     }
 
-.Product img {
-    /* 💥 QUAN TRỌNG: Giới hạn chiều cao ảnh */
-    max-height: 200px;
-    width: 100%;
-    object-fit: contain; /* Đảm bảo ảnh không bị méo */
-    margin-bottom: 5px; /* Thêm chút khoảng cách với tên sản phẩm */
-    /* Thêm transition */
-    transition: transform 0.3s ease-in-out;
-}
+    .Product img {
+        /* 💥 QUAN TRỌNG: Giới hạn chiều cao ảnh */
+        max-height: 200px;
+        width: 100%;
+        object-fit: contain; /* Đảm bảo ảnh không bị méo */
+        margin-bottom: 5px; /* Thêm chút khoảng cách với tên sản phẩm */
+        /* Thêm transition */
+        transition: transform 0.3s ease-in-out;
+    }
 
-.Product .Item {
-    /* font-size: 20px; */
-    font-weight: 500;
-    color: #333;
-    margin: 0;
-    /* Giới hạn số dòng để tránh tên quá dài làm vỡ bố cục */
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* Chỉ hiển thị tối đa 2 dòng */
-    -webkit-box-orient: vertical;
-    line-height: 1.4;
-}
+    .Product .Item {
+        /* font-size: 20px; */
+        font-weight: 500;
+        color: #333;
+        margin: 0;
+        /* Giới hạn số dòng để tránh tên quá dài làm vỡ bố cục */
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Chỉ hiển thị tối đa 2 dòng */
+        -webkit-box-orient: vertical;
+        line-height: 1.4;
+    }
 
-.Product-info-bottom {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 5px;
-}
+    .Product-info-bottom {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 5px;
+    }
 
-/* Giá bán chính thức */
-.Product .PriceOfPoduct {
-     font-size: 16px;
-    font-weight: 700;
-    color: #FF4500; /* Màu nổi bật cho giá */
-    margin: 3px 0;
-}
+    /* Giá bán chính thức */
 
-/* Giá gốc (bị gạch) và Chiết khấu */
-.Product .Discount {
-    font-size: 13px;
-    color: #888;
-    text-decoration: line-through;
-    margin: 0;
-}
+    .Product .PriceOfPoduct {
+        font-size: 16px;
+        font-weight: 700;
+        color: #FF4500; /* Màu nổi bật cho giá */
+        margin: 3px 0;
+    }
 
-.Product .DiscountPercent {
-    font-size: 13px;
-    font-weight: 700;
-    color: rgb(27, 110, 118); /* Màu nổi bật cho chiết khấu */
-    margin: 0;
-}
+    /* Giá gốc (bị gạch) và Chiết khấu */
 
-.Product .Sold {
-    font-size: 14px;
-    color: #999;
-    margin-top: 5px;
-}
+    .Product .Discount {
+        font-size: 13px;
+        color: #888;
+        text-decoration: line-through;
+        margin: 0;
+    }
 
-.Product .Discount .DiscountPercent {
-    display: flex;
-}
+    .Product .DiscountPercent {
+        font-size: 13px;
+        font-weight: 700;
+        color: rgb(27, 110, 118); /* Màu nổi bật cho chiết khấu */
+        margin: 0;
+    }
 
-.Discount-row {
-    display: flex;
-    gap: 10px;
-}
+    .Product .Sold {
+        font-size: 14px;
+        color: #999;
+        margin-top: 5px;
+    }
 
-.Product .Item:hover {
-    color: rgb(227, 189, 93);
-}
+    .Product .Discount .DiscountPercent {
+        display: flex;
+    }
 
-/* Hiệu ứng khi hover vào khung sản phẩm */
-.Product:hover img {
-    /* Phóng to ảnh lên 1.1 lần (10%) */
-    transform: scale(1.1);
-}
+    .Discount-row {
+        display: flex;
+        gap: 10px;
+    }
 
-.InformationStore {
-    background-color: black;
-    padding: 30px;
-    box-sizing: border-box;
-    text-align: center; /* Căn giữa mọi thứ inline bên trong */
-}
+    .Product .Item:hover {
+        color: rgb(227, 189, 93);
+    }
+
+    /* Hiệu ứng khi hover vào khung sản phẩm */
+
+    .Product:hover img {
+        /* Phóng to ảnh lên 1.1 lần (10%) */
+        transform: scale(1.1);
+    }
+
+    .InformationStore {
+        background-color: black;
+        padding: 30px;
+        box-sizing: border-box;
+        text-align: center; /* Căn giữa mọi thứ inline bên trong */
+    }
 
     .InformationStore .Picture-Brand img {
         height: 280px;
@@ -813,7 +843,7 @@ body {
     .InformationStore .LogoStore {
         font-size: 3vw;
         color: #fff;
-        
+
     }
 
     .InformationStore .ReputationBrand {
@@ -821,100 +851,113 @@ body {
         color: rgb(227, 189, 93);
     }
 
-.History-Brand {
-    display: flex;
-    align-items: center !important;
-}
+    .History-Brand {
+        display: flex;
+        align-items: center !important;
+    }
 
-.History1 {
-    color: #fff;
-    font-size: 1vw;
-    margin-top: 20px;
-}
+    .History1 {
+        color: #fff;
+        font-size: 1vw;
+        margin-top: 20px;
+    }
 
-.History2 {
-    color: #fff;
-    font-size: 1vw;
-    margin-top: 5px;
-}
+    .History2 {
+        color: #fff;
+        font-size: 1vw;
+        margin-top: 5px;
+    }
 
-.History3 {
-    color: #fff;
-    font-size: 1vw;
-    margin-top: 5px;
-}
+    .History3 {
+        color: #fff;
+        font-size: 1vw;
+        margin-top: 5px;
+    }
 
- /*them phan CSS danh sach cua Vy */
+    /*them phan CSS danh sach cua Vy */
 
-h1{
+    h1 {
+        text-align: center;
+    }
+
+    .grid-container {
+        margin: 50px 400px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .store-box {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .store-box {
+        font-size: 25px;
+    }
+
+    .store-box h3 {
+        margin-top: 0;
+        font-size: 30px;
+        color: #333;
+    }
+
+    .store-box p {
+        margin: 8px 0;
+        color: #555;
+    }
+
+    .store-box a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .store-box a:hover {
+        text-decoration: underline;
+    }
+
+
+.lhtv {
+    height: 50px;
+    font-size: 35px;
     text-align: center;
+    color: white  ;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 50px 790px;
+    background: orangered;
 }
 
-.grid-container {
-    margin: 50px 400px;
-    display: grid;
-    grid-template-columns: repeat(3,  1fr);
-    gap: 20px;
-}
-.store-box {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-.store-box {
-    font-size: 25px;
-}
-.store-box h3 {
-    margin-top: 0;
-    font-size: 30px;
-    color: #333;
-}
-.store-box p {
-    margin: 8px 0;
-    color: #555;
-}
-.store-box a {
-    color: #007bff;
-    text-decoration: none;
-}
-.store-box a:hover {
-    text-decoration: underline;
-}
-.lhtv{
-    text-align: center;
-
-    border: 2px solid black;
-    border-radius: 8px;
-    margin:  50px 1200px;
-    background: gold;
-}
 .danhgiakhachhang {
     margin: auto;
     width: 100%;
-    height: 800px;
+    height: 500px;
     background: black;
 
 }
-.thongtin{
+
+.thongtin {
     text-align: left;
-    width: 650px;
+    width: 450px;
     height: 500px;
-    float:left;
+    float: left;
     margin: auto;
-    padding: 50px;
-    font-size: 24px;
+    padding: 10px;
+    font-size: 18px;
 
 }
-.aaa1{
-    font-size: 39px;
+.aaa1 {
+    font-size: 25px;
     color: darkorange;
 }
-.textF{
-    text-decoration-color: #cccccc;
+.textF {
+    text-decoration-color: black  ;
 }
-div{
+
+div {
     color: white;
-    padding: 13px;
+    padding: 5px;
 }
