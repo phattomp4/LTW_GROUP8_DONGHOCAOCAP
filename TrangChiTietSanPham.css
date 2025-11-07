@@ -1,9 +1,13 @@
+.body{
+    height: 1000px;
+    width: 1000px;
+}
 .Body{
     display: flex;
     /* --- Các thay đổi để căn giữa và giới hạn chiều rộng --- */
     max-width: 1200px; /* Chọn chiều rộng tối đa bạn mong muốn (ví dụ 1200px) */
     margin: 0 auto;    /* Đặt lề trái và phải tự động để căn giữa */
-    padding: 120px;     /* Thêm padding bên trong để nội dung không chạm sát viền */
+    padding: 20px;     /* Thêm padding bên trong để nội dung không chạm sát viền */
     /* ---------------------------------------------------- */
     
     gap: 30px; /* Khoảng cách giữa Picture-clock và Right-body */
@@ -65,8 +69,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* height: 800px;
-    width: 800px; */
+    height: 600px;
+    width: 600px;
 }
 
 .Main-image-container img{
