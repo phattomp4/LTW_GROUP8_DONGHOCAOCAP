@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Đồng hồ cao cấp</title>
-    <link rel="stylesheet" href="stylesIndex.css">
     <!-- Linking SwiperJS CSS-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="stylesIndex.css">
     <!-- Linking Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
   
 <body>
@@ -224,7 +224,7 @@
         <div class="icon-box">
             <div class="icon-box-img" style="width: 32px">
                 <div class="icon">
-                    <div class="icon-inner" style="color:;">
+                    <div class="icon-inner" >
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"> <path d="M6.80761 25.1924C5.65711 24.0419 6.42019 21.6265 5.8346 20.2111C5.22755 18.744 3 17.5631 3 16C3 14.4368 5.22756 13.256 5.8346 11.7888C6.4202 10.3735 5.65711 7.95811 6.80761 6.80761C7.95811 5.65711 10.3735 6.42019 11.7889 5.8346C13.256 5.22755 14.4369 3 16 3C17.5632 3 18.744 5.22756 20.2112 5.8346C21.6265 6.4202 24.0419 5.65711 25.1924 6.80761C26.3429 7.95811 25.5798 10.3735 26.1654 11.7889C26.7725 13.256 29 14.4369 29 16C29 17.5632 26.7724 18.744 26.1654 20.2112C25.5798 21.6265 26.3429 24.0419 25.1924 25.1924C24.0419 26.3429 21.6265 25.5798 20.2111 26.1654C18.744 26.7725 17.5631 29 16 29C14.4368 29 13.256 26.7724 11.7888 26.1654C10.3735 25.5798 7.95811 26.3429 6.80761 25.1924Z" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M21.5 13L14.1666 20L10.5 16.5" stroke="#1b6e76" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg>
                     </div>
                 </div>
@@ -803,7 +803,7 @@
 
     <!-- Vy -->
     <div class="slide-img">
-        <button class="button left" onclick="scrollSlider(-1)">❮</button>
+        <button class="button-left" onclick="scrollSlider(-1)">❮</button>
         <div class="slide-list-img" id="slide-list-img">
             <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-5.webp">
             <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp">
@@ -816,11 +816,14 @@
             <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-5.webp">
             <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp">
         </div>
-        <button class="button right" onclick="scrollSlider(1)">❯</button>
+        <button class="button-right" onclick="scrollSlider(1)">❯</button>
     </div>
 
     <!-- Them phan danh sach dia chi -->
-    <h1>Danh sách cửa hàng WatchStore</h1>
+    <div class="dscuahang-title">
+        <h1>Danh sách cửa hàng WatchStore</h1>
+    </div>
+
     <div class="grid-container">
         <div class="store-box">
             <h3>WatchStore Trần Đại Nghĩa</h3>
@@ -853,57 +856,71 @@
             <a href="#">Xem chỉ đường</a>
         </div>
     </div>
-<h1 class="lhtv">Liên Hệ Tư Vấn</h1>
-<div class="danhgiakhachhang">
-    <div class="thongtintong">
-        <div class="thongtin">
-<div class="aaa1 ">Về chúng tôi</div>
-    <div>WatchStore tự hào là website có lượng đánh giá nhiều nhất tại Việt Nam</div>
-        <div> Giới thiệu về WatchStore  </div>
-        <div> Phản ánh - Khiếu nại  </div>
-        <div> Chứng nhận đại lý  </div>
-        <div> Tin tức công ty  </div>
-        <div> Top list đồng hồ  </div>
-        <div> Kiến thức đồng hồ  </div>
-    </div>
-<div class="thongtin">
-    <div class="aaa1 " id="csc">Chính sách chung</div>
-    <div>Điều khoản thanh toán </div>
-    <div> Chính sách bảo hành</div>
-    <div>Chính sách bảo mật </div>
-    <div>Chính sách vận chuyển </div>
-    <div>Chính sách đổi trả </div>
-    <div>Thông tin các trang TMĐT </div>
-</div>
-    <div class="thongtin">
-<div  class="aaa1 " id="chmb">Cửa hàng Miền Bắc</div>
-        <div>
-        <div>97 Trần Đại Nghĩa, P.Bạch Mai, Hà Nội </div>
-        <div>58 Trần Đăng Ninh, P.Cầu Giấy, Hà Nội </div>
-    </div>
-        <div class="aaa1 " id="chmt">Cửa hàng Miền Trung</div>
-        <div>
-            <div>339 Lê Duẩn, P.Thanh Khê, Đà Nẵng</div>
 
+    <!-- Nút lhtv -->
+    <div class="introduce-section container-button-lhtv">
+        <div class="button-introduce" style="text-align:center">
+            <a href="contact.html" target="_blank" class="button button-lhtv" style="border-radius:7px;">
+                <span style="color: #fff">LIÊN HỆ TƯ VẤN</span>
+            </a>
         </div>
-        <div class="aaa1"  id="chmn">Cửa hàng Miền Nam</div>
-        <div>
-            <div>642 CMT8, P.Thủ Dầu Một, HCM (Bình Dương)</div>
-            <div>90 Lê Văn Sỹ, P.Phú Nhuận, HCM</div>
-            <div>61 Quang Trung, P.Gò Vấp, HCM</div>
-        </div>
-        </div>
-        <div class="thongtin">
-            <div class="aaa1 " id="lhht">Liên hệ hỗ trợ</div>
-            <div>Hotline 1: 093 189 2222 </div>
-            <div>Hotline 2: 097 189 3333 </div>
-            <div>Hotline 3: 096 139 5555 </div>
-            <div> </div>
-            <div class="aaa1 " id="tdct">Theo dõi chúng tôi tại</div>
+    </div>
 
+
+    <footer>
+        <div class="thongtintong">
+            <div class="thongtin">
+                <p>VỀ CHÚNG TÔI</p>
+                <ul class="list-tt">
+                    <li><a href="#"> Giới thiệu về WatchStore</a></li>
+                    <li><a href="#"> Phản ánh - Khiếu nại</a></li>
+                    <li><a href="#"> Chứng nhận đại lý</a></li>
+                    <li><a href="#"> Tin tức công ty</a></li>
+                    <li><a href="#"> Top list đồng hồ</a></li>
+                    <li><a href="#"> Kiến thức đồng hồ</a></li>
+                </ul>
+            </div>
+
+            <div class="thongtin">
+                <p>CHÍNH SÁCH CHUNG</p>
+                <ul class="list-tt">
+                    <li><a href="#">Điều khoản thanh toán</a></li>
+                    <li><a href="#">Chính sách bảo hành</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Chính sách vận chuyển</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Thông tin các trang TMĐT</a></li>
+                </ul>
+            </div>
+
+            <div class="thongtin">
+                <p>Cửa hàng Miền Bắc</p>
+                <ul class="list-tt">
+                    <li><a href="#">97 Trần Đại Nghĩa, P.Bạch Mai, Hà Nội</a></li>
+                    <li><a href="#">58 Trần Đăng Ninh, P.Cầu Giấy, Hà Nội</a></li>
+                </ul>
+                <p>Cửa hàng Miền Trung</p>
+                <ul class="list-tt">
+                    <li><a href="#">339 Lê Duẩn, P.Thanh Khê, Đà Nẵng</a></li>
+                </ul>
+                <p>Cửa hàng Miền Nam</p>
+                <ul class="list-tt">
+                    <li><a href="#">642 CMT8, P.Thủ Dầu Một, HCM</a></li>
+                    <li><a href="#">90 Lê Văn Sỹ, P.Phú Nhuận, HCM</a></li>
+                    <li><a href="#">61 Quang Trung, P.Gò Vấp, HCM</a></li>
+                </ul>
+            </div>
+
+            <div class="thongtin">
+                <p>Liên hệ hỗ trợ</p>
+                <ul class="list-tt">
+                    <li><a href="#">Hotline 1: 093 189 222</a></li>
+                    <li><a href="#">Hotline 2: 097 189 3333</a></li>
+                    <li><a href="#">Hotline 3: 096 139 5555</a></li>
+                </ul>
             </div>
         </div>
-</div>
+    </footer>
 
     <!-- Linking SwiperJS Script -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
