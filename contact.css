@@ -187,3 +187,32 @@
 .textF {
     text-decoration-color: black  ;
 }
+
+
+
+
+
+
+
+
+
+
+/* media moblie */
+@media screen and (max-width: 768px) {
+    .contact {
+        grid-template-columns: 1fr;
+        font-size: 16px;
+    }
+
+    .luuy {
+        padding: 10px 20px;
+    }
+
+    .thongtin {
+        max-width: 100%;
+    }
+
+    .mySlides img {
+        max-height: 300px;
+    }
+}
