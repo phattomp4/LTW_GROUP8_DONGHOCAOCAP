@@ -457,6 +457,14 @@ body {
 
     /* COLLECTION LUXURY */
 
+.collection-luxury {
+    margin: 15px 5px 15px 5px; 
+}
+
+.luxury-cards {
+    margin: 3px 15px 3px 15px;
+}
+
     .luxury-title h2 {
         text-align: center;
         font-weight: 500;
@@ -476,46 +484,55 @@ body {
     }
 
 
-    .luxury-banner {
-        margin: 30px;
-        width: 285px;
-        height: 350px;
-    }
-
     .luxury-banner img {
+        width: 300px;
+        height: 400px;
         border-radius: 8px;
     }
 
-    .ul-luxury-cards .luxury-card {
-        list-style: none;
-    }
+.card-wrapper {
+    max-width: 850px;
+}
+
+.ul-luxury-cards.swiper-wrapper {
+    align-items: center; /* Căn giữa các slide (card) theo chiều dọc */
+}
+
+.ul-luxury-cards .luxury-card {
+    margin: 0 0 0 0;
+    list-style: none;
+}
 
     .ul-luxury-cards .luxury-card .Product {
-        width: 180px;
         display: block;
-        padding: 10px;
+        width: auto; 
+        height: auto; 
+        margin: 0 0 0 0;
         border: 1px solid black;
         text-decoration: none;
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+        transition: 0.2s ease;
     }
-
-    /*.ul-luxury-cards .luxury-card .Product {*/
-    /*    transition: 0.2 ease;*/
-    /*}*/
 
     .ul-luxury-cards .luxury-card .Product:hover {
         border-color: #e3bd5d;
     }
 
     .ul-luxury-cards .Product .luxury-card-img {
-        width: 100%;
+       
         object-fit: cover;
     }
 
 
-    .luxury-cards {
-        display: flex;
-    }
+
+.luxury-cards {
+    display: flex;
+}
+
+    .luxury-cards .Product p {
+        font-size: 13px;
+    }  
+
 
 
     /*Vu*/
