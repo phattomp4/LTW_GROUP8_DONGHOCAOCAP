@@ -31,7 +31,7 @@ function showSlides(n) {
 // SwiperJS
 new Swiper('.card-wrapper', {
     loop: true,
-    spaceBetween: 30,
+    spaceBetween: 10,
 
     // Pagination bullets
     pagination: {
@@ -47,15 +47,18 @@ new Swiper('.card-wrapper', {
     },
 
     // Responsive breakpoints
-    breakpoint: {
+    breakpoints: {
         0: {
             slidesPerView: 1,
         },
-        768: {
+        690: {
             slidesPerView: 2,
         },
-        1024: {
+        900: {
             slidesPerView: 3,
+        },
+        950: {
+            slidesPerView: 4,
         },
     }
 });
