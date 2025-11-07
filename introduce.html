@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- CSS IntroDuce -->
+    <link rel="stylesheet" href="introduce.css">
+    <script src="introduce.js"></script>
+</head>
+<body>
+<header>
+    <!--Phần hình ảnh đầu trang  -->
+    <div class="top" id="top">
+        <div> <img src="https://cdn.watchstore.vn/wp-content/uploads/2025/10/watchstore-dai-ly-ban-dong-ho-chinh-hang-uy-tin.jpg"> </div>
+    </div>
+    <!-- Phần slide show hình ảnh khách hàng tại cửa hàng -->
+    <div class="slideshow-gallery-section">
+        <button class="gallery-button prev-gallery" onclick="scrollSlider(-1)">❮</button>
+
+        <div class="new-store-gallery-container" id="slide-list-img-new">
+            <!-- TÔI ĐÃ XÓA class "full-row-gallery" khỏi tất cả các ảnh -->
+            <img src="https://cdn.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-5.webp" alt="Bộ sưu tập ảnh cửa hàng VVP" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-5.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-3.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-3.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp" class="gallery-image">
+            <img src="https://cdn.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-5.webp" alt="Bộ sưu tập ảnh cửa hàng VVP" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-3.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-3.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp" class="gallery-image">
+        </div>
+
+        <button class="gallery-button next-gallery" onclick="scrollSlider(1)">❯</button>
+    </div>
+</header>
+<body>
+
+<!-- Danh sách cửa hàng -->
+<div class="dscuahang-title">
+    <h1>Danh sách cửa hàng WatchStore</h1>
+</div>
+
+<div class="grid-container">
+    <div class="store-box">
+        <h3>WatchStore Trần Đại Nghĩa</h3>
+        <p>97 Trần Đại Nghĩa, HBT, Hà Nội</p>
+        <a href="#">Xem chỉ đường</a>
+    </div>
+    <div class="store-box">
+        <h3>WatchStore Trần Bằng Ninh</h3>
+        <p>58 Trần Bằng Ninh, Q. Hai Bà Trưng, Hà Nội</p>
+        <a href="#">Xem chỉ đường</a>
+    </div>
+    <div class="store-box">
+        <h3>WatchStore Đà Nẵng</h3>
+        <p>339 Lê Duẩn, Thanh Khê, Đà Nẵng</p>
+        <a href="#">Xem chỉ đường</a>
+    </div>
+    <div class="store-box">
+        <h3>WatchStore Bình Dương</h3>
+        <p>642 CMT8, Thủ Dầu Một, Bình Dương</p>
+        <a href="#">Xem chỉ đường</a>
+    </div>
+    <div class="store-box">
+        <h3>WatchStore Lê Văn Sỹ</h3>
+        <p>96 Lê Văn Sỹ, P11, Phú Nhuận, TPHCM</p>
+        <a href="#">Xem chỉ đường</a>
+    </div>
+    <div class="store-box">
+        <h3>WatchStore Quang Trung</h3>
+        <p>9 Quang Trung, P10, Gò Vấp, TPHCM</p>
+        <a href="#">Xem chỉ đường</a>
+    </div>
+</div>
+
+<!-- Online Store -->
+<div class="kenh-mua-sam-online">
+        <div  class="kenh-mua-sam"><a>Kênh Mua Sắm ONLINE Chính Thức</a> </div> </br>
+        <div class="kenh-mua-sam-note"><a>Để phục vụ khách hàng trên toàn quốc, WatchStore.vn phát triển hệ thống mua sắm trực tuyến đa nền tảng, đảm bảo mua hàng nhanh, nhận hàng chính hãng, bảo hành toàn quốc.</a></div>
+        <ul class="list-shop">
+            <li> Facebook:<a href="#"> https://www.facebook.com/watchstore.vn</a></li>
+            <li>Instagram:<a href="#"> https://www.instagram.com/watchstore.vietnam/#</a></li>
+            <li>Shopee:<a href="#"> https://shopee.vn/watchstore.vn</a></li>
+            <li>Tiktok Shop:<a href="#"> https://vt.tiktok.com/ZSUGoLeAo/?page=TikTokShop</a></li>
+        </ul>
+    <div  class="kenh-mua-sam-note"><a> Các kênh online của WatchStore thường xuyên cập nhật ưu đãi độc quyền, giảm giá theo mùa và quà tặng chính hãng, giúp khách hàng dễ dàng sở hữu chiếc đồng hồ yêu thích dù ở bất kỳ đâu.</a> </div>
+</div>
+
+</body>
+
+
+<footer>
+        <div class="thongtintong">
+            <div class="thongtin">
+                <p>VỀ CHÚNG TÔI</p>
+                <ul class="list-tt">
+                    <li><a href="#"> Giới thiệu về WatchStore</a></li>
+                    <li><a href="#"> Phản ánh - Khiếu nại</a></li>
+                    <li><a href="#"> Chứng nhận đại lý</a></li>
+                    <li><a href="#"> Tin tức công ty</a></li>
+                    <li><a href="#"> Top list đồng hồ</a></li>
+                    <li><a href="#"> Kiến thức đồng hồ</a></li>
+                </ul>
+            </div>
+
+            <div class="thongtin">
+                <p>CHÍNH SÁCH CHUNG</p>
+                <ul class="list-tt">
+                    <li><a href="#">Điều khoản thanh toán</a></li>
+                    <li><a href="#">Chính sách bảo hành</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Chính sách vận chuyển</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Thông tin các trang TMĐT</a></li>
+                </ul>
+            </div>
+
+            <div class="thongtin">
+                <p>Cửa hàng Miền Bắc</p>
+                <ul class="list-tt">
+                    <li><a href="#">97 Trần Đại Nghĩa, P.Bạch Mai, Hà Nội</a></li>
+                    <li><a href="#">58 Trần Đăng Ninh, P.Cầu Giấy, Hà Nội</a></li>
+                </ul>
+                <p>Cửa hàng Miền Trung</p>
+                <ul class="list-tt">
+                    <li><a href="#">339 Lê Duẩn, P.Thanh Khê, Đà Nẵng</a></li>
+                </ul>
+                <p>Cửa hàng Miền Nam</p>
+                <ul class="list-tt">
+                    <li><a href="#">642 CMT8, P.Thủ Dầu Một, HCM</a></li>
+                    <li><a href="#">90 Lê Văn Sỹ, P.Phú Nhuận, HCM</a></li>
+                    <li><a href="#">61 Quang Trung, P.Gò Vấp, HCM</a></li>
+                </ul>
+            </div>
+
+            <div class="thongtin">
+                <p>Liên hệ hỗ trợ</p>
+                <ul class="list-tt">
+                    <li><a href="#">Hotline 1: 093 189 222</a></li>
+                    <li><a href="#">Hotline 2: 097 189 3333</a></li>
+                    <li><a href="#">Hotline 3: 096 139 5555</a></li>
+                </ul>
+            </div>
+        </div>
+</footer>
+</body>
+</html>
