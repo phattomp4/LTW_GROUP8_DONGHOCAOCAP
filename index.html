@@ -806,7 +806,7 @@
 
     <!-- Vy -->
     <div class="slide-img">
-        <button class="button left" onclick="scrollSlider(-1)">❮</button>
+        <button class="button-left" onclick="scrollSlider(-1)">❮</button>
         <div class="slide-list-img" id="slide-list-img">
             <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-5.webp">
             <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp">
@@ -819,11 +819,14 @@
             <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-5.webp">
             <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp">
         </div>
-        <button class="button right" onclick="scrollSlider(1)">❯</button>
+        <button class="button-right" onclick="scrollSlider(1)">❯</button>
     </div>
 
     <!-- Them phan danh sach dia chi -->
-    <h1>Danh sách cửa hàng WatchStore</h1>
+    <div class="dscuahang-title">
+        <h1>Danh sách cửa hàng WatchStore</h1>
+    </div>
+
     <div class="grid-container">
         <div class="store-box">
             <h3>WatchStore Trần Đại Nghĩa</h3>
@@ -856,56 +859,71 @@
             <a href="#">Xem chỉ đường</a>
         </div>
     </div>
-<h1 class="lhtv" > Liên Hệ Tư Vấn </h1>
-<div class="danhgiakhachhang">
-    <div class="thongtintong">
-        <div class="thongtin">
-<div class="aaa1 ">Về chúng tôi</div>
-    <div>WatchStore tự hào là website có lượng đánh giá nhiều nhất tại Việt Nam</div>
-        <div> Giới thiệu về WatchStore  </div>
-        <div> Phản ánh - Khiếu nại  </div>
-        <div> Chứng nhận đại lý  </div>
-        <div> Tin tức công ty  </div>
-        <div> Top list đồng hồ  </div>
-        <div> Kiến thức đồng hồ  </div>
-    </div>
-<div class="thongtin">
-    <div class="aaa1 " id="csc">Chính sách chung</div>
-    <div>Điều khoản thanh toán </div>
-    <div> Chính sách bảo hành</div>
-    <div>Chính sách bảo mật </div>
-    <div>Chính sách vận chuyển </div>
-    <div>Chính sách đổi trả </div>
-    <div>Thông tin các trang TMĐT </div>
-</div>
-    <div class="thongtin">
-<div  class="aaa1 " id="chmb">Cửa hàng Miền Bắc</div>
-        <div>
-        <div>97 Trần Đại Nghĩa, P.Bạch Mai, Hà Nội </div>
-        <div>58 Trần Đăng Ninh, P.Cầu Giấy, Hà Nội </div>
-    </div>
-        <div class="aaa1 " id="chmt">Cửa hàng Miền Trung</div>
-        <div>
-            <div>339 Lê Duẩn, P.Thanh Khê, Đà Nẵng</div>
 
+    <!-- Nút lhtv -->
+    <div class="introduce-section container-button-lhtv">
+        <div class="button-introduce" style="text-align:center">
+            <a href="contact.html" target="_blank" class="button button-lhtv" style="border-radius:7px;">
+                <span style="color: #fff">LIÊN HỆ TƯ VẤN</span>
+            </a>
         </div>
-        <div class="aaa1"  id="chmn">Cửa hàng Miền Nam</div>
-        <div>
-            <div>642 CMT8, P.Thủ Dầu Một, HCM (Bình Dương)</div>
-            <div>90 Lê Văn Sỹ, P.Phú Nhuận, HCM</div>
-            <div>61 Quang Trung, P.Gò Vấp, HCM</div>
-        </div>
-        </div>
-        <div class="thongtin">
-            <div class="aaa1 " id="lhht">Liên hệ hỗ trợ</div>
-            <div>Hotline 1: 093 189 2222 </div>
-            <div>Hotline 2: 097 189 3333 </div>
-            <div>Hotline 3: 096 139 5555 </div>
-            <div> </div>
-            <div class="aaa1 " id="tdct">Theo dõi chúng tôi tại</div>
+    </div>
+
+
+    <footer>
+        <div class="thongtintong">
+            <div class="thongtin">
+                <p>VỀ CHÚNG TÔI</p>
+                <ul class="list-tt">
+                    <li><a href="#"> Giới thiệu về WatchStore</a></li>
+                    <li><a href="#"> Phản ánh - Khiếu nại</a></li>
+                    <li><a href="#"> Chứng nhận đại lý</a></li>
+                    <li><a href="#"> Tin tức công ty</a></li>
+                    <li><a href="#"> Top list đồng hồ</a></li>
+                    <li><a href="#"> Kiến thức đồng hồ</a></li>
+                </ul>
+            </div>
+
+            <div class="thongtin">
+                <p>CHÍNH SÁCH CHUNG</p>
+                <ul class="list-tt">
+                    <li><a href="#">Điều khoản thanh toán</a></li>
+                    <li><a href="#">Chính sách bảo hành</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Chính sách vận chuyển</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Thông tin các trang TMĐT</a></li>
+                </ul>
+            </div>
+
+            <div class="thongtin">
+                <p>Cửa hàng Miền Bắc</p>
+                <ul class="list-tt">
+                    <li><a href="#">97 Trần Đại Nghĩa, P.Bạch Mai, Hà Nội</a></li>
+                    <li><a href="#">58 Trần Đăng Ninh, P.Cầu Giấy, Hà Nội</a></li>
+                </ul>
+                <p>Cửa hàng Miền Trung</p>
+                <ul class="list-tt">
+                    <li><a href="#">339 Lê Duẩn, P.Thanh Khê, Đà Nẵng</a></li>
+                </ul>
+                <p>Cửa hàng Miền Nam</p>
+                <ul class="list-tt">
+                    <li><a href="#">642 CMT8, P.Thủ Dầu Một, HCM</a></li>
+                    <li><a href="#">90 Lê Văn Sỹ, P.Phú Nhuận, HCM</a></li>
+                    <li><a href="#">61 Quang Trung, P.Gò Vấp, HCM</a></li>
+                </ul>
+            </div>
+
+            <div class="thongtin">
+                <p>Liên hệ hỗ trợ</p>
+                <ul class="list-tt">
+                    <li><a href="#">Hotline 1: 093 189 222</a></li>
+                    <li><a href="#">Hotline 2: 097 189 3333</a></li>
+                    <li><a href="#">Hotline 3: 096 139 5555</a></li>
+                </ul>
             </div>
         </div>
-</div>
+    </footer>
 
     <!-- Linking SwiperJS Script -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
