@@ -31,7 +31,7 @@ function showSlides(n) {
 // SwiperJS
 new Swiper('.card-wrapper', {
     loop: true,
-    spaceBetween: 10,
+    spaceBetween: 0,
 
     // Pagination bullets
     pagination: {
