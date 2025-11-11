@@ -1,4 +1,35 @@
 ﻿/* phan script cua Phat -- > */
+
+///* --- TỰ ĐỘNG TẢI HEADER VÀ FOOTER --- */
+//// 1. Tạo một hàm để tải HTML từ một file bên ngoài
+//function loadHTML(filePath, elementId) {
+//    fetch(filePath)
+//        .then(response => {
+//            if (!response.ok) {
+//                throw new Error("Network response was not ok");
+//            }
+//            return response.text(); // Lấy nội dung HTML dạng text
+//        })
+//        .then(html => {
+//            // "Nhét" nội dung HTML vào đúng cái "chỗ" (placeholder)
+//            document.getElementById(elementId).innerHTML = html;
+//        })
+//        .catch(error => {
+//            console.error(`Error loading ${filePath}:`, error);
+//            // Thông báo lỗi nếu không tải được file
+//            document.getElementById(elementId).innerHTML = `<p style="color:red;">Failed to load ${filePath}.</p>`;
+//        });
+//}
+
+//// 2. Chờ cho trang web tải xong...
+//document.addEventListener("DOMContentLoaded", function () {
+//    // ...rồi gọi hàm để tải header và footer vào đúng "chỗ" của chúng
+//    loadHTML("header.html", "header-placeholder");
+//    loadHTML("footer.html", "footer-placeholder");
+//});
+
+
+// Slideshow container
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -64,26 +95,6 @@ new Swiper('.card-wrapper', {
 });
 
 
-/* phan script cua Vu */
-        const page2 = document.getElementById('Page2');
-        const viewMoreBtn = document.getElementById('view-more-btn');
-
-        viewMoreBtn.addEventListener('click', () => {
-            if (page2.classList.contains('hidden')) {
-            // Hiện Page2
-            page2.classList.remove('hidden');
-        viewMoreBtn.textContent = 'Thu gọn';
-            } else {
-            // Ẩn Page2
-            page2.classList.add('hidden');
-        viewMoreBtn.textContent = 'Xem thêm sản phẩm';
-        // (Tùy chọn: Cuộn lên đầu Page1 sau khi thu gọn)
-        window.scrollTo({
-            top: document.querySelector('.Outstanding-clocks').offsetTop - 20,
-        behavior: 'smooth'
-                });
-            }
-        });
 
 
 /* phan script cua Vy */

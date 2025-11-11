@@ -14,15 +14,10 @@ body {
     box-sizing: border-box;
 }
 
-/* Định dạng chung cho thẻ link */
-a {
+.product-name {
     text-decoration: none;
-    color: #007bff;
 }
 
-    a:hover {
-        text-decoration: underline;
-    }
 
 /* Đảm bảo hình ảnh không bị tràn */
 img {
@@ -250,12 +245,14 @@ img {
     }
 
 /* Nút "Tiến hành thanh toán" */
+
 .checkout-button {
+    text-decoration: none;
     display: block;
     width: 100%;
     background-color: #1b6e76;
-    color: #ffffff;
     border: none;
+    text-align: center;
     padding: 18px;
     font-size: 16px;
     font-weight: bold;
@@ -265,6 +262,9 @@ img {
     margin-top: 25px;
     transition: background-color 0.2s;
 }
+    .checkout-button p {
+        font-: #fff;
+    }
 
     .checkout-button:hover {
         background-color: #004248;
