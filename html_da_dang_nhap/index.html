@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Đồng hồ cao cấp</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="Share/css/ProductCards.css">
-    <link rel="stylesheet" href="Share/css/header.css">
-    <link rel="stylesheet" href="Share/css/footer.css">
-    <!-- Linking SwiperJS CSS-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
-    <!-- Linking Font Awesome-->
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../Share/css/ProductCards.css">
+    <link rel="stylesheet" href="../Share/css/header.css">
+    <link rel="stylesheet" href="../Share/css/footer.css">
+    <!-- Linking SwiperJS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+    <!-- Linking Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
@@ -118,7 +118,7 @@
                 </li>
                 <!-- Gio hang -->
                 <li>
-                    <a href="" class="action-icon cart-icon">
+                    <a href="GioHang.html" class="action-icon cart-icon">
                         <i class="fa-solid fa-bag-shopping"></i>
                         <span class="cart-badge">3</span>
                     </a>
@@ -132,10 +132,21 @@
                 </li>
                 <!-- Nút đăng nhập -->
                 <li>
-                    <div class="container-button-login" style="text-align:center">
-                        <a href="" class="button button-login">
-                            <span style="color: #fff">Đăng nhập</span>
-                        </a>
+                    <div class="profile-dropdown">
+
+                        <button class="profile-avatar-btn" id="profile-btn">
+                            <img src="https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png" alt="User Avatar">
+                        </button>
+
+                        <div class="dropdown-menu" id="profile-menu">
+                            <div class="menu-header">
+                                TÔ TẤN PHÁT
+                            </div>
+                            <a href="#"><i class="fa-solid fa-user"></i><span>Hồ sơ</span></a>
+                            <div class="divider"></div>
+                            <a href="../index.html"><i class="fa-solid fa-sign-out"></i><span>Đăng xuất</span></a>
+                        </div>
+
                     </div>
 
                 </li>
@@ -814,7 +825,8 @@
 
         </div>
         <!-- Tab đồng hồ nam -->
-        <div id="content-men" class="tab-content hidden"> <!-- đặt tab nam bị ẩn -->
+        <div id="content-men" class="tab-content hidden">
+            <!-- đặt tab nam bị ẩn -->
             <div class="Product-page">
                 <a href="#" class="link-product">
                     <div class="Product">
@@ -848,7 +860,8 @@
             </div>
         </div>
         <!-- Tab đồng hồ nữ -->
-        <div id="content-women" class="tab-content hidden"> <!-- đặt tab nữ bị ẩn -->
+        <div id="content-women" class="tab-content hidden">
+            <!-- đặt tab nữ bị ẩn -->
             <div class="Product-page">
                 <a href="#" class="link-product">
                     <div class="Product">
@@ -1027,7 +1040,7 @@
 
     <!-- Linking SwiperJS Script -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script src="index.js"></script>
-    <script src="Share/js/ProductCards.js"></script>
+    <script src="../index.js"></script>
+    <script src="../Share/js/ProductCards.js"></script>
 </body>
 </html>

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="styleGioHang.css">
+    <link rel="stylesheet" href="../Share/css/header.css">
+    <link rel="stylesheet" href="../Share/css/footer.css">
+    <link rel="stylesheet" href="../css/GioHang.css">
     <!-- Linking Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>Giỏ hàng</title>
@@ -120,10 +120,30 @@
                 </li>
                 <!-- Yêu thích -->
                 <li>
-                    <a href="#" class="action-icon">
+                    <a href="FavoritesList.html" class="action-icon">
                         <i class="fa-regular fa-heart"></i>
                         <span class="wishlist-count">(5)</span>
                     </a>
+                </li>
+                <!-- Nút đăng nhập -->
+                <li>
+                    <div class="profile-dropdown">
+
+                        <button class="profile-avatar-btn" id="profile-btn">
+                            <img src="https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png" alt="User Avatar">
+                        </button>
+
+                        <div class="dropdown-menu" id="profile-menu">
+                            <div class="menu-header">
+                                TÔ TẤN PHÁT
+                            </div>
+                            <a href="#"><i class="fa-solid fa-user"></i><span>Hồ sơ</span></a>
+                            <div class="divider"></div>
+                            <a href="../index.html"><i class="fa-solid fa-sign-out"></i><span>Đăng xuất</span></a>
+                        </div>
+
+                    </div>
+
                 </li>
             </ul>
         </div>
@@ -236,7 +256,7 @@
             </div>
             <!-- Nút thanh toán -->
             <a href="ThanhToan.html" class="checkout-button"><span style="color: #fff">Tiến hành thanh toán</span></a>
-            
+
         </div>
     </div>
 
@@ -294,5 +314,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="../index.js"></script>
 </body>
 </html>
