@@ -569,65 +569,79 @@ body {
         right: 5px;
     }
 }
-/*them phan CSS danh sach cua Vy */
-
-.dscuahang-title h1{
-    text-align: center;
-    color: black;
+/*them phan CSS danh sach cua hang cua Vy */
+/* --- 1. TIÊU ĐỀ DANH SÁCH CỬA HÀNG --- */
+.dscuahang-title {
+    text-align: center; /* Căn giữa tiêu đề */
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
+.dscuahang-title h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* --- 2. BỐ CỤC CHÍNH (3 CỘT MẶC ĐỊNH) --- */
 .grid-container {
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 28px;
     display: grid;
-    place-items: center;
+    /* Mặc định 3 cột bằng nhau, tạo bố cục lớn như trên màn hình 24 inch */
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 20px; /* Khoảng cách giữa các ô */
+    /* Giới hạn chiều rộng và căn giữa container */
+    max-width: 1200px;
+    margin: 0 auto 50px auto; /* Căn giữa khối và thêm khoảng cách dưới */
+    padding: 0 20px; /* Thêm padding ngang để nội dung không bị dính vào mép màn hình */
 }
 
+/* --- 3. STYLING CHO MỖI Ô CỬA HÀNG --- */
 .store-box {
-    width: 35vh;
-    height: 15vh;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    padding: 15px 20px;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: left;
 }
 
+.store-box h3 {
+    font-size: 18px;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
 
-        .store-box h3 {
-            padding: 8px;
-            background-color: #f4f4f4;
-            border-top-right-radius: 8px;
-            border-top-left-radius: 8px;
-            margin: 0;
-            font-size: 2vh;
-            color: #333;
-            border-bottom: 1px solid #eee;
-            font-weight: 400;
-        }
+.store-box p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
 
-    .store-box p {
-        font-size: 1.5vh;
-        margin: 0;
-        padding: 8px;
-        color: #555;
+.store-box a {
+    color: #007bff; /* Màu xanh nổi bật cho link */
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* --- 4. MEDIA QUERIES (Giải quyết vấn đề màn hình 14 inch) --- */
+
+/* @media cho màn hình vừa (như laptop 14 inch) */
+@media (max-width: 1024px) {
+    .grid-container {
+        /* Chuyển từ 3 cột sang 2 cột, giúp các ô rộng hơn và không bị co */
+        grid-template-columns: repeat(2, 1fr);
     }
+}
 
-        .store-box a {
-            font-size: 1.5vh;
-            padding: 8px;
-            color: #007bff;
-            text-decoration: none;
-        }
-
-    .store-box a:hover {
-        text-decoration: underline;
+/* @media cho màn hình nhỏ (như điện thoại) */
+@media (max-width: 600px) {
+    .grid-container {
+        /* Chuyển sang 1 cột duy nhất */
+        grid-template-columns: 1fr;
+        padding: 0 15px;
     }
-
-
+}
 .container-button-lhtv {
     margin: 0px 0px 40px 0px;
 }
