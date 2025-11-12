@@ -2,12 +2,13 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>WatchStore - Cửa hàng</title>
-    <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="Share/css/header.css">
-    <link rel="stylesheet" href="Share/css/footer.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Share/css/header.css">
+    <link rel="stylesheet" href="../Share/css/footer.css">
+    <link rel="stylesheet" href="../css/contact.css">
     <!-- Linking Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>VVP.VN - Cửa hàng</title>
 </head>
 
 <body>
@@ -112,7 +113,7 @@
                 </li>
                 <!-- Gio hang -->
                 <li>
-                    <a href="" class="action-icon cart-icon">
+                    <a href="GioHang.html" class="action-icon cart-icon">
                         <i class="fa-solid fa-bag-shopping"></i>
                         <span class="cart-badge">3</span>
                     </a>
@@ -126,10 +127,21 @@
                 </li>
                 <!-- Nút đăng nhập -->
                 <li>
-                    <div class="container-button-login" style="text-align:center">
-                        <a href="" class="button button-login">
-                            <span style="color: #fff">Đăng nhập</span>
-                        </a>
+                    <div class="profile-dropdown">
+
+                        <button class="profile-avatar-btn" id="profile-btn">
+                            <img src="https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png" alt="User Avatar">
+                        </button>
+
+                        <div class="dropdown-menu" id="profile-menu">
+                            <div class="menu-header">
+                                TÔ TẤN PHÁT
+                            </div>
+                            <a href="#"><i class="fa-solid fa-user"></i><span>Hồ sơ</span></a>
+                            <div class="divider"></div>
+                            <a href="../index.html"><i class="fa-solid fa-sign-out"></i><span>Đăng xuất</span></a>
+                        </div>
+
                     </div>
 
                 </li>
@@ -267,7 +279,8 @@
         </footer>
     </div>
     <!-- Gọi file JS -->
-    <script src="js/contact.js"></script>
-    <script src="index.js"></script>
+    <script src="../js/contact.js"></script>
+    <script src="../index.js"></script>
+
 </body>
 </html>

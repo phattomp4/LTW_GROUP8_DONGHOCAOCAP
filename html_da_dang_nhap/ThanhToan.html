@@ -1,18 +1,19 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="styleFavoritesList.css">
-    <link rel="stylesheet" href="ProductCards.css">
+    <link rel="stylesheet" href="../css/ThanhToan.css">
+    <link rel="stylesheet" href="../Share/css/header.css">
+    <link rel="stylesheet" href="../Share/css/footer.css">
+    <!-- Linking Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <title>Giỏ hàng</title>
-</head>
+    <title>Thanh Toán</title>
 
+</head>
 <body>
 
+    <!-- Header -->
     <header class="main-header">
 
         <!--Logo-->
@@ -120,92 +121,195 @@
                 </li>
                 <!-- Yêu thích -->
                 <li>
-                    <a href="#" class="action-icon">
+                    <a href="FavoritesList.html" class="action-icon">
                         <i class="fa-regular fa-heart"></i>
                         <span class="wishlist-count">(5)</span>
                     </a>
+                </li>
+                <!-- Nút đăng nhập -->
+                <li>
+                    <div class="profile-dropdown">
+
+                        <button class="profile-avatar-btn" id="profile-btn">
+                            <img src="https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png" alt="User Avatar">
+                        </button>
+
+                        <div class="dropdown-menu" id="profile-menu">
+                            <div class="menu-header">
+                                TÔ TẤN PHÁT
+                            </div>
+                            <a href="#"><i class="fa-solid fa-user"></i><span>Hồ sơ</span></a>
+                            <div class="divider"></div>
+                            <a href="../index.html"><i class="fa-solid fa-sign-out"></i><span>Đăng xuất</span></a>
+                        </div>
+
+                    </div>
+
                 </li>
             </ul>
         </div>
     </header>
 
-    <div class="contents">
+    <div class="checkout-container">
 
-        <div class="title-favorites-list">
-            <h2>Danh sách đã lưu (5)</h2>
-        </div>
+        <section class="cart-items">
+            <div class="cart-header">
+                <h2>Giỏ hàng của bạn</h2>
+                <a href="#">&lt; Mua thêm sản phẩm khác</a>
+            </div>
 
-            <div class="Product-list-container">
-                <div id="Page1" class="Product-page">
-                    <button class="Product">
-                        <img src="https://www.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-d-1-1173700471-248243325-1712668536-400x400.jpg" alt="">
-                        <br />
-                        <p class="Item">Carnival 40mm Nam 8907G-VT-D</p>
-                        <p class="PriceOfPoduct">3.801.000₫</p>
-                        <div class="Discount-row">
-                            <p class="Discount">5.430.000₫</p>
-                            <p class="DiscountPercent">-30%</p>
-                        </div>
-                        <p class="Sold">Đã bán 88</p>
-                    </button>
+            <div class="cart-item">
+                <img src="https://cdn.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-d-1-1173700471-248243325-1712668536.jpg" alt="Sản phẩm 1">
+                <div class="cart-item-details">
+                    <p class="cart-item-name">Carnival 40mm Nam 8807G-VT-D</p>
+                    <p class="cart-item-price">3.801.000 ₫</p>
+                </div>
+                <div class="quantity-selector">
+                    <button type="button">-</button>
+                    <input type="text" value="1" readonly>
+                    <button type="button">+</button>
+                </div>
+            </div>
 
-                    <button class="Product">
-                        <img src="https://www.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-t-1-348948390-593092946-1712668541-400x400.jpg" alt="">
-                        <br />
-                        <p class="Item">Carnival 40mm Nam 8907G-VT-T</p>
-                        <p class="PriceOfPoduct">3.801.000₫</p>
-                        <div class="Discount-row">
-                            <p class="Discount">5.430.000₫ </p>
-                            <p class="DiscountPercent">-30%</p>
-                        </div>
-                        <p class="Sold">Đã bán 114</p>
-                    </button>
+            <div class="cart-item">
+                <img src="https://cdn.watchstore.vn/wp-content/uploads/2020/11/1-khung-sp-1-1818542633-1853976209-1712563883.jpg" alt="Sản phẩm 2">
+                <div class="cart-item-details">
+                    <p class="cart-item-name">Casio MTP-1374L-1A</p>
+                    <p class="cart-item-price">1.816.000 ₫</p>
+                </div>
+                <div class="quantity-selector">
+                    <button type="button">-</button>
+                    <input type="text" value="1" readonly>
+                    <button type="button">+</button>
+                </div>
+            </div>
 
-                    <button class="Product">
-                        <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/carnival-8907g-vt-tf-400x400.jpg" alt="">
-                        <br />
-                        <p class="Item">Carnival 40mm Nam 8907G-VT-XT</p>
-                        <p class="PriceOfPoduct">3.801.000₫</p>
-                        <div class="Discount-row">
-                            <p class="Discount">5.430.000₫</p>
-                            <p class="DiscountPercent">-30%</p>
-                        </div>
+            <div class="cart-item">
+                <img src="https://cdn.watchstore.vn/wp-content/uploads/2020/09/ra-aa0b02r19b-2081811590-287106387-1712554040.jpg" alt="Sản phẩm 3">
+                <div class="cart-item-details">
+                    <p class="cart-item-name">Orient 42mm Nam RA-AA0B02R39B (RA-AA0B02R19B)</p>
+                    <p class="cart-item-price">6.880.000 ₫</p>
+                </div>
+                <div class="quantity-selector">
+                    <button type="button">-</button>
+                    <input type="text" value="1" readonly>
+                    <button type="button">+</button>
+                </div>
+            </div>
 
-                        <p class="Sold">Đã bán 1</p>
-                    </button>
+            <div class="cart-subtotal">
+                <p>Tổng tiền tạm tính: <span>12.457.000 ₫</span></p>
+                <p class="savings">Tiết kiệm: <span>2.809.000 ₫</span></p>
+            </div>
+        </section>
 
-                    <button class="Product">
-                        <img src="https://www.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-t-1-348948390-593092946-1712668541-400x400.jpg" alt="">
-                        <br />
-                        <p class="Item">Carnival 41mm Nam 8110G-VH-DD-N</p>
-                        <p class="PriceOfPoduct">4.851.000₫</p>
-                        <div class="Discount-row">
-                            <p class="Discount">6.930.000₫</p>
-                            <p class="DiscountPercent">-30%</p>
-                        </div>
-                        <p class="Sold">Đã bán 51</p>
-                    </button>
+        <section class="customer-info">
+            <p class="promo-code">
+                Bạn có mã ưu đãi? <a href="#">Ấn vào đây để nhập mã</a>
+            </p>
 
-                    <button class="Product">
-                        <img src="https://www.watchstore.vn/wp-content/uploads/2020/11/1-khung-sp-6676612-1785849039-1712554705-400x400.jpg" alt="">
-                        <br />
-                        <p class="Item">Casio 45 X 42.1mm Nam AE-1200WHD-1A</p>
-                        <p class="PriceOfPoduct">1.204.800₫</p>
-                        <div class="Discount-row">
-                            <p class="Discount">1.506.000₫</p>
-                            <p class="DiscountPercent">-20%</p>
-                        </div>
-                        <p class="Sold">Đã bán 1,4k</p>
-                    </button>
+            <p class="contact-prompt">
+                Nếu bạn không đặt được hàng, vui lòng nhấn tin <strong>Messenger</strong>, <strong>Chat Zalo</strong>
+                <br>Hoặc gọi tới Hotline <strong>090 123 4567</strong>
+            </p>
+
+            <form action="#">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <input type="text" placeholder="Họ và tên *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Số điện thoại *" required>
+                    </div>
                 </div>
 
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-scrollbar"></div>
+                <div class="form-group full-width">
+                    <input type="email" placeholder="Địa chỉ Email (tuỳ chọn)">
+                </div>
+
+                <div class="form-group full-width">
+                    <input type="text" placeholder="Địa chỉ (số nhà, tên đường, phường/xã...) *" required>
+                </div>
+
+                <div class="form-group full-width">
+                    <input type="text" placeholder="Thị trấn / Thành phố *" required>
+                </div>
+
+                <div class="form-group full-width">
+                    <textarea placeholder="Ghi chú đơn hàng (tuỳ chọn). Ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn."></textarea>
+                </div>
+            </form>
+        </section>
+
+        <section class="order-summary">
+            <div class="summary-header">
+                <span>Sản phẩm</span>
+                <span>Tạm tính</span>
             </div>
-   </div>
-    
+
+            <div class="summary-item">
+                <span>Carnival 40mm Nam 8807G-VT-D &times; 1</span>
+                <span>3.801.000 ₫</span>
+            </div>
+
+            <div class="summary-item">
+                <span>Casio MTP-1374L-1A &times; 1</span>
+                <span>1.816.000 ₫</span>
+            </div>
+
+            <div class="summary-item">
+                <span>Orient 42mm Nam RA-AA0B02R39B... &times; 1</span>
+                <span>6.880.000 ₫</span>
+            </div>
+
+            <div class="summary-shipping">
+                <span>Vận chuyển</span>
+                <span>Miễn phí vận chuyển</span>
+            </div>
+
+            <div class="summary-total">
+                <span>Tổng cấn thanh toán</span>
+                <span>12.457.000 ₫</span>
+            </div>
+        </section>
+
+        <section class="payment-methods">
+
+            <div class="payment-option">
+                <input type="radio" id="bank-transfer" name="payment-method" checked>
+                <label for="bank-transfer">Chuyển khoản</label>
+                <div class="payment-details">
+                    <ul>
+                        <li>Sau khi ấn ĐẶT HÀNG, bạn sẽ nhận được <strong>MÃ ĐƠN HÀNG</strong> và số tài khoản ngân hàng.</li>
+                        <li>Vui lòng chuyển khoản đúng nội dung mã đơn hàng.</li>
+                        <li>Lưu ý y hệt như bên trên.</li>
+                        <li>Ghi đúng nội dung chuyển khoản là <strong>MÃ ĐƠN HÀNG</strong>.</li>
+                        <li>Đơn sẽ xử lý khi nhận được tiền.</li>
+                        <li>Sau 24h chưa thanh toán, đơn có thể bị hủy.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="payment-option">
+                <input type="radio" id="cod" name="payment-method">
+                <label for="cod">Thanh toán khi nhận hàng</label>
+            </div>
+
+            <div class="payment-option">
+                <input type="radio" id="fundiin" name="payment-method">
+                <label for="fundiin">Thanh toán trả sau qua Fundiin</label>
+            </div>
+
+        </section>
+
+        <section class="submit-section">
+            <button type="submit" class="submit-btn">Đặt hàng</button>
+            <p class="terms">
+                Thông tin cá nhân của bạn sẽ được sử dụng để xử lý đơn hàng, tăng trải nghiệm sử dụng website, và cho các mục đích khác đã được mô tả trong <a href="#">chính sách riêng tư</a> của chúng tôi.
+            </p>
+        </section>
+
+    </div>
 
     <footer>
         <div class="thongtintong">
@@ -261,5 +365,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="../index.js"></script>
+    <script src="../Share/js/ProductCards.js"></script>
 </body>
 </html>

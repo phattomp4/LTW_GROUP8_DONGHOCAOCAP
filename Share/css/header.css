@@ -13,7 +13,7 @@ body {
     display: flex; /* 1. Kích hoạt Flexbox */
     justify-content: space-between; /* 2. Đẩy 3 khối ra xa nhau */
     align-items: center; /* 3. Căn giữa mọi thứ theo chiều dọc */
-    padding: 15px 30px;
+    padding: 15px 15px;
     background-color: #f8f8f8;
     border-bottom: 1px solid #e0e0e0;
 }
@@ -129,6 +129,95 @@ body {
     padding: 2px 6px;
     border-radius: 50%; /* Làm nó tròn */
 }
+
+/* Nút đăng nhập */
+.container-button-login {
+    margin: 0;
+}
+
+.button-login {
+    background-color: #1b6e76;
+}
+
+    .button-login:hover {
+        background-color: #004248;
+    }
+
+        /* Nút profile */
+/* 1. Vùng chứa chính - Rất quan trọng */
+.profile-dropdown {
+    position: relative; /* Đặt làm mốc cho menu thả xuống */
+    display: inline-block;
+}
+
+/* 2. Nút bấm (avatar) */
+.profile-avatar-btn {
+    background: none;
+    border: 1px solid #d0d7de; /* Viền xám mờ */
+    padding: 0;
+    cursor: pointer;
+    border-radius: 50%; /* Làm cho nút tròn */
+    width: 40px;
+    height: 40px;
+    overflow: hidden; /* Ẩn các phần ảnh thừa */
+}
+
+    .profile-avatar-btn img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Đảm bảo ảnh lấp đầy hình tròn */
+    }
+
+/* 3. Menu thả xuống (ẩn mặc định) */
+.dropdown-menu {
+    display: none; /* Ẩn menu đi */
+    position: absolute; /* Đặt vị trí tuyệt đối so với .profile-dropdown */
+    top: 50px; /* Ngay bên dưới nút avatar (40px + 10px đệm) */
+    right: 0;
+    width: 220px;
+    background-color: white;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 100; /* Đảm bảo menu nằm trên cùng */
+    padding: 5px 0; /* Khoảng đệm trên/dưới cho menu */
+}
+
+    /* 4. Lớp .show để kích hoạt hiển thị menu */
+    .dropdown-menu.show {
+        display: block; /* Hiện menu lên */
+    }
+
+/* 5. Kiểu cho các mục bên trong menu */
+.menu-header {
+    padding: 8px 16px;
+    font-weight: 600;
+    border-bottom: 1px solid #d0d7de;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #24292e;
+    font-size: 14px;
+}
+
+    .dropdown-menu a:hover {
+        background-color: #f6f8fa;
+    }
+
+/* 6. Đường kẻ phân cách */
+.divider {
+    height: 1px;
+    background-color: #d0d7de;
+    margin: 5px 0;
+}
+
 /* Thiết lập cơ bản cho thanh Nav */
 .main-nav ul {
     display: flex;

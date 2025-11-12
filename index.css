@@ -382,16 +382,15 @@ body {
         margin-top: 10px;
     }
 
-    .logo-container {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        text-align: center;
-        margin: 20px;
-        width: 100%; /* 🔹 Làm hàng logo trải dài hơn trên màn hình */
-    }
+.logo-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    margin: 20px;
+}
 
 
     .logo-container img {
@@ -399,20 +398,13 @@ body {
         max-height: 40px; /* Giới hạn chiều cao tối đa */
         object-fit: contain; /* Giữ nguyên tỉ lệ ảnh */
     }
-
-    .logo-container button {
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        padding: 10px;
-        width: 160px; /* 🔹 Tăng chiều ngang của mỗi khung */
-        height: 50px;
-        background-color: white;
-        cursor: pointer;
-        transition: 0.3s ease;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 40px;
+    .logo-container .item-Casio img {
+        width: 80px;
+        height: 40px;
+    }
+    .logo-container a {
+        border: 1px solid #dddddd;
+        border-radius: 8px;
     }
 
     .BST {
@@ -445,6 +437,17 @@ body {
         background-color: white;
         border-color: #1b6e76;
     }
+
+        .button-bst-container button.active {
+            background-color: #1b6e76; /* Màu nền xanh */
+            color: #fff; /* Chữ màu trắng */
+            border-color: #1b6e76; /* Viền màu xanh */
+        }
+
+/* Đặt ẩn đi các tab */
+.tab-content.hidden {
+    display: none;
+}
 
     .InformationStore {
         background-color: black;
@@ -492,13 +495,37 @@ body {
         margin-top: 5px;
     }
 
-/* slideshow cua hang */
-.slide-img {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
+.btn-timhieuthem {
+    width: 150px;
+    height: auto;
+    margin: 10px 150px 0 720px;
+    padding: 5px;
+    border: 1px solid #1b6e76;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
+    .btn-timhieuthem a {
+        font-size: 15px;
+        text-align: center;
+        text-decoration: none;
+        color: #1b6e76;
+    }
+
+    .btn-timhieuthem:hover {
+        border: 1px solid #b4dcf3;
+    }
+    .btn-timhieuthem a:hover {
+        color: #b4dcf3;
+    }
+
+    /* slideshow cua hang */
+    .slide-img {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
 
 #slide-list-img {
     position: relative;
