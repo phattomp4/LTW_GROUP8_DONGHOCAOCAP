@@ -806,24 +806,32 @@
     </section>
 
 
-    <!-- Vy -->
-    <div class="slide-img">
-        <button class="button-left" onclick="scrollSlider(-1)">❮</button>
-        <div class="slide-list-img" id="slide-list-img">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-5.webp">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-3.webp">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-3.webp">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-5.webp">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp">
-        </div>
-        <button class="button-right" onclick="scrollSlider(1)">❯</button>
-    </div>
+    <!-- Phần slide show hình ảnh khách hàng tại cửa hàng -->
+    <div class="slideshow-gallery-section">
+        <button class="gallery-button prev-gallery" onclick="scrollSlider(-1)">❮</button>
 
+        <div class="new-store-gallery-container" id="slide-list-img-new">
+            <!-- TÔI ĐÃ XÓA class "full-row-gallery" khỏi tất cả các ảnh -->
+            <img src="https://cdn.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-5.webp" alt="Bộ sưu tập ảnh cửa hàng VVP" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-5.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-3.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-3.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp" class="gallery-image">
+            <img src="https://cdn.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-5.webp" alt="Bộ sưu tập ảnh cửa hàng VVP" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-3.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-3.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp" class="gallery-image">
+        </div>
+
+        <button class="gallery-button next-gallery" onclick="scrollSlider(1)">❯</button>
+    </div>
     <!-- Them phan danh sach dia chi -->
     <div class="dscuahang-title">
         <h1>Danh sách cửa hàng WatchStore</h1>
@@ -877,7 +885,7 @@
             <div class="thongtin">
                 <p>VỀ CHÚNG TÔI</p>
                 <ul class="list-tt">
-                    <li><a href="#"> Giới thiệu về WatchStore</a></li>
+                    <li><a href="introduce.html"> Giới thiệu về WatchStore</a></li>
                     <li><a href="#"> Phản ánh - Khiếu nại</a></li>
                     <li><a href="#"> Chứng nhận đại lý</a></li>
                     <li><a href="#"> Tin tức công ty</a></li>
