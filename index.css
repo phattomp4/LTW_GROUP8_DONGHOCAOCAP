@@ -4,6 +4,7 @@
 }
 
 body {
+    overflow-x: hidden; /* Ngăn cuộn ngang */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -518,103 +519,168 @@ body {
     .btn-timhieuthem a:hover {
         color: #b4dcf3;
     }
-
-    /* slideshow cua hang */
-    .slide-img {
-        position: relative;
-        width: 100%;
-        max-width: 100%;
-        overflow: hidden;
-    }
-
-#slide-list-img {
+/*them phan CSS danh sach cua Vy */
+/* --- PHẦN SLIDESHOW GALLERY --- */
+.slideshow-gallery-section {
     position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.new-store-gallery-container {
+    /* Quan trọng: Tạo thanh cuộn ngang */
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
     scroll-behavior: smooth;
-    padding: 10px;
+    padding:  0px;
+
+    /* Ẩn thanh cuộn mặc định */
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
-.button-left {
-    position: absolute;
-}
-.button-right {
-    position: absolute;
-}
-
-#slide-list-img::-webkit-scrollbar {
+.new-store-gallery-container::-webkit-scrollbar {
     display: none;
 }
 
-.slide-list-img img {
-    width: 300px;
-    height: auto;
-    margin-right: 10px;
-    border-radius: 8px;
-    flex-shrink: 0;
+.gallery-image {
+    /* Định dạng cho từng ảnh */
+    width: 300px; /* CHIỀU RỘNG CỐ ĐỊNH (Quan trọng cho JS) */
+    height: 200px; /* Chiều cao cố định trên desktop */
     object-fit: cover;
-}
-
-
-/*them phan CSS danh sach cua Vy */
-
-.dscuahang-title h1{
-    text-align: center;
-    color: black;
-}
-
-.grid-container {
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 28px;
-    display: grid;
-    place-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-}
-
-.store-box {
-    width: 35vh;
-    height: 15vh;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    margin-right: 15px; /* MARGIN PHÂN CÁCH (Quan trọng cho JS) */
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* KHÔNG CHO PHÉP CO LẠI */
+}
+/* Nút Điều hướng */
+.gallery-button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    z-index: 10;
+    transition: 0.3s;
+}
+.prev-gallery {
+    left: 25px;
+}
+
+.next-gallery {
+    right: 25px;
+}
+
+.gallery-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Responsive cho Mobile */
+@media (max-width: 768px) {
+    .gallery-image {
+        width: 180px; /* TÔI ĐÃ SỬA: Giảm kích thước ảnh trên mobile để cuộn mượt hơn */
+        height: 180px; /* TÔI ĐÃ SỬA: Giữ chiều cao tương ứng */
+    }
+
+    .gallery-button {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        left: 5px;
+    }
+    .next-gallery {
+        right: 5px;
+    }
 }
 
 
-        .store-box h3 {
-            padding: 8px;
+
+
+/*them phan CSS danh sach cua hang cua Vy */
+/* --- 1. TIÊU ĐỀ DANH SÁCH CỬA HÀNG --- */
+.dscuahang-title {
+    text-align: center; /* Căn giữa tiêu đề */
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.dscuahang-title h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* --- 2. BỐ CỤC CHÍNH (3 CỘT MẶC ĐỊNH) --- */
+.grid-container {
+    display: grid;
+    /* Mặc định 3 cột bằng nhau, tạo bố cục lớn như trên màn hình 24 inch */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* Khoảng cách giữa các ô */
+    /* Giới hạn chiều rộng và căn giữa container */
+    max-width: 1200px;
+    margin: 0 auto 50px auto; /* Căn giữa khối và thêm khoảng cách dưới */
+    padding: 0 20px; /* Thêm padding ngang để nội dung không bị dính vào mép màn hình */
+}
+
+/* --- 3. STYLING CHO MỖI Ô CỬA HÀNG --- */
+.store-box {
+    height: 130px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    text-align: left;
+}
+
+.store-box h3 {
+
+            padding: 15px;
             background-color: #f4f4f4;
             border-top-right-radius: 8px;
             border-top-left-radius: 8px;
-            margin: 0;
+            margin:0 ;
             font-size: 2vh;
             color: #333;
             border-bottom: 1px solid #eee;
             font-weight: 400;
         }
 
-    .store-box p {
-        font-size: 1.5vh;
-        margin: 0;
-        padding: 8px;
-        color: #555;
+.store-box p {
+    font-size: 14px;
+    color: #555;
+    margin: 10px;
+}
+
+.store-box a {
+    color: #007bff; /* Màu xanh nổi bật cho link */
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+/* --- 4. MEDIA QUERIES (Giải quyết vấn đề màn hình 14 inch) --- */
+
+/* @media cho màn hình vừa (như laptop 14 inch) */
+@media (max-width: 1024px) {
+    .grid-container {
+        /* Chuyển từ 3 cột sang 2 cột, giúp các ô rộng hơn và không bị co */
+        grid-template-columns: repeat(2, 1fr);
     }
+}
 
-        .store-box a {
-            font-size: 1.5vh;
-            padding: 8px;
-            color: #007bff;
-            text-decoration: none;
-        }
-
-    .store-box a:hover {
-        text-decoration: underline;
+/* @media cho màn hình nhỏ (như điện thoại) */
+@media (max-width: 600px) {
+    .grid-container {
+        /* Chuyển sang 1 cột duy nhất */
+        grid-template-columns: 1fr;
+        padding: 0 15px;
     }
-
+}
 
 .container-button-lhtv {
     margin: 0px 0px 40px 0px;
