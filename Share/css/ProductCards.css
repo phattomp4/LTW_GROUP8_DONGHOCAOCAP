@@ -1,4 +1,5 @@
 ﻿.Product {
+    position: relative;
     /* Đặt chiều cao CỐ ĐỊNH để các sản phẩm trong 2 hàng Grid đồng đều */
     height: 350px; /* Giới hạn chiều cao tổng thể của 1 sản phẩm */
     padding: 10px; /* Giảm padding để tăng không gian cho nội dung */
@@ -22,6 +23,39 @@
         border-color: #e3bd5d;
     }
 
+/* Biểu tượng trái tim */
+.wishlist-icon {
+    position: absolute;
+    z-index: 100;
+    top: 10px;
+    left: 10px;
+    background: white; /* Nền trắng */
+    border: 1px solid #ddd;
+    border-radius: 50%; /* Hình tròn */
+    width: 36px; /* Kích thước nút */
+    height: 36px; /* Kích thước nút */
+    display: flex; /* Dùng flexbox để căn icon */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px; /* Kích thước icon */
+    color: #888; /* Màu icon mặc định */
+    transition: all 0.2s ease; /* Hiệu ứng chuyển động mượt mà */
+    outline: none; /* Bỏ viền khi focus */
+}
+
+/* Khi hover vào nút */
+.wishlist-icon:hover {
+    border-color: #e3bd5d; /* Đổi màu viền khi hover */
+    color: #e3bd5d; /* Đổi màu icon khi hover */
+}
+
+/* TRẠNG THÁI ACTIVE: Khi trái tim được tô đặc */
+.wishlist-icon.active {
+    background-color: #e3bd5d; /* Nền đỏ */
+    border-color: #e3bd5d;
+    color: white; /* Icon màu trắng */
+}
 
 /* 2. Tạo container cho danh sách sản phẩm (chứa Page1 và Page2) */
 
@@ -89,6 +123,9 @@
     transition: transform 0.3s ease-in-out;
 }
 
+.Product a {
+    text-decoration: none;
+}
 .Product .Item {
     font-size: 13px;
     font-weight: 500;
