@@ -159,8 +159,6 @@ if (tabWomen) {
 
 /* === KẾT THÚC CODE MỚI CHO TAB SẢN PHẨM === */
 
-
-
 /* phan script cua Vy */
 
 /**

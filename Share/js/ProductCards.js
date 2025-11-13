@@ -18,3 +18,29 @@ viewMoreBtn.addEventListener('click', () => {
         });
     }
 });
+
+
+    /* Phan script của Phát */
+// Hình trái tim trên Product Card 
+document.addEventListener('DOMContentLoaded', function() {
+    // Lấy tất cả các nút trái tim
+    const wishlistButtons = document.querySelectorAll('.wishlist-icon');
+
+    wishlistButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Chuyển đổi class 'active'
+            this.classList.toggle('active');
+
+            // Chuyển đổi icon từ rỗng sang đặc và ngược lại
+            const icon = this.querySelector('i');
+            if (this.classList.contains('active')) {
+                icon.classList.remove('fa-regular');
+                icon.classList.add('fa-solid');
+            } else {
+                icon.classList.remove('fa-solid');
+                icon.classList.add('fa-regular');
+            }
+            console.log('Trạng thái yêu thích đã thay đổi.');
+        });
+    });
+});

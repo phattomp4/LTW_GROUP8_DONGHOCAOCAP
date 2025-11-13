@@ -94,7 +94,7 @@ body {
     }
 
     .active, .dot:hover {
-        background-color: #1b6e76;
+        background-color: #1C242F;
     }
 
     /* Fading animation */
@@ -113,6 +113,7 @@ body {
         }
     }
 
+    
     /*Service*/
 
     .service {
