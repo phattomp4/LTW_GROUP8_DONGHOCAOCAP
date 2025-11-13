@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+<div class="login-container">
+<div class="back-home">
+        <a href="index.html" class="back-home-button">
+            <i class="fa-solid fa-arrow-left"></i> Quay về Trang chủ
+        </a>
+    </div>
+    <div class="login-box">
+        <h2 class="login-title">Đăng Ký Tài Khoản Mới</h2>
+        <form action="#" method="POST" id="registerForm">
+
+            <div class="input-group">
+                <label for="fullname">Họ và Tên</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên của bạn" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Địa chỉ Email</label>
+                <input type="email" id="email" name="email" placeholder="Nhập email của bạn" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Mật khẩu</label>
+                <input type="password" id="password" name="password" placeholder="Tạo mật khẩu (ít nhất 6 ký tự)" required>
+            </div>
+
+            <div class="input-group">
+                <label for="confirm_password">Xác nhận Mật khẩu</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Nhập lại mật khẩu" required>
+            </div>
+
+            <button type="submit" class="login-button">Đăng Ký</button>
+        </form>
+
+        <p class="register-link">
+            Đã có tài khoản? <a href="login.html">Đăng nhập ngay</a>
+        </p>
+    </div>
+</div>
+  <script src="register.js"></script>
+</body>
+</html>
