@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile User</title>
+    <link rel="stylesheet" href="ProfileUser.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="page-header">
+        <div class="Account">
+            <div class="icon-account"><i class="fa-regular fa-user"></i></div>
+            <p>Xin chào, <span class="user-name">Vũ 12A9 52</span></p>
+        </div>
+
+        <div class="page-title-wrapper">
+            <h1 class="title-page" id="current-title">Thông tin tài khoản</h1>
+        </div>
+    </div>
+
+    <div class="main-container">
+
+        <div class="left-side tab">
+            <button id="btn-info" class="Information-account tablinks active" data-content-title="Thông tin tài khoản"
+                onclick="openTab(event, 'info-content')">
+                <p class="Name-product">Thông tin tài khoản</p>
+            </button>
+            <button id="btn-history" class="History-bought tablinks" data-content-title="Lịch sử mua hàng"
+                onclick="openTab(event, 'history-content')">
+                <p class="Name-product">Lịch sử mua hàng</p>
+            </button>
+            <button id="btn-address" class="List-address tablinks" data-content-title="Danh sách địa chỉ"
+                onclick="openTab(event, 'address-content')">
+                <p class="Name-product">Danh sách địa chỉ</p>
+            </button>
+        </div>
+
+        <div class="right-side tabcontent-wrapper">
+
+            <div id="info-content" class="tabcontent defaultOpen">
+                <form action="">
+                    <label class="label">Họ tên</label>
+                    <label class="Information-user">Vũ 12A9 52</label>
+                    <label class="label">Email</label>
+                    <label class="Information-user">nguyentruongvu11a9@gmail.com</label>
+                    <label class="label">Giới tính</label>
+                    <label class="Information-user">Nam</label>
+                    <label class="label">Số điện thoại</label>
+                    <label class="Information-user">ThemeSyntaxError</label>
+                    <label class="label">Địa chỉ</label>
+                    <label class="Information-user">ThemeSyntaxError</label>
+                </form>
+            </div>
+
+            <div id="history-content" class="tabcontent" style="display: none;">
+    <h2 class="section-title">Nội dung Lịch sử mua hàng</h2>
+    
+    <div class="order-tab-group"> 
+        <button class="order-tab active" onclick="openOrderStatusTab(event, 'all-orders')">Tất cả</button> 
+        <button class="order-tab" onclick="openOrderStatusTab(event, 'pending-orders')">Chờ xác nhận</button>
+        <button class="order-tab" onclick="openOrderStatusTab(event, 'shipping-orders')">Vận chuyển</button>
+        <button class="order-tab" onclick="openOrderStatusTab(event, 'delivery-orders')">Chờ giao hàng</button>
+        <button class="order-tab" onclick="openOrderStatusTab(event, 'completed-orders')">Hoàn thành</button>
+        <button class="order-tab" onclick="openOrderStatusTab(event, 'cancelled-orders')">Đã hủy</button>
+        <button class="order-tab" onclick="openOrderStatusTab(event, 'return-orders')">Trả hàng/Hoàn tiền</button>
+    </div>
+    
+    <div class="order-details-wrapper">
+        
+        <div id="all-orders" class="order-content">
+            <div class="order">
+                <img src="https://cdn.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-d-1-1173700471-248243325-1712668536-400x400.jpg" alt="">
+                <div class="product-info-details">
+                <div class="name-and-quantity"> 
+                    <p class="Name-product">Carnival 40mm Nam 8907G-VT-D</p>
+                    <p class="quantity-product">x1</p>
+                    </div>
+               <div class="price"> <p>Tổng tiền: <span class="Price-product">3.801.000₫</span></p></div>
+                </div>
+            </div>
+
+            <div class="order">
+                <img src="https://cdn.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-t-1-348948390-593092946-1712668541-400x400.jpg" alt="">
+                <div class="product-info-details">
+                <div class="name-and-quantity"> 
+                    <p class="Name-product">Đồng Hồ Carnival 40mm Nam 8907G-VT-T</p>
+                    <p class="quantity-product">x1</p>
+                    </div>
+               <div class="price"> <p>Tổng tiền: <span class="Price-product">3.801.000₫</span></p></div>
+                </div>
+            </div>
+
+            <div class="order">
+                <img src="https://cdn.watchstore.vn/wp-content/uploads/2023/07/8110g-vh-dd-n-1-1164444482-993248187-1712664914-400x400.jpg" alt="">
+                <div class="product-info-details">
+                <div class="name-and-quantity"> 
+                    <p class="Name-product">Đồng Hồ Carnival 41mm Nam 8110G-VH-DD-N</p>
+                    <p class="quantity-product">x1</p>
+                    </div>
+               <div class="price"> <p>Tổng tiền: <span class="Price-product">4.851.000₫</span></p></div>
+                </div>
+            </div>
+
+            
+
+        </div>
+        
+        <div id="pending-orders" class="order-content" style="display: none;">
+            <div class="order">
+                <img src="https://cdn.watchstore.vn/wp-content/uploads/2022/05/t137-679443174-610497435-1712585231-400x400.jpg" alt="">
+                <div class="product-info-details">
+                <div class="name-and-quantity"> 
+                    <p class="Name-product">Đồng Hồ Tissot 40mm Nam T137.407.11.041.00</p>
+                    <p class="quantity-product">x1</p>
+                    </div>
+               <div class="price"> <p>Tổng tiền: <span class="Price-product">17.900.000₫</span></p></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cancelled-orders" class="order-content" style="display: none;">
+            <div class="order">
+                <img src="https://cdn.watchstore.vn/wp-content/uploads/2022/05/op990-45adgs-gl-d-1-1655171724651-1712585288-400x400.jpg" alt="">
+                <div class="product-info-details">
+                <div class="name-and-quantity"> 
+                    <p class="Name-product">Đồng Hồ Olym Pianus 42mm Nam OP990-45ADGS-GL-D</p>
+                    <p class="quantity-product">x1</p>
+                    </div>
+               <div class="price"> <p>Tổng tiền: <span class="Price-product">6.776.000₫</span></p></div>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+
+</div>
+
+            <div id="address-content" class="tabcontent" style="display: none;">
+                <h2 class="section-title">Nội dung Danh sách địa chỉ</h2>
+                <div class="address-customer1">
+                    <p class="Name-customer">Nguyễn Trường Vũ</p>
+                    <p class="phone-number">(+84)03******65</p>
+                <p class="address">Địa chỉ 1: 346/72 khu phố 4, phường Tân Hòa, Biên Hòa, Đồng Nai.</p>     
+                </div>   
+
+                <div class="address-customer2">
+                    <p class="Name-customer">Nguyễn Trường Vũ</p>
+                    <p class="phone-number">(+84)03******65</p>               
+                    <p class="address">Địa chỉ 2: Ký túc xá Khu B - Đại học Quốc gia TP.HCM, Đường Mạc Đĩnh Chi, Khu phố Tân Hòa, Dĩ An, Đông Hòa, Bình Dương, Việt Nam</p>
+                </div>
+                <button class="add-address"><i class="fa-solid fa-plus" style="color: #b4b3b1;"></i>Thêm địa chỉ mới</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="Logout">
+        <button class="log-out">Đăng xuất</button>
+    </div>
+
+    <script src="ProfileUser.js">
+
+    </script>
+</body>
+
+</html>
