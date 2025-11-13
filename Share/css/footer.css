@@ -1,41 +1,103 @@
-.thongtintong {
-    display: flex;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    height: 35vw;
-    padding: 0 30px 0 30px;
+
+
+/* 2. Định dạng Footer và Container chính */
+footer {
+    width: 100%;
     background: black;
+    box-sizing: border-box; /* Rất quan trọng để padding không làm tràn width */
+}
+
+.thongtintong {
+    /* Thay thế float bằng Flexbox để bố cục tự động co giãn */
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các cột xuống dòng khi màn hình nhỏ */
+    justify-content: space-around; /* Phân bổ không gian đồng đều giữa các cột */
+    
+    /* Thiết lập chiều rộng tối đa (max-width) giúp kiểm soát nội dung trên màn hình lớn */
+    max-width: 1200px;
+    margin: 0 auto; /* Căn giữa container trên màn hình lớn */
+    padding: 40px 20px; /* Thêm padding trên dưới và ngang */
+    
+    /* Xóa height cố định: Height nên tự động theo nội dung */
+    /* height: 30vw; <-- Xóa dòng này */
 }
 
 .thongtin {
-    width: auto;
-    height: auto;
+    /* Điều chỉnh width để mỗi cột chiếm 1 phần (ví dụ: 200px hoặc 20%) và có thể co giãn */
+    width: 250px; /* Đặt chiều rộng cơ bản cho mỗi cột */
+    min-width: 180px; /* Đảm bảo cột không quá nhỏ */
+    /* flex-grow: 1; */ /* Tùy chọn: Cho phép cột giãn ra để chiếm thêm không gian trống */
+    
+    text-align: left;
     padding: 10px;
-    font-size: 1vw;
+    font-size: 16px; /* Dùng px hoặc rem cho font size cơ bản */
 }
 
-    .thongtin p {
-        margin-left: 50px;
-        text-align: left;
-        font-size: 2vw;
-        color: #e3bd5d;
-    }
+.thongtin p {
+    /* Chuyển sang dùng padding-left thay vì margin-left cố định */
+    padding-left: 0; 
+    margin: 0 0 10px 0; /* Giảm margin để bố cục gọn hơn */
+    font-size: 1.2rem; /* Dùng rem thay vì vw để kích thước chữ không quá lớn/nhỏ */
+    color: darkorange;
+    font-weight: bold;
+}
 
 .list-tt {
     text-align: left;
     list-style: none;
+    padding-left: 0; /* Xóa padding mặc định của ul */
+    margin: 0;
 }
 
-    .list-tt li {
-        margin: 10px;
+.list-tt li {
+    margin: 8px 0; /* Giảm margin li */
+    line-height: 1.4;
+}
+
+.list-tt a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.list-tt a:hover {
+    color: #e3bd5d;
+}
+
+/* --- Xử lý Responsive (Co giãn) bằng Media Queries --- */
+
+/* 3. Media Query cho máy tính bảng và màn hình trung bình */
+@media (max-width: 992px) {
+    .thongtintong {
+        justify-content: space-around; /* Căn chỉnh lại */
+    }
+    .thongtin {
+        width: 45%; /* Hai cột trên 1 hàng */
+        margin-bottom: 30px;
+    }
+}
+
+
+/* 4. Media Query cho điện thoại di động */
+@media (max-width: 600px) {
+    .thongtintong {
+        flex-direction: column; /* Chuyển tất cả cột xuống thành một hàng dọc */
+        padding: 20px 10px;
+    }
+    
+    .thongtin {
+        width: 95%; /* Mỗi cột chiếm gần hết chiều rộng */
+        text-align: center; /* Căn giữa nội dung */
+        min-width: unset;
+    }
+    
+    .thongtin p {
+        text-align: center;
+        margin-left: 0;
+        font-size: 1.3rem;
     }
 
-    .list-tt a {
-        text-decoration: none;
-        color: white;
+    .list-tt {
+        text-align: center; /* Căn giữa danh sách */
     }
-
-        .list-tt a:hover {
-            color: #b4dcf3;
-        }
+}

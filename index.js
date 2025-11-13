@@ -163,28 +163,44 @@ if (tabWomen) {
 
 /* phan script cua Vy */
 
-// --- BỌC CODE SLIDER CỦA VY ---
-// (Lưu ý: Hàm này phải ở ngoài if vì nó được gọi bằng onclick)
-function scrollSlider(direction) {
-    const slider = document.getElementById("slide-list-img");
+/**
+ * Chức năng cuộn chính xác từng hình ảnh trong container ngang.
+ * Nó tính toán chiều rộng của hình ảnh cộng với margin để cuộn mượt mà sang ảnh tiếp theo.
+ * @param {number} direction - Hướng cuộn: 1 cho phải (next), -1 cho trái (prev).
+ */
+let scrollSlider = (direction) => {
+    // 1. Xác định Slider container
+    // Sử dụng ID chính xác từ HTML của bạn
+    const slider = document.getElementById("slide-list-img-new");
 
-    // Thêm kiểm tra ngay trong hàm
     if (!slider) {
+        console.error("Slider element with ID slide-list-img-new not found.");
         return;
     }
 
-    // Tính toán scrollAmount bên trong hàm
-    let currentScroll = slider.scrollLeft;
-    const scrollStep = 300;
-    const maxScroll = slider.scrollWidth - slider.clientWidth;
+    // 2. Tính toán bước cuộn chính xác
+    // Lấy thẻ ảnh đầu tiên để tính toán kích thước bước cuộn
+    const firstImage = slider.querySelector('.gallery-image');
+    let scrollStep = 300; // Giá trị mặc định an toàn
 
-    let scrollAmount = currentScroll + (direction * scrollStep);
+    if (firstImage) {
+        // Lấy chiều rộng hình ảnh thực tế
+        const imageWidth = firstImage.offsetWidth;
+        const style = window.getComputedStyle(firstImage);
 
-    if (scrollAmount < 0) scrollAmount = 0;
-    if (scrollAmount > maxScroll) scrollAmount = maxScroll;
+        // Lấy margin-right (giá trị 15px trong CSS)
+        const marginRight = parseFloat(style.marginRight) || 0;
 
-    slider.scrollTo({
-        left: scrollAmount,
+        // Bước cuộn = Chiều rộng ảnh + Margin
+        scrollStep = imageWidth + marginRight;
+    }
+
+    // 3. Thực hiện cuộn
+    slider.scrollBy({
+        left: direction * scrollStep,
         behavior: "smooth"
     });
-}
+};
+
+// Gán hàm vào window để nó có thể được gọi từ onclick trong HTML
+window.scrollSlider = scrollSlider;

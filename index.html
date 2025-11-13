@@ -133,7 +133,7 @@
                 <!-- Nút đăng nhập -->
                 <li>
                     <div class="container-button-login" style="text-align:center">
-                        <a href="" class="button button-login">
+                        <a href="login.html" class="button button-login">
                             <span style="color: #fff">Đăng nhập</span>
                         </a>
                     </div>
@@ -899,66 +899,77 @@
             </div>
         </div>
         <div class="btn-timhieuthem">
-            <a href="">Tìm hiểu thêm</a>
+            <a href="introduce.html">Tìm hiểu thêm</a>
         </div>
     </section>
 
 
     <!-- Vy -->
-    <div class="slide-img">
-        <button class="button-left" onclick="scrollSlider(-1)">❮</button>
-        <div class="slide-list-img" id="slide-list-img">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-5.webp">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-3.webp">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-3.webp">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-5.webp">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp">
+    <!-- Phần slide show hình ảnh khách hàng tại cửa hàng -->
+    <div class="slideshow-gallery-section">
+        <button class="gallery-button prev-gallery" onclick="scrollSlider(-1)">❮</button>
+
+        <div class="new-store-gallery-container" id="slide-list-img-new">
+            <!-- TÔI ĐÃ XÓA class "full-row-gallery" khỏi tất cả các ảnh -->
+            <img src="https://cdn.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-5.webp" alt="Bộ sưu tập ảnh cửa hàng VVP" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-5.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-3.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-3.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp" class="gallery-image">
+            <img src="https://cdn.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-5.webp" alt="Bộ sưu tập ảnh cửa hàng VVP" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-3.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-3.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp" class="gallery-image">
+            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp" class="gallery-image">
         </div>
-        <button class="button-right" onclick="scrollSlider(1)">❯</button>
+
+        <button class="gallery-button next-gallery" onclick="scrollSlider(1)">❯</button>
     </div>
 
-    <!-- Them phan danh sach dia chi -->
-    <div class="dscuahang-title">
-        <h1>Danh sách cửa hàng WatchStore</h1>
-    </div>
+     <!-- Danh sách cửa hàng -->
+<div class="dscuahang-title">
+    <h1>DANH SÁCH CỬA HÀNG</h1>
+</div>
 
-    <div class="grid-container">
-        <div class="store-box">
-            <h3>WatchStore Trần Đại Nghĩa</h3>
-            <p>97 Trần Đại Nghĩa, HBT, Hà Nội</p>
-            <a href="#">Xem chỉ đường</a>
-        </div>
-        <div class="store-box">
-            <h3>WatchStore Trần Bằng Ninh</h3>
-            <p>58 Trần Bằng Ninh, Q. Hai Bà Trưng, Hà Nội</p>
-            <a href="#">Xem chỉ đường</a>
-        </div>
-        <div class="store-box">
-            <h3>WatchStore Đà Nẵng</h3>
-            <p>339 Lê Duẩn, Thanh Khê, Đà Nẵng</p>
-            <a href="#">Xem chỉ đường</a>
-        </div>
-        <div class="store-box">
-            <h3>WatchStore Bình Dương</h3>
-            <p>642 CMT8, Thủ Dầu Một, Bình Dương</p>
-            <a href="#">Xem chỉ đường</a>
-        </div>
-        <div class="store-box">
-            <h3>WatchStore Lê Văn Sỹ</h3>
-            <p>96 Lê Văn Sỹ, P11, Phú Nhuận, TPHCM</p>
-            <a href="#">Xem chỉ đường</a>
-        </div>
-        <div class="store-box">
-            <h3>WatchStore Quang Trung</h3>
-            <p>9 Quang Trung, P10, Gò Vấp, TPHCM</p>
-            <a href="#">Xem chỉ đường</a>
-        </div>
+<div class="grid-container">
+    <div class="store-box">
+        <h3>WatchStore Trần Đại Nghĩa</h3>
+        <p>97 Trần Đại Nghĩa, HBT, Hà Nội</p>
+        <a href="#">Xem chỉ đường</a>
     </div>
+    <div class="store-box">
+        <h3>WatchStore Trần Bằng Ninh</h3>
+        <p>58 Trần Bằng Ninh, Q. Hai Bà Trưng, Hà Nội</p>
+        <a href="#">Xem chỉ đường</a>
+    </div>
+    <div class="store-box">
+        <h3>WatchStore Đà Nẵng</h3>
+        <p>339 Lê Duẩn, Thanh Khê, Đà Nẵng</p>
+        <a href="#">Xem chỉ đường</a>
+    </div>
+    <div class="store-box">
+        <h3>WatchStore Bình Dương</h3>
+        <p>642 CMT8, Thủ Dầu Một, Bình Dương</p>
+        <a href="#">Xem chỉ đường</a>
+    </div>
+    <div class="store-box">
+        <h3>WatchStore Lê Văn Sỹ</h3>
+        <p>96 Lê Văn Sỹ, P11, Phú Nhuận, TPHCM</p>
+        <a href="#">Xem chỉ đường</a>
+    </div>
+    <div class="store-box">
+        <h3>WatchStore Quang Trung</h3>
+        <p>9 Quang Trung, P10, Gò Vấp, TPHCM</p>
+        <a href="#">Xem chỉ đường</a>
+    </div>
+</div>
+
 
     <!-- Nút lhtv -->
     <div class="introduce-section container-button-lhtv">
