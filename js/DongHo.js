@@ -2,7 +2,7 @@ const filterButton = document.getElementById('filterButton');
 const filterDropdown = document.getElementById('filterDropdown');
 const pageOverlay = document.getElementById('pageOverlay');
 const applyButton = document.querySelector('.apply-button'); 
-const productItems = document.querySelectorAll('.items'); 
+const productItems = document.querySelectorAll('.link-product'); 
 
 function priceToNumber(priceString) {
     if (!priceString) return 0;
@@ -27,7 +27,6 @@ function checkPriceRange(price, selectedRadioValue) {
             return price >= 6000000 && price <= 9000000;
         case 'Từ 9 - 15 Triệu':
             return price >= 9000000 && price <= 15000000;
-        // ĐÃ THÊM: Xử lý mức giá cho sản phẩm Orient 22 triệu
         case 'Từ 15 - 30 Triệu': 
             return price >= 15000000 && price <= 30000000;
         case 'Từ 30 - 50 Triệu':
@@ -63,9 +62,9 @@ function applyFilters(event) {
     const selectedPriceLabel = selectedPriceElement ? selectedPriceElement.parentElement.textContent.trim() : null;
 
     productItems.forEach(item => {
-        const itemPriceString = item.querySelector('.price').textContent;
+        const itemPriceString = item.querySelector('.PriceOfPoduct').textContent;
         const itemPrice = priceToNumber(itemPriceString);
-        const itemName = item.querySelector('.name-items').textContent;
+        const itemName = item.querySelector('.Item').textContent;
         const itemBrand = getBrandFromItem(itemName).toLowerCase();
 
         let matchesBrand = true;
