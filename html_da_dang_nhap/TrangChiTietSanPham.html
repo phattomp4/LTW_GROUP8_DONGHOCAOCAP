@@ -1,18 +1,19 @@
-﻿<!DOCTYPE html>
-<html lang="vi">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/ThanhToan.css">
+    <title>Document</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/TrangChiTietSanPham.css">
     <link rel="stylesheet" href="../Share/css/header.css">
     <link rel="stylesheet" href="../Share/css/footer.css">
-    <!-- Linking Font Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <title>Thanh Toán</title>
-
 </head>
 <body>
-
     <!-- Header -->
     <header class="main-header">
 
@@ -151,167 +152,114 @@
         </div>
     </header>
 
-    <div class="checkout-container">
-
-        <section class="cart-items">
-            <div class="cart-header">
-                <h2>Giỏ hàng của bạn</h2>
-                <a href="#">&lt; Mua thêm sản phẩm khác</a>
+    <section class="Body">
+        <div class="Picture-clock">
+            <div class="Main-image-container">
+                <img id="mainImage" src="https://www.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-d-1-1173700471-248243325-1712668536-768x768.jpg" alt="Ảnh đồng hồ chính">
             </div>
 
-            <div class="cart-item">
-                <img src="https://cdn.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-d-1-1173700471-248243325-1712668536.jpg" alt="Sản phẩm 1">
-                <div class="cart-item-details">
-                    <p class="cart-item-name">Carnival 40mm Nam 8807G-VT-D</p>
-                    <p class="cart-item-price">3.801.000 ₫</p>
-                </div>
-                <div class="quantity-selector">
-                    <button type="button">-</button>
-                    <input type="text" value="1" readonly>
-                    <button type="button">+</button>
-                </div>
+            <div class="Thumbnail-wrapper">
+                <button class="scroll-button" id="scrollLeft"> &lt; </button>
+
+                <ul class="Thumbnail-list">
+                    <li><img class="thumbnail active" src="https://www.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-d-1-1173700471-248243325-1712668536-768x768.jpg" data-full-src="https://www.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-d-1-1173700471-248243325-1712668536-768x768.jpg" alt="thumbnail 1"></li>
+                    <li><img class="thumbnail" src="https://www.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-d-2-1712668537-768x768.jpg" data-full-src="https://www.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-d-2-1712668537-768x768.jpg" alt="thumbnail 2"></li>
+                    <li><img class="thumbnail" src="https://www.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-d-3-1712668537-768x768.jpg" data-full-src="https://www.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-d-3-1712668537-768x768.jpg" alt="thumbnail 3"></li>
+                    <li><img class="thumbnail" src="https://www.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-d-4-1712668538-768x768.jpg" data-full-src="https://www.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-d-4-1712668538-768x768.jpg" alt="thumbnail 4"></li>
+                    <li><img class="thumbnail" src="https://www.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-d-5-1712668539-768x768.jpg" data-full-src="https://www.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-d-5-1712668539-768x768.jpg" alt="thumbnail 5"></li>
+                    <li><img class="thumbnail" src="https://www.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-d-7-1712668540-768x768.jpg" data-full-src="https://www.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-d-7-1712668540-768x768.jpg" alt="thumbnail 6"></li>
+                </ul>
+
+                <button class="scroll-button" id="scrollRight"> &gt; </button>
+            </div>
+        </div>
+
+        <div class="Right-body">
+            <!-- Header -->
+            <div class="Info-clock">
+                <p class="Name-clock">Đồng Hồ Carnival 40mm Nam 8907G-VT-D</p>
+            </div>
+            <div class="Avalable">
+                <p class="Sold">Đã bán 87</p>
+                <p class="jamb">|</p>
+                <p class="available">Tình trạng: còn hàng</p>
             </div>
 
-            <div class="cart-item">
-                <img src="https://cdn.watchstore.vn/wp-content/uploads/2020/11/1-khung-sp-1-1818542633-1853976209-1712563883.jpg" alt="Sản phẩm 2">
-                <div class="cart-item-details">
-                    <p class="cart-item-name">Casio MTP-1374L-1A</p>
-                    <p class="cart-item-price">1.816.000 ₫</p>
-                </div>
-                <div class="quantity-selector">
-                    <button type="button">-</button>
-                    <input type="text" value="1" readonly>
-                    <button type="button">+</button>
-                </div>
+            <div class="Feedback">
+                <p class="price">3.801.000₫</p>
+                <p class="discount">5.430.000₫</p>
+                <p class="percent-discount">-30%</p>
             </div>
 
-            <div class="cart-item">
-                <img src="https://cdn.watchstore.vn/wp-content/uploads/2020/09/ra-aa0b02r19b-2081811590-287106387-1712554040.jpg" alt="Sản phẩm 3">
-                <div class="cart-item-details">
-                    <p class="cart-item-name">Orient 42mm Nam RA-AA0B02R39B (RA-AA0B02R19B)</p>
-                    <p class="cart-item-price">6.880.000 ₫</p>
-                </div>
-                <div class="quantity-selector">
-                    <button type="button">-</button>
-                    <input type="text" value="1" readonly>
-                    <button type="button">+</button>
-                </div>
+            <div class="privilege">
+                <p class="privilege-in-VVP">
+                    <i class="fa-solid fa-star" style="color: #F79009"></i> Đặc quyền ở VVP
+                </p>
+                <ul class="list">
+                    <li data-number="1">Được đảm bảo chất lượng sản phẩm, cam kết 100% sản phẩm chính hãng</li>
+                    <li data-number="2">Được đổi trả sản phẩm trong trường hợp sản phẩm bị lỗi trong vòng 3 ngày theo điều kiện của VVP.</li>
+                    <li data-number="3">Miễn phí vận chuyển toàn quốc, đồng kiểm trực tiếp khi giao nhận.</li>
+                    <li data-number="4">Giao hàng hỏa tốc (áp dụng đối với hàng có sẵn tại cửa hàng gần nhất)</li>
+                    <li data-number="5">Được hưởng các ưu đãi, quà tặng, chương trình khách hàng thân thiết.</li>
+                </ul>
             </div>
 
-            <div class="cart-subtotal">
-                <p>Tổng tiền tạm tính: <span>12.457.000 ₫</span></p>
-                <p class="savings">Tiết kiệm: <span>2.809.000 ₫</span></p>
+            <div class="Transfer">
+                <p class="Info-transfer">Thông tin vận chuyển</p>
+                <p class="Destination">nội thành HN, Đà Nẵng, HCM trong ngày, các tỉnh thành khác từ 1 đến 3 ngày</p>
+
             </div>
-        </section>
-
-        <section class="customer-info">
-            <p class="promo-code">
-                Bạn có mã ưu đãi? <a href="#">Ấn vào đây để nhập mã</a>
-            </p>
-
-            <p class="contact-prompt">
-                Nếu bạn không đặt được hàng, vui lòng nhấn tin <strong>Messenger</strong>, <strong>Chat Zalo</strong>
-                <br>Hoặc gọi tới Hotline <strong>090 123 4567</strong>
-            </p>
-
-            <form action="#">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <input type="text" placeholder="Họ và tên *" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" placeholder="Số điện thoại *" required>
-                    </div>
-                </div>
-
-                <div class="form-group full-width">
-                    <input type="email" placeholder="Địa chỉ Email (tuỳ chọn)">
-                </div>
-
-                <div class="form-group full-width">
-                    <input type="text" placeholder="Địa chỉ (số nhà, tên đường, phường/xã...) *" required>
-                </div>
-
-                <div class="form-group full-width">
-                    <input type="text" placeholder="Thị trấn / Thành phố *" required>
-                </div>
-
-                <div class="form-group full-width">
-                    <textarea placeholder="Ghi chú đơn hàng (tuỳ chọn). Ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn."></textarea>
-                </div>
-            </form>
-        </section>
-
-        <section class="order-summary">
-            <div class="summary-header">
-                <span>Sản phẩm</span>
-                <span>Tạm tính</span>
+            <div class="button-service">
+                <form id="them_gio_hang_form">
+                    <button type="submit" class="shopping-cart">THÊM VÀO GIỎ HÀNG</button>
+                </form>
+                <div class="Buying-now"><a href="ThanhToan.html">MUA HÀNG</a></div>
             </div>
 
-            <div class="summary-item">
-                <span>Carnival 40mm Nam 8807G-VT-D &times; 1</span>
-                <span>3.801.000 ₫</span>
+            <div class="Feedback-customer">
+                <p class="FromCustomer">Phản hồi khách hàng</p>
+                <ul>
+                    <li class="List-feedback">
+                        <img src="https://www.watchstore.vn/wp-content/uploads/2025/10/anh-chup-khach-hang-mua-dong-ho-tai-watchstore.jpg" alt="">
+                    </li>
+                </ul>
             </div>
+        </div>
 
-            <div class="summary-item">
-                <span>Casio MTP-1374L-1A &times; 1</span>
-                <span>1.816.000 ₫</span>
+
+    </section>
+
+    <section class="infoProduct">
+        <div class="detail-product">
+            <p>Thông tin sản phẩm</p>
+        </div>
+        <div class="detail">
+            <p>Thương hiệu: Carnival</p>
+            <p>Chống nước: 3atm</p>
+            <p>Chất liệu kính: Kính Sapphire</p>
+            <p>Độ dầy: 10.5mm</p>
+            <p>Màu dây: Màu trắng</p>
+            <p>Màu vỏ: Màu trắng</p>
+            <p>Tiện ích: Dạ quang, Lịch thứ, Lịch ngày, Giờ, phút, giây</p>
+            <p>Đối tượng: Nam</p>
+            <p>Loại máy: Cơ</p>
+            <p>Size mặt: 40mm</p>
+            <p>Màu mặt: Màu đen</p>
+            <p>Đường kính mặt: 37 - 40 mm</p>
+            <p>Hình dáng mặt: Mặt tròn</p>
+        </div>
+
+        <div class="Comment-product">
+            <p class="Instruction">Hướng dẫn chọn size</p>
+            <div class="Picture">
+                <p class="step">Bước 1: Đo chu vi cổ tay</p>
+                <div class="picture-guide"><img src="https://cdn.tgdd.vn/Files/2019/07/12/1179133/co-tay-nho-nen-deo-dong-ho-gi-1.png" alt=""></div>
+
+                <p class="step">Bước 2: So sánh size cổ tay để chọn mặt đồng hồ phù hợp</p>
+                <div class="picture-guide"><img src="https://cdn.vuanhwatch.com//media/articles/1048/cach-chon-dong-ho-deo-tay.png" alt=""></div>
             </div>
-
-            <div class="summary-item">
-                <span>Orient 42mm Nam RA-AA0B02R39B... &times; 1</span>
-                <span>6.880.000 ₫</span>
-            </div>
-
-            <div class="summary-shipping">
-                <span>Vận chuyển</span>
-                <span>Miễn phí vận chuyển</span>
-            </div>
-
-            <div class="summary-total">
-                <span>Tổng cấn thanh toán</span>
-                <span>12.457.000 ₫</span>
-            </div>
-        </section>
-
-        <section class="payment-methods">
-
-            <div class="payment-option">
-                <input type="radio" id="bank-transfer" name="payment-method" checked>
-                <label for="bank-transfer">Chuyển khoản</label>
-                <div class="payment-details">
-                    <ul>
-                        <li>Sau khi ấn ĐẶT HÀNG, bạn sẽ nhận được <strong>MÃ ĐƠN HÀNG</strong> và số tài khoản ngân hàng.</li>
-                        <li>Vui lòng chuyển khoản đúng nội dung mã đơn hàng.</li>
-                        <li>Lưu ý y hệt như bên trên.</li>
-                        <li>Ghi đúng nội dung chuyển khoản là <strong>MÃ ĐƠN HÀNG</strong>.</li>
-                        <li>Đơn sẽ xử lý khi nhận được tiền.</li>
-                        <li>Sau 24h chưa thanh toán, đơn có thể bị hủy.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="payment-option">
-                <input type="radio" id="cod" name="payment-method">
-                <label for="cod">Thanh toán khi nhận hàng</label>
-            </div>
-
-            <div class="payment-option">
-                <input type="radio" id="fundiin" name="payment-method">
-                <label for="fundiin">Thanh toán trả sau qua Fundiin</label>
-            </div>
-
-        </section>
-
-        <section class="submit-section">
-            <form action="#" method="POST" id="thanhtoanForm"><button type="submit" class="submit-btn">Đặt hàng</button></form>
-            <p class="terms">
-                Thông tin cá nhân của bạn sẽ được sử dụng để xử lý đơn hàng, tăng trải nghiệm sử dụng website, và cho các mục đích khác đã được mô tả trong <a href="#">chính sách riêng tư</a> của chúng tôi.
-            </p>
-        </section>
-
-    </div>
-
+        </div>
+    </section>
     <footer>
         <div class="thongtintong">
             <div class="thongtin">
@@ -366,9 +314,6 @@
             </div>
         </div>
     </footer>
-
-    <script src="../js/index.js"></script>
-    <script src="../js/ThanhToan.js"></script>
-    <script src="../Share/js/ProductCards.js"></script>
+    <script src="../js/TrangChiTietSanPham.js"></script>
 </body>
 </html>

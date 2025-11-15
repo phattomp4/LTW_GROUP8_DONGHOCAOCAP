@@ -1,16 +1,21 @@
-/*
-=================================================
-Tối ưu hóa và Thu nhỏ Giao diện Trang Chi Tiết Sản Phẩm (Final Version 5)
-=================================================
-*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 
-.Body{
+body {
+    overflow-x: hidden; /* Ngăn cuộn ngang */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.Body {
     display: flex;
     /* Chiều rộng tối đa 960px */
-    max-width: 960px; 
-    margin: 0 auto;    
-    padding: 15px 8px; 
-    gap: 15px; 
+    width: 90%;
+    margin: 0 auto;
+    padding: 15px 8px;
+    gap: 15px;
     align-items: flex-start;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -27,7 +32,7 @@ Tối ưu hóa và Thu nhỏ Giao diện Trang Chi Tiết Sản Phẩm (Final Ve
     align-items: center;
 }
 .Main-image-container img{
-    width: 350px; 
+    width: 450px; 
     height: 450px; 
     display: block; 
     background-color: gray;
@@ -35,8 +40,7 @@ Tối ưu hóa và Thu nhỏ Giao diện Trang Chi Tiết Sản Phẩm (Final Ve
 .Thumbnail-wrapper {
     display: flex;
     align-items: center;
-    width: 350px; 
-    margin-top: 10px; 
+    margin-top: 10px;
     margin-left: 0px;
 }
 .Thumbnail-list {
@@ -49,43 +53,54 @@ Tối ưu hóa và Thu nhỏ Giao diện Trang Chi Tiết Sản Phẩm (Final Ve
     overflow-x: auto; 
     width: 100%;
     scrollbar-width: none; 
-    &::-webkit-scrollbar {
+    &::-webkit-scrollbar 
         display: none;
     }
-}
+
 .Thumbnail-list li img {
-    width: 70px; 
-    height: 70px; 
+    width: 50px; 
+    height: 50px; 
     object-fit: cover;
     cursor: pointer;
     border: 2px solid transparent;
     transition: border 0.2s;
     flex-shrink: 0; 
 }
-.Thumbnail-list li img:hover, .Thumbnail-list li img.active {
-    border: 2px solid blue; 
-}
+    .Thumbnail-list li img:hover, .Thumbnail-list li img.active {
+        border: 2px solid #e3bd5d;
+    }
 .scroll-button {
-    background: transparent;
+    background: #ffffff00;
     border: none;
-    font-size: 20px; 
     cursor: pointer;
     padding: 0 5px;
-    color: #333;
+    color: #00000000;
     flex-shrink: 0;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff00;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    z-index: 10;
+    transition: 0.3s;
 }
+    .scroll-button:hover {
+        background-color: gray;
+    }
 
-
-/* ---------------------------------
+    /* ---------------------------------
    KHỐI BÊN PHẢI (Thông tin chính)
    --------------------------------- */
-.Right-body{
-    flex-grow: 1;
-    flex-direction: column;
-    display: flex;
-    gap: 8px; 
-    margin-right: 0; 
-}
+    .Right-body {
+        flex-grow: 1;
+        flex-direction: column;
+        display: flex;
+        gap: 8px;
+        margin-right: 0;
+    }
 
 .Info-clock{
     display: flex;
@@ -211,28 +226,61 @@ Tối ưu hóa và Thu nhỏ Giao diện Trang Chi Tiết Sản Phẩm (Final Ve
     display: flex;
     gap: 10px;
 }
-.shopping-cart, .Buying-now{
-    width: 50%; 
+ .Buying-now {
+    display: flex;
+    /* Căn giữa theo chiều ngang */
+    justify-content: center;
+    /* Căn giữa theo chiều dọc (cần có chiều cao) */
+    align-items: center;
+    width: 50%;
     height: 35px;
     border-radius: 5px;
     cursor: pointer;
     border: none;
     font-size: 12px;
 }
-.shopping-cart{
-    background-color: rgb(227, 189, 93);
+.shopping-cart {
+    display: flex;
+    /* Căn giữa theo chiều ngang */
+    justify-content: center;
+    /* Căn giữa theo chiều dọc (cần có chiều cao) */
+    align-items: center;
+    width: 320px;
+    height: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 12px;
 }
-.Buying-now{
-    background-color: rgb(180, 220, 243);
+.shopping-cart {
+    background-color: #e3bd5d;
+}
+.Buying-now {
+    background-color: #1b6e76;
+
+}
+.shopping-cart a {
+    text-decoration: none;
+    color: black;
+}
+.Buying-now a {
+    text-decoration: none;
+    color: white;
 }
 
-/* Phản hồi */
-.FromCustomer{
-    margin-left: 0; 
-    text-align: center;
-    font-size: 14px;
-    font-weight: bold;
+.shopping-cart:hover {
+    background-color: #c3a351;
 }
+.Buying-now:hover {
+    background-color: #155056;
+}
+    /* Phản hồi */
+    .FromCustomer {
+        margin-left: 0;
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+    }
 .List-feedback img{
     width: 100%; 
     height: auto; 
@@ -248,10 +296,9 @@ Tối ưu hóa và Thu nhỏ Giao diện Trang Chi Tiết Sản Phẩm (Final Ve
 /* ---------------------------------
    FOOTER (Chi tiết & Hướng dẫn)
    --------------------------------- */
-.footer{
+.infoProduct{
     margin-left: 0;
-    max-width: 960px;
-    width: 100%;
+    width: 90%;
     margin: 10px auto 0 auto; 
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); 
 }
@@ -321,4 +368,31 @@ Tối ưu hóa và Thu nhỏ Giao diện Trang Chi Tiết Sản Phẩm (Final Ve
 }
 .Measure:hover{
     color: rgb(227, 189, 93);
+}
+.button {
+    background-color: #fff0;
+    border: 1px solid #fff0;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: currentColor;
+    cursor: pointer;
+    display: inline-block;
+    font-size: .97em;
+    font-weight: bolder;
+    letter-spacing: .03em;
+    line-height: 2.4em;
+    margin-right: 1em;
+    margin-top: 0;
+    max-width: 100%;
+    min-height: 2.5em;
+    min-width: 24px;
+    padding: 0 1.2em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-rendering: optimizeLegibility;
+    text-shadow: none;
+    text-transform: uppercase;
+    transition: transform .3s, border .3s, background .3s, box-shadow .3s, opacity .3s, color .3s;
+    vertical-align: middle;
 }

@@ -26,7 +26,7 @@
 /* Biểu tượng trái tim */
 .wishlist-icon {
     position: absolute;
-    z-index: 100;
+    z-index: 98;
     top: 10px;
     left: 10px;
     background: white; /* Nền trắng */
@@ -52,7 +52,7 @@
 
 /* TRẠNG THÁI ACTIVE: Khi trái tim được tô đặc */
 .wishlist-icon.active {
-    background-color: #e3bd5d; /* Nền đỏ */
+    background-color: #e3bd5d;
     border-color: #e3bd5d;
     color: white; /* Icon màu trắng */
 }
@@ -109,9 +109,7 @@
         background-color: #1b6e76;
     }
 
-.link-product {
-    text-decoration: none;
-}
+
 
 .Product img {
     /* 💥 QUAN TRỌNG: Giới hạn chiều cao ảnh */

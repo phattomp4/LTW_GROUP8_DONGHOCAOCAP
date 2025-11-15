@@ -93,9 +93,9 @@ body {
         transition: background-color 0.6s ease;
     }
 
-    .active, .dot:hover {
-        background-color: #1C242F;
-    }
+        .active, .dot:hover {
+            background-color: #b4dcf3;
+        }
 
     /* Fading animation */
 
@@ -584,8 +584,8 @@ body {
 /* Responsive cho Mobile */
 @media (max-width: 768px) {
     .gallery-image {
-        width: 180px; /* TÔI ĐÃ SỬA: Giảm kích thước ảnh trên mobile để cuộn mượt hơn */
-        height: 180px; /* TÔI ĐÃ SỬA: Giữ chiều cao tương ứng */
+        width: 180px; /* Giảm kích thước ảnh trên mobile để cuộn mượt hơn */
+        height: 180px; /* Giữ chiều cao tương ứng */
     }
 
     .gallery-button {
