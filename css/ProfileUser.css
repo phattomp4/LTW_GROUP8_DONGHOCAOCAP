@@ -57,8 +57,9 @@ body {
     width: 90%; /* Chiếm 70% chiều rộng */
     /* Thêm style khung cho nội dung */
     background-color: white;
+    border: 1px solid #eee;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 5px 6px 6px 2px rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
 
@@ -295,6 +296,6 @@ body {
     color: black;
 }
     .log-out:hover {
-        background-color: #1b6e76;
+        background-image: linear-gradient(45deg, #1b6e76, #2c96a0, #0e3e43);
         color: white;
     }

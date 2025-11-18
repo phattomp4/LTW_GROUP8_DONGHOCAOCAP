@@ -38,7 +38,7 @@ footer {
     padding-left: 0; 
     margin: 0 0 10px 0; /* Giảm margin để bố cục gọn hơn */
     font-size: 1.2rem; /* Dùng rem thay vì vw để kích thước chữ không quá lớn/nhỏ */
-    color: darkorange;
+    color: #daa51e;
     font-weight: bold;
 }
 

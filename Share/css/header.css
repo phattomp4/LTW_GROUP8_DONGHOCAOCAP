@@ -13,9 +13,18 @@ body {
     display: flex; /* 1. Kích hoạt Flexbox */
     justify-content: space-between; /* 2. Đẩy 3 khối ra xa nhau */
     align-items: center; /* 3. Căn giữa mọi thứ theo chiều dọc */
-    padding: 15px 15px 15px 15px;
+    padding: 5px 15px 5px 15px;
     background-color: #f8f8f8;
     border-bottom: 1px solid #e0e0e0;
+    /* Kích hoạt chế độ dính */
+    position: sticky;
+    /* Dính ở vị trí nào? (0px là sát mép trên cùng) */
+    top: 0;
+    /* Đảm bảo menu nằm ĐÈ LÊN các nội dung khác khi cuộn */
+    z-index: 1000;
+    background-color: #f8f8f8; /* Phải có màu nền, nếu không nội dung sẽ trôi xuyên qua chữ */
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2); /* Thêm bóng cho đẹp */
+    opacity: 0.9;
 }
 /* Khối logo (ở bên trái) */
 .logo-header {
@@ -26,13 +35,25 @@ body {
     font-weight: bold;
     font-size: 1.1rem;
     margin-right: 40px;
-    
 }
 
 .logo-img {
-    width: 80px;
-    height: 20x;
+    width: 90px;
+    height: 60px
 }
+
+.logo-text {
+    padding: 0 0 4px 0;
+    margin: 0 50px 0 80px;
+    /* 1. Tạo nền gradient (Ví dụ này là màu vàng kim loại) */
+    background-image: linear-gradient(45deg, #1b6e76, #2c96a0, #0e3e43);
+    /* 2. Cắt nền theo chữ (Cần thêm prefix -webkit- cho Chrome/Safari) */
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* 3. Làm chữ trong suốt */
+    color: transparent;
+}
+
 /* Khối Nav (ở giữa) */
 .nav-item {
     flex: 1; /* Chiếm không gian còn lại */
@@ -50,7 +71,7 @@ body {
     }
 /* Màu đặc biệt cho link Dong Ho */
 .main-nav .link-yellow {
-    color: #e3bd5d; /* Màu vàng */
+    color: #daa51e; /* Màu vàng */
 }
 /* Mũi tên dropdown */
 .main-nav .fa-chevron-down {
@@ -137,12 +158,18 @@ body {
 }
 
 .button-login {
-    background-color: #1b6e76;
+    background-image: linear-gradient(45deg, #1b6e76, #2c96a0, #0e3e43);
+    border: none;
+    transition: all 0.4s ease-in-out;
 }
 
     .button-login:hover {
-        background-color: #004248;
+        opacity: 0.9;
+        /* Thêm hiệu ứng nhún nhẹ khi hover */
+        transform: translateY(-3px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Thêm bóng nhẹ */
     }
+
 
         /* Nút profile */
 /* 1. Vùng chứa chính - Rất quan trọng */

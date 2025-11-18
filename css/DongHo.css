@@ -96,7 +96,7 @@ body {
 .apply-button {
     width: 100%;
     padding: 8px;
-    background-color: #1B6E76;
+    background-image: linear-gradient(45deg, #1b6e76, #2c96a0, #0e3e43);
     color: white;
     border: none;
     border-radius: 5px;
@@ -133,7 +133,7 @@ padding: 20px 0;
 
         /* Style the active/current link */
         .pagination a.active {
-            background-color: #1b6e76;
+            background-image: linear-gradient(45deg, #1b6e76, #2c96a0, #0e3e43);
             color: white;
         }
 

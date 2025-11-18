@@ -9,6 +9,46 @@ body {
     margin: 0;
     padding: 0;
 }
+
+/* Scroll To Top */
+#btnScrollToTop {
+    /* 1. Định vị nút nằm cố định ở góc màn hình */
+    position: fixed;
+    bottom: 30px; /* Cách đáy 30px */
+    right: 30px; /* Cách phải 30px */
+    z-index: 9999; /* Luôn nằm trên cùng */
+    /* 2. Tạo hình dáng tròn */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Bo tròn tuyệt đối */
+    /* 3. Màu sắc giống hình mẫu */
+    background-image: linear-gradient(45deg, #1b6e76, #2c96a0, #0e3e43);
+    color: #fff; /* Mũi tên trắng */
+    border: 1px solid #fff; /* Viền trắng mỏng */
+    /* 4. Căn giữa mũi tên bên trong */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 5. Hiệu ứng và trạng thái ban đầu */
+    cursor: pointer;
+    opacity: 0; /* Ban đầu ẩn đi */
+    visibility: hidden; /* Ban đầu ẩn đi */
+    transition: all 0.4s ease-in-out; /* Hiệu ứng hiện ra mượt mà */
+}
+
+    /* Class này sẽ được JS thêm vào để hiện nút lên */
+    #btnScrollToTop.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Hiệu ứng khi hover vào */
+    #btnScrollToTop:hover {
+        opacity: 0.9; /* Đổi màu nền nhẹ khi hover */
+        transform: translateY(-3px); /* Nhún nhẹ lên trên */
+    }
+
+
 /* Slideshow container */
 .slideshow-container {
 
@@ -93,8 +133,8 @@ body {
         transition: background-color 0.6s ease;
     }
 
-        .active, .dot:hover {
-            background-color: #b4dcf3;
+        .dot:hover {
+            background-image: linear-gradient(to right, #b4dcf3, #dddddd, #b4dcf3);
         }
 
     /* Fading animation */
@@ -123,21 +163,21 @@ body {
         gap: 5px 10px !important;
     }
 
-    .service .icon-box {
-        background: #b4dcf3;
-        display: flex;
-        flex-wrap: wrap;
-        border-radius: 8px 8px 8px 8px;
-    }
+        .service .icon-box {
+            background-image: linear-gradient(to right, #b4dcf3, #dddddd, #b4dcf3);
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 8px 8px 8px 8px;
+        }
 
-    .service .icon-box .icon-box-img {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #1b6e76;
-        min-width: 35px;
-        border-radius: 8px 0px 0px 8px;
-    }
+        .service .icon-box .icon-box-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(45deg, #1b6e76, #2c96a0, #0e3e43);
+            min-width: 35px;
+            border-radius: 8px 0px 0px 8px;
+        }
 
     .service .icon-box .icon-box-text h4 {
         font-size: 12px;
@@ -206,13 +246,14 @@ body {
         margin: 0px 0px -30px 0px;
     }
 
-    .button-flash-sales {
-        background-color: #1b6e76;
-        margin-bottom: 50px;
-        box-shadow: 0px 0px 28px rgb(0 0 0 / .25), 0px 0px 10px rgb(0 0 0 / .1);
-    }
+.button-flash-sales {
+    background-image: linear-gradient(45deg, #1b6e76, #2c96a0, #0e3e43);
+    margin-bottom: 50px;
+    box-shadow: 0px 0px 28px rgb(0 0 0 / .25), 0px 0px 10px rgb(0 0 0 / .1);
+}
 
     .button-flash-sales:hover {
+        opacity: 0.9;
         transform: translateY(-6px);
     }
 
@@ -240,11 +281,17 @@ body {
 
     /* Khoảng cách giữa các ảnh brand, bo góc */
 
-    .img-brand img {
-        margin: 10px;
-        border-radius: 8px;
-    }
+.img-brand img {
+    margin: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
 
+        .img-brand img:hover {
+            cursor: pointer;
+            box-shadow: 5px 6px 6px 2px #a7a7a7;
+            transform: scale(1.05);
+        }
     /* COLLECTION LUXURY */
 
 .collection-luxury {
@@ -268,11 +315,18 @@ body {
         margin-top: 20px;
     }
 
-    .luxury-gallary img {
-        object-fit: cover;
-        border-radius: 8px;
-    }
+        .luxury-gallary img {
+            object-fit: cover;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+        }
 
+    .luxury-gallary img:hover {
+         cursor: pointer;
+        box-shadow: 5px 6px 6px 2px #a7a7a7;
+        transform: translateY(-4px);
+    }
+    
 
     .luxury-banner img {
         width: 300px;
@@ -314,7 +368,7 @@ body {
         }
 
         .ul-luxury-cards .luxury-card .Product:hover {
-            border-color: #e3bd5d;
+            border-color: #daa51e;
         }
 
 .card-wrapper .swiper-pagination-bullet {
@@ -441,9 +495,8 @@ body {
     }
 
         .button-bst-container button.active {
-            background-color: #1b6e76; /* Màu nền xanh */
+            background-image: linear-gradient(45deg, #1b6e76, #2c96a0, #0e3e43);
             color: #fff; /* Chữ màu trắng */
-            border-color: #1b6e76; /* Viền màu xanh */
         }
 
 /* Đặt ẩn đi các tab */
@@ -471,7 +524,7 @@ body {
 
     .InformationStore .ReputationBrand {
         font-size: 3vw;
-        color: rgb(227, 189, 93);
+        color: #daa51e;
     }
 
     .History-Brand {
@@ -656,19 +709,22 @@ body {
     margin: 10px;
 }
 
-.store-box a {
-    color: #007bff; /* Màu xanh nổi bật cho link */
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    margin: 10px;
-}
+    .store-box a {
+        color: #007bff; /* Màu xanh nổi bật cho link */
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 10px;
+    }
 
-/* --- 4. MEDIA QUERIES (Giải quyết vấn đề màn hình 14 inch) --- */
+        .store-box a:hover {
+            color: #daa51e;
+        }
 
-/* @media cho màn hình vừa (như laptop 14 inch) */
-@media (max-width: 1024px) {
-    .grid-container {
+        /* --- 4. MEDIA QUERIES (Giải quyết vấn đề màn hình 14 inch) --- */
+        /* @media cho màn hình vừa (như laptop 14 inch) */
+        @media (max-width: 1024px) {
+            .grid-container {
         /* Chuyển từ 3 cột sang 2 cột, giúp các ô rộng hơn và không bị co */
         grid-template-columns: repeat(2, 1fr);
     }
@@ -688,14 +744,15 @@ body {
 }
 
 .button-lhtv {
-    background-color: #1b6e76;
-
+    border: none;
+    background-image: linear-gradient(45deg, #1b6e76, #2c96a0, #0e3e43);
     box-shadow: 0px 0px 28px rgb(0 0 0 / .25), 0px 0px 10px rgb(0 0 0 / .1);
 }
 
-.button-lhtv:hover {
-    transform: translateY(-6px);
-}
+    .button-lhtv:hover {
+        opacity: 0.9;
+        transform: translateY(-6px);
+    }
 
 
 
