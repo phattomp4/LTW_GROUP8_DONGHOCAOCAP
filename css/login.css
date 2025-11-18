@@ -164,7 +164,7 @@ body {
 .login-button {
     width: 100%;
     padding: 13px;
-    background-color: #1B6E76; /* Màu xanh lục đậm */
+    background-image: linear-gradient(45deg, #1b6e76, #2c96a0, #0e3e43);
     color: white;
     border: none;
     border-radius: 5px;
@@ -172,7 +172,7 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
-   text-align: center;
+    text-align: center;
 }
 .login-button a {
  text-decoration: none;
@@ -194,7 +194,7 @@ body {
 }
 
 .register-link a {
-    color: #E3BD5D; /* Màu vàng đồng */
+    color: #daa51e; /* Màu vàng đồng */
     text-decoration: none;
     font-weight: bold;
 }

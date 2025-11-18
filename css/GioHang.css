@@ -250,7 +250,7 @@ img {
     text-decoration: none;
     display: block;
     width: 100%;
-    background-color: #1b6e76;
+    background-image: linear-gradient(45deg, #1b6e76, #2c96a0, #0e3e43);
     border: none;
     text-align: center;
     padding: 18px;
@@ -260,12 +260,14 @@ img {
     cursor: pointer;
     border-radius: 4px;
     margin-top: 25px;
-    transition: background-color 0.2s;
+    transition: 0.3s all ease-in-out;
 }
     .checkout-button p {
         font-: #fff;
     }
 
     .checkout-button:hover {
+        opacity: 0.9;
         background-color: #004248;
+        transform: translateY(-4px)
     }

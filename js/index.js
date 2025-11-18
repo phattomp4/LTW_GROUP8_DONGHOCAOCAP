@@ -1,5 +1,36 @@
 ﻿/* phan script cua Phat -- > */
 
+// --- BỌC CODE NÚT SCROLL TO TOP ---
+// Lấy nút từ HTML
+const btnScrollToTop = document.getElementById("btnScrollToTop");
+
+// Lắng nghe sự kiện cuộn trang
+window.onscroll = function () {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    // Nếu cuộn xuống quá 200px thì hiện nút
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btnScrollToTop.classList.add("show");
+    } else {
+        // Nếu ở trên đầu trang thì ẩn nút
+        btnScrollToTop.classList.remove("show");
+    }
+}
+
+// Hàm xử lý khi click vào nút
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Quan trọng: tạo hiệu ứng trượt mượt mà
+    });
+}
+
+
+
+
+
 // --- BỌC CODE SLIDESHOW ---
 // Chỉ chạy code slideshow nếu các phần tử tồn tại
 const dotsContainer = document.getElementsByClassName("dot");
@@ -33,7 +64,9 @@ if (dotsContainer.length > 0) {
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
     }
-} // --- KẾT THÚC BỌC CODE SLIDESHOW ---
+}
+
+
 
 
 // --- BỌC CODE SWIPERJS ---

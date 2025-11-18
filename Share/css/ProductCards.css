@@ -1,14 +1,15 @@
-﻿.Product {
+﻿
+
+.Product {
     position: relative;
     /* Đặt chiều cao CỐ ĐỊNH để các sản phẩm trong 2 hàng Grid đồng đều */
-    height: 350px; /* Giới hạn chiều cao tổng thể của 1 sản phẩm */
+    height: 370px; /* Giới hạn chiều cao tổng thể của 1 sản phẩm */
     padding: 10px; /* Giảm padding để tăng không gian cho nội dung */
     width: 250px;
     /* Căn chỉnh nội dung */
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Nội dung bắt đầu từ trái */
-    /* justify-content: space-between;  Đẩy giá và thông tin xuống dưới */
     /* Thiết kế */
     border: 1px solid #eee;
     border-radius: 8px;
@@ -16,46 +17,51 @@
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    text-align: left;
 }
 
     .Product:hover {
-        border-color: #e3bd5d;
+        border-color: #daa51e;
+        box-shadow: 5px 6px 6px 2px #d7d7d7;
     }
 
-/* Biểu tượng trái tim */
-.wishlist-icon {
-    position: absolute;
-    z-index: 98;
-    top: 10px;
-    left: 10px;
-    background: white; /* Nền trắng */
-    border: 1px solid #ddd;
-    border-radius: 50%; /* Hình tròn */
-    width: 36px; /* Kích thước nút */
-    height: 36px; /* Kích thước nút */
-    display: flex; /* Dùng flexbox để căn icon */
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    font-size: 18px; /* Kích thước icon */
-    color: #888; /* Màu icon mặc định */
-    transition: all 0.2s ease; /* Hiệu ứng chuyển động mượt mà */
-    outline: none; /* Bỏ viền khi focus */
-}
+    .Product .img-product {
+        margin: 0 0 0 13px;
+    }
+
+
+    /* Biểu tượng trái tim */
+    .wishlist-icon {
+        position: absolute;
+        z-index: 98;
+        top: 10px;
+        left: 10px;
+        background: white; /* Nền trắng */
+        border: 1px solid #ddd;
+        border-radius: 50%; /* Hình tròn */
+        width: 36px; /* Kích thước nút */
+        height: 36px; /* Kích thước nút */
+        display: flex; /* Dùng flexbox để căn icon */
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 18px; /* Kích thước icon */
+        color: #888; /* Màu icon mặc định */
+        transition: all 0.2s ease; /* Hiệu ứng chuyển động mượt mà */
+        outline: none; /* Bỏ viền khi focus */
+    }
 
 /* Khi hover vào nút */
 .wishlist-icon:hover {
-    border-color: #e3bd5d; /* Đổi màu viền khi hover */
-    color: #e3bd5d; /* Đổi màu icon khi hover */
+    border-color: #daa51e; /* Đổi màu viền khi hover */
+    color: #daa51e; /* Đổi màu icon khi hover */
 }
 
 /* TRẠNG THÁI ACTIVE: Khi trái tim được tô đặc */
-.wishlist-icon.active {
-    background-color: #e3bd5d;
-    border-color: #e3bd5d;
-    color: white; /* Icon màu trắng */
-}
+        .wishlist-icon.active {
+            background-color: #daa51e;
+            border-color: #daa51e;
+            color: white; /* Icon màu trắng */
+        }
 
 /* 2. Tạo container cho danh sách sản phẩm (chứa Page1 và Page2) */
 
@@ -100,13 +106,13 @@
     border: 1px solid #1b6e76;
     border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.3s all ease-in-out;
     width: 300px;
 }
 
     .ViewMore-Button:hover {
         color: #fff;
-        background-color: #1b6e76;
+        background-image: linear-gradient(45deg, #1b6e76, #2c96a0, #0e3e43);
     }
 
 

@@ -67,7 +67,7 @@ body {
     flex-shrink: 0; 
 }
     .Thumbnail-list li img:hover, .Thumbnail-list li img.active {
-        border: 2px solid #e3bd5d;
+        border: 2px solid #daa51e;
     }
 .scroll-button {
     background: #ffffff00;
@@ -253,11 +253,10 @@ body {
     font-size: 12px;
 }
 .shopping-cart {
-    background-color: #e3bd5d;
+    background-image: linear-gradient(45deg, #daa51e, #ffb700, #daa51e);
 }
 .Buying-now {
-    background-color: #1b6e76;
-
+    background-image: linear-gradient(45deg, #1b6e76, #2c96a0, #0e3e43);
 }
 .shopping-cart a {
     text-decoration: none;
@@ -269,10 +268,10 @@ body {
 }
 
 .shopping-cart:hover {
-    background-color: #c3a351;
+    opacity: 0.8;
 }
 .Buying-now:hover {
-    background-color: #155056;
+    opacity: 0.8;
 }
     /* Phản hồi */
     .FromCustomer {
