@@ -9,73 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7f4887d-eaea-4edf-8d52-c8fde5a4825e" name="Changes" comment="thay doi cau truc project thanh web dong">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/LTW_GROUP8_DONGHOCAOCAP.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="c7f4887d-eaea-4edf-8d52-c8fde5a4825e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/context/DBContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/HomeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/dao/ProductDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/LTW_GROUP8_DONGHOCAOCAP/CopilotIndices/17.14.1347.20289/CodeChunks.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/LTW_GROUP8_DONGHOCAOCAP/CopilotIndices/17.14.1347.20289/SemanticSymbols.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/LTW_GROUP8_DONGHOCAOCAP/FileContentIndex/26342a29-48f9-4e58-81fd-f958489f2f6c.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/LTW_GROUP8_DONGHOCAOCAP/FileContentIndex/443ee7ff-fa14-48a3-9d9b-99c331ad3746.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/LTW_GROUP8_DONGHOCAOCAP/FileContentIndex/7594ef2c-33ed-4224-b3c8-27886ecdd872.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/LTW_GROUP8_DONGHOCAOCAP/FileContentIndex/7fe6b0df-15ba-477a-b4f0-3b98158ade8f.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/LTW_GROUP8_DONGHOCAOCAP/FileContentIndex/8e7262ca-1784-4914-aed4-a53895fa10b3.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/LTW_GROUP8_DONGHOCAOCAP/FileContentIndex/bd1b0499-1f2b-46a0-aef7-714312779a67.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/LTW_GROUP8_DONGHOCAOCAP/config/applicationhost.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/LTW_GROUP8_DONGHOCAOCAP/v17/.wsuo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/LTW_GROUP8_DONGHOCAOCAP/v17/DocumentLayout.backup.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/LTW_GROUP8_DONGHOCAOCAP/v17/DocumentLayout.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DongHo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhuKien.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Share/css/ProductCards.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Share/css/footer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Share/css/header.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Share/js/ProductCards.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TrangChiTietSanPham.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebBanDongHo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/DongHo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/FavoritesList.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/GioHang.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/ProfileUser.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/ThanhToan.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/TrangChiTietSanPham.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/admin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/contact.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/introduce.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/forgot_password.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_da_dang_nhap/DongHo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_da_dang_nhap/FavoritesList.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_da_dang_nhap/GioHang.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_da_dang_nhap/PhuKien.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_da_dang_nhap/ProfileUser.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_da_dang_nhap/ThanhToan.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_da_dang_nhap/TrangChiTietSanPham.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_da_dang_nhap/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_da_dang_nhap/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_da_dang_nhap/introduce.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/introduce.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/DongHo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/ProfileUser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/ThanhToan.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/TrangChiTietSanPham.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/admin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/contact.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/introduce.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/register.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/contact.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/contact.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +34,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -96,6 +45,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="LogFilters">
@@ -128,34 +78,59 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.DBContext.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Tomcat Server.Tomcat 10.1.49.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;ToTanPhat&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/LTW&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/LTW_GROUP8_DONGHOCAOCAP/LTW_GROUP8_DONGHOCAOCAP&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql_aurora_aws&quot;,
+      &quot;mysql&quot;
+    ]
   }
 }</component>
-  <component name="RunManager">
-    <configuration name="Tomcat 10.1.49" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.49" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="UPDATING_POLICY" value="restart-server" />
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.49">
+    <configuration name="DBContext" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.vvp.context.DBContext" />
+      <module name="WebBanDongHo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vvp.context.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 10.1.49" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.49" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="21" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/WebBanDongHo_war_exploded/home" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
         <artifact name="WebBanDongHo:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/WebBanDongHo_war_exploded/VVP" />
+            <option name="CONTEXT_PATH" value="/WebBanDongHo_war_exploded" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="6af28c28-b5d1-4142-8ee8-02d01c09eab8" />
-        <option name="JNDI_PORT" value="1090" />
+        <option name="BASE_DIRECTORY_NAME" value="31f2b261-409d-4c93-8ac9-76b092481488" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -163,7 +138,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="52679" />
+        <option name="DEBUG_PORT" value="50733" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -232,6 +207,15 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.DBContext" />
+      <item itemvalue="Tomcat Server.Tomcat 10.1.49" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DBContext" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -252,6 +236,13 @@
       <workItem from="1765087732648" duration="5166000" />
       <workItem from="1765092944463" duration="1410000" />
       <workItem from="1765095802179" duration="499000" />
+      <workItem from="1765097633614" duration="5381000" />
+      <workItem from="1765165463614" duration="1697000" />
+      <workItem from="1765167974957" duration="468000" />
+      <workItem from="1765379340338" duration="18000" />
+      <workItem from="1765379390157" duration="603000" />
+      <workItem from="1765455984772" duration="7316000" />
+      <workItem from="1765463346376" duration="985000" />
     </task>
     <task id="LOCAL-00001" summary="thay doi cau truc project thanh web dong">
       <option name="closed" value="true" />

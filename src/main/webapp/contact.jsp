@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Liên hệ</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="Share/css/header.css">
-    <link rel="stylesheet" href="Share/css/footer.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
     <!-- Linking Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
@@ -276,7 +276,7 @@
         </footer>
     </div>
     <!-- Gọi file JS -->
-    <script src="js/contact.js"></script>
-    <script src="js/index.js"></script>
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 </html>
