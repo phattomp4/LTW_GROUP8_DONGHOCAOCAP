@@ -1,5 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-!DOCTYPE html>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -620,137 +622,37 @@
         <!-- Tab đồng hồ nổi bật -->
         <div id="content-featured" class="tab-content">
             <div id="Page1" class="Product-page">
-                <div href="" class="link-product">
-                    <div class="Product">
-                        <button class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <a href="TrangChiTietSanPham.html" class="img-product"><img src="https://www.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-d-1-1173700471-248243325-1712668536-400x400.jpg" alt=""></a>
-                        <br />
-                        <a href="TrangChiTietSanPham.html"><p class="Item">Carnival 40mm Nam 8907G-VT-D</p></a>
-                        <p class="PriceOfPoduct">3.801.000₫</p>
-                        <div class="Discount-row">
-                            <p class="Discount">5.430.000₫</p>
-                            <p class="DiscountPercent">-30%</p>
-                        </div>
-                        <p class="Sold">Đã bán 88</p>
-                    </div>
-                </div>
-                <div class="link-product">
-                    <div class="Product">
-                        <button class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <a href="TrangChiTietSanPham.html" class="img-product"><img src="https://www.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-t-1-348948390-593092946-1712668541-400x400.jpg" alt=""></a>
-                        <br />
-                        <a href="TrangChiTietSanPham.html"><p class="Item">Carnival 40mm Nam 8907G-VT-T</p></a>
-                        <p class="PriceOfPoduct">3.801.000₫</p>
-                        <div class="Discount-row">
-                            <p class="Discount">5.430.000₫ </p>
-                            <p class="DiscountPercent">-30%</p>
-                        </div>
-                        <p class="Sold">Đã bán 114</p>
-                    </div>
-                </div>
-                <div class="link-product">
-                    <div class="Product">
-                        <button class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <a href="TrangChiTietSanPham.html" class="img-product"><img src="https://www.watchstore.vn/wp-content/uploads/2025/06/carnival-8907g-vt-tf-400x400.jpg" alt=""></a>
-                        <br />
-                        <a href="TrangChiTietSanPham.html"><p class="Item">Carnival 40mm Nam 8907G-VT-XT</p></a>
-                        <p class="PriceOfPoduct">3.801.000₫</p>
-                        <div class="Discount-row">
-                            <p class="Discount">5.430.000₫</p>
-                            <p class="DiscountPercent">-30%</p>
-                        </div>
+                <c:forEach items="${listP}" var="p">
+                    <div class="link-product">
+                        <div class="Product">
+                            <button class="wishlist-icon"><i class="fa-regular fa-heart"></i></button>
 
-                        <p class="Sold">Đã bán 1</p>
-                    </div>
-                </div>
-                <div class="link-product">
-                    <div class="Product">
-                        <button class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <a href="TrangChiTietSanPham.html" class="img-product"><img src="https://cdn.watchstore.vn/wp-content/uploads/2023/07/8110g-vh-dd-n-1-1164444482-993248187-1712664914-400x400.jpg" alt=""></a>
-                        <br />
-                        <a href="TrangChiTietSanPham.html"><p class="Item">Carnival 41mm Nam 8110G-VH-DD-N</p></a>
-                        <p class="PriceOfPoduct">4.851.000₫</p>
-                        <div class="Discount-row">
-                            <p class="Discount">6930.000₫</p>
-                            <p class="DiscountPercent">-30%</p>
-                        </div>
-                        <p class="Sold">Đã bán 51</p>
-                    </div>
-                </div>
-                <div class="link-product">
-                    <div class="Product">
-                        <button class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <a href="TrangChiTietSanPham.html" class="img-product"><img src="https://www.watchstore.vn/wp-content/uploads/2020/11/1-khung-sp-6676612-1785849039-1712554705-400x400.jpg" alt=""></a>
-                        <br />
-                        <a href="TrangChiTietSanPham.html"><p class="Item">Casio 45 X 42.1mm Nam AE-1200WHD-1A</p></a>
-                        <p class="PriceOfPoduct">1.204.800₫</p>
-                        <div class="Discount-row">
-                            <p class="Discount">1.506.000₫</p>
-                            <p class="DiscountPercent">-20%</p>
-                        </div>
-                        <p class="Sold">Đã bán 1,4k</p>
-                    </div>
-                </div>
-                <div class="link-product">
-                    <div class="Product">
-                        <button class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <a href="TrangChiTietSanPham.html" class="img-product"><img src="https://www.watchstore.vn/wp-content/uploads/2020/11/1-khung-sp-1-1818542633-1853976209-1712563883-400x400.jpg" alt=""></a>
-                        <br />
-                        <a href="TrangChiTietSanPham.html"><p class="Item">Casio MTP-1374L-1A</p></a>
-                        <p class="PriceOfPoduct">1.816.000₫</p>
-                        <div class="Discount-row">
-                            <p class="Discount">2.270.000₫ </p>
-                            <p class="DiscountPercent">-20%</p>
-                        </div>
+                            <a href="detail?pid=${p.id}" class="img-product">
+                                <img src="${p.imageUrl}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/300'">
+                            </a>
+                            <br />
 
-                        <p class="Sold">Đã bán 1,2k</p>
-                    </div>
-                </div>
-                <div class="link-product">
-                    <div class="Product">
-                        <button class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <a href="TrangChiTietSanPham.html" class="img-product"><img src="https://www.watchstore.vn/wp-content/uploads/2022/05/op990-45adgs-gl-d-1-1655171724651-1712585288-400x400.jpg" alt=""></a>
-                        <br />
-                        <a href="TrangChiTietSanPham.html"><p class="Item">Olym Pianus 42mm Nam OP990-45ADGS-GL-D</p></a>
-                        <p class="PriceOfPoduct">6.776.000₫</p>
-                        <div class="Discount-row">
-                            <p class="Discount">8.800.000₫</p>
-                            <p class="DiscountPercent">-23%</p>
-                        </div>
-                        <p class="Sold">Đã bán 348</p>
-                    </div>
-                </div>
-                <div class="link-product">
-                    <div class="Product">
-                        <button class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <a href="TrangChiTietSanPham.html" class="img-product"><img src="https://cdn.watchstore.vn/wp-content/uploads/2022/05/t137-679443174-610497435-1712585231-400x400.jpg" alt=""></a>
-                        <br />
-                        <a href="TrangChiTietSanPham.html"><p class="Item">Tissot 40mm Nam T137.407.11.041.00</p></a>
-                        <p class="PriceOfPoduct">17.900.000₫</p>
-                        <div class="Discount-row">
-                            <p class="Discount">20.610.000₫</p>
-                            <p class="DiscountPercent">-13%</p>
-                        </div>
+                            <a href="detail?pid=${p.id}">
+                                <p class="Item" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${p.name}</p>
+                            </a>
 
-                        <p class="Sold">Đã bán 118</p>
+                            <p class="PriceOfPoduct">
+                                <fmt:formatNumber value="${p.currentPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>
+                            </p>
+
+                            <div class="Discount-row">
+                                <p class="Discount">
+                                    <fmt:formatNumber value="${p.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>
+                                </p>
+                                <p class="DiscountPercent">-30%</p>
+                            </div>
+
+                            <p class="Sold" style="font-size: 12px; color: #666;">Đã bán: ${p.soldQuantity}</p>
+
+                            <a href="add-to-cart?pid=${p.id}" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
+                        </div>
                     </div>
-                </div>
+                </c:forEach>
             </div>
 
             <div id="Page2" class="Product-page hidden">
