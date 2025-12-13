@@ -12,7 +12,7 @@ public class Product {
 
     public Product() {}
 
-    public Product(int id, int brandId, String name, String sku, double originalPrice, double currentPrice, String imageUrl, int soldQuantity) {
+    public Product(int id, int brandId, String name, String sku, String description, double originalPrice, double currentPrice, String imageUrl, int stockQuantity, int soldQuantity) {
         this.id = id;
         this.brandId = brandId;
         this.name = name;
@@ -22,6 +22,8 @@ public class Product {
         this.imageUrl = imageUrl;
         this.soldQuantity = soldQuantity;
     }
+
+
 
     // Getter methods (Cực kỳ quan trọng để JSP đọc được)
     public int getId() { return id; }
