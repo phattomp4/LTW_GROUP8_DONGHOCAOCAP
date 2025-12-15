@@ -9,58 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f673c5c2-5c53-445f-bde9-95e7c08d8e26" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Service/AccountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/controller/AccountController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dao/AccountDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/model/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/LTW_GROUP8_DONGHOCAOCAP.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DongHoNam.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DongHoNam.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DongHoNam.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProfileUser.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProfileUser.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProfileUser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Share/css/ProductCards.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Share/css/footer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Share/css/header.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Share/js/ProductCards.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TrangChiTietSanPham.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TrangChiTietSanPham.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TrangChiTietSanPham.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/FavoritesList.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/GioHang.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/ThanhToan.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/contact.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/introduce.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/forgot_password.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_da_dang_nhap/FavoritesList.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_da_dang_nhap/GioHang.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_da_dang_nhap/ThanhToan.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_da_dang_nhap/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_da_dang_nhap/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_da_dang_nhap/introduce.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/introduce.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/ThanhToan.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/contact.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/introduce.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.js" beforeDir="false" />
+    <list default="true" id="c7f4887d-eaea-4edf-8d52-c8fde5a4825e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/context/DBContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/context/DBContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/controller/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/HomeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/dao/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +25,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -77,23 +33,13 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Phát" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;23130389-cell&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/phattomp4/LTW_GROUP8_DONGHOCAOCAP.git&quot;,
-    &quot;accountId&quot;: &quot;f6e405c2-b4b8-4963-8c2a-d2dc890aa1c8&quot;
-  }
-}</component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -108,53 +54,66 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
+  &quot;associatedIndex&quot;: 2
 }</component>
-  <component name="ProjectId" id="36et5Wk1KGotcSftb3WGNvAY4Rf" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectId" id="36VNMN4f5YHNhYvVJG54T4oEUk4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.WebBanDongHo [clean].executor": "Run",
-    "Maven.WebBanDongHo [compile].executor": "Run",
-    "Maven.WebBanDongHo [verify].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Tomcat Server.WebBanDongHo.executor": "Run",
-    "git-widget-placeholder": "NguyenTruongVu",
-    "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "File.Encoding",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.DBContext.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 10.1.49.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;ToTanPhat&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/LTW_GROUP8_DONGHOCAOCAP/LTW_GROUP8_DONGHOCAOCAP&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql_aurora_aws&quot;,
+      &quot;mysql&quot;
+    ]
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\SpringBoot\Intellij\LTW_GROUP8_DONGHOCAOCAP\src\main\java\controller" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="configurationStatuses">
-      <map>
-        <entry key="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
-          <value>
-            <map>
-              <entry key="WebBanDongHo" value="STOPPED" />
-            </map>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="RunManager">
-    <configuration name="WebBanDongHo" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.49" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
+}</component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.49">
+    <configuration name="DBContext" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.vvp.context.DBContext" />
+      <module name="WebBanDongHo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vvp.context.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 10.1.49" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.49" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="21" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/WebBanDongHo_war_exploded/home" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
         <artifact name="WebBanDongHo:war exploded">
           <settings>
@@ -163,7 +122,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="93bd2500-c73d-4f27-8774-56cb59170e05" />
+        <option name="BASE_DIRECTORY_NAME" value="31f2b261-409d-4c93-8ac9-76b092481488" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -171,7 +130,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="50288" />
+        <option name="DEBUG_PORT" value="50733" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -240,31 +199,97 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.DBContext" />
+      <item itemvalue="Tomcat Server.Tomcat 10.1.49" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DBContext" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
-        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-IU-253.28294.334" />
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
       </set>
     </attachedChunks>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f673c5c2-5c53-445f-bde9-95e7c08d8e26" name="Changes" comment="" />
-      <created>1765378685969</created>
+      <changelist id="c7f4887d-eaea-4edf-8d52-c8fde5a4825e" name="Changes" comment="" />
+      <created>1765087731564</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1765378685969</updated>
-      <workItem from="1765378688725" duration="1115000" />
-      <workItem from="1765691196724" duration="390000" />
-      <workItem from="1765705690007" duration="2305000" />
-      <workItem from="1765728375096" duration="5924000" />
+      <updated>1765087731564</updated>
+      <workItem from="1765087732648" duration="5166000" />
+      <workItem from="1765092944463" duration="1410000" />
+      <workItem from="1765095802179" duration="499000" />
+      <workItem from="1765097633614" duration="5381000" />
+      <workItem from="1765165463614" duration="1697000" />
+      <workItem from="1765167974957" duration="468000" />
+      <workItem from="1765379340338" duration="18000" />
+      <workItem from="1765379390157" duration="603000" />
+      <workItem from="1765455984772" duration="7316000" />
+      <workItem from="1765463346376" duration="1925000" />
+      <workItem from="1765600974339" duration="5143000" />
+      <workItem from="1765615561082" duration="145000" />
+      <workItem from="1765615806586" duration="72000" />
+      <workItem from="1765616479425" duration="177000" />
+      <workItem from="1765618431774" duration="3221000" />
+      <workItem from="1765636021922" duration="119000" />
     </task>
+    <task id="LOCAL-00001" summary="thay doi cau truc project thanh web dong">
+      <option name="closed" value="true" />
+      <created>1765094709028</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1765094709028</updated>
+    </task>
+    <task id="LOCAL-00002" summary="thay doi cau truc project thanh web dong">
+      <option name="closed" value="true" />
+      <created>1765095746998</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1765095746998</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="ToTanPhat" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="thay doi cau truc project thanh web dong" />
+    <option name="LAST_COMMIT_MESSAGE" value="thay doi cau truc project thanh web dong" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
