@@ -48,10 +48,7 @@
 
 
 
-            <div class="login-button">
-<%--                <a href="html_da_dang_nhap/index.jsp">Đăng Nhập</a>--%>
-                <button type="submit"> Dang nhap</button>
-            </div>
+            <button type="submit" class="login-button">Đăng Nhập</button>
         </form>
 
 
