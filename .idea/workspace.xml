@@ -9,19 +9,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7f4887d-eaea-4edf-8d52-c8fde5a4825e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/ForgotPasswordController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/IndexController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/NewPasswordController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/RegisterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/VerifyOTPController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/utils/DBConnect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/utils/Mailer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/forgot-password.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/newPassword.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/verifyOTP.jsp" afterDir="false" />
+    <list default="true" id="c7f4887d-eaea-4edf-8d52-c8fde5a4825e" name="Changes" comment="Đã hoàn thành đăng ký, đăng nhập&#10;Chưa hoàn thiện chức năng quên mật khẩu.&#10;Database thiếu cột Email.">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/forgot-password.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/newPassword.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/register.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/verifyOTP.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/forgot-password.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/forgot-password.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/newPassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/newPassword.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/verifyOTP.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/verifyOTP.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +34,7 @@
       <list>
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -99,6 +101,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/HP/Desktop/LTW/LTW_GROUP8_DONGHOCAOCAP",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -284,7 +287,8 @@
       <workItem from="1765880066995" duration="195000" />
       <workItem from="1765907789910" duration="4336000" />
       <workItem from="1765944124021" duration="7388000" />
-      <workItem from="1765987455583" duration="3717000" />
+      <workItem from="1765987455583" duration="4134000" />
+      <workItem from="1766047386943" duration="3019000" />
     </task>
     <task id="LOCAL-00001" summary="thay doi cau truc project thanh web dong">
       <option name="closed" value="true" />
@@ -302,7 +306,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765095746998</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Đã hoàn thành đăng ký, đăng nhập&#10;Chưa hoàn thiện chức năng quên mật khẩu.&#10;Database thiếu cột Email.">
+      <option name="closed" value="true" />
+      <created>1765991509480</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1765991509480</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,7 +345,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="thay doi cau truc project thanh web dong" />
-    <option name="LAST_COMMIT_MESSAGE" value="thay doi cau truc project thanh web dong" />
+    <MESSAGE value="Đã hoàn thành đăng ký, đăng nhập&#10;Chưa hoàn thiện chức năng quên mật khẩu.&#10;Database thiếu cột Email." />
+    <option name="LAST_COMMIT_MESSAGE" value="Đã hoàn thành đăng ký, đăng nhập&#10;Chưa hoàn thiện chức năng quên mật khẩu.&#10;Database thiếu cột Email." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

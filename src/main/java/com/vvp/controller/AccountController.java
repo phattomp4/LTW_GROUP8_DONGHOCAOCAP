@@ -20,7 +20,7 @@ public class AccountController extends  HttpServlet{
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        Account acc = accountService.findUserByUsername(username, password);
+        Account acc = accountService.login(username, password);
         if(acc != null){
             HttpSession session = request.getSession();
             session.setAttribute("user", acc);
@@ -28,6 +28,7 @@ public class AccountController extends  HttpServlet{
             response.sendRedirect(request.getContextPath() + "/index");
         }
         else {
+            request.setAttribute("errorMessage", "Tên đăng nhập hoặc mật khẩu không chính xác!");
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
 

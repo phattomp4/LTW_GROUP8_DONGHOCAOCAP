@@ -5,8 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/login.css">
-    <!-- Linking Font Awesome-->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>Đăng nhập</title>
 </head>
@@ -21,6 +20,13 @@
     
     <div class="login-box">
         <h2 class="login-title">Đăng Nhập Tài Khoản</h2>
+
+        <c:if test="${not empty errorMessage}">
+            <div class="error-msg">
+                <i class="fa-solid fa-circle-exclamation"></i> ${errorMessage}
+            </div>
+        </c:if> <br>
+
         <form action="${pageContext.request.contextPath}/login" method="POST">
 
             <div class="input-group">
