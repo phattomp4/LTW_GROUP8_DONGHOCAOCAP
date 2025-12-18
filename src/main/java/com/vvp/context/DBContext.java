@@ -8,7 +8,7 @@ public class DBContext {
         // Thay đổi user/pass cho đúng với MySQL của bạn
         String url = "jdbc:mysql://localhost:3306/DongHoCaoCap";
         String user = "root";
-        String pass = "Totanphat56po";
+        String pass = "";
         Class.forName("com.mysql.cj.jdbc.Driver");
         return DriverManager.getConnection(url, user, pass);
     }
@@ -21,5 +21,6 @@ public class DBContext {
         } catch (Exception e) {
             System.out.println("Lỗi: " + e.getMessage());
         }
+
     }
 }
