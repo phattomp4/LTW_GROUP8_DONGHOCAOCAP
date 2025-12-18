@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/ProductCards.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/footer.css">
+
     <!-- Linking SwiperJS CSS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <!-- Linking Font Awesome-->
@@ -32,7 +34,7 @@
 
         <!--Logo-->
         <div class="logo-container-header">
-            <a href="index.html" class="logo-header">
+            <a href="<c:url value="/index"/>" class="logo-header">
                 <h1 class="logo-text" style="font-weight: 900; font-size: 35px;">VVP</h1>
             </a>
         </div>
@@ -141,7 +143,7 @@
                 <!-- Nút đăng nhập -->
                 <li>
                     <div class="container-button-login" style="text-align:center">
-                        <a href="login.jsp" class="button button-login">
+                        <a href="<c:url value="/login"/>" class="button button-login">
                             <c:if test="${user == null}">
                                 <span style="color: #fff">Đăng nhập</span>
                             </c:if>
