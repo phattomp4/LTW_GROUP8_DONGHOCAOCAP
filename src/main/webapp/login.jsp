@@ -21,6 +21,12 @@
     <div class="login-box">
         <h2 class="login-title">Đăng Nhập Tài Khoản</h2>
 
+        <c:if test="${not empty success}">
+            <div class="success-msg">
+                <i class="fa-solid fa-circle-check"></i> ${success}
+            </div>
+        </c:if>
+
         <c:if test="${not empty errorMessage}">
             <div class="error-msg">
                 <i class="fa-solid fa-circle-exclamation"></i> ${errorMessage}
@@ -43,8 +49,7 @@
                 <label>
                     <input type="checkbox" name="remember"> Ghi nhớ đăng nhập
                 </label>
-                <a href="<c:url value="/forgot-password"/>" class="forgot-password">Quên mật khẩu?</a>
-            </div>
+                <a href="javascript:void(0);" onclick="checkUsernameBeforeReset()" class="forgot-password">Quên mật khẩu?</a>            </div>
 
 
 
@@ -61,5 +66,22 @@
 
     </div>
 </div>
+<script>
+        function checkUsernameBeforeReset() {
+        // Lấy giá trị trong ô input username
+        var userField = document.getElementById("username");
+        var username = userField.value.trim();
+
+        if (username === "") {
+        // Nếu trống thì báo lỗi và không cho đi tiếp
+        alert("Vui lòng nhập Tên đăng nhập để chúng tôi xác định tài khoản cần khôi phục!");
+        userField.style.borderColor = "red"; // Làm nổi bật ô lỗi
+        userField.focus();
+    } else {
+        // Nếu đã nhập, chuyển hướng sang trang forgot-password và đính kèm username lên URL
+        window.location.href = "${pageContext.request.contextPath}/forgot-password?username=" + encodeURIComponent(username);
+    }
+    }
+</script>
 </body>
 </html>

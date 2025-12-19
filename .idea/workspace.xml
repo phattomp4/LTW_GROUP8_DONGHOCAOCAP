@@ -9,9 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7f4887d-eaea-4edf-8d52-c8fde5a4825e" name="Changes" comment="Cập nhật hoàn thiện giao diện của register, forgot-password, newPassword, verifyOTP">
+    <list default="true" id="c7f4887d-eaea-4edf-8d52-c8fde5a4825e" name="Changes" comment="Cập nhật lại nút Đăng nhập bị lỗi css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/controller/NewPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/NewPasswordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/dao/AccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/dao/AccountDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
     <list default="true" id="c7f4887d-eaea-4edf-8d52-c8fde5a4825e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
@@ -62,7 +63,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="LyDaiVy" />
+        <entry key="$PROJECT_DIR$" value="Phát" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -131,10 +132,10 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql_aurora_aws",
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql_aurora_aws&quot;,
+      &quot;mysql&quot;
     ]
   }
 }</component>
@@ -291,7 +292,8 @@
       <workItem from="1765944124021" duration="7388000" />
       <workItem from="1765987455583" duration="4134000" />
       <workItem from="1766047386943" duration="3533000" />
-      <workItem from="1766050979402" duration="308000" />
+      <workItem from="1766050979402" duration="526000" />
+      <workItem from="1766112061703" duration="2994000" />
     </task>
     <task id="LOCAL-00001" summary="thay doi cau truc project thanh web dong">
       <option name="closed" value="true" />
@@ -325,28 +327,21 @@
       <option name="project" value="LOCAL" />
       <updated>1766050693899</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Cập nhật lại nút Đăng nhập bị lỗi css">
+      <option name="closed" value="true" />
+      <created>1766051441897</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1766051441897</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/LyDaiVy" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -357,7 +352,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="LyDaiVy" />
+                        <option value="ToTanPhat" />
                       </list>
                     </value>
                   </entry>
@@ -373,7 +368,8 @@
     <MESSAGE value="thay doi cau truc project thanh web dong" />
     <MESSAGE value="Đã hoàn thành đăng ký, đăng nhập&#10;Chưa hoàn thiện chức năng quên mật khẩu.&#10;Database thiếu cột Email." />
     <MESSAGE value="Cập nhật hoàn thiện giao diện của register, forgot-password, newPassword, verifyOTP" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cập nhật hoàn thiện giao diện của register, forgot-password, newPassword, verifyOTP" />
+    <MESSAGE value="Cập nhật lại nút Đăng nhập bị lỗi css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cập nhật lại nút Đăng nhập bị lỗi css" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
