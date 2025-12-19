@@ -78,22 +78,22 @@ public class AccountDAO{
         return false;
     }
 
-    public boolean forgotPassword(String newPassword) {
-        String sql = "UPDATE users SET password = ? WHERE email = ?";
+    public boolean forgotPassword(String newPassword, String email) {
+        String sql = "UPDATE USERS SET PASSWORD = ? WHERE EMAIL = ?";
 
         // 🔥 Lấy 'conn' tại đây
         try (Connection conn = DBConnect.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
-//            ps.setString(1, acc.getUsername());
-//            ps.setString(2, acc.getPassword());
-//
-//            int rowsAffected = ps.executeUpdate();
-//            return rowsAffected > 0;
+            ps.setString(1, newPassword);
+            ps.setString(2, email);
+
+            int rowsAffected = ps.executeUpdate();
+            return rowsAffected > 0;
 
         } catch (SQLException e) {
             e.printStackTrace();
-            // Xử lý lỗi CSDL
+            System.err.println("Lỗi khi cập nhật mật khẩu mới!");
         }
         return false;
     }

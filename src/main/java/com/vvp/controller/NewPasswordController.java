@@ -1,5 +1,6 @@
 package com.vvp.controller;
 
+import com.vvp.dao.AccountDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,6 +12,8 @@ import java.io.IOException;
 
 @WebServlet("/newPassword")
 public class NewPasswordController extends HttpServlet {
+    private AccountDAO accountDAO = new AccountDAO();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("/newPassword.jsp").forward(req, resp);
@@ -33,10 +36,22 @@ public class NewPasswordController extends HttpServlet {
 
         // Check if passwords match
         if (newPassword != null && newPassword.equals(confirmPassword)) {
+            boolean isUpdate = accountDAO.forgotPassword(newPassword, email);
 
-           //Logic...
+            if (isUpdate) {
+                session.removeAttribute("email");
+                session.removeAttribute("generatedOTP");
 
-        } else {
+                request.setAttribute("success", "Update successfully");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+
+            } else {
+                request.setAttribute("error", "Lỗi hệ thống: Không thể cập nhật mật khẩu vào Database.");
+                request.getRequestDispatcher("newPassword.jsp").forward(request, response);
+
+            }
+            }
+        else{
             request.setAttribute("error", "Passwords do not match.");
             request.getRequestDispatcher("newPassword.jsp").forward(request, response);
         }
