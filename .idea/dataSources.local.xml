@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="IU-241.14494.240">
-    <data-source name="WebBanDongHo@localhost" uuid="df7565f1-40a6-4ce7-b7d3-d51ea77f2802">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MSSQL" />
+    <data-source name="DongHoCaoCap@localhost" uuid="332957ec-5d9e-4a1d-9a93-e158d3632970">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
       <schema-mapping />
     </data-source>
   </component>

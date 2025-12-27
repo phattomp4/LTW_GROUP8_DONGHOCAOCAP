@@ -18,7 +18,7 @@
 
         <!--Logo-->
         <div class="logo-container-header">
-            <a href="index.jsp" class="logo-header">
+            <a href="index.html" class="logo-header">
                 <h1 class="logo-text" style="font-weight: 900; font-size: 35px;">VVP</h1>
             </a>
         </div>
@@ -140,7 +140,7 @@
                             </div>
                             <a href="ProfileUser.html"><i class="fa-solid fa-user"></i><span>Hồ sơ</span></a>
                             <div class="divider"></div>
-                            <a href="../index.jsp"><i class="fa-solid fa-sign-out"></i><span>Đăng xuất</span></a>
+                            <a href="../index.html"><i class="fa-solid fa-sign-out"></i><span>Đăng xuất</span></a>
                         </div>
 
                     </div>

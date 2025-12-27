@@ -1,22 +1,19 @@
 package com.vvp.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class CartItem {
-    private Product product;
+    private Product product; // Đảm bảo bạn đã có class Product
     private int quantity;
 
-    public CartItem() {}
-
-    public CartItem(Product product, int quantity) {
-        this.product = product;
-        this.quantity = quantity;
-    }
-
-    public Product getProduct() { return product; }
-    public void setProduct(Product product) { this.product = product; }
-    public int getQuantity() { return quantity; }
-    public void setQuantity(int quantity) { this.quantity = quantity; }
-
-    // Tính thành tiền của dòng này
+    // Hàm tính thành tiền của item này
     public double getTotalPrice() {
         return product.getCurrentPrice() * quantity;
     }
