@@ -25,7 +25,7 @@
 
         <!--Logo-->
         <div class="logo-container-header">
-            <a href="index.jsp" class="logo-header">
+            <a href="index.html" class="logo-header">
                 <h1 class="logo-text" style="font-weight: 900; font-size: 35px;">VVP</h1>
             </a>
         </div>
