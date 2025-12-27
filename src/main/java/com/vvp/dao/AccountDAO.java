@@ -1,7 +1,7 @@
 package com.vvp.dao;
 
+import com.vvp.context.DBContext;
 import com.vvp.model.Account;
-import com.vvp.utils.DBConnect;
 import lombok.RequiredArgsConstructor;
 
 import java.sql.Connection;
@@ -16,7 +16,7 @@ public class AccountDAO{
        String sql = "SELECT USERNAME, PASSWORD, ROLE FROM USERS WHERE USERNAME = ?";
        Account acc = null;
 
-        try(Connection conn = DBConnect.getConnection();
+        try(Connection conn = DBContext.getConnection();
             PreparedStatement preparedStatement = conn.prepareStatement(sql)){
             preparedStatement.setString(1, username);
 
@@ -42,7 +42,7 @@ public class AccountDAO{
         String sql = "SELECT COUNT(Username) FROM Accounts WHERE Username = ?";
 
         // 🔥 Lấy 'conn' tại đây, sử dụng try-with-resources để tự động đóng Connection
-        try (Connection conn = DBConnect.getConnection();
+        try (Connection conn = DBContext.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, username);
@@ -62,7 +62,7 @@ public class AccountDAO{
         String sql = "INSERT INTO USERS (Username, Password, Role) VALUES (?, ?, 'USER')";
 
         // 🔥 Lấy 'conn' tại đây
-        try (Connection conn = DBConnect.getConnection();
+        try (Connection conn = DBContext.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, acc.getUsername());
@@ -82,7 +82,7 @@ public class AccountDAO{
         String sql = "UPDATE USERS SET PASSWORD = ? WHERE EMAIL = ?";
 
         // 🔥 Lấy 'conn' tại đây
-        try (Connection conn = DBConnect.getConnection();
+        try (Connection conn = DBContext.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, newPassword);

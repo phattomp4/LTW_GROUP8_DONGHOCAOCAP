@@ -130,8 +130,9 @@
                 </li>
                 <!-- Gio hang -->
                 <li>
-                    <a href="login.jsp" class="action-icon cart-icon">
-                        <i class="fa-solid fa-bag-shopping"></i>
+                    <a href="cart?action=view">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span>(${sessionScope.cart.size() != null ? sessionScope.cart.size() : 0})</span>
                     </a>
                 </li>
                 <!-- Yêu thích -->

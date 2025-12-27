@@ -1,11 +1,13 @@
-﻿<!DOCTYPE html>
+﻿<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Share/css/header.css">
-    <link rel="stylesheet" href="../Share/css/footer.css">
-    <link rel="stylesheet" href="../css/GioHang.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/GioHang.css">
     <!-- Linking Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>Giỏ hàng</title>
@@ -152,85 +154,50 @@
     <div class="cart-container">
         <!-- Danh sách sản phẩm -->
         <div class="product-list">
-
             <div class="cart-header">
                 <span>Sản phẩm</span>
                 <span>Tổng</span>
             </div>
-            <!-- Thẻ sản phẩm -->
-            <div class="product-item">
-                <div class="item-main">
-                    <img src="https://cdn.watchstore.vn/wp-content/uploads/2023/11/8907g-vt-d-1-1173700471-248243325-1712668536.jpg" alt="Carnival Watch">
-                    <div class="item-details">
-                        <a href="#" class="product-name">Carnival 40mm Nam 8907G-VT-D</a> <!-- Tên sản phẩm -->
-                        <div class="price-info">
-                            <!-- Giá sản phẩm -->
-                            <span class="old-price">5.430.000 ₫</span>
-                            <span class="new-price">3.801.000 ₫</span>
+
+            <c:if test="${empty sessionScope.cart}">
+                <p style="text-align: center; padding: 20px;">Giỏ hàng của bạn đang trống!</p>
+            </c:if>
+
+            <c:forEach items="${sessionScope.cart}" var="item">
+                <div class="product-item">
+                    <div class="item-main">
+                        <img src="${item.product.imageUrl}" alt="${item.product.name}">
+
+                        <div class="item-details">
+                            <a href="detail?id=${item.product.id}" class="product-name">${item.product.name}</a>
+
+                            <div class="price-info">
+                        <span class="old-price">
+                             <fmt:formatNumber value="${item.product.originalPrice}" type="currency" currencySymbol="₫"/>
+                        </span>
+                                <span class="new-price">
+                             <fmt:formatNumber value="${item.product.currentPrice}" type="currency" currencySymbol="₫"/>
+                        </span>
+                            </div>
                         </div>
-                        <span class="save-badge">TIẾT KIỆM 1.629.000 ₫</span>
                     </div>
-                </div>
-                <div class="item-total">
-                    <span>3.801.000 ₫</span> <!-- Tổng giá sản phẩm -->
-                </div>
-                <div class="item-actions">
-                    <div class="quantity-selector">
-                        <button type="button">-</button> <!-- Trừ số lượng sp -->
-                        <input type="text" value="1" readonly>
-                        <button type="button">+</button> <!-- Cộng số lượng sp -->
+
+                    <div class="item-total">
+                <span>
+                    <fmt:formatNumber value="${item.totalPrice}" type="currency" currencySymbol="₫"/>
+                </span>
                     </div>
-                    <a href="#" class="remove-link">Xóa sản phẩm</a> <!-- Xóa sp -->
-                </div>
-            </div>
-            <div class="product-item">
-                <div class="item-main">
-                    <img src="https://cdn.watchstore.vn/wp-content/uploads/2020/11/1-khung-sp-1-1818542633-1853976209-1712563883.jpg" alt="Casio Watch">
-                    <div class="item-details">
-                        <a href="#" class="product-name">Casio MTP-1374L-1A</a>
-                        <div class="price-info">
-                            <span class="old-price">2.270.000 ₫</span>
-                            <span class="new-price">1.816.000 ₫</span>
+
+                    <div class="item-actions">
+                        <div class="quantity-selector">
+                            <button type="button">-</button>
+                            <input type="text" value="${item.quantity}" readonly>
+                            <button type="button">+</button>
                         </div>
-                        <span class="save-badge">TIẾT KIỆM 454.000 ₫</span>
+                        <a href="cart?action=remove&id=${item.product.id}" class="remove-link">Xóa sản phẩm</a>
                     </div>
                 </div>
-                <div class="item-total">
-                    <span>1.816.000 ₫</span>
-                </div>
-                <div class="item-actions">
-                    <div class="quantity-selector">
-                        <button type="button">-</button>
-                        <input type="text" value="1" readonly>
-                        <button type="button">+</button>
-                    </div>
-                    <a href="#" class="remove-link">Xóa sản phẩm</a>
-                </div>
-            </div>
-            <div class="product-item">
-                <div class="item-main">
-                    <img src="https://cdn.watchstore.vn/wp-content/uploads/2020/09/ra-aa0b02r19b-2081811590-287106387-1712554040.jpg" alt="Orient Watch">
-                    <div class="item-details">
-                        <a href="#" class="product-name">Orient 42mm Nam RA-AA0B02R39B (RA-AA0B02R19B)</a>
-                        <div class="price-info">
-                            <span class="old-price">8.600.000 ₫</span>
-                            <span class="new-price">6.880.000 ₫</span>
-                        </div>
-                        <span class="save-badge">TIẾT KIỆM 1.720.000 ₫</span>
-                    </div>
-                </div>
-                <div class="item-total">
-                    <span>6.880.000 ₫</span>
-                </div>
-                <div class="item-actions">
-                    <div class="quantity-selector">
-                        <button type="button">-</button>
-                        <input type="text" value="1" readonly>
-                        <button type="button">+</button>
-                    </div>
-                    <a href="#" class="remove-link">Xóa sản phẩm</a>
-                </div>
-            </div>
+            </c:forEach>
         </div>
 
         <!-- Tổng tiền giỏ hàng -->
@@ -252,7 +219,9 @@
             <!-- Tổng tiền -->
             <div class="summary-total">
                 <span>Tổng ước tính</span>
-                <span class="total-price">12.497.000 ₫</span>
+                <span class="total-price">
+    <fmt:formatNumber value="${sessionScope.totalCartPrice != null ? sessionScope.totalCartPrice : 0}" type="currency" currencySymbol="₫"/>
+</span>
             </div>
             <!-- Nút thanh toán -->
             <a href="ThanhToan.html" class="checkout-button"><span style="color: #fff">Tiến hành thanh toán</span></a>
