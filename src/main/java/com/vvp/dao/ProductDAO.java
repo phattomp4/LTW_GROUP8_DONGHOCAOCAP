@@ -96,31 +96,4 @@ public class ProductDAO {
         }
         return list;
     }
-
-    public Product getProductById(int id) {
-        String query = "SELECT * FROM Products WHERE ProductID = ?";
-        try {
-            conn = new DBContext().getConnection();
-            ps = conn.prepareStatement(query);
-            ps.setInt(1, id);
-            rs = ps.executeQuery();
-            if (rs.next()) {
-                return new Product(
-                        rs.getInt("ProductID"),
-                        rs.getInt("BrandID"),
-                        rs.getString("Name"),
-                        rs.getString("SKU"),
-                        rs.getString("Description"), // Lưu ý thêm constructor nhận description nếu chưa có
-                        rs.getDouble("OriginalPrice"),
-                        rs.getDouble("CurrentPrice"),
-                        rs.getString("ImageURL"),
-                        rs.getInt("StockQuantity"),
-                        rs.getInt("SoldQuantity")
-                );
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 }
