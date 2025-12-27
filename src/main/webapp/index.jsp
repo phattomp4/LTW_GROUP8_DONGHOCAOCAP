@@ -128,8 +128,14 @@
                 </li>
                 <!-- Gio hang -->
                 <li>
+<<<<<<< HEAD
                     <a href="login.html" class="action-icon cart-icon">
                         <i class="fa-solid fa-bag-shopping"></i>
+=======
+                    <a href="cart?action=view">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span>(${sessionScope.cart.size() != null ? sessionScope.cart.size() : 0})</span>
+>>>>>>> 41f1e75957f2397df758542c5af00debc2273b42
                     </a>
                 </li>
                 <!-- Yêu thích -->
