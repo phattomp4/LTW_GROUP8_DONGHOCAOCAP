@@ -128,8 +128,9 @@
                 </li>
                 <!-- Gio hang -->
                 <li>
-                    <a href="login.html" class="action-icon cart-icon">
-                        <i class="fa-solid fa-bag-shopping"></i>
+                    <a href="cart?action=view">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span>(${sessionScope.cart.size() != null ? sessionScope.cart.size() : 0})</span>
                     </a>
                 </li>
                 <!-- Yêu thích -->
@@ -140,12 +141,29 @@
                 </li>
                 <!-- Nút đăng nhập -->
                 <li>
-                    <div class="container-button-login" style="text-align:center">
-                        <a href="login.html" class="button button-login">
-                            <span style="color: #fff">Đăng nhập</span>
+                    <c:if test="${sessionScope.acc == null}">
+                        <a href="login.jsp" class="action-icon">
+                            <i class="fa-solid fa-user"></i> Đăng nhập
                         </a>
-                    </div>
+                    </c:if>
 
+                    <c:if test="${sessionScope.acc != null}">
+                        <div class="profile-dropdown">
+                            <button class="profile-avatar-btn" id="profile-btn">
+                                <img src="https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png" alt="Avatar">
+                            </button>
+
+                            <div class="dropdown-menu" id="profile-menu">
+                                <div class="menu-header">
+                                        ${sessionScope.acc.fullName}
+                                </div>
+                                <a href="user/profile.jsp"><i class="fa-solid fa-user"></i> Hồ sơ</a>
+
+                                <div class="divider"></div>
+                                <a href="logout"><i class="fa-solid fa-sign-out"></i> Đăng xuất</a>
+                            </div>
+                        </div>
+                    </c:if>
                 </li>
             </ul>
         </div>
@@ -452,6 +470,7 @@
                                     <p class="DiscountPercent">-30%</p>
                                 </div>
                                 <p class="Sold">Đã bán ${p.soldQuantity}</p>
+                                <a href="add-to-cart?pid=${p.id}" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
                             </div>
                         </li>
                     </c:forEach>
@@ -520,15 +539,12 @@
                                 <p class="DiscountPercent">-30%</p>
                             </div>
                             <p class="Sold">Đã bán ${p.soldQuantity}</p>
+
                             <a href="add-to-cart?pid=${p.id}" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
                         </div>
                     </div>
                 </c:forEach>
             </div>
-            <div class="ViewMore-Container">
-                <button id="view-more-btn" class="ViewMore-Button">Xem thêm sản phẩm</button>
-            </div>
-        </div>
 
         <!-- Tab đồng hồ nam -->
         <div id="content-men" class="tab-content hidden">
