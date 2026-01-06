@@ -96,4 +96,21 @@ public class ProductDAO {
         }
         return list;
     }
+
+
+    public Product getProductById(int id) {
+        String query = "SELECT * FROM Products WHERE ProductID = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                return mapResultSetToProduct(rs);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
