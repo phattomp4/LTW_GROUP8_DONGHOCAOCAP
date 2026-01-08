@@ -113,4 +113,54 @@ public class ProductDAO {
         }
         return null;
     }
+
+
+    // 1. Tìm sản phẩm theo khoảng giá (min - max)
+    public List<Product> getProductsByPriceRange(double min, double max) {
+        List<Product> list = new ArrayList<>();
+        // Nếu max = -1 tức là tìm các sản phẩm giá > min (không giới hạn trần)
+        String query;
+        if (max == -1) {
+            query = "SELECT * FROM Products WHERE CurrentPrice >= ?";
+        } else {
+            query = "SELECT * FROM Products WHERE CurrentPrice BETWEEN ? AND ?";
+        }
+
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setDouble(1, min);
+            if (max != -1) {
+                ps.setDouble(2, max);
+            }
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(mapResultSetToProduct(rs));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    // 2. Tìm sản phẩm theo từ khóa (Tên, Thương hiệu, Mô tả)
+    public List<Product> searchProducts(String keyword) {
+        List<Product> list = new ArrayList<>();
+        // Tìm kiếm tương đối trong cột Name hoặc Description
+        String query = "SELECT * FROM Products WHERE Name LIKE ? OR Description LIKE ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            String searchPattern = "%" + keyword + "%";
+            ps.setString(1, searchPattern);
+            ps.setString(2, searchPattern);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(mapResultSetToProduct(rs));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
 }
