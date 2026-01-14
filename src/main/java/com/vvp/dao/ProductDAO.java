@@ -96,4 +96,24 @@ public class ProductDAO {
         }
         return list;
     }
+    public List<Product> search(String keyword){
+        List<Product> list = new ArrayList<>();
+        String query = "SELECT * FROM Products WHERE Name LIKE ? and SKU LIKE ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, "%" + keyword + "%");
+            ps.setString(2, "%" + keyword + "%");
+
+            rs = ps.executeQuery();
+            while(rs.next()){
+
+                list.add(mapResultSetToProduct(rs));
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
 }
