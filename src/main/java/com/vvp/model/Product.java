@@ -5,9 +5,11 @@ public class Product {
     private int brandId;
     private String name;
     private String sku;
+    private String description;
     private double originalPrice;
     private double currentPrice;
     private String imageUrl;
+    private int stockQuantity;
     private int soldQuantity;
 
     public Product() {}
@@ -17,9 +19,11 @@ public class Product {
         this.brandId = brandId;
         this.name = name;
         this.sku = sku;
+        this.description = description;
         this.originalPrice = originalPrice;
         this.currentPrice = currentPrice;
         this.imageUrl = imageUrl;
+        this.stockQuantity = stockQuantity;
         this.soldQuantity = soldQuantity;
     }
 
@@ -30,8 +34,10 @@ public class Product {
     public int getBrandId() { return brandId; }
     public String getName() { return name; }
     public String getSku() { return sku; }
+    public String getDescription(){return description;}
     public double getOriginalPrice() { return originalPrice; }
     public double getCurrentPrice() { return currentPrice; }
     public String getImageUrl() { return imageUrl; }
+    public int getStockQuantity(){return stockQuantity;}
     public int getSoldQuantity() { return soldQuantity; }
 }

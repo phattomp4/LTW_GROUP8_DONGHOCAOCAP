@@ -25,7 +25,7 @@
 
         <!--Logo-->
         <div class="logo-container-header">
-            <a href="index.html" class="logo-header">
+            <a href="index.jsp" class="logo-header">
                 <h1 class="logo-text" style="font-weight: 900; font-size: 35px;">VVP</h1>
             </a>
         </div>
@@ -136,7 +136,7 @@
                 <!-- Nút đăng nhập -->
                 <li>
                     <div class="container-button-login" style="text-align:center">
-                        <a href="login.html" class="button button-login">
+                        <a href="login.jsp" class="button button-login">
                             <span style="color: #fff">Đăng nhập</span>
                         </a>
                     </div>

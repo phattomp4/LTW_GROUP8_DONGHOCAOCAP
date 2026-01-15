@@ -32,7 +32,7 @@
 
         <!--Logo-->
         <div class="logo-container-header">
-            <a href="index.html" class="logo-header">
+            <a href="index.jsp" class="logo-header">
                 <h1 class="logo-text" style="font-weight: 900; font-size: 35px;">VVP</h1>
             </a>
         </div>
@@ -128,20 +128,20 @@
                 </li>
                 <!-- Gio hang -->
                 <li>
-                    <a href="login.html" class="action-icon cart-icon">
+                    <a href="login.jsp" class="action-icon cart-icon">
                         <i class="fa-solid fa-bag-shopping"></i>
                     </a>
                 </li>
                 <!-- Yêu thích -->
                 <li>
-                    <a href="login.html" class="action-icon">
+                    <a href="login.jsp" class="action-icon">
                         <i class="fa-regular fa-heart"></i>
                     </a>
                 </li>
                 <!-- Nút đăng nhập -->
                 <li>
                     <div class="container-button-login" style="text-align:center">
-                        <a href="login.html" class="button button-login">
+                        <a href="login.jsp" class="button button-login">
                             <span style="color: #fff">Đăng nhập</span>
                         </a>
                     </div>

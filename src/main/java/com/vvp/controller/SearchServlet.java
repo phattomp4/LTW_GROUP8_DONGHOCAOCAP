@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("search")
+@WebServlet("/search")
 public class SearchServlet extends HttpServlet {
     private ProductDAO productDAO;
     @Override

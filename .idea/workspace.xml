@@ -10,9 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7f4887d-eaea-4edf-8d52-c8fde5a4825e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/SearchServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/dao/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/controller/SearchServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/SearchServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/contact.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/contact.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/introduce.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/introduce.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/product/accessory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product/accessory.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/product/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product/detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/product/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/checkout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/wishlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/wishlist.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,18 +48,18 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "23130389-cell"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;23130389-cell&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/phattomp4/LTW_GROUP8_DONGHOCAOCAP.git",
-    "accountId": "f6e405c2-b4b8-4963-8c2a-d2dc890aa1c8"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/phattomp4/LTW_GROUP8_DONGHOCAOCAP.git&quot;,
+    &quot;accountId&quot;: &quot;f6e405c2-b4b8-4963-8c2a-d2dc890aa1c8&quot;
   }
-}]]></component>
+}</component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -107,6 +118,19 @@
     ]
   }
 }</component>
+  <component name="RunDashboard">
+    <option name="configurationStatuses">
+      <map>
+        <entry key="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+          <value>
+            <map>
+              <entry key="Tomcat 10.1.49" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.49">
     <configuration name="DBContext" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.vvp.context.DBContext" />
@@ -254,7 +278,9 @@
       <workItem from="1766838835797" duration="5675000" />
       <workItem from="1766925571917" duration="3263000" />
       <workItem from="1768309231959" duration="8000" />
-      <workItem from="1768380671898" duration="4102000" />
+      <workItem from="1768380671898" duration="4240000" />
+      <workItem from="1768487678386" duration="715000" />
+      <workItem from="1768499225799" duration="1202000" />
     </task>
     <task id="LOCAL-00001" summary="thay doi cau truc project thanh web dong">
       <option name="closed" value="true" />
@@ -304,6 +330,17 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="thay doi cau truc project thanh web dong" />
     <option name="LAST_COMMIT_MESSAGE" value="thay doi cau truc project thanh web dong" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/product/list.jsp</url>
+          <line>14</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

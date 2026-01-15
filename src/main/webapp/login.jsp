@@ -13,7 +13,7 @@
 
 <div class="login-container">
     <div class="back-home">
-        <a href="index.html" class="back-home-button">
+        <a href="index.jsp" class="back-home-button">
             <i class="fa-solid fa-arrow-left"></i> Quay về Trang chủ
         </a>
     </div>
@@ -40,7 +40,7 @@
             </div>
 
             <div class="login-button">
-                <a href="html_da_dang_nhap/index.html">Đăng Nhập</a>
+                <a href="index.jsp">Đăng Nhập</a>
             </div>
         </form>
 
