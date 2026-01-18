@@ -1,16 +1,131 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Admin
-  Date: 07/12/2025
-  Time: 1:53 CH
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 
-</body>
-</html>
+<header class="main-header">
+
+    <!--Logo-->
+    <div class="logo-container-header">
+        <a href="index.jsp" class="logo-header"> <h1 class="logo-text" style="font-weight: 900; font-size: 35px;">VVP</h1>
+        </a>
+    </div>
+
+
+    <!--Links dieu huong-->
+    <div class="nav-item">
+        <nav class="main-nav">
+            <ul>
+                <li class="nav-item-has-dropdown">
+                    <a href="DongHo.html" class="link-yellow">Đồng hồ<i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="megamenu megamenu-dongho">
+                        <div class="megamenu-column">
+                            <ul>
+                                <li><a href="category?type=search&keyword=Rolex">Giống Rolex, Hublot</a></li>
+                                <li><a href="DongHo.html">Giống Patek, Richard</a></li>
+                                <li><a href="category?type=price&min=0&max=1000000">Giá dưới 1 triệu</a></li>
+                                <li><a href="category?type=price&min=1000000&max=3000000">Giá từ 1 - 3 triệu</a></li>
+                                <li><a href="DongHo.html">Giá từ 3 - 6 triệu</a></li>
+                                <li><a href="DongHo.html">Giá từ 6 - 9 triệu</a></li>
+                                <li><a href="DongHo.html">Giá từ 9 - 15 triệu</a></li>
+                                <li><a href="category?type=price&min=15000000&max=-1">Giá trên 15 triệu</a></li>
+                            </ul>
+                        </div>
+                        <div class="megamenu-column">
+                            <ul>
+                                <li><a href="category?type=search&keyword=Casio">Casio, G-Shock</a></li>
+                                <li><a href="DongHo.html">Olym Pianus</a></li>
+                                <li><a href="DongHo.html">Bentley</a></li>
+                                <li><a href="DongHo.html">Carnival, I&W Carnival</a></li>
+                                <li><a href="category?type=search&keyword=Orient">Orient</a></li>
+                                <li><a href="DongHo.html">Tissot</a></li>
+                                <li><a href="DongHo.html">Seiko</a></li>
+                                <li><a href="DongHo.html">Citizen</a></li>
+                                <li><a href="DongHo.html">Bonest Gatti</a></li>
+                                <li><a href="DongHo.html">SRWatch</a></li>
+                                <li><a href="DongHo.html">Daniel Wellington</a></li>
+                                <li><a href="DongHo.html">Oblvlo</a></li>
+                            </ul>
+                        </div>
+                        <div class="megamenu-column">
+                            <ul>
+                                <li><a href="DongHo.html">Frederique Constant</a></li>
+                                <li><a href="DongHo.html">Longines</a></li>
+                                <li><a href="DongHo.html">Omega</a></li>
+                                <li><a href="DongHo.html">Orient Star</a></li>
+                                <li><a href="DongHo.html">Certina</a></li>
+                                <li><a href="DongHo.html">Maurice Lacroix</a></li>
+                                <li><a href="DongHo.html">Movado</a></li>
+                            </ul>
+                        </div>
+                        <div class="megamenu-column">
+                            <ul>
+                                <li><a href="DongHo.html">Kiểu dáng công sở</a></li>
+                                <li><a href="DongHo.html">Đồng hồ quân đội</a></li>
+                                <li><a href="category?type=search&keyword=Automatic">Đồng hồ cơ/automatic</a></li>
+                                <li><a href="DongHo.html">Đồng hồ lướt 99%</a></li>
+                                <li><a href="DongHo.html">Đồng hồ Luxury</a></li>
+                                <li><a href="DongHo.html">Đồng hồ để bàn</a></li>
+                                <li><a href="DongHo.html">Đồng hồ treo tường</a></li>
+                                <li><a href="DongHo.html">Đồng hồ Nhật</a></li>
+                                <li><a href="DongHo.html">Đồng hồ Thụy Sỹ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="DongHo.html">Nam</a></li>
+                <li><a href="DongHo.html">Nữ</a></li>
+                <li class="nav-item-has-dropdown">
+                    <a href="PhuKien.html">Phụ kiện<i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="megamenu megamenu-phukien">
+                        <div class="megamenu-column-phukien">
+                            <ul>
+                                <li><a href="PhuKien.html">Dây đồng hồ</a></li>
+                                <li><a href="PhuKien.html">Hộp xoay đồng hồ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!--Tim kiem, gio hang-->
+    <div class="header-action">
+        <ul class="ul-header-action">
+            <li>
+                <div class="search-bar">
+                    <form action="category" method="GET" style="display:flex; align-items:center;">
+                        <input type="hidden" name="type" value="search">
+                        <input type="text" name="keyword" placeholder="Tìm là thấy" required>
+                        <button type="submit" style="background:none; border:none;"><i class="fa-solid fa-magnifying-glass search-icon"></i></button>
+                    </form>
+                </div>
+            </li>
+
+            <li>
+                <a href="user/cart.jsp" class="action-icon cart-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <c:if test="${sessionScope.size > 0}">
+                        <span class="cart-count" style="background:red; color:white; border-radius:50%; padding:2px 6px; font-size:10px; position:absolute;">${sessionScope.size}</span>
+                    </c:if>
+                </a>
+            </li>
+
+            <li>
+                <c:if test="${sessionScope.acc == null}">
+                    <div class="container-button-login" style="text-align:center">
+                        <a href="login.jsp" class="button button-login">
+                            <span style="color: #fff">Đăng nhập</span>
+                        </a>
+                    </div>
+                </c:if>
+                <c:if test="${sessionScope.acc != null}">
+                    <div class="profile-dropdown" style="position: relative; display: inline-block;">
+                        <span style="font-weight: bold; cursor: pointer;">${sessionScope.acc.fullName}</span>
+                        <a href="logout" style="font-size: 12px; color: red; margin-left: 5px;">(Thoát)</a>
+                    </div>
+                </c:if>
+            </li>
+        </ul>
+    </div>
+</header>

@@ -1,13 +1,12 @@
 ﻿<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/login.css">
-    <!-- Linking Font Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>Đăng nhập</title>
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
@@ -17,14 +16,17 @@
             <i class="fa-solid fa-arrow-left"></i> Quay về Trang chủ
         </a>
     </div>
-    
+
     <div class="login-box">
         <h2 class="login-title">Đăng Nhập Tài Khoản</h2>
-        <form action="#" method="POST">
+
+        <p style="color: red; text-align: center; font-style: italic;">${requestScope.mess}</p>
+
+        <form action="login" method="POST">
 
             <div class="input-group">
-                <label for="username">Tên đăng nhập hoặc Email</label>
-                <input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập hoặc email" required>
+                <label for="username">Tên đăng nhập</label>
+                <input type="text" id="username" name="username" value="${requestScope.username}" placeholder="Nhập tên đăng nhập" required>
             </div>
 
             <div class="input-group">
@@ -40,12 +42,12 @@
             </div>
 
             <div class="login-button">
-                <a href="index.jsp">Đăng Nhập</a>
+                <button type="submit" style="width: 100%; padding: 10px; background-color: #000; color: #fff; border: none; cursor: pointer;">Đăng Nhập</button>
             </div>
         </form>
 
         <p class="register-link">
-            Chưa có tài khoản? <a href="register.html">Đăng ký ngay</a>
+            Chưa có tài khoản? <a href="register.jsp">Đăng ký ngay</a>
         </p>
     </div>
 </div>
