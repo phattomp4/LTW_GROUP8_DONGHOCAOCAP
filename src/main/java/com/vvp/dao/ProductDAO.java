@@ -4,7 +4,9 @@ import com.vvp.context.DBContext;
 import com.vvp.model.Product;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ProductDAO {
     Connection conn = null;
@@ -98,6 +100,8 @@ public class ProductDAO {
     }
 
 
+    // CẬP NHẬT HÀM getProductById (Quan trọng nhất)
+    // Hàm này sẽ gọi 2 hàm trên để nạp dữ liệu đầy đủ cho Product
     public Product getProductById(int id) {
         String query = "SELECT * FROM Products WHERE ProductID = ?";
         try {
@@ -106,7 +110,14 @@ public class ProductDAO {
             ps.setInt(1, id);
             rs = ps.executeQuery();
             if (rs.next()) {
-                return mapResultSetToProduct(rs);
+                Product p = mapResultSetToProduct(rs);
+
+                // --- ĐÂY LÀ PHẦN MỚI THÊM VÀO ---
+                // Tự động lấy thêm ảnh và thông số nạp vào object p
+                p.setImageList(getProductImages(id));
+                p.setSpecifications(getProductSpecs(id));
+
+                return p;
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -143,15 +154,49 @@ public class ProductDAO {
         return list;
     }
 
-    // 2. Tìm sản phẩm theo từ khóa (Tên, Thương hiệu, Mô tả)
+
+    // 1. Hàm lấy danh sách ảnh (Giả sử cột là ImageURL)
+    public List<String> getProductImages(int productId) {
+        List<String> list = new ArrayList<>();
+        // Lưu ý: Sửa tên cột 'ImageURL' nếu trong DB bạn đặt tên khác
+        String query = "SELECT ImageURL FROM ProductImages WHERE ProductID = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, productId);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(rs.getString("ImageURL"));
+            }
+        } catch (Exception e) { e.printStackTrace(); }
+        return list;
+    }
+
+    // 2. Hàm lấy thông số kỹ thuật (Giả sử cột là SpecName và SpecValue)
+    public Map<String, String> getProductSpecs(int productId) {
+        Map<String, String> specs = new HashMap<>();
+        // Lưu ý: Sửa tên cột 'SpecName', 'SpecValue' nếu DB bạn đặt khác
+        String query = "SELECT SpecName, SpecValue FROM ProductSpecifications WHERE ProductID = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, productId);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                specs.put(rs.getString("SpecName"), rs.getString("SpecValue"));
+            }
+        } catch (Exception e) { e.printStackTrace(); }
+        return specs;
+    }
+
     public List<Product> searchProducts(String keyword) {
         List<Product> list = new ArrayList<>();
-        // Tìm kiếm tương đối trong cột Name hoặc Description
+        // Tìm kiếm tương đối (LIKE) trong tên hoặc mô tả
         String query = "SELECT * FROM Products WHERE Name LIKE ? OR Description LIKE ?";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-            String searchPattern = "%" + keyword + "%";
+            String searchPattern = "%" + keyword + "%"; // Thêm % để tìm kiếm gần đúng
             ps.setString(1, searchPattern);
             ps.setString(2, searchPattern);
             rs = ps.executeQuery();
@@ -163,22 +208,6 @@ public class ProductDAO {
         }
         return list;
     }
-    public List<Product> search(String keyword) {
-        List<Product> list = new ArrayList<>();
-        String query = "SELECT * FROM products WHERE name LIKE ? OR sku LIKE ?";
-
-       try {
-           conn = new DBContext().getConnection();
-           ps = conn.prepareStatement(query);
-           ps.setString(1, "%" + keyword + "%");
-           ps.setString(2, "%" + keyword + "%");
-           ResultSet resultSet = ps.executeQuery();
-           while(resultSet.next()){
-               list.add(mapResultSetToProduct(rs));
-           }
-       }  catch (Exception e) {
-           e.printStackTrace();
-       }
-       return list;
-    }
 }
+
+

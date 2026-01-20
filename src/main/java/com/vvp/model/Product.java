@@ -1,5 +1,10 @@
 package com.vvp.model;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class Product {
     private int id;
     private int brandId;
@@ -11,6 +16,14 @@ public class Product {
     private String imageUrl;
     private int stockQuantity;  // 2. Thêm thuộc tính này
     private int soldQuantity;
+
+    // --- THÊM 2 THUỘC TÍNH MỚI ---
+    // List chứa danh sách đường dẫn ảnh (cho bảng ProductImages)
+    private List<String> imageList = new ArrayList<>();
+
+    // Map chứa thông số kỹ thuật (cho bảng ProductSpecifications)
+    // Key = Tên thông số (VD: "Chống nước"), Value = Giá trị (VD: "5 ATM")
+    private Map<String, String> specifications = new HashMap<>();
 
     public Product() {}
 
@@ -50,4 +63,19 @@ public class Product {
     public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
     public void setStockQuantity(int stockQuantity) { this.stockQuantity = stockQuantity; }
     public void setSoldQuantity(int soldQuantity) { this.soldQuantity = soldQuantity; }
+
+    // --- THÊM GETTER/SETTER CHO 2 THUỘC TÍNH MỚI ---
+    public List<String> getImageList() {
+        return imageList;
+    }
+    public void setImageList(List<String> imageList) {
+        this.imageList = imageList;
+    }
+
+    public Map<String, String> getSpecifications() {
+        return specifications;
+    }
+    public void setSpecifications(Map<String, String> specifications) {
+        this.specifications = specifications;
+    }
 }
