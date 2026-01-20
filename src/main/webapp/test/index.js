@@ -236,32 +236,29 @@ let scrollSlider = (direction) => {
 // Gán hàm vào window để nó có thể được gọi từ onclick trong HTML
 window.scrollSlider = scrollSlider;
 
+// Goi y san pham
+document.getElementById("searchBox").addEventListener("keyup", function () {
+    let keyword = this.value;
 
-function searchByName(param) {
-    var txtSearch = param.value;
-    var resultBox = document.getElementById("search-results");
-
-    // Nếu ô tìm kiếm trống thì ẩn hộp gợi ý đi
-    if (txtSearch.trim() === "") {
-        resultBox.style.display = "none";
+    if (keyword.trim().length === 0) {
+        document.getElementById("suggest-box").style.display = "none";
         return;
     }
 
-    // Gọi AJAX bằng Fetch API
-    // Lưu ý: Đổi đường dẫn '/ajax-search' cho đúng với context path nếu cần
-    fetch("ajax-search?txt=" + txtSearch)
-        .then(response => response.text())
+    fetch("search?keyword=" + keyword)
+        .then(res => res.json())
         .then(data => {
-            // Đổ dữ liệu HTML nhận được vào hộp kết quả
-            resultBox.innerHTML = data;
-            resultBox.style.display = "block"; // Hiện hộp lên
-        })
-        .catch(error => console.error('Lỗi:', error));
-}
+            let box = document.getElementById("suggest-box");
 
-// Ẩn hộp gợi ý khi click ra ngoài
-window.addEventListener('click', function(e){
-    if (!document.querySelector('.search-bar').contains(e.target)){
-        document.getElementById("search-results").style.display = "none";
-    }
+            if (data.length === 0) {
+                box.style.display = "none";
+                return;
+            }
+
+            box.innerHTML = "";
+            data.forEach(item => {
+                box.innerHTML += `<div>${item}</div>`;
+            });
+            box.style.display = "block";
+        });
 });

@@ -7,6 +7,33 @@ public class User {
     private String fullName; // Mới thêm
     private String email;
     private String role;
+    private String phone;
+    private String gender;
+    private String address;
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     public User() {}
 

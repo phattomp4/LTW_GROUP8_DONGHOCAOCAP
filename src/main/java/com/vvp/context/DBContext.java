@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class DBContext {
     public Connection getConnection() throws Exception {
         // Thay đổi user/pass cho đúng với MySQL của bạn
-        String url = "jdbc:mysql://localhost:3306/DongHoCaoCap";
+        String url = "jdbc:mysql://localhost:3306/DongHoCaoCap?useUnicode=true&characterEncoding=UTF-8";
         String user = "root";
         String pass = "Totanphat56po";
         Class.forName("com.mysql.cj.jdbc.Driver");
