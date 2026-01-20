@@ -19,7 +19,7 @@
 
         <!--Logo-->
         <div class="logo-container-header">
-            <a href="index.html" class="logo-header">
+            <a href="index.jsp" class="logo-header">
                 <h1 class="logo-text" style="font-weight: 900; font-size: 35px;">VVP</h1>
             </a>
         </div>
@@ -115,20 +115,20 @@
                 </li>
                 <!-- Gio hang -->
                 <li>
-                    <a href="login.html" class="action-icon cart-icon">
+                    <a href="login.jsp" class="action-icon cart-icon">
                         <i class="fa-solid fa-bag-shopping"></i>
                     </a>
                 </li>
                 <!-- Yêu thích -->
                 <li>
-                    <a href="login.html" class="action-icon">
+                    <a href="login.jsp" class="action-icon">
                         <i class="fa-regular fa-heart"></i>
                     </a>
                 </li>
                 <!-- Nút đăng nhập -->
                 <li>
                     <div class="container-button-login" style="text-align:center">
-                        <a href="login.html" class="button button-login">
+                        <a href="login.jsp" class="button button-login">
                             <span style="color: #fff">Đăng nhập</span>
                         </a>
                     </div>
@@ -186,7 +186,7 @@
         <div class="Items-area">
             <div href="" class="link-product">
                 <div class="Product">
-                    <a href="login.html" class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
+                    <a href="login.jsp" class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
                         <i class="fa-regular fa-heart"></i>
                     </a>
                     <a href="TrangChiTietSanPham.html" class="img-product" ><img src="https://cdn.watchstore.vn/wp-content/uploads/2023/05/e9f5712cac9c73c22a8d-1712663280-400x400.jpg" alt=""></a>
@@ -202,7 +202,7 @@
             </div>
             <div class="link-product">
                 <div class="Product">
-                    <a href="login.html" class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
+                    <a href="login.jsp" class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
                         <i class="fa-regular fa-heart"></i>
                     </a>
                     <a href="TrangChiTietSanPham.html" class="img-product" ><img src="https://cdn.watchstore.vn/wp-content/uploads/2023/05/01502010-2-22-1712663287-400x400.jpg" alt=""></a>
@@ -218,7 +218,7 @@
             </div>
             <div class="link-product">
                 <div class="Product">
-                    <a href="login.html" class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
+                    <a href="login.jsp" class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
                         <i class="fa-regular fa-heart"></i>
                     </a>
                     <a href="TrangChiTietSanPham.html" class="img-product" ><img src="https://cdn.watchstore.vn/wp-content/uploads/2025/06/day-phu-kien-dong-ho-hirsch-10302810-2-22-400x400.jpg" alt=""></a>
@@ -235,7 +235,7 @@
             </div>
             <div class="link-product">
                 <div class="Product">
-                    <a href="login.html" class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
+                    <a href="login.jsp" class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
                         <i class="fa-regular fa-heart"></i>
                     </a>
                     <a href="TrangChiTietSanPham.html" class="img-product" ><img src="https://cdn.watchstore.vn/wp-content/uploads/2025/06/day-phu-kien-dong-ho-hirsch-0925128050-2-22-400x400.jpg" alt=""></a>
@@ -251,7 +251,7 @@
             </div>
             <div class="link-product">
                 <div class="Product">
-                    <a href="login.html" class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
+                    <a href="login.jsp" class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
                         <i class="fa-regular fa-heart"></i>
                     </a>
                     <a href="TrangChiTietSanPham.html" class="img-product" ><img src="https://cdn.watchstore.vn/wp-content/uploads/2023/05/5c15e3ac6d1cb242eb0d-1712663265-400x400.jpg" alt=""></a>
@@ -267,7 +267,7 @@
             </div>
             <div class="link-product">
                 <div class="Product">
-                    <a href="login.html" class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
+                    <a href="login.jsp" class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
                         <i class="fa-regular fa-heart"></i>
                     </a>
                     <a href="TrangChiTietSanPham.html" class="img-product" ><img src="https://cdn.watchstore.vn/wp-content/uploads/2022/03/fraco-x100-black-1712581364-400x400.jpg" alt=""></a>
@@ -284,7 +284,7 @@
             </div>
             <div class="link-product">
                 <div class="Product">
-                    <a href="login.html" class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
+                    <a href="login.jsp" class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
                         <i class="fa-regular fa-heart"></i>
                     </a>
                     <a href="TrangChiTietSanPham.html" class="img-product" ><img src="https://cdn.watchstore.vn/wp-content/uploads/2023/11/19max-1712668657-400x400.jpg" alt=""></a>
@@ -300,7 +300,7 @@
             </div>
             <div class="link-product">
                 <div class="Product">
-                    <a href="login.html" class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
+                    <a href="login.jsp" class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
                         <i class="fa-regular fa-heart"></i>
                     </a>
                     <a href="TrangChiTietSanPham.html" class="img-product" ><img src="https://cdn.watchstore.vn/wp-content/uploads/2023/11/1r-205474360-2128482686-1712668662-400x400.jpg" alt=""></a>
