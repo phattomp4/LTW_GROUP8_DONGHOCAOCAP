@@ -6,7 +6,7 @@
 
     <!--Logo-->
     <div class="logo-container-header">
-        <a href="home" class="logo-header"> <h1 class="logo-text" style="font-weight: 900; font-size: 35px;">VVP</h1>
+        <a href="${pageContext.request.contextPath}/home" class="logo-header"> <h1 class="logo-text" style="font-weight: 900; font-size: 35px;">VVP</h1>
         </a>
     </div>
 
@@ -114,12 +114,15 @@
             </li>
 
             <li>
-                <a href="user/cart.jsp" class="action-icon cart-icon">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                    <c:if test="${sessionScope.size > 0}">
-                        <span class="cart-count" style="background:red; color:white; border-radius:50%; padding:2px 6px; font-size:10px; position:absolute;">${sessionScope.size}</span>
-                    </c:if>
-                </a>
+                <div class="header-action-item">
+                    <a href="${pageContext.request.contextPath}/cart" style="position: relative; text-decoration: none; color: inherit;">
+                        <i class="fa-solid fa-cart-shopping" style="font-size: 20px;"></i>
+
+                        <span class="cart-count" id="cartCountHeader" style="position: absolute; top: -8px; right: -8px; background: #d0011b; color: white; font-size: 11px; font-weight: bold; padding: 2px 6px; border-radius: 50%;">
+                            ${sessionScope.cartCount != null ? sessionScope.cartCount : 0}
+                        </span>
+                    </a>
+                </div>
             </li>
 
             <li>

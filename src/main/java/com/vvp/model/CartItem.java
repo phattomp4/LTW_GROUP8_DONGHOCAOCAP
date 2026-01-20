@@ -1,15 +1,23 @@
 package com.vvp.model;
 
-public class CartItem extends Product {
+public class CartItem {
+    private Product product;
     private int quantity;
 
     public CartItem() {
     }
 
-    public CartItem(Product p, int quantity) {
-        // Bây giờ bạn có thể dùng p.getDescription() và p.getStockQuantity() mà không bị lỗi
-        super(p.getId(), p.getBrandId(), p.getName(), p.getSku(), p.getDescription(), p.getOriginalPrice(), p.getCurrentPrice(), p.getImageUrl(), p.getStockQuantity(), p.getSoldQuantity());
+    public CartItem(Product product, int quantity) {
+        this.product = product;
         this.quantity = quantity;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     public int getQuantity() {
@@ -20,7 +28,9 @@ public class CartItem extends Product {
         this.quantity = quantity;
     }
 
+    // Tính tổng tiền = giá * số lượng
     public double getTotalPrice() {
-        return this.getCurrentPrice() * quantity;
+        // Sửa getPrice() thành getCurrentPrice()
+        return product.getCurrentPrice() * quantity;
     }
 }

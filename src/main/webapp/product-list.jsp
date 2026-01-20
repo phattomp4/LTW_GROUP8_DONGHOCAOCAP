@@ -26,11 +26,11 @@
             <div class="link-product">
                 <div class="Product">
                     <button class="wishlist-icon"><i class="fa-regular fa-heart"></i></button>
-                    <a href="detail?pid=${p.id}" class="img-product">
+                    <a href="${pageContext.request.contextPath}/detail?pid=${p.id}" class="img-product">
                         <img src="${p.imageUrl}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/300'">
                     </a>
                     <br />
-                    <a href="detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
+                    <a href="${pageContext.request.contextPath}/detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
                     <p class="PriceOfPoduct"><fmt:formatNumber value="${p.currentPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
                     <div class="Discount-row">
                         <p class="Discount"><fmt:formatNumber value="${p.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
