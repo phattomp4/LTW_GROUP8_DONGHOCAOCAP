@@ -235,3 +235,29 @@ let scrollSlider = (direction) => {
 
 // Gán hàm vào window để nó có thể được gọi từ onclick trong HTML
 window.scrollSlider = scrollSlider;
+
+// tim kiem san pham
+    document.getElementById("searchBox").addEventListener("keyup", function () {
+    let keyword = this.value.trim();
+
+    if (keyword.length === 0) {
+    document.getElementById("searchResults").style.display = "none";
+    return;
+}
+
+    fetch("livesearch?q=" + keyword)
+    .then(res => res.text())
+    .then(data => {
+    let resultBox = document.getElementById("searchResults");
+    resultBox.innerHTML = data;
+    resultBox.style.display = "block";
+});
+});
+
+    // Ẩn dropdown khi click ra ngoài
+    document.addEventListener("click", function (e) {
+    if (!document.querySelector(".search-bar").contains(e.target)) {
+    document.getElementById("searchResults").style.display = "none";
+}
+});
+
