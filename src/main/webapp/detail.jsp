@@ -60,10 +60,28 @@
         <p class="desc" style="line-height: 1.6; margin-bottom: 20px;">${p.description}</p>
 
         <div class="actions">
-            <a href="add-to-cart?pid=${p.id}" class="btn-buy"
-               style="background: #d0011b; color: white; padding: 15px 40px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;">
-                MUA NGAY
-            </a>
+            <form id="productForm" action="${pageContext.request.contextPath}/add-to-cart" method="GET">
+                <input type="hidden" name="pid" value="${p.id}">
+
+                <div class="quantity-box">
+                    <label>Số lượng:</label>
+                    <input type="number" id="qtyInput" name="quantity" value="1" min="1" style="width: 50px; text-align: center;">
+                </div>
+
+                <div class="action-buttons" style="margin-top: 20px; display: flex; gap: 10px;">
+                    <button type="button" onclick="addToCartAjax()" class="btn-add-cart" style="background: #fff; border: 1px solid #d0011b; color: #d0011b; padding: 10px 20px; cursor: pointer;">
+                        <i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ
+                    </button>
+
+                    <button type="submit" name="action" value="buynow" class="btn-buy-now" style="background: #d0011b; color: white; border: none; padding: 10px 30px; cursor: pointer;">
+                        Mua ngay
+                    </button>
+                </div>
+            </form>
+
+            <div id="toast" style="visibility: hidden; min-width: 250px; margin-left: -125px; background-color: #333; color: #fff; text-align: center; border-radius: 2px; padding: 16px; position: fixed; z-index: 1000; left: 50%; bottom: 30px; font-size: 17px;">
+                <i class="fa-solid fa-check"></i> Đã thêm sản phẩm vào giỏ!
+            </div>
         </div>
 
 
@@ -85,7 +103,51 @@
 
     </div>
 </div>
+<script>
+    function addToCartAjax() {
+        const pidInput = document.querySelector('input[name="pid"]');
+        const pid = pidInput ? pidInput.value : "";
 
+        // --- THÊM ĐOẠN KIỂM TRA NÀY ---
+        if (!pid) {
+            alert("Lỗi: Không tìm thấy ID sản phẩm. Vui lòng tải lại trang.");
+            return;
+        }
+        // ------------------------------
+
+        const qtyInput = document.getElementById('qtyInput');
+        const qty = qtyInput ? qtyInput.value : 1;
+
+        // Gửi request ngầm
+        fetch('${pageContext.request.contextPath}/add-to-cart?pid=' + pid + '&quantity=' + qty + '&ajax=true')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Lỗi Server hoặc Đường dẫn sai");
+                }
+                return response.text();
+            })
+            .then(data => {
+                // Cập nhật số trên header (Tìm theo class .cart-count)
+                const listCartCounts = document.querySelectorAll(".cart-count");
+
+                // Cập nhật tất cả các chỗ hiển thị số lượng (nếu có nhiều icon giỏ hàng)
+                listCartCounts.forEach(el => {
+                    el.innerText = data;
+                });
+
+                // Hiện thông báo thành công
+                const x = document.getElementById("toast");
+                if (x) {
+                    x.style.visibility = "visible";
+                    setTimeout(function(){ x.style.visibility = "hidden"; }, 3000);
+                }
+            })
+            .catch(error => {
+                console.error('Lỗi:', error);
+                alert("Không thể thêm vào giỏ. Vui lòng kiểm tra Console (F12) để biết chi tiết.");
+            });
+    }
+</script>
 <jsp:include page="WEB-INF/tags/footer.jsp"></jsp:include>
 </body>
 </html>

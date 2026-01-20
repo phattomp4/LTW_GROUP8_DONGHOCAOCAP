@@ -10,68 +10,98 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
-@WebServlet(name = "AddToCartServlet", urlPatterns = "/add-to-cart")
+@WebServlet(name = "AddToCartServlet", urlPatterns = {"/add-to-cart"})
 public class AddToCartServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            // 1. Lấy tham số từ URL
+            // 1. Lấy tham số và kiểm tra kỹ
             String pidRaw = request.getParameter("pid");
+            String quantityRaw = request.getParameter("quantity");
 
-            // --- KIỂM TRA QUAN TRỌNG ĐỂ TRÁNH LỖI NULL ---
-            // Nếu không có pid (người dùng vào sai link), quay về trang chủ ngay
-            if (pidRaw == null || pidRaw.isEmpty()) {
-                response.sendRedirect("home");
+            // Nếu pid rỗng -> Lỗi ngay (tránh 500)
+            if (pidRaw == null || pidRaw.trim().isEmpty()) {
+                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Missing Product ID");
                 return;
             }
 
-            int pid = Integer.parseInt(pidRaw); // Nếu pidRaw là chữ cái, dòng này sẽ nhảy xuống catch
+            int productId = Integer.parseInt(pidRaw);
+            int quantity = 1;
+            try {
+                if (quantityRaw != null && !quantityRaw.isEmpty()) {
+                    quantity = Integer.parseInt(quantityRaw);
+                }
+            } catch (NumberFormatException e) { }
 
-            // 2. Lấy giỏ hàng từ Session
             HttpSession session = request.getSession();
-            Map<Integer, CartItem> cart = (Map<Integer, CartItem>) session.getAttribute("cart");
-            if (cart == null) cart = new HashMap<>();
 
-            // 3. Logic thêm vào giỏ
-            if (cart.containsKey(pid)) {
-                // Nếu sản phẩm đã có -> Tăng số lượng
-                CartItem item = cart.get(pid);
-                item.setQuantity(item.getQuantity() + 1);
-            } else {
-                // Nếu chưa có -> Lấy từ DB
+            // 2. Lấy giỏ hàng từ Session (Dùng List như bạn đã chọn trước đó)
+            // Lưu ý: Nếu bạn dùng Map thì sửa lại Logic Map, ở đây mình viết theo List để đồng bộ với CartServlet cũ
+            List<CartItem> cart = (List<CartItem>) session.getAttribute("cart");
+            if (cart == null) {
+                cart = new ArrayList<>();
+            }
+
+            // 3. Logic thêm/cộng dồn
+            boolean found = false;
+            for (CartItem item : cart) {
+                if (item.getProduct().getId() == productId) {
+                    item.setQuantity(item.getQuantity() + quantity);
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
                 ProductDAO dao = new ProductDAO();
-                Product p = dao.getProductById(pid);
-                if (p != null) {
-                    // Tạo CartItem từ Product, số lượng ban đầu là 1
-                    CartItem item = new CartItem(p, 1);
-                    cart.put(pid, item);
+                Product product = dao.getProductById(productId);
+                if (product != null) {
+                    cart.add(new CartItem(product, quantity));
                 }
             }
 
-            // 4. Cập nhật lại Session
+            // 4. Lưu lại Session
             session.setAttribute("cart", cart);
-            session.setAttribute("size", cart.size()); // Cập nhật số lượng item trên icon giỏ hàng
 
-            // Tính tổng tiền (nếu cần hiển thị ngay)
-            double total = 0;
-            for (CartItem ci : cart.values()) {
-                total += ci.getTotalPrice();
+            // Tính tổng số lượng
+            int totalCount = 0;
+            for (CartItem item : cart) totalCount += item.getQuantity();
+            session.setAttribute("cartCount", totalCount);
+
+            // --- XỬ LÝ ĐIỀU HƯỚNG ---
+            String ajax = request.getParameter("ajax");
+            String action = request.getParameter("action");
+
+            // TRƯỜNG HỢP 1: AJAX (Nút "Thêm vào giỏ")
+            if ("true".equals(ajax)) {
+                response.setContentType("text/plain");
+                response.setCharacterEncoding("UTF-8");
+                response.getWriter().write(String.valueOf(totalCount)); // Trả về số lượng mới
+                return; // DỪNG LẠI, KHÔNG REDIRECT
             }
-            session.setAttribute("totalMoney", total);
 
-            // 5. Quay về trang chủ (hoặc trang người dùng vừa đứng)
-            response.sendRedirect("home");
+            // TRƯỜNG HỢP 2: MUA NGAY
+            else if ("buynow".equals(action)) {
+                response.sendRedirect("user/checkout.jsp");
+            }
 
-        } catch (NumberFormatException e) {
-            // Nếu pid không phải số (vd: ?pid=abc) -> Quay về trang chủ
-            System.out.println("Lỗi định dạng số ID sản phẩm: " + e.getMessage());
-            response.sendRedirect("home");
+            // TRƯỜNG HỢP 3: FALLBACK
+            else {
+                String referer = request.getHeader("Referer");
+                response.sendRedirect(referer != null ? referer : "home");
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
-            response.sendRedirect("home");
+            // Nếu lỗi AJAX -> Trả về lỗi 500 để JS bắt được
+            if ("true".equals(request.getParameter("ajax"))) {
+                response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Server Error: " + e.getMessage());
+            } else {
+                response.sendRedirect("home");
+            }
         }
     }
 }

@@ -1,53 +1,94 @@
 package com.vvp.controller;
 
-import com.vvp.dao.ProductDAO;
 import com.vvp.model.CartItem;
-import com.vvp.model.Product;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.*;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(name = "CartServlet", urlPatterns = {"/cart"})
 public class CartServlet extends HttpServlet {
 
-    // Thêm vào giỏ hàng
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getParameter("action");
         HttpSession session = request.getSession();
-        Map<Integer, CartItem> cart = (Map<Integer, CartItem>) session.getAttribute("cart");
-        if (cart == null) cart = new HashMap<>();
+        List<CartItem> cart = (List<CartItem>) session.getAttribute("cart");
 
-        if ("add".equals(action)) {
-            int id = Integer.parseInt(request.getParameter("pid"));
-            if (cart.containsKey(id)) {
-                CartItem item = cart.get(id);
-                item.setQuantity(item.getQuantity() + 1);
-            } else {
-                ProductDAO dao = new ProductDAO();
-                Product p = dao.getProductById(id); // Bạn cần viết thêm hàm này trong ProductDAO
-                if(p != null) {
-                    CartItem item = new CartItem(p, 1);
-                    cart.put(id, item);
+        if (cart == null) {
+            cart = new ArrayList<>();
+            session.setAttribute("cart", cart);
+        }
+
+        // --- XỬ LÝ CÁC HÀNH ĐỘNG (THÊM, BỚT, XÓA) ---
+        String action = request.getParameter("action");
+        if (action != null) {
+            int pid = Integer.parseInt(request.getParameter("pid"));
+
+            // Tìm sản phẩm trong giỏ
+            CartItem target = null;
+            for (CartItem item : cart) {
+                if (item.getProduct().getId() == pid) {
+                    target = item;
+                    break;
                 }
             }
-        }
-        else if ("delete".equals(action)) {
-            int id = Integer.parseInt(request.getParameter("pid"));
-            cart.remove(id);
+
+            if (target != null) {
+                if ("delete".equals(action)) {
+                    cart.remove(target);
+                } else if ("inc".equals(action)) {
+                    target.setQuantity(target.getQuantity() + 1);
+                } else if ("dec".equals(action)) {
+                    if (target.getQuantity() > 1) {
+                        target.setQuantity(target.getQuantity() - 1);
+                    } else {
+                        cart.remove(target); // Giảm về 0 thì xóa luôn
+                    }
+                }
+            }
+
+            // Cập nhật lại số lượng trên icon
+            int totalCount = 0;
+            for (CartItem item : cart) totalCount += item.getQuantity();
+            session.setAttribute("cartCount", totalCount);
+
+            // Chuyển hướng để tránh lỗi resubmit form
+            response.sendRedirect("cart");
+            return;
         }
 
-        session.setAttribute("cart", cart);
-
-        // Tính tổng tiền lưu vào session để hiển thị
+        // --- TÍNH TOÁN TIỀN ---
         double totalMoney = 0;
-        for (CartItem item : cart.values()) {
+        for (CartItem item : cart) {
             totalMoney += item.getTotalPrice();
         }
-        session.setAttribute("totalMoney", totalMoney);
 
-        response.sendRedirect("user/cart.jsp");
+        // Xử lý Voucher (Giả lập)
+        String voucher = request.getParameter("voucherCode");
+        double discount = 0;
+        if ("GIAM10".equals(voucher)) {
+            discount = totalMoney * 0.1;
+            request.setAttribute("voucherMessage", "Áp dụng mã GIAM10 thành công!");
+        } else if (voucher != null && !voucher.isEmpty()) {
+            request.setAttribute("voucherMessage", "Mã giảm giá không hợp lệ.");
+        }
+
+        // Đẩy dữ liệu sang JSP
+        request.setAttribute("totalMoney", totalMoney);
+        request.setAttribute("discount", discount);
+        request.setAttribute("finalTotal", totalMoney - discount);
+
+        // Lưu ý: List cart đã nằm trong Session nên JSP tự lấy được qua ${sessionScope.cart}
+        request.getRequestDispatcher("user/cart.jsp").forward(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
     }
 }

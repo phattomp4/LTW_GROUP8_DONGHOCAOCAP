@@ -322,16 +322,16 @@
                                 <button class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
                                     <i class="fa-regular fa-heart"></i>
                                 </button>
-                                <a href="detail?pid=${p.id}"><img src="${p.imageUrl}" alt="${p.name}" class="luxury-card-img" onerror="this.src='https://via.placeholder.com/300'"></a>
+                                <a href="${pageContext.request.contextPath}/detail?pid=${p.id}"><img src="${p.imageUrl}" alt="${p.name}" class="luxury-card-img" onerror="this.src='https://via.placeholder.com/300'"></a>
                                 <br />
-                                <a href="detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
+                                <a href="${pageContext.request.contextPath}/detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
                                 <p class="PriceOfPoduct"><fmt:formatNumber value="${p.currentPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
                                 <div class="Discount-row">
                                     <p class="Discount"><fmt:formatNumber value="${p.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
                                     <p class="DiscountPercent">-30%</p>
                                 </div>
                                 <p class="Sold">Đã bán ${p.soldQuantity}</p>
-                                <a href="add-to-cart?pid=${p.id}" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
+                                <a href="${pageContext.request.contextPath}/add-to-cart?pid=${detail.productID}&quantity=1&action=buynow" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
                             </div>
                         </li>
                     </c:forEach>
@@ -389,11 +389,11 @@
                     <div class="link-product">
                         <div class="Product">
                             <button class="wishlist-icon"><i class="fa-regular fa-heart"></i></button>
-                            <a href="detail?pid=${p.id}" class="img-product">
+                            <a href="${pageContext.request.contextPath}/detail?pid=${p.id}" class="img-product">
                                 <img src="${p.imageUrl}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/300'">
                             </a>
                             <br />
-                            <a href="detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
+                            <a href="${pageContext.request.contextPath}/detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
                             <p class="PriceOfPoduct"><fmt:formatNumber value="${p.currentPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
                             <div class="Discount-row">
                                 <p class="Discount"><fmt:formatNumber value="${p.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
@@ -401,7 +401,7 @@
                             </div>
                             <p class="Sold">Đã bán ${p.soldQuantity}</p>
 
-                            <a href="add-to-cart?pid=${p.id}" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
+                            <a href="${pageContext.request.contextPath}/add-to-cart?pid=${detail.productID}&quantity=1&action=buynow" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
                         </div>
                     </div>
                 </c:forEach>
@@ -414,18 +414,18 @@
                     <div class="link-product">
                         <div class="Product">
                             <button class="wishlist-icon"><i class="fa-regular fa-heart"></i></button>
-                            <a href="detail?pid=${p.id}" class="img-product">
+                            <a href="${pageContext.request.contextPath}/detail?pid=${p.id}" class="img-product">
                                 <img src="${p.imageUrl}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/300'">
                             </a>
                             <br />
-                            <a href="detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
+                            <a href="${pageContext.request.contextPath}/detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
                             <p class="PriceOfPoduct"><fmt:formatNumber value="${p.currentPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
                             <div class="Discount-row">
                                 <p class="Discount"><fmt:formatNumber value="${p.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
                                 <p class="DiscountPercent">-30%</p>
                             </div>
                             <p class="Sold">Đã bán ${p.soldQuantity}</p>
-                            <a href="add-to-cart?pid=${p.id}" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
+                            <a href="${pageContext.request.contextPath}/add-to-cart?pid=${detail.productID}&quantity=1&action=buynow" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
                         </div>
                     </div>
                 </c:forEach>
@@ -440,18 +440,18 @@
                     <div class="link-product">
                         <div class="Product">
                             <button class="wishlist-icon"><i class="fa-regular fa-heart"></i></button>
-                            <a href="detail?pid=${p.id}" class="img-product">
+                            <a href="${pageContext.request.contextPath}/detail?pid=${p.id}" class="img-product">
                                 <img src="${p.imageUrl}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/300'">
                             </a>
                             <br />
-                            <a href="detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
+                            <a href="${pageContext.request.contextPath}/detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
                             <p class="PriceOfPoduct"><fmt:formatNumber value="${p.currentPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
                             <div class="Discount-row">
                                 <p class="Discount"><fmt:formatNumber value="${p.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
                                 <p class="DiscountPercent">-30%</p>
                             </div>
                             <p class="Sold">Đã bán ${p.soldQuantity}</p>
-                            <a href="add-to-cart?pid=${p.id}" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
+                            <a href="${pageContext.request.contextPath}/add-to-cart?pid=${detail.productID}&quantity=1&action=buynow" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
                         </div>
                     </div>
                 </c:forEach>
