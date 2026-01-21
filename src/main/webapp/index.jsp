@@ -563,7 +563,7 @@
         <jsp:include page="WEB-INF/tags/footer.jsp"></jsp:include>
     <!-- Linking SwiperJS Script -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script src="assets/js/index.js"></script>
-    <script src="assets/js/ProductCards.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/js/index.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/js/ProductCards.js"></script>
 </body>
 </html>

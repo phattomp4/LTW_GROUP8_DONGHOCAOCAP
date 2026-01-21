@@ -96,9 +96,7 @@
                     Tổng cộng: <fmt:formatNumber value="${finalTotal}" type="currency" currencySymbol="₫"/>
                 </h3>
 
-                <a href="${pageContext.request.contextPath}/user/checkout.jsp" class="checkout-btn">
-                    Tiến hành thanh toán <i class="fa-solid fa-arrow-right"></i>
-                </a>
+                <a href="${pageContext.request.contextPath}/checkout" class="checkout-btn">Tiến hành thanh toán</a>
             </div>
         </div>
     </c:if>
