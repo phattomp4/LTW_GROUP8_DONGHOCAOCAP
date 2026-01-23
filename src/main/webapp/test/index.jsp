@@ -28,8 +28,129 @@
     </button>
 
     <!-- Header -->
+    <header class="main-header">
 
-    <jsp:include page="WEB-INF/tags/header.jsp"></jsp:include>
+        <!--Logo-->
+        <div class="logo-container-header">
+            <a href="index.jsp" class="logo-header">
+                <h1 class="logo-text" style="font-weight: 900; font-size: 35px;">VVP</h1>
+            </a>
+        </div>
+
+
+        <!--Links dieu huong-->
+        <div class="nav-item">
+            <nav class="main-nav">
+                <ul>
+                    <li class="nav-item-has-dropdown">
+                        <a href="DongHo.html" class="link-yellow">Đồng hồ<i class="fa-solid fa-chevron-down"></i></a>
+                        <div class="megamenu megamenu-dongho">
+                            <div class="megamenu-column">
+                                <ul>
+                                    <li><a href="DongHo.html">Giống Rolex, Hublot</a></li>
+                                    <li><a href="DongHo.html">Giống Patek, Richard</a></li>
+                                    <li><a href="DongHo.html">Giá dưới 1 triệu</a></li>
+                                    <li><a href="DongHo.html">Giá từ 1 - 3 triệu</a></li>
+                                    <li><a href="DongHo.html">Giá từ 3 - 6 triệu</a></li>
+                                    <li><a href="DongHo.html">Giá từ 6 - 9 triệu</a></li>
+                                    <li><a href="DongHo.html">Giá từ 9 - 15 triệu</a></li>
+                                    <li><a href="DongHo.html">Giá trên 15 triệu</a></li>
+                                </ul>
+                            </div>
+                            <div class="megamenu-column">
+                                <ul>
+                                    <li><a href="DongHo.html">Casio, G-Shock</a></li>
+                                    <li><a href="DongHo.html">Olym Pianus</a></li>
+                                    <li><a href="DongHo.html">Bentley</a></li>
+                                    <li><a href="DongHo.html">Carnival, I&W Carnival</a></li>
+                                    <li><a href="DongHo.html">Orient</a></li>
+                                    <li><a href="DongHo.html">Tissot</a></li>
+                                    <li><a href="DongHo.html">Seiko</a></li>
+                                    <li><a href="DongHo.html">Citizen</a></li>
+                                    <li><a href="DongHo.html">Bonest Gatti</a></li>
+                                    <li><a href="DongHo.html">SRWatch</a></li>
+                                    <li><a href="DongHo.html">Daniel Wellington</a></li>
+                                    <li><a href="DongHo.html">Oblvlo</a></li>
+                                </ul>
+                            </div>
+                            <div class="megamenu-column">
+                                <ul>
+                                    <li><a href="DongHo.html">Frederique Constant</a></li>
+                                    <li><a href="DongHo.html">Longines</a></li>
+                                    <li><a href="DongHo.html">Omega</a></li>
+                                    <li><a href="DongHo.html">Orient Star</a></li>
+                                    <li><a href="DongHo.html">Certina</a></li>
+                                    <li><a href="DongHo.html">Maurice Lacroix</a></li>
+                                    <li><a href="DongHo.html">Movado</a></li>
+                                </ul>
+                            </div>
+                            <div class="megamenu-column">
+                                <ul>
+                                    <li><a href="DongHo.html">Kiểu dáng công sở</a></li>
+                                    <li><a href="DongHo.html">Đồng hồ quân đội</a></li>
+                                    <li><a href="DongHo.html">Đồng hồ cơ/automatic</a></li>
+                                    <li><a href="DongHo.html">Đồng hồ lướt 99%</a></li>
+                                    <li><a href="DongHo.html">Đồng hồ Luxury</a></li>
+                                    <li><a href="DongHo.html">Đồng hồ để bàn</a></li>
+                                    <li><a href="DongHo.html">Đồng hồ treo tường</a></li>
+                                    <li><a href="DongHo.html">Đồng hồ Nhật</a></li>
+                                    <li><a href="DongHo.html">Đồng hồ Thụy Sỹ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="DongHo.html">Nam</a></li>
+                    <li><a href="DongHo.html">Nữ</a></li>
+                    <li class="nav-item-has-dropdown">
+                        <a href="PhuKien.html">Phụ kiện<i class="fa-solid fa-chevron-down"></i></a>
+                        <div class="megamenu megamenu-phukien">
+                            <div class="megamenu-column-phukien">
+                                <ul>
+                                    <li><a href="PhuKien.html">Dây đồng hồ</a></li>
+                                    <li><a href="PhuKien.html">Hộp xoay đồng hồ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!--Tim kiem, gio hang-->
+        <div class="header-action">
+            <ul class="ul-header-action">
+                <!-- Tim kiem -->
+                <li>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Tìm là thấy">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    </div>
+                </li>
+                <!-- Gio hang -->
+                <li>
+                    <a href="login.jsp" class="action-icon cart-icon">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </a>
+                </li>
+                <!-- Yêu thích -->
+                <li>
+                    <a href="login.jsp" class="action-icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </a>
+                </li>
+                <!-- Nút đăng nhập -->
+                <li>
+                    <div class="container-button-login" style="text-align:center">
+                        <a href="login.jsp" class="button button-login">
+                            <span style="color: #fff">Đăng nhập</span>
+                        </a>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </header>
+
 
     <!-- Slideshow container -->
     <div class="slideshow-container">
@@ -322,16 +443,15 @@
                                 <button class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
                                     <i class="fa-regular fa-heart"></i>
                                 </button>
-                                <a href="${pageContext.request.contextPath}/detail?pid=${p.id}"><img src="${p.imageUrl}" alt="${p.name}" class="luxury-card-img" onerror="this.src='https://via.placeholder.com/300'"></a>
+                                <a href="detail?pid=${p.id}"><img src="${p.imageUrl}" alt="${p.name}" class="luxury-card-img" onerror="this.src='https://via.placeholder.com/300'"></a>
                                 <br />
-                                <a href="${pageContext.request.contextPath}/detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
+                                <a href="detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
                                 <p class="PriceOfPoduct"><fmt:formatNumber value="${p.currentPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
                                 <div class="Discount-row">
                                     <p class="Discount"><fmt:formatNumber value="${p.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
                                     <p class="DiscountPercent">-30%</p>
                                 </div>
                                 <p class="Sold">Đã bán ${p.soldQuantity}</p>
-                                <a href="${pageContext.request.contextPath}/add-to-cart?pid=${detail.productID}&quantity=1&action=buynow" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
                             </div>
                         </li>
                     </c:forEach>
@@ -389,23 +509,26 @@
                     <div class="link-product">
                         <div class="Product">
                             <button class="wishlist-icon"><i class="fa-regular fa-heart"></i></button>
-                            <a href="${pageContext.request.contextPath}/detail?pid=${p.id}" class="img-product">
+                            <a href="detail?pid=${p.id}" class="img-product">
                                 <img src="${p.imageUrl}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/300'">
                             </a>
                             <br />
-                            <a href="${pageContext.request.contextPath}/detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
+                            <a href="detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
                             <p class="PriceOfPoduct"><fmt:formatNumber value="${p.currentPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
                             <div class="Discount-row">
                                 <p class="Discount"><fmt:formatNumber value="${p.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
                                 <p class="DiscountPercent">-30%</p>
                             </div>
                             <p class="Sold">Đã bán ${p.soldQuantity}</p>
-
-                            <a href="${pageContext.request.contextPath}/add-to-cart?pid=${detail.productID}&quantity=1&action=buynow" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
+                            <a href="add-to-cart?pid=${p.id}" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
                         </div>
                     </div>
                 </c:forEach>
             </div>
+            <div class="ViewMore-Container">
+                <button id="view-more-btn" class="ViewMore-Button">Xem thêm sản phẩm</button>
+            </div>
+        </div>
 
         <!-- Tab đồng hồ nam -->
         <div id="content-men" class="tab-content hidden">
@@ -414,18 +537,18 @@
                     <div class="link-product">
                         <div class="Product">
                             <button class="wishlist-icon"><i class="fa-regular fa-heart"></i></button>
-                            <a href="${pageContext.request.contextPath}/detail?pid=${p.id}" class="img-product">
+                            <a href="detail?pid=${p.id}" class="img-product">
                                 <img src="${p.imageUrl}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/300'">
                             </a>
                             <br />
-                            <a href="${pageContext.request.contextPath}/detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
+                            <a href="detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
                             <p class="PriceOfPoduct"><fmt:formatNumber value="${p.currentPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
                             <div class="Discount-row">
                                 <p class="Discount"><fmt:formatNumber value="${p.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
                                 <p class="DiscountPercent">-30%</p>
                             </div>
                             <p class="Sold">Đã bán ${p.soldQuantity}</p>
-                            <a href="${pageContext.request.contextPath}/add-to-cart?pid=${detail.productID}&quantity=1&action=buynow" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
+                            <a href="add-to-cart?pid=${p.id}" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
                         </div>
                     </div>
                 </c:forEach>
@@ -440,18 +563,18 @@
                     <div class="link-product">
                         <div class="Product">
                             <button class="wishlist-icon"><i class="fa-regular fa-heart"></i></button>
-                            <a href="${pageContext.request.contextPath}/detail?pid=${p.id}" class="img-product">
+                            <a href="detail?pid=${p.id}" class="img-product">
                                 <img src="${p.imageUrl}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/300'">
                             </a>
                             <br />
-                            <a href="${pageContext.request.contextPath}/detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
+                            <a href="detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
                             <p class="PriceOfPoduct"><fmt:formatNumber value="${p.currentPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
                             <div class="Discount-row">
                                 <p class="Discount"><fmt:formatNumber value="${p.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
                                 <p class="DiscountPercent">-30%</p>
                             </div>
                             <p class="Sold">Đã bán ${p.soldQuantity}</p>
-                            <a href="${pageContext.request.contextPath}/add-to-cart?pid=${detail.productID}&quantity=1&action=buynow" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
+                            <a href="add-to-cart?pid=${p.id}" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
                         </div>
                     </div>
                 </c:forEach>
@@ -559,11 +682,64 @@
     </div>
 
 
-    <!-- Footer -->
-        <jsp:include page="WEB-INF/tags/footer.jsp"></jsp:include>
+    <footer>
+        <div class="thongtintong">
+            <div class="thongtin">
+                <p>VỀ CHÚNG TÔI</p>
+                <ul class="list-tt">
+                    <li><a href="#"> Giới thiệu về WatchStore</a></li>
+                    <li><a href="#"> Phản ánh - Khiếu nại</a></li>
+                    <li><a href="#"> Chứng nhận đại lý</a></li>
+                    <li><a href="#"> Tin tức công ty</a></li>
+                    <li><a href="#"> Top list đồng hồ</a></li>
+                    <li><a href="#"> Kiến thức đồng hồ</a></li>
+                </ul>
+            </div>
+
+            <div class="thongtin">
+                <p>CHÍNH SÁCH CHUNG</p>
+                <ul class="list-tt">
+                    <li><a href="#">Điều khoản thanh toán</a></li>
+                    <li><a href="#">Chính sách bảo hành</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Chính sách vận chuyển</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Thông tin các trang TMĐT</a></li>
+                </ul>
+            </div>
+
+            <div class="thongtin">
+                <p>Cửa hàng Miền Bắc</p>
+                <ul class="list-tt">
+                    <li><a href="#">97 Trần Đại Nghĩa, P.Bạch Mai, Hà Nội</a></li>
+                    <li><a href="#">58 Trần Đăng Ninh, P.Cầu Giấy, Hà Nội</a></li>
+                </ul>
+                <p>Cửa hàng Miền Trung</p>
+                <ul class="list-tt">
+                    <li><a href="#">339 Lê Duẩn, P.Thanh Khê, Đà Nẵng</a></li>
+                </ul>
+                <p>Cửa hàng Miền Nam</p>
+                <ul class="list-tt">
+                    <li><a href="#">642 CMT8, P.Thủ Dầu Một, HCM</a></li>
+                    <li><a href="#">90 Lê Văn Sỹ, P.Phú Nhuận, HCM</a></li>
+                    <li><a href="#">61 Quang Trung, P.Gò Vấp, HCM</a></li>
+                </ul>
+            </div>
+
+            <div class="thongtin">
+                <p>Liên hệ hỗ trợ</p>
+                <ul class="list-tt">
+                    <li><a href="#">Hotline 1: 093 189 222</a></li>
+                    <li><a href="#">Hotline 2: 097 189 3333</a></li>
+                    <li><a href="#">Hotline 3: 096 139 5555</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
     <!-- Linking SwiperJS Script -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script src="${pageContext.request.contextPath}/assets/js/index.js"></script>
-    <script src="${pageContext.request.contextPath}/assets/js/ProductCards.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/ProductCards.js"></script>
 </body>
 </html>

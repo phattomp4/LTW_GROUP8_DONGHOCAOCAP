@@ -1,264 +1,107 @@
-﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+﻿<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/header.css">
-    <link rel="stylesheet" href="../assets/css/footer.css">
-    <link rel="stylesheet" href="../assets/css/GioHang.css">
-    <!-- Linking Font Awesome-->
+    <title>Giỏ hàng | VVP Store</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/index.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/header.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/footer.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/GioHang.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <title>Giỏ hàng</title>
+
+    <style>
+        .cart-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .cart-table th, .cart-table td { padding: 15px; text-align: center; border-bottom: 1px solid #ddd; }
+        .cart-img { width: 80px; height: 80px; object-fit: cover; border: 1px solid #eee; }
+        .btn-qty { padding: 5px 10px; border: 1px solid #ccc; background: #fff; cursor: pointer; text-decoration: none; color: #333; display: inline-block;}
+        .btn-qty:hover { background: #eee; }
+        .btn-delete { color: #d0011b; cursor: pointer; }
+        .cart-summary { margin-top: 30px; text-align: right; }
+        .checkout-btn { background: #d0011b; color: #fff; padding: 12px 25px; text-decoration: none; display: inline-block; margin-top: 10px; border-radius: 4px; font-weight: bold;}
+    </style>
 </head>
-
 <body>
+<jsp:include page="../WEB-INF/tags/header.jsp" />
 
-    <header class="main-header">
+<div class="container" style="margin-top: 150px; min-height: 500px; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 20px;">
+    <h2>Giỏ hàng của bạn</h2>
 
-        <!--Logo-->
-        <div class="logo-container-header">
-            <a href="index.jsp" class="logo-header">
-                <h1 class="logo-text" style="font-weight: 900; font-size: 35px;">VVP</h1>
-            </a>
+    <c:if test="${empty sessionScope.cart}">
+        <div style="text-align: center; padding: 50px;">
+            <i class="fa-solid fa-cart-shopping" style="font-size: 50px; color: #ccc;"></i>
+            <p style="margin-top: 10px; color: #666;">Giỏ hàng của bạn đang trống.</p>
+            <a href="${pageContext.request.contextPath}/home" style="color: #d0011b; text-decoration: underline;">Tiếp tục mua sắm</a>
         </div>
+    </c:if>
 
-
-        <!--Links dieu huong-->
-        <div class="nav-item">
-            <nav class="main-nav">
-                <ul>
-                    <li class="nav-item-has-dropdown">
-                        <a href="DongHo.html" class="link-yellow">Đồng hồ<i class="fa-solid fa-chevron-down"></i></a>
-                        <div class="megamenu megamenu-dongho">
-                            <div class="megamenu-column">
-                                <ul>
-                                    <li><a href="DongHo.html">Giống Rolex, Hublot</a></li>
-                                    <li><a href="DongHo.html">Giống Patek, Richard</a></li>
-                                    <li><a href="DongHo.html">Giá dưới 1 triệu</a></li>
-                                    <li><a href="DongHo.html">Giá từ 1 - 3 triệu</a></li>
-                                    <li><a href="DongHo.html">Giá từ 3 - 6 triệu</a></li>
-                                    <li><a href="DongHo.html">Giá từ 6 - 9 triệu</a></li>
-                                    <li><a href="DongHo.html">Giá từ 9 - 15 triệu</a></li>
-                                    <li><a href="DongHo.html">Giá trên 15 triệu</a></li>
-                                </ul>
-                            </div>
-                            <div class="megamenu-column">
-                                <ul>
-                                    <li><a href="DongHo.html">Casio, G-Shock</a></li>
-                                    <li><a href="DongHo.html">Olym Pianus</a></li>
-                                    <li><a href="DongHo.html">Bentley</a></li>
-                                    <li><a href="DongHo.html">Carnival, I&W Carnival</a></li>
-                                    <li><a href="DongHo.html">Orient</a></li>
-                                    <li><a href="DongHo.html">Tissot</a></li>
-                                    <li><a href="DongHo.html">Seiko</a></li>
-                                    <li><a href="DongHo.html">Citizen</a></li>
-                                    <li><a href="DongHo.html">Bonest Gatti</a></li>
-                                    <li><a href="DongHo.html">SRWatch</a></li>
-                                    <li><a href="DongHo.html">Daniel Wellington</a></li>
-                                    <li><a href="DongHo.html">Oblvlo</a></li>
-                                </ul>
-                            </div>
-                            <div class="megamenu-column">
-                                <ul>
-                                    <li><a href="DongHo.html">Frederique Constant</a></li>
-                                    <li><a href="DongHo.html">Longines</a></li>
-                                    <li><a href="DongHo.html">Omega</a></li>
-                                    <li><a href="DongHo.html">Orient Star</a></li>
-                                    <li><a href="DongHo.html">Certina</a></li>
-                                    <li><a href="DongHo.html">Maurice Lacroix</a></li>
-                                    <li><a href="DongHo.html">Movado</a></li>
-                                </ul>
-                            </div>
-                            <div class="megamenu-column">
-                                <ul>
-                                    <li><a href="DongHo.html">Kiểu dáng công sở</a></li>
-                                    <li><a href="DongHo.html">Đồng hồ quân đội</a></li>
-                                    <li><a href="DongHo.html">Đồng hồ cơ/automatic</a></li>
-                                    <li><a href="DongHo.html">Đồng hồ lướt 99%</a></li>
-                                    <li><a href="DongHo.html">Đồng hồ Luxury</a></li>
-                                    <li><a href="DongHo.html">Đồng hồ để bàn</a></li>
-                                    <li><a href="DongHo.html">Đồng hồ treo tường</a></li>
-                                    <li><a href="DongHo.html">Đồng hồ Nhật</a></li>
-                                    <li><a href="DongHo.html">Đồng hồ Thụy Sỹ</a></li>
-                                </ul>
-                            </div>
+    <c:if test="${not empty sessionScope.cart}">
+        <table class="cart-table">
+            <thead>
+            <tr style="background: #f9f9f9;">
+                <th>Sản phẩm</th>
+                <th>Đơn giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+                <th>Thao tác</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${sessionScope.cart}" var="item">
+                <tr>
+                    <td style="text-align: left; display: flex; align-items: center; gap: 15px;">
+                        <img src="${item.product.imageUrl}" class="cart-img" alt="Product Image">
+                        <div>
+                            <b style="font-size: 15px;">${item.product.name}</b>
+                            <p style="color: #888; font-size: 13px; margin: 0;">Mã: #${item.product.id}</p>
                         </div>
-                    </li>
-                    <li><a href="DongHo.html">Nam</a></li>
-                    <li><a href="DongHo.html">Nữ</a></li>
-                    <li class="nav-item-has-dropdown">
-                        <a href="PhuKien.html">Phụ kiện<i class="fa-solid fa-chevron-down"></i></a>
-                        <div class="megamenu megamenu-phukien">
-                            <div class="megamenu-column-phukien">
-                                <ul>
-                                    <li><a href="DongHo.html">Dây đồng hồ</a></li>
-                                    <li><a href="DongHo.html">Hộp xoay đồng hồ</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-
-        <!--Tim kiem, gio hang-->
-        <div class="header-action">
-            <ul class="ul-header-action">
-                <!-- Tim kiem -->
-                <li>
-                    <div class="search-bar">
-                        <form action="search" method="get" style="display:flex; align-items:center;">
-                            <input type="text" name="keyword" placeholder="Tìm là thấy">
-                            <button type="submit" class="search-icon" style="background:none; border:none;">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
-                        </form>
-                    </div>
-
-                </li>
-                <!-- Gio hang -->
-                <li>
-                    <a href="GioHang.html" class="action-icon cart-icon">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                        <span class="cart-badge">3</span>
-                    </a>
-                </li>
-                <!-- Yêu thích -->
-                <li>
-                    <a href="FavoritesList.html" class="action-icon">
-                        <i class="fa-regular fa-heart"></i>
-                        <span class="wishlist-count">(5)</span>
-                    </a>
-                </li>
-                <!-- Nút đăng nhập -->
-                <li>
-                    <div class="profile-dropdown">
-
-                        <button class="profile-avatar-btn" id="profile-btn">
-                            <img src="https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png" alt="User Avatar">
-                        </button>
-
-                        <div class="dropdown-menu" id="profile-menu">
-                            <div class="menu-header">
-                                TÔ TẤN PHÁT
-                            </div>
-                            <a href="ProfileUser.html"><i class="fa-solid fa-user"></i><span>Hồ sơ</span></a>
-                            <div class="divider"></div>
-                            <a href="../index.jsp"><i class="fa-solid fa-sign-out"></i><span>Đăng xuất</span></a>
-                        </div>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-    </header>
-
-    <div class="cart-container">
-        <!-- Danh sách sản phẩm -->
-        <div class="product-list">
-            <div class="cart-header">
-                <span>Sản phẩm</span>
-                <span>Tổng</span>
-            </div>
-
-            <c:if test="${empty sessionScope.cart}">
-                <p style="padding: 20px;">Giỏ hàng trống.</p>
-            </c:if>
-
-            <c:forEach items="${sessionScope.cart.values()}" var="i">
-                <div class="product-item">
-                    <div class="item-main">
-                        <img src="${i.imageUrl}" alt="${i.name}">
-                        <div class="item-details">
-                            <a href="#" class="product-name">${i.name}</a>
-                            <div class="price-info">
-                                <span class="old-price"><fmt:formatNumber value="${i.originalPrice}" pattern="#,###"/> ₫</span>
-                                <span class="new-price"><fmt:formatNumber value="${i.currentPrice}" pattern="#,###"/> ₫</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-total">
-                        <span><fmt:formatNumber value="${i.currentPrice * i.quantity}" pattern="#,###"/> ₫</span>
-                    </div>
-                    <div class="item-actions">
-                        <div class="quantity-selector">
-                            <button type="button">-</button>
-                            <input type="text" value="${i.quantity}" readonly>
-                            <button type="button">+</button>
-                        </div>
-                        <a href="../cart?action=delete&pid=${i.id}" class="remove-link">Xóa sản phẩm</a>
-                    </div>
-                </div>
+                    </td>
+                    <td><fmt:formatNumber value="${item.product.currentPrice}" type="currency" currencySymbol="₫"/></td>
+                    <td>
+                        <a href="cart?action=dec&pid=${item.product.id}" class="btn-qty">-</a>
+                        <span style="margin: 0 10px; font-weight: bold;">${item.quantity}</span>
+                        <a href="cart?action=inc&pid=${item.product.id}" class="btn-qty">+</a>
+                    </td>
+                    <td style="color: #d0011b; font-weight: bold;">
+                        <fmt:formatNumber value="${item.totalPrice}" type="currency" currencySymbol="₫"/>
+                    </td>
+                    <td>
+                        <a href="cart?action=delete&pid=${item.product.id}" class="btn-delete" onclick="return confirm('Bạn chắc chắn muốn xóa sản phẩm này?')">
+                            <i class="fa-solid fa-trash"></i> Xóa
+                        </a>
+                    </td>
+                </tr>
             </c:forEach>
-        </div>
+            </tbody>
+        </table>
 
-        <!-- Tổng tiền giỏ hàng -->
-        <div class="summary-total">
-            <span>Tổng ước tính</span>
-            <span class="total-price">
-        <fmt:formatNumber value="${sessionScope.totalMoney}" pattern="#,###"/> ₫
-    </span>
-        </div>
-    </div>
+        <div class="cart-summary">
+            <form action="cart" method="POST" style="margin-bottom: 20px;">
+                <input type="text" name="voucherCode" placeholder="Mã giảm giá (VD: GIAM10)" style="padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                <button type="submit" style="padding: 10px 20px; background: #333; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Áp dụng</button>
+                <c:if test="${not empty voucherMessage}">
+                    <p style="color: green; font-size: 14px; margin-top: 5px;"><i class="fa-solid fa-check-circle"></i> ${voucherMessage}</p>
+                </c:if>
+            </form>
 
-    <footer>
-        <div class="thongtintong">
-            <div class="thongtin">
-                <p>VỀ CHÚNG TÔI</p>
-                <ul class="list-tt">
-                    <li><a href="#"> Giới thiệu về WatchStore</a></li>
-                    <li><a href="#"> Phản ánh - Khiếu nại</a></li>
-                    <li><a href="#"> Chứng nhận đại lý</a></li>
-                    <li><a href="#"> Tin tức công ty</a></li>
-                    <li><a href="#"> Top list đồng hồ</a></li>
-                    <li><a href="#"> Kiến thức đồng hồ</a></li>
-                </ul>
-            </div>
+            <div style="background: #fdfdfd; padding: 20px; border: 1px solid #eee; display: inline-block; min-width: 300px; text-align: right;">
+                <p>Tạm tính: <b><fmt:formatNumber value="${totalMoney}" type="currency" currencySymbol="₫"/></b></p>
+                <c:if test="${discount > 0}">
+                    <p>Giảm giá: <b style="color: green;">- <fmt:formatNumber value="${discount}" type="currency" currencySymbol="₫"/></b></p>
+                </c:if>
+                <h3 style="color: #d0011b; margin-top: 10px; border-top: 1px solid #eee; padding-top: 10px;">
+                    Tổng cộng: <fmt:formatNumber value="${finalTotal}" type="currency" currencySymbol="₫"/>
+                </h3>
 
-            <div class="thongtin">
-                <p>CHÍNH SÁCH CHUNG</p>
-                <ul class="list-tt">
-                    <li><a href="#">Điều khoản thanh toán</a></li>
-                    <li><a href="#">Chính sách bảo hành</a></li>
-                    <li><a href="#">Chính sách bảo mật</a></li>
-                    <li><a href="#">Chính sách vận chuyển</a></li>
-                    <li><a href="#">Chính sách đổi trả</a></li>
-                    <li><a href="#">Thông tin các trang TMĐT</a></li>
-                </ul>
-            </div>
-
-            <div class="thongtin">
-                <p>Cửa hàng Miền Bắc</p>
-                <ul class="list-tt">
-                    <li><a href="#">97 Trần Đại Nghĩa, P.Bạch Mai, Hà Nội</a></li>
-                    <li><a href="#">58 Trần Đăng Ninh, P.Cầu Giấy, Hà Nội</a></li>
-                </ul>
-                <p>Cửa hàng Miền Trung</p>
-                <ul class="list-tt">
-                    <li><a href="#">339 Lê Duẩn, P.Thanh Khê, Đà Nẵng</a></li>
-                </ul>
-                <p>Cửa hàng Miền Nam</p>
-                <ul class="list-tt">
-                    <li><a href="#">642 CMT8, P.Thủ Dầu Một, HCM</a></li>
-                    <li><a href="#">90 Lê Văn Sỹ, P.Phú Nhuận, HCM</a></li>
-                    <li><a href="#">61 Quang Trung, P.Gò Vấp, HCM</a></li>
-                </ul>
-            </div>
-
-            <div class="thongtin">
-                <p>Liên hệ hỗ trợ</p>
-                <ul class="list-tt">
-                    <li><a href="#">Hotline 1: 093 189 222</a></li>
-                    <li><a href="#">Hotline 2: 097 189 3333</a></li>
-                    <li><a href="#">Hotline 3: 096 139 5555</a></li>
-                </ul>
+                <a href="${pageContext.request.contextPath}/checkout" class="checkout-btn">Tiến hành thanh toán</a>
             </div>
         </div>
-    </footer>
+    </c:if>
+</div>
 
-    <script src="../assets/js/index.js"></script>
+<jsp:include page="../WEB-INF/tags/footer.jsp" />
 </body>
 </html>

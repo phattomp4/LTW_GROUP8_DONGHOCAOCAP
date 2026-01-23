@@ -6,7 +6,7 @@
 
     <!--Logo-->
     <div class="logo-container-header">
-        <a href="index.jsp" class="logo-header"> <h1 class="logo-text" style="font-weight: 900; font-size: 35px;">VVP</h1>
+        <a href="${pageContext.request.contextPath}/home" class="logo-header"> <h1 class="logo-text" style="font-weight: 900; font-size: 35px;">VVP</h1>
         </a>
     </div>
 
@@ -93,22 +93,36 @@
     <div class="header-action">
         <ul class="ul-header-action">
             <li>
-                <div class="search-bar">
-                    <form action="category" method="GET" style="display:flex; align-items:center;">
+                <div class="search-bar" style="position: relative;">
+
+                    <form action="category" method="GET" class="search-form">
                         <input type="hidden" name="type" value="search">
-                        <input type="text" name="keyword" placeholder="Tìm là thấy" required>
-                        <button type="submit" style="background:none; border:none;"><i class="fa-solid fa-magnifying-glass search-icon"></i></button>
+
+                        <input type="text" name="keyword"
+                               oninput="searchByName(this)"
+                               placeholder="Tìm kiếm..." required autocomplete="off">
+
+                        <button type="submit" class="search-button">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
                     </form>
+
+                    <div id="search-results" class="search-results-box">
+                    </div>
+
                 </div>
             </li>
 
             <li>
-                <a href="user/cart.jsp" class="action-icon cart-icon">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                    <c:if test="${sessionScope.size > 0}">
-                        <span class="cart-count" style="background:red; color:white; border-radius:50%; padding:2px 6px; font-size:10px; position:absolute;">${sessionScope.size}</span>
-                    </c:if>
-                </a>
+                <div class="header-action-item">
+                    <a href="${pageContext.request.contextPath}/cart" style="position: relative; text-decoration: none; color: inherit;">
+                        <i class="fa-solid fa-cart-shopping" style="font-size: 20px;"></i>
+
+                        <span class="cart-count" id="cartCountHeader" style="position: absolute; top: -8px; right: -8px; background: #d0011b; color: white; font-size: 11px; font-weight: bold; padding: 2px 6px; border-radius: 50%;">
+                            ${sessionScope.cartCount != null ? sessionScope.cartCount : 0}
+                        </span>
+                    </a>
+                </div>
             </li>
 
             <li>
@@ -119,10 +133,28 @@
                         </a>
                     </div>
                 </c:if>
+
                 <c:if test="${sessionScope.acc != null}">
-                    <div class="profile-dropdown" style="position: relative; display: inline-block;">
-                        <span style="font-weight: bold; cursor: pointer;">${sessionScope.acc.fullName}</span>
-                        <a href="logout" style="font-size: 12px; color: red; margin-left: 5px;">(Thoát)</a>
+                    <div class="profile-dropdown">
+                        <button id="profile-btn" class="profile-avatar-btn">
+                            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar">
+                        </button>
+
+                        <div id="profile-menu" class="dropdown-menu">
+                            <div class="menu-header">
+                                Xin chào, <br>
+                                <b style="color: #1b6e76;">${sessionScope.acc.username}</b>
+                            </div>
+
+                            <a href="${pageContext.request.contextPath}/profile"><i class="fa-regular fa-user"></i> Hồ sơ cá nhân</a>
+                            <a href="order-history"><i class="fa-solid fa-clock-rotate-left"></i> Lịch sử đơn hàng</a>
+
+                            <div class="divider"></div>
+
+                            <a href="logout" style="color: #d0011b;">
+                                <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
+                            </a>
+                        </div>
                     </div>
                 </c:if>
             </li>
