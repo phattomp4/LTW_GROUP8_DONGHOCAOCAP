@@ -15,10 +15,6 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/model/Order.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/model/OrderDetail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/ThanhToan.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/ThanhToan.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/checkout.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,17 +263,9 @@
       <workItem from="1767280845625" duration="598000" />
       <workItem from="1767668023687" duration="1747000" />
       <workItem from="1767894022952" duration="2742000" />
-      <workItem from="1768064815306" duration="7357000" />
-      <workItem from="1768699969874" duration="667000" />
-      <workItem from="1768752616766" duration="1367000" />
-      <workItem from="1768846902581" duration="2831000" />
-      <workItem from="1768849820236" duration="211000" />
-      <workItem from="1768850105020" duration="501000" />
-      <workItem from="1768851196496" duration="6974000" />
-      <workItem from="1768926226345" duration="946000" />
-      <workItem from="1768927206126" duration="4745000" />
-      <workItem from="1768932272957" duration="6421000" />
-      <workItem from="1769015972938" duration="3024000" />
+      <workItem from="1768064815306" duration="6110000" />
+      <workItem from="1768824878544" duration="1988000" />
+      <workItem from="1768913127870" duration="2636000" />
     </task>
     <task id="LOCAL-00001" summary="thay doi cau truc project thanh web dong">
       <option name="closed" value="true" />
