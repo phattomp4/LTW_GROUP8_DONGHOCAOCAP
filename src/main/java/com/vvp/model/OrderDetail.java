@@ -7,43 +7,37 @@ public class OrderDetail {
     private int quantity;
     private double priceAtPurchase;
 
-    public int getOrderDetailId() {
-        return orderDetailId;
+    // --- PHẦN QUAN TRỌNG CÒN THIẾU ---
+    private Product product; // Biến này chứa Tên, Ảnh, Giá...
+
+    public Product getProduct() {
+        return product;
     }
 
-    public void setOrderDetailId(int orderDetailId) {
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+    // ---------------------------------
+
+    public OrderDetail() {
+    }
+
+    public OrderDetail(int orderDetailId, int orderId, int productId, int quantity, double priceAtPurchase) {
         this.orderDetailId = orderDetailId;
-    }
-
-    public int getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(int orderId) {
         this.orderId = orderId;
-    }
-
-    public int getProductId() {
-        return productId;
-    }
-
-    public void setProductId(int productId) {
         this.productId = productId;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
         this.quantity = quantity;
-    }
-
-    public double getPriceAtPurchase() {
-        return priceAtPurchase;
-    }
-
-    public void setPriceAtPurchase(double priceAtPurchase) {
         this.priceAtPurchase = priceAtPurchase;
     }
+
+    public int getOrderDetailId() { return orderDetailId; }
+    public void setOrderDetailId(int orderDetailId) { this.orderDetailId = orderDetailId; }
+    public int getOrderId() { return orderId; }
+    public void setOrderId(int orderId) { this.orderId = orderId; }
+    public int getProductId() { return productId; }
+    public void setProductId(int productId) { this.productId = productId; }
+    public int getQuantity() { return quantity; }
+    public void setQuantity(int quantity) { this.quantity = quantity; }
+    public double getPriceAtPurchase() { return priceAtPurchase; }
+    public void setPriceAtPurchase(double priceAtPurchase) { this.priceAtPurchase = priceAtPurchase; }
 }
