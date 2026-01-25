@@ -27,7 +27,7 @@
 <body>
 <jsp:include page="../WEB-INF/tags/header.jsp" />
 
-<div class="container" style="margin-top: 150px; min-height: 500px; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 20px;">
+<div class="container" style="margin-top: 5px; min-height: 500px; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 20px;">
     <h2>Giỏ hàng của bạn</h2>
 
     <c:if test="${empty sessionScope.cart}">

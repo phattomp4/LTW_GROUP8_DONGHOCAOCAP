@@ -25,14 +25,16 @@ public class ProductDAO {
                 rs.getDouble("CurrentPrice"),
                 rs.getString("ImageURL"),
                 rs.getInt("StockQuantity"),
-                rs.getInt("SoldQuantity")
+                rs.getInt("SoldQuantity"),
+                rs.getBoolean("IsLuxury")
         );
     }
 
     public List<Product> getFeaturedProducts() {
         List<Product> list = new ArrayList<>();
-        // Lấy 8 sản phẩm mới nhất
-        String query = "SELECT * FROM Products ORDER BY CreatedAt DESC LIMIT 8";
+
+        String query = "SELECT * FROM Products ORDER BY CreatedAt DESC";
+
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
@@ -46,14 +48,14 @@ public class ProductDAO {
         return list;
     }
 
-    // 2. Tab Đồng hồ Nam: Lấy 8 sản phẩm có tên chứa chữ "Nam"
     public List<Product> getMenProducts() {
         List<Product> list = new ArrayList<>();
-        String query = "SELECT * FROM Products WHERE Name LIKE ? LIMIT 8";
+        // Dùng LIKE '%Nam%' để tìm sản phẩm có chứa chữ Nam
+        String query = "SELECT * FROM Products WHERE Name LIKE '%Nam%' ORDER BY CreatedAt DESC";
+
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setString(1, "%Nam%"); // Tìm kiếm tương đối
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(mapResultSetToProduct(rs));
@@ -64,14 +66,16 @@ public class ProductDAO {
         return list;
     }
 
-    // 3. Tab Đồng hồ Nữ: Lấy 8 sản phẩm có tên chứa chữ "Nữ"
+    // 2. Hàm lấy Đồng hồ Nữ (Tìm theo tên có chữ "Nữ")
     public List<Product> getWomenProducts() {
         List<Product> list = new ArrayList<>();
-        String query = "SELECT * FROM Products WHERE Name LIKE ? LIMIT 8";
+        // Dùng LIKE '%Nữ%' để tìm.
+        // Lưu ý: Nếu Database lỗi font, hãy thử N'%Nữ%' (cho SQL Server) hoặc đảm bảo URL kết nối có useUnicode=true
+        String query = "SELECT * FROM Products WHERE Name LIKE '%Nữ%' ORDER BY CreatedAt DESC";
+
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setString(1, "%Nữ%");
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(mapResultSetToProduct(rs));
@@ -85,7 +89,9 @@ public class ProductDAO {
     // 4. Phần Luxury: Lấy các sản phẩm giá > 15 triệu
     public List<Product> getLuxuryProducts() {
         List<Product> list = new ArrayList<>();
-        String query = "SELECT * FROM Products WHERE CurrentPrice >= 15000000 ORDER BY CurrentPrice DESC LIMIT 8";
+        // Chỉ lấy sản phẩm có IsLuxury = 1
+        String query = "SELECT * FROM Products WHERE IsLuxury = 1 ORDER BY CreatedAt DESC LIMIT 10";
+
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
