@@ -288,7 +288,7 @@ body {
 }
 
         .img-brand img:hover {
-            cursor: pointer;
+            cursor: default;
             box-shadow: 5px 6px 6px 2px #a7a7a7;
             transform: scale(1.05);
         }
@@ -438,31 +438,87 @@ body {
         margin-top: 10px;
     }
 
-.logo-container {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    text-align: center;
-    margin: 20px;
+/* --- CSS CHO SLIDER THƯƠNG HIỆU MỚI --- */
+
+.brand-slider-wrapper {
+    position: relative;
+    padding: 0 40px; /* Chừa chỗ cho 2 nút bấm */
 }
 
+.logo-container {
+    display: flex; /* Chuyển từ Grid sang Flex để xếp hàng ngang */
+    gap: 20px;
+    overflow-x: auto; /* Cho phép cuộn ngang */
+    scroll-behavior: smooth; /* Cuộn mượt */
+    padding: 20px 0;
 
-    .logo-container img {
-        max-width: 80px; /* Giới hạn chiều ngang tối đa */
-        max-height: 40px; /* Giới hạn chiều cao tối đa */
-        object-fit: contain; /* Giữ nguyên tỉ lệ ảnh */
-    }
-    .logo-container .item-Casio img {
-        width: 80px;
-        height: 40px;
-    }
-    .logo-container a {
-        border: 1px solid #dddddd;
-        border-radius: 8px;
-    }
+    /* Ẩn thanh cuộn xấu xí đi */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE */
+}
 
+.logo-container::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+/* Style cho từng ô thương hiệu */
+.logo-brand {
+    /* Quan trọng: Giữ kích thước cố định, không bị co lại */
+    flex: 0 0 calc(100% / 6 - 20px); /* Hiển thị 6 logo trên 1 dòng */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background: #fff;
+    transition: 0.3s;
+
+    /* Căn giữa ảnh */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+.logo-brand:hover {
+    border-color: #1b6e76;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Nút điều hướng (Next/Prev) */
+.brand-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #1b6e76; /* Màu xanh thương hiệu */
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.8;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-nav-btn:hover {
+    opacity: 1;
+    background-color: #0e3e43;
+}
+
+.prev-brand { left: 0; }
+.next-brand { right: 0; }
+
+/* Responsive cho Mobile: Hiển thị 2 logo/dòng */
+@media (max-width: 768px) {
+    .logo-brand {
+        flex: 0 0 calc(100% / 2 - 20px);
+    }
+}
     .BST {
         text-align: center;
         font-size: 230%;
@@ -740,7 +796,7 @@ body {
 }
 
 .container-button-lhtv {
-    margin: 0px 0px 40px 0px;
+    margin: 30px 0px 30px 0px;
 }
 
 .button-lhtv {
@@ -773,5 +829,29 @@ body {
 }
 
 
+/* Class dùng để ẩn sản phẩm */
+.hidden-style {
+    display: none !important;
+}
+
+/* Style cho nút Xem thêm mới */
+.btn-view-more-style {
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1b6e76; /* Màu xanh thương hiệu của bạn */
+    background-color: white;
+    border: 1px solid #1b6e76;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+.btn-view-more-style:hover {
+    background-color: #1b6e76;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 
 

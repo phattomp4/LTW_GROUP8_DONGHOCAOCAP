@@ -34,29 +34,19 @@
     <!-- Slideshow container -->
     <div class="slideshow-container">
 
-        <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/07/carnivial-chi-tu-3-trieu.webp" style="width:100%">
-        </div>
-        <div class="mySlides fade">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/10/banner-dong-ho-20-10-1.jpg" style="width:100%">
-        </div>
+        <c:forEach items="${listSlideshow}" var="banner">
+            <div class="mySlides fade">
+                <img src="${banner.imageUrl}" style="width:100%">
+            </div>
+        </c:forEach>
 
-        <div class="mySlides fade">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/10/banner-tieu-rolex-pc.jpg" style="width:100%">
-        </div>
-
-
-
-        <!-- Next and previous buttons -->
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-        <!-- The dots/circles -->
         <div class="dots-container" style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+            <c:forEach items="${listSlideshow}" var="banner" varStatus="status">
+                <span class="dot" onclick="currentSlide(${status.count})"></span>
+            </c:forEach>
         </div>
     </div>
     <br>
@@ -154,7 +144,7 @@
 
         <div class="introduce-section">
             <p id="text-introduce">
-                <a href="">VVP.VN</a> cung cấp đa dạng mẫu đồng hồ theo nhiều phong cách khác nhau.
+                VVP cung cấp đa dạng mẫu đồng hồ theo nhiều phong cách khác nhau.
             </p>
             <style>
                 #text-introduce {
@@ -164,134 +154,23 @@
             </style>
         </div>
 
-        <div class="introduce-section container-button-introduce">
-            <div class="button-introduce" style="text-align:center">
-                <a href="" class="button button-flash-sales" style="border-radius:7px;">
-                    <span style="color: #fff">CASIO MÙA HÈ 2025 GIẢM GIÁ SHOCK  45% - FLASH SALES</span>
-                </a>
-            </div>
-        </div>
 
     </div>
 
     <div class="container-introduce-brand">
         <div class="introduce-brand">
-            <div class="row-brand">
-                <div class="brand">
-                    <div class="container-img-brand">
-                        <a href="" target="_blank" style="text-decoration: none">
+            <div class="row-brand" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+
+                <c:forEach items="${listSmallBanners}" var="b">
+                    <div class="brand">
+                        <div class="container-img-brand">
                             <div class="img-brand">
-                                <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/small-web-banner-xu-huong-2024_1725589299.webp" width="232" height="99">
+                                <img src="${b.imageUrl}" width="232" height="99" alt="Banner Brand">
                             </div>
-                        </a>
+                        </div>
                     </div>
+                </c:forEach>
 
-                    <div class="text-brand">
-                        <h4>Xu hướng 2025</h4>
-                    </div>
-                </div>
-
-                <div class="brand">
-                    <div class="container-img-brand">
-                        <a href="" target="_blank" style="text-decoration: none">
-                            <div class="img-brand">
-                                <img src="https://cdn.watchstore.vn/wp-content/uploads/2025/06/small-web-banner-baby-g_1725596682.webp" width="232" height="99">
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="text-brand">
-                        <h4>Baby-G cá tính</h4>
-                    </div>
-                </div>
-
-                <div class="brand">
-                    <div class="container-img-brand">
-                        <a href="" target="_blank" style="text-decoration: none">
-                            <div class="img-brand">
-                                <img src="https://cdn.watchstore.vn/wp-content/uploads/2025/06/small-web-banner-g-shock_1725589299.webp" width="232" height="99">
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="text-brand">
-                        <h4>G-Shock thể thao</h4>
-                    </div>
-                </div>
-
-                <div class="brand">
-                    <div class="container-img-brand">
-                        <a href="" target="_blank" style="text-decoration: none">
-                            <div class="img-brand">
-                                <img src="https://cdn.watchstore.vn/wp-content/uploads/2025/06/small-web-banner-quan-doi_1725598290.webp" width="232" height="99">
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="text-brand">
-                        <h4>Quân đội mạnh mẽ</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="introduce-brand">
-            <div class="row-brand">
-                <div class="brand">
-                    <div class="container-img-brand">
-                        <a href="" target="_blank" style="text-decoration: none">
-                            <div class="img-brand">
-                                <img src="https://cdn.watchstore.vn/wp-content/uploads/2025/06/small-web-banner-tissot_1725589299.webp" width="232" height="99">
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="text-brand">
-                        <h4>Tissot sang trọng</h4>
-                    </div>
-                </div>
-
-                <div class="brand">
-                    <div class="container-img-brand">
-                        <a href="" target="_blank" style="text-decoration: none">
-                            <div class="img-brand">
-                                <img src="https://cdn.watchstore.vn/wp-content/uploads/2025/06/small-web-banner-casio-ltp_1725589299.webp" width="232" height="99">
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="text-brand">
-                        <h4>Casio LTP nữ tính</h4>
-                    </div>
-                </div>
-
-                <div class="brand">
-                    <div class="container-img-brand">
-                        <a href="" target="_blank" style="text-decoration: none">
-                            <div class="img-brand">
-                                <img src="https://cdn.watchstore.vn/wp-content/uploads/2025/06/small-web-banner-casio-mtp_1725589299.webp" width="232" height="99">
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="text-brand">
-                        <h4>Casio MTP thanh lịch</h4>
-                    </div>
-                </div>
-
-                <div class="brand">
-                    <div class="container-img-brand">
-                        <a href="" target="_blank" style="text-decoration: none">
-                            <div class="img-brand">
-                                <img src="https://cdn.watchstore.vn/wp-content/uploads/2025/06/small-web-banner-giong-rolex_1725589710.webp" width="232" height="99">
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="text-brand">
-                        <h4>Giống Rolex</h4>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -300,12 +179,6 @@
     <div class="collection-luxury">
         <div class="luxury-title">
             <h2>BỘ SƯU TẬP HÀNG LUXURY</h2>
-        </div>
-
-        <div class="luxury-gallary">
-            <a href="#"> <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/fc-luxury-banner_1711707751.webp" width="400" height="230"></a>
-            <a href="#"> <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/omega-luxury-banner_1711707171.webp" width="400" height="230"></a>
-            <a href="#"> <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/lg-giam-34-banner_1711707950.webp" width="400" height="230"></a>
         </div>
 
         <div class="luxury-cards">
@@ -318,20 +191,32 @@
                 <ul class="ul-luxury-cards swiper-wrapper">
                     <c:forEach items="${listLuxury}" var="p">
                         <li class="luxury-card swiper-slide">
-                            <div class="Product">
-                                <button class="wishlist-icon" aria-label="Thêm vào danh sách yêu thích">
-                                    <i class="fa-regular fa-heart"></i>
-                                </button>
-                                <a href="${pageContext.request.contextPath}/detail?pid=${p.id}"><img src="${p.imageUrl}" alt="${p.name}" class="luxury-card-img" onerror="this.src='https://via.placeholder.com/300'"></a>
+                            <c:set var="isOut" value="${p.stockQuantity <= 0}" />
+
+                            <div class="Product ${isOut ? 'out-of-stock' : ''}">
+
+                                <a href="${pageContext.request.contextPath}/detail?pid=${p.id}" class="img-product">
+                                    <img src="${p.imageUrl}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/300'">
+
+                                    <c:if test="${isOut}">
+                                        <span class="badge-out-of-stock">HẾT HÀNG</span>
+                                    </c:if>
+                                </a>
+
                                 <br />
                                 <a href="${pageContext.request.contextPath}/detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
-                                <p class="PriceOfPoduct"><fmt:formatNumber value="${p.currentPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
+
+                                <p class="PriceOfPoduct">
+                                    <fmt:formatNumber value="${p.currentPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>
+                                </p>
+
                                 <div class="Discount-row">
-                                    <p class="Discount"><fmt:formatNumber value="${p.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
-                                    <p class="DiscountPercent">-30%</p>
+                                    <p class="Discount">
+                                        <fmt:formatNumber value="${p.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>
+                                    </p>
                                 </div>
-                                <p class="Sold">Đã bán ${p.soldQuantity}</p>
-                                <a href="${pageContext.request.contextPath}/add-to-cart?pid=${detail.productID}&quantity=1&action=buynow" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
+
+                                <p class="Sold">${isOut ? 'Tạm hết hàng' : 'Đã bán ' += p.soldQuantity}</p>
                             </div>
                         </li>
                     </c:forEach>
@@ -349,112 +234,161 @@
 
     <!-- Vu -->
     <div>
-        <p class="ThuongHieu">Thương hiệu nổi bật</p>
+        <p class="ThuongHieu">Thương hiệu có ở VVP</p>
     </div>
     <div class="CamKet">
-        <p>VPP.vn Cam kết chính hãng 100%, bồi thường 20 lần nếu phát hiện hàng giả</p>
+        <p>VPP Cam kết chính hãng 100%, bồi thường 20 lần nếu phát hiện hàng giả</p>
     </div>
 
-    <div class="logo-container">
-        <a href="" class="logo-brand"><div class="item-Casio"><img src="https://cdn.casio-vietnam.vn/wp-content/uploads/2024/11/logo_casio_g_store.png" alt=""></div></a>
-        <a href="" class="logo-brand"><div class="item-Orient"><img src="https://1000logos.net/wp-content/uploads/2018/10/Orient-Logo.png" alt=""></div></a>
-        <a href="" class="logo-brand"><div class="item-Citizen"><img src="https://thietkelogo.mondial.vn/wp-content/uploads/2024/01/MAU_THIET_KE_LOGO_THUONG_HIEU_CITIZEN_1.jpg" alt=""></div></a>
-        <a href="" class="logo-brand"><div class="item-Longines"><img src="https://i.pinimg.com/originals/e0/ce/07/e0ce0771f4e6c58203eeb6a638375500.png" alt=""></div></a>
-        <a href="" class="logo-brand"><div class="item-Bentley"><img src="https://donghochinhhangsmile.com/wp-content/uploads/2023/04/logo-dong-ho-bentley.png" alt=""></div></a>
-        <a href="" class="logo-brand"><div class="item-SR"><img src="https://www.watchstore.vn/wp-content/uploads/2025/06/dong-ho-srwatch-cua-nuoc-nao-1-1650531691689.jpg" alt=""></div></a>
-        <a href="" class="logo-brand"><div class="item-Seiko"><img src="https://thietkelogo.mondial.vn/wp-content/uploads/2024/01/Seiko-Logo.jpg" alt=""></div></a>
-        <a href="" class="logo-brand"><div class="item-Omega"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC6W1731EzorghFc3xS1iz1mptUitE1X1dUg&s" alt=""></div></a>
-        <a href="" class="logo-brand"><div class="item-Hublot"><img src="https://greeninnovation.com.vn/wp-content/uploads/2023/06/Hublot-Logo.png" alt=""></div></a>
-        <a href="" class="logo-brand"><div class="item-Tissot"><img src="https://brandpalettes.com/wp-content/uploads/2023/06/Tissot-logo.png" alt=""></div></a>
-        <a href="" class="logo-brand"><div class="item-G-shock"><img src="https://dongho.timemart.vn/wp-content/uploads/2017/07/casio-logo.png" alt=""></div></a>
-        <a href="" class="logo-brand"><div class="item-Olym"><img src="https://cdn.vuanhwatch.com/media/products/22104/content/olym-pianus-png-1663989235-24092022101355.png" alt=""></div></a>
+    <div class="brand-slider-wrapper" style="position: relative; max-width: 1200px; margin: 0 auto;">
+
+        <button class="brand-nav-btn prev-brand" onclick="scrollBrand(-1)">❮</button>
+
+        <div class="logo-container" id="brand-slider">
+            <c:forEach items="${listBrands}" var="b">
+                <div class="logo-brand">
+                    <div style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%; overflow: hidden;">
+                        <img src="${b.logoUrl}" alt="${b.name}" title="${b.name}"
+                             style="width: 80px; height: 40px; object-fit: contain;">
+                    </div>
+                </div>
+            </c:forEach>
+        </div>
+
+        <button class="brand-nav-btn next-brand" onclick="scrollBrand(1)">❯</button>
+
     </div>
 
     <div class="BST">
-        <p>BỘ SƯU TẬP CHO MÙA HÈ</p>
+        <p>BỘ SƯU TẬP</p>
     </div>
 
 
     <div class="button-bst-container">
-        <button id="tab-featured" class="active">Nổi bật</button> <!-- đặt tab nổi bật làm mặc định -->
+        <button id="tab-featured" class="active">Tất cả</button> <!-- đặt tab nổi bật làm mặc định -->
         <button id="tab-men">Đồng hồ nam</button>
         <button id="tab-women">Đồng hồ nữ</button>
     </div>
 
     <div class="Product-list-container">
-        <!-- Tab đồng hồ nổi bật -->
+
         <div id="content-featured" class="tab-content">
-            <div id="Page1" class="Product-page">
+            <div class="Product-page">
                 <c:forEach items="${listFeatured}" var="p">
-                    <div class="link-product">
-                        <div class="Product">
-                            <button class="wishlist-icon"><i class="fa-regular fa-heart"></i></button>
+                    <div class="link-product js-item-featured"> <c:set var="isOut" value="${p.stockQuantity <= 0}" />
+
+                        <div class="Product ${isOut ? 'out-of-stock' : ''}">
+
                             <a href="${pageContext.request.contextPath}/detail?pid=${p.id}" class="img-product">
                                 <img src="${p.imageUrl}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/300'">
+
+                                <c:if test="${isOut}">
+                                    <span class="badge-out-of-stock">HẾT HÀNG</span>
+                                </c:if>
                             </a>
+
                             <br />
                             <a href="${pageContext.request.contextPath}/detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
-                            <p class="PriceOfPoduct"><fmt:formatNumber value="${p.currentPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
-                            <div class="Discount-row">
-                                <p class="Discount"><fmt:formatNumber value="${p.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
-                                <p class="DiscountPercent">-30%</p>
-                            </div>
-                            <p class="Sold">Đã bán ${p.soldQuantity}</p>
 
-                            <a href="${pageContext.request.contextPath}/add-to-cart?pid=${detail.productID}&quantity=1&action=buynow" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
+                            <p class="PriceOfPoduct">
+                                <fmt:formatNumber value="${p.currentPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>
+                            </p>
+
+                            <div class="Discount-row">
+                                <p class="Discount">
+                                    <fmt:formatNumber value="${p.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>
+                                </p>
+                            </div>
+
+                            <p class="Sold">${isOut ? 'Tạm hết hàng' : 'Đã bán ' += p.soldQuantity}</p>
                         </div>
                     </div>
                 </c:forEach>
             </div>
-
-        <!-- Tab đồng hồ nam -->
-        <div id="content-men" class="tab-content hidden">
-            <div class="Product-page">
-                <c:forEach items="${listMen}" var="p">
-                    <div class="link-product">
-                        <div class="Product">
-                            <button class="wishlist-icon"><i class="fa-regular fa-heart"></i></button>
-                            <a href="${pageContext.request.contextPath}/detail?pid=${p.id}" class="img-product">
-                                <img src="${p.imageUrl}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/300'">
-                            </a>
-                            <br />
-                            <a href="${pageContext.request.contextPath}/detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
-                            <p class="PriceOfPoduct"><fmt:formatNumber value="${p.currentPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
-                            <div class="Discount-row">
-                                <p class="Discount"><fmt:formatNumber value="${p.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
-                                <p class="DiscountPercent">-30%</p>
-                            </div>
-                            <p class="Sold">Đã bán ${p.soldQuantity}</p>
-                            <a href="${pageContext.request.contextPath}/add-to-cart?pid=${detail.productID}&quantity=1&action=buynow" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
-                        </div>
-                    </div>
-                </c:forEach>
+            <div class="container-btn-viewmore" style="text-align: center; margin: 30px 0; width: 100%;">
+                <button id="btnNewLoadMore" type="button" class="btn-view-more-style">
+                    Xem thêm <i class="fa-solid fa-chevron-down"></i>
+                </button>
             </div>
         </div>
 
-
-        <!-- Tab đồng hồ nữ -->
-        <div id="content-women" class="tab-content hidden">
+        <div id="content-men" class="tab-content hidden">
             <div class="Product-page">
-                <c:forEach items="${listWomen}" var="p">
-                    <div class="link-product">
-                        <div class="Product">
-                            <button class="wishlist-icon"><i class="fa-regular fa-heart"></i></button>
+                <c:forEach items="${listMen}" var="p">
+                    <div class="link-product js-item-men"> <c:set var="isOut" value="${p.stockQuantity <= 0}" />
+
+                        <div class="Product ${isOut ? 'out-of-stock' : ''}">
+
                             <a href="${pageContext.request.contextPath}/detail?pid=${p.id}" class="img-product">
                                 <img src="${p.imageUrl}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/300'">
+
+                                <c:if test="${isOut}">
+                                    <span class="badge-out-of-stock">HẾT HÀNG</span>
+                                </c:if>
                             </a>
+
                             <br />
                             <a href="${pageContext.request.contextPath}/detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
-                            <p class="PriceOfPoduct"><fmt:formatNumber value="${p.currentPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
+
+                            <p class="PriceOfPoduct">
+                                <fmt:formatNumber value="${p.currentPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>
+                            </p>
+
                             <div class="Discount-row">
-                                <p class="Discount"><fmt:formatNumber value="${p.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></p>
-                                <p class="DiscountPercent">-30%</p>
+                                <p class="Discount">
+                                    <fmt:formatNumber value="${p.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>
+                                </p>
                             </div>
-                            <p class="Sold">Đã bán ${p.soldQuantity}</p>
-                            <a href="${pageContext.request.contextPath}/add-to-cart?pid=${detail.productID}&quantity=1&action=buynow" class="button" style="text-align: center; margin-top: 5px; display:block;">Mua ngay</a>
+
+                            <p class="Sold">${isOut ? 'Tạm hết hàng' : 'Đã bán ' += p.soldQuantity}</p>
                         </div>
                     </div>
                 </c:forEach>
+            </div>
+            <div class="container-btn-viewmore" style="text-align: center; margin: 30px 0; width: 100%;">
+                <button id="btnLoadMoreMen" type="button" class="btn-view-more-style">
+                    Xem thêm <i class="fa-solid fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="content-women" class="tab-content hidden">
+            <div class="Product-page">
+                <c:forEach items="${listWomen}" var="p">
+                    <div class="link-product js-item-women"> <c:set var="isOut" value="${p.stockQuantity <= 0}" />
+
+                        <div class="Product ${isOut ? 'out-of-stock' : ''}">
+
+                            <a href="${pageContext.request.contextPath}/detail?pid=${p.id}" class="img-product">
+                                <img src="${p.imageUrl}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/300'">
+
+                                <c:if test="${isOut}">
+                                    <span class="badge-out-of-stock">HẾT HÀNG</span>
+                                </c:if>
+                            </a>
+
+                            <br />
+                            <a href="${pageContext.request.contextPath}/detail?pid=${p.id}"><p class="Item">${p.name}</p></a>
+
+                            <p class="PriceOfPoduct">
+                                <fmt:formatNumber value="${p.currentPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>
+                            </p>
+
+                            <div class="Discount-row">
+                                <p class="Discount">
+                                    <fmt:formatNumber value="${p.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>
+                                </p>
+                            </div>
+
+                            <p class="Sold">${isOut ? 'Tạm hết hàng' : 'Đã bán ' += p.soldQuantity}</p>
+                        </div>
+                    </div>
+                </c:forEach>
+            </div>
+            <div class="container-btn-viewmore" style="text-align: center; margin: 30px 0; width: 100%;">
+                <button id="btnLoadMoreWomen" type="button" class="btn-view-more-style">
+                    Xem thêm <i class="fa-solid fa-chevron-down"></i>
+                </button>
             </div>
         </div>
 
@@ -465,15 +399,15 @@
     <section class="InformationStore">
         <div class="History-Brand">
             <div class="Picture-Brand">
-                <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/gioithieu-home-desktop_1711705731.webp" alt="">
+                <img src="${shopInfo.mainImageUrl}" alt="VVP Store">
             </div>
             <div class="Introduce-Brand">
-                <p class="LogoStore">VVP</p>
-                <p class="ReputationBrand">Cửa hàng đồng hồ đeo tay chính hãng</p>
-                <p class="History1">Là chuỗi cửa hàng chuyên bán đồng hồ chính hãng, VVP.VN đã đồng hành cùng khách hàng hơn 4 năm kể từ ngày thành lập vào năm 2020. Chúng tôi tự hào là đại lý ủy quyền của nhiều thương hiệu đồng hồ Thụy Sĩ và Nhật Bản hàng đầu.</p>
-                <p class="History2">Chúng tôi cam kết 100% sản phẩm là chính hãng và áp dụng Chính sách Bảo hành lên đến 5 năm để đảm bảo sự an tâm tuyệt đối. Đội ngũ VVP.VN luôn sẵn lòng hỗ trợ với kiến thức chuyên sâu, mang đến trải nghiệm mua sắm đẳng cấp và đáng tin cậy.</p>
-                <p class="History3">Hãy để VVP.VN hoàn thiện phong cách của bạn với chiếc đồng hồ chất lượng nhất!</p>
-                </p>
+                <p class="LogoStore">${shopInfo.brandName}</p>
+                <p class="ReputationBrand">${shopInfo.subtitle}</p>
+
+                <p class="History1">${shopInfo.history1}</p>
+                <p class="History2">${shopInfo.history2}</p>
+                <p class="History3">${shopInfo.history3}</p>
             </div>
         </div>
         <div class="btn-timhieuthem">
@@ -489,64 +423,14 @@
         <button class="gallery-button prev-gallery" onclick="scrollSlider(-1)">❮</button>
 
         <div class="new-store-gallery-container" id="slide-list-img-new">
-            <!-- TÔI ĐÃ XÓA class "full-row-gallery" khỏi tất cả các ảnh -->
-            <img src="https://cdn.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-5.webp" alt="Bộ sưu tập ảnh cửa hàng VVP" class="gallery-image">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-5.webp" class="gallery-image">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp" class="gallery-image">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-3.webp" class="gallery-image">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp" class="gallery-image">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-3.webp" class="gallery-image">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp" class="gallery-image">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp" class="gallery-image">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp" class="gallery-image">
-            <img src="https://cdn.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-5.webp" alt="Bộ sưu tập ảnh cửa hàng VVP" class="gallery-image">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp" class="gallery-image">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-3.webp" class="gallery-image">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp" class="gallery-image">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-3.webp" class="gallery-image">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang-2.webp" class="gallery-image">
-            <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/tai-cua-hang.webp" class="gallery-image">
+            <c:forEach items="${shopGallery}" var="imgUrl">
+                <img src="${imgUrl}" alt="Cửa hàng VVP" class="gallery-image">
+            </c:forEach>
         </div>
 
         <button class="gallery-button next-gallery" onclick="scrollSlider(1)">❯</button>
     </div>
-    <!-- Danh sách cửa hàng -->
-    <div class="dscuahang-title">
-        <h1>DANH SÁCH CỬA HÀNG</h1>
-    </div>
 
-    <div class="grid-container">
-        <div class="store-box">
-            <h3>WatchStore Trần Đại Nghĩa</h3>
-            <p>97 Trần Đại Nghĩa, HBT, Hà Nội</p>
-            <a href="#">Xem chỉ đường</a>
-        </div>
-        <div class="store-box">
-            <h3>WatchStore Trần Bằng Ninh</h3>
-            <p>58 Trần Bằng Ninh, Q. Hai Bà Trưng, Hà Nội</p>
-            <a href="#">Xem chỉ đường</a>
-        </div>
-        <div class="store-box">
-            <h3>WatchStore Đà Nẵng</h3>
-            <p>339 Lê Duẩn, Thanh Khê, Đà Nẵng</p>
-            <a href="#">Xem chỉ đường</a>
-        </div>
-        <div class="store-box">
-            <h3>WatchStore Bình Dương</h3>
-            <p>642 CMT8, Thủ Dầu Một, Bình Dương</p>
-            <a href="#">Xem chỉ đường</a>
-        </div>
-        <div class="store-box">
-            <h3>WatchStore Lê Văn Sỹ</h3>
-            <p>96 Lê Văn Sỹ, P11, Phú Nhuận, TPHCM</p>
-            <a href="#">Xem chỉ đường</a>
-        </div>
-        <div class="store-box">
-            <h3>WatchStore Quang Trung</h3>
-            <p>9 Quang Trung, P10, Gò Vấp, TPHCM</p>
-            <a href="#">Xem chỉ đường</a>
-        </div>
-    </div>
 
 
     <!-- Nút lhtv -->
