@@ -14,19 +14,17 @@
 <body>
 <jsp:include page="../WEB-INF/tags/header.jsp" />
 
-<div class="profile-container" style="margin-top: 140px;">
+<div class="profile-container" style="margin-top: 5px;">
     <div class="profile-sidebar">
         <div class="user-brief">
             <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="user-avatar-img" alt="Avatar">
             <div>
                 <strong>${sessionScope.acc.username}</strong>
-                <span><i class="fa-solid fa-pen"></i> Sửa hồ sơ</span>
             </div>
         </div>
         <div class="sidebar-menu">
-            <a href="profile" class="active"><i class="fa-regular fa-user"></i> Hồ sơ của tôi</a>
-            <a href="#"><i class="fa-solid fa-clock-rotate-left"></i> Lịch sử đơn hàng</a>
-            <a href="#"><i class="fa-regular fa-bell"></i> Thông báo</a>
+            <a href="${pageContext.request.contextPath}/profile" class="active"><i class="fa-regular fa-user"></i> Hồ sơ của tôi</a>
+            <a href="${pageContext.request.contextPath}/order-history"><i class="fa-solid fa-clock-rotate-left"></i> Lịch sử đơn hàng</a>
             <a href="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Đăng xuất</a>
         </div>
     </div>
@@ -122,7 +120,7 @@
                                 <div class="addr-header">
                     <span class="addr-name" style="font-weight: bold; font-size: 15px;">
                         ${addr.name}
-                        <c:if test="${addr.isDefault}">
+                        <c:if test="${addr.defaultAddress}">
                             <span class="badge-default" style="margin-left: 10px; font-size: 11px; color: #d0011b; border: 1px solid #d0011b; padding: 1px 5px; border-radius: 3px;">Mặc định</span>
                         </c:if>
                     </span>
@@ -136,16 +134,23 @@
                                     <p style="color: #444; margin: 0;">${addr.address}</p>
                                 </div>
 
-                                <div class="addr-footer" style="margin-top: 10px; border-top: 1px dashed #eee; padding-top: 8px; display: flex; justify-content: flex-end; gap: 10px;">
+                                <div class="addr-footer" style="margin-top: 10px; border-top: 1px dashed #eee; padding-top: 8px; display: flex; justify-content: flex-end; gap: 15px; align-items: center;">
+
+                                    <c:if test="${!addr.defaultAddress}">
+                                        <a href="address?action=set-default&id=${addr.id}"
+                                           style="font-size: 13px; color: #007bff; text-decoration: none; margin-right: auto;">
+                                            <i class="fa-regular fa-star"></i> Đặt làm mặc định
+                                        </a>
+                                    </c:if>
                                     <a href="javascript:void(0)"
                                        onclick="openEditModal('${addr.id}', '${addr.name}', '${addr.phone}', '${addr.address}')"
-                                       class="btn-edit-addr" style="font-size: 13px; color: #1b6e76;">
+                                       class="btn-edit-addr" style="font-size: 13px; color: #1b6e76; text-decoration: none;">
                                         <i class="fa-solid fa-pen"></i> Sửa
                                     </a>
 
                                     <a href="profile?action=delete&id=${addr.id}"
                                        onclick="return confirm('Bạn có chắc chắn muốn xóa địa chỉ này?')"
-                                       class="btn-delete-addr" style="font-size: 13px; color: #d0011b;">
+                                       class="btn-delete-addr" style="font-size: 13px; color: #d0011b; text-decoration: none;">
                                         <i class="fa-solid fa-trash"></i> Xóa
                                     </a>
                                 </div>
