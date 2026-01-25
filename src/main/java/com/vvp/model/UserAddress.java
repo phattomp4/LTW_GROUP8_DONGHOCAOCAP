@@ -7,7 +7,7 @@ public class UserAddress {
     private String phone;   // Map với Phone
     private String address; // Map với Street
     private String city;    // Map với City (Thêm vào cho đủ bộ)
-    private boolean isDefault;
+    private boolean isDefaultAddress;
 
     public UserAddress() {}
 
@@ -19,15 +19,62 @@ public class UserAddress {
         this.phone = phone;
         this.address = address;
         this.city = city;
-        this.isDefault = isDefault;
+        this.isDefaultAddress = isDefaultAddress;
     }
 
-    // --- CÁC HÀM GETTER BẮT BUỘC (JSP dùng cái này để hiển thị) ---
-    public int getId() { return id; }
-    public int getuID() { return uID; }
-    public String getName() { return name; }       // JSP gọi ${addr.name}
-    public String getPhone() { return phone; }     // JSP gọi ${addr.phone}
-    public String getAddress() { return address; } // JSP gọi ${addr.address}
-    public String getCity() { return city; }
-    public boolean getIsDefault() { return isDefault; }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getuID() {
+        return uID;
+    }
+
+    public void setuID(int uID) {
+        this.uID = uID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public boolean isDefaultAddress() { // Getter mới
+        return isDefaultAddress;
+    }
+
+    public void setDefaultAddress(boolean isDefaultAddress) { // Setter mới
+        this.isDefaultAddress = isDefaultAddress;
+    }
 }

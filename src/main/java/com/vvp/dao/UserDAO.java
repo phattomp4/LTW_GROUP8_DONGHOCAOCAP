@@ -7,6 +7,7 @@ import org.mindrot.jbcrypt.BCrypt;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -199,6 +200,109 @@ public class UserDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    // Lấy thông tin 1 địa chỉ theo ID
+    public UserAddress getAddressById(int addressId) {
+        String query = "SELECT * FROM Addresses WHERE AddressID = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, addressId);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                return new UserAddress(
+                        rs.getInt("AddressID"),
+                        rs.getInt("UserID"),
+                        rs.getString("ReceiverName"),
+                        rs.getString("Phone"),
+                        rs.getString("Street"),
+                        rs.getString("City"),
+                        rs.getBoolean("IsDefault")
+                );
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public User getUserById(int userId) {
+        String query = "SELECT * FROM Users WHERE UserID = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, userId);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                User u = new User();
+                u.setId(rs.getInt("UserID"));
+                u.setUsername(rs.getString("Username"));
+                u.setFullName(rs.getString("FullName"));
+                u.setEmail(rs.getString("Email"));
+                u.setPhone(rs.getString("Phone"));
+                u.setRole(rs.getString("Role"));
+                return u;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    // 1. HÀM ĐẶT ĐỊA CHỈ MẶC ĐỊNH
+    public void setDefaultAddress(int userId, int addressId) {
+        try {
+            conn = new DBContext().getConnection();
+            conn.setAutoCommit(false); // Bắt đầu Transaction
+
+            // B1: Reset tất cả địa chỉ của user này về 0
+            // Lưu ý tên bảng là: addresses
+            PreparedStatement ps1 = conn.prepareStatement("UPDATE addresses SET IsDefault = 0 WHERE UserID = ?");
+            ps1.setInt(1, userId);
+            ps1.executeUpdate();
+
+            // B2: Set địa chỉ được chọn thành 1
+            PreparedStatement ps2 = conn.prepareStatement("UPDATE addresses SET IsDefault = 1 WHERE AddressID = ? AND UserID = ?");
+            ps2.setInt(1, addressId);
+            ps2.setInt(2, userId);
+            ps2.executeUpdate();
+
+            conn.commit(); // Lưu thay đổi
+        } catch (Exception e) {
+            try { if(conn!=null) conn.rollback(); } catch(SQLException ex){}
+            e.printStackTrace();
+        } finally {
+            try { if(conn!=null) { conn.setAutoCommit(true); conn.close(); } } catch(SQLException ex){}
+        }
+    }
+
+    // 2. CẬP NHẬT HÀM LẤY DANH SÁCH (Để hiển thị ra Profile và Checkout)
+    public List<UserAddress> getListAddress(int userId) {
+        List<UserAddress> list = new ArrayList<>();
+        // Sắp xếp IsDefault DESC để địa chỉ mặc định luôn hiện lên đầu
+        String query = "SELECT * FROM addresses WHERE UserID = ? ORDER BY IsDefault DESC";
+
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, userId);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                UserAddress a = new UserAddress();
+                a.setId(rs.getInt("AddressID"));
+                a.setName(rs.getString("ReceiverName")); // DB là ReceiverName
+                a.setPhone(rs.getString("Phone"));
+                a.setAddress(rs.getString("Street"));    // DB là Street
+                a.setCity(rs.getString("City"));
+
+                // Lấy trạng thái mặc định
+                a.setDefaultAddress(rs.getBoolean("IsDefault"));
+
+                list.add(a);
+            }
+        } catch (Exception e) { e.printStackTrace(); }
+        return list;
     }
 
 
