@@ -89,7 +89,7 @@ public class CheckoutServlet extends HttpServlet {
                 session.removeAttribute("cartCount"); // Reset số lượng icon
 
                 // Chuyển sang trang thông báo thành công (hoặc trang lịch sử đơn hàng)
-                response.sendRedirect("profile"); // Hoặc order-success.jsp
+                response.sendRedirect("order-history"); // Hoặc order-success.jsp
             } else {
                 // Thất bại
                 request.setAttribute("error", "Đặt hàng thất bại. Vui lòng thử lại!");
