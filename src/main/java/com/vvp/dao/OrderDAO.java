@@ -1,10 +1,11 @@
 package com.vvp.dao;
 
 import com.vvp.context.DBContext;
-import com.vvp.model.CartItem;
-import com.vvp.model.User;
+import com.vvp.model.*;
+
 import java.sql.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class OrderDAO {
@@ -96,4 +97,140 @@ public class OrderDAO {
             }
         }
     }
+
+    // Lấy danh sách đơn hàng của 1 User
+    public List<Order> getOrdersByUserId(int userId) {
+        List<Order> list = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String query = "SELECT * FROM Orders WHERE UserID = ? ORDER BY OrderDate DESC";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, userId);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Order o = new Order();
+                o.setOrderId(rs.getInt("OrderID"));
+                o.setUserId(rs.getInt("UserID"));
+                o.setOrderDate(rs.getTimestamp("OrderDate"));
+                o.setTotalAmount(rs.getDouble("TotalAmount"));
+                o.setStatus(rs.getString("Status")); // Quan trọng: Trạng thái đơn
+                o.setPaymentMethod(rs.getString("PaymentMethod"));
+                o.setPaymentStatus(rs.getString("PaymentStatus"));
+                list.add(o);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    // Lấy chi tiết sản phẩm của 1 đơn hàng (Để xem chi tiết nếu cần)
+    // Lưu ý: Bạn cần Class OrderDetail có chứa Product bên trong (hoặc join bảng)
+    // Ở đây mình làm đơn giản lấy số lượng SP trước
+    public int countProductsInOrder(int orderId) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String query = "SELECT COUNT(*) FROM OrderDetails WHERE OrderID = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, orderId);
+            rs = ps.executeQuery();
+            if (rs.next()) return rs.getInt(1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    // 1. Lấy thông tin cơ bản của 1 đơn hàng
+    public Order getOrderById(int orderId) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String query = "SELECT * FROM Orders WHERE OrderID = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, orderId);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                com.vvp.model.Order o = new com.vvp.model.Order();
+                o.setOrderId(rs.getInt("OrderID"));
+                o.setUserId(rs.getInt("UserID"));
+                o.setShippingAddressId(rs.getInt("ShippingAddressID"));
+                o.setOrderDate(rs.getTimestamp("OrderDate"));
+                o.setTotalAmount(rs.getDouble("TotalAmount"));
+                o.setDiscountAmount(rs.getDouble("DiscountAmount"));
+                o.setStatus(rs.getString("Status"));
+                o.setPaymentMethod(rs.getString("PaymentMethod"));
+                return o;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    // 2. Lấy danh sách sản phẩm trong đơn hàng (Kèm thông tin Product)
+    // Lấy danh sách chi tiết đơn hàng (Kèm thông tin Tên & Ảnh sản phẩm)
+    public List<OrderDetail> getOrderDetails(int orderId) {
+        List<OrderDetail> list = new ArrayList<>();
+
+        // SỬA: p.ProductName -> p.Name
+        String query = "SELECT od.*, p.Name, " +
+                "(SELECT ImageURL FROM ProductImages WHERE ProductID = p.ProductID LIMIT 1) AS ImageURL " +
+                "FROM OrderDetails od " +
+                "JOIN Products p ON od.ProductID = p.ProductID " +
+                "WHERE od.OrderID = ?";
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, orderId);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                OrderDetail od = new OrderDetail();
+                od.setOrderDetailId(rs.getInt("OrderDetailID"));
+                od.setOrderId(rs.getInt("OrderID"));
+                od.setProductId(rs.getInt("ProductID"));
+                od.setQuantity(rs.getInt("Quantity"));
+                od.setPriceAtPurchase(rs.getDouble("PriceAtPurchase"));
+
+                Product p = new Product();
+                p.setId(rs.getInt("ProductID"));
+
+                // SỬA: Lấy dữ liệu từ cột "Name"
+                p.setName(rs.getString("Name"));
+
+                String img = rs.getString("ImageURL");
+                if (img == null) img = "https://via.placeholder.com/150";
+                p.setImageUrl(img);
+
+                od.setProduct(p);
+                list.add(od);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // ... (Giữ nguyên phần đóng kết nối của bạn)
+            try {
+                if (rs != null) rs.close();
+                if (ps != null) ps.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return list;
+    }
+
 }
