@@ -1,0 +1,55 @@
+package com.vvp.controller;
+
+import com.vvp.dao.OrderDAO;
+import com.vvp.dao.UserDAO;
+import com.vvp.model.Order;
+import com.vvp.model.OrderDetail;
+import com.vvp.model.User;
+import com.vvp.model.UserAddress;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
+
+@WebServlet(name = "AdminOrderDetailServlet", urlPatterns = {"/admin/order-detail"})
+public class AdminOrderDetailServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            int orderId = Integer.parseInt(request.getParameter("id"));
+            OrderDAO orderDAO = new OrderDAO();
+            UserDAO userDAO = new UserDAO();
+
+            // 1. Lấy Order
+            Order order = orderDAO.getOrderById(orderId);
+            if (order == null) {
+                response.sendRedirect("dashboard");
+                return;
+            }
+
+            // 2. Lấy địa chỉ giao hàng
+            UserAddress address = userDAO.getAddressById(order.getShippingAddressId());
+
+            // 3. Lấy danh sách sản phẩm
+            List<OrderDetail> details = orderDAO.getOrderDetails(orderId);
+
+            // --- 4. (MỚI) LẤY THÔNG TIN TÀI KHOẢN ĐẶT HÀNG ---
+            User customer = userDAO.getUserById(order.getUserId());
+            request.setAttribute("customer", customer);
+            // -------------------------------------------------
+
+            request.setAttribute("order", order);
+            request.setAttribute("address", address);
+            request.setAttribute("details", details);
+
+            request.getRequestDispatcher("/admin/order-detail.jsp").forward(request, response);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.sendRedirect("dashboard");
+        }
+    }
+}

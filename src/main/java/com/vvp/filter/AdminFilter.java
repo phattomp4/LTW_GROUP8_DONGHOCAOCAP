@@ -1,0 +1,30 @@
+package com.vvp.filter;
+
+import com.vvp.model.User;
+import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebFilter;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import java.io.IOException;
+
+// Chặn tất cả các đường dẫn bắt đầu bằng /admin/*
+@WebFilter(urlPatterns = {"/admin/*"})
+public class AdminFilter implements Filter {
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        HttpServletRequest req = (HttpServletRequest) request;
+        HttpServletResponse res = (HttpServletResponse) response;
+        HttpSession session = req.getSession();
+
+        User acc = (User) session.getAttribute("acc");
+
+        // Nếu chưa đăng nhập HOẶC Role không phải Admin -> Đuổi về trang chủ
+        if (acc == null || !"Admin".equals(acc.getRole())) {
+            res.sendRedirect(req.getContextPath() + "/home");
+        } else {
+            // Cho phép đi tiếp
+            chain.doFilter(request, response);
+        }
+    }
+}

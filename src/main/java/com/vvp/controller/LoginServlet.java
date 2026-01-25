@@ -32,8 +32,22 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("acc", user); // Lưu toàn bộ object User vào session
             session.setMaxInactiveInterval(60 * 60); // Phiên đăng nhập tồn tại 1 tiếng
 
-            // Chuyển hướng về trang chủ
-            response.sendRedirect("home");
+            // --- ĐOẠN CODE MỚI: XỬ LÝ CHUYỂN HƯỚNG THÔNG MINH ---
+
+            // Kiểm tra xem trước đó khách có đang bấm "Mua ngay" không?
+            String redirectUrl = (String) session.getAttribute("redirectAfterLogin");
+
+            if (redirectUrl != null) {
+                // Nếu có (ví dụ: "checkout"), xóa nó đi để không bị lặp lại lần sau
+                session.removeAttribute("redirectAfterLogin");
+
+                // Chuyển hướng đến trang khách đang muốn vào (Trang thanh toán)
+                response.sendRedirect(redirectUrl);
+            } else {
+                // Nếu không có yêu cầu đặc biệt nào, về trang chủ như bình thường
+                response.sendRedirect("home");
+            }
+            // ----------------------------------------------------
         }
     }
 }

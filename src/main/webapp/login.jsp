@@ -12,7 +12,7 @@
 
 <div class="login-container">
     <div class="back-home">
-        <a href="index.jsp" class="back-home-button">
+        <a href="${pageContext.request.contextPath}/home" class="back-home-button">
             <i class="fa-solid fa-arrow-left"></i> Quay về Trang chủ
         </a>
     </div>

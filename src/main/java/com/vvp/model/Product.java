@@ -16,6 +16,7 @@ public class Product {
     private String imageUrl;
     private int stockQuantity;  // 2. Thêm thuộc tính này
     private int soldQuantity;
+    private boolean isLuxury;
 
     // --- THÊM 2 THUỘC TÍNH MỚI ---
     // List chứa danh sách đường dẫn ảnh (cho bảng ProductImages)
@@ -27,7 +28,7 @@ public class Product {
 
     public Product() {}
 
-    public Product(int id, int brandId, String name, String sku, String description, double originalPrice, double currentPrice, String imageUrl, int stockQuantity, int soldQuantity) {
+    public Product(int id, int brandId, String name, String sku, String description, double originalPrice, double currentPrice, String imageUrl, int stockQuantity, int soldQuantity, boolean isLuxury) {
         this.id = id;
         this.brandId = brandId;
         this.name = name;
@@ -38,6 +39,7 @@ public class Product {
         this.imageUrl = imageUrl;
         this.stockQuantity = stockQuantity; // 4. Gán giá trị stockQuantity
         this.soldQuantity = soldQuantity;
+        this.isLuxury = isLuxury;
     }
 
     // Getter methods
@@ -51,6 +53,7 @@ public class Product {
     public String getImageUrl() { return imageUrl; }
     public int getStockQuantity() { return stockQuantity; } // 6. Thêm getter
     public int getSoldQuantity() { return soldQuantity; }
+    public boolean isLuxury() { return isLuxury; }
 
     // Setter methods (Nên có để linh hoạt)
     public void setId(int id) { this.id = id; }
@@ -63,6 +66,7 @@ public class Product {
     public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
     public void setStockQuantity(int stockQuantity) { this.stockQuantity = stockQuantity; }
     public void setSoldQuantity(int soldQuantity) { this.soldQuantity = soldQuantity; }
+    public void setLuxury(boolean luxury) { isLuxury = luxury; }
 
     // --- THÊM GETTER/SETTER CHO 2 THUỘC TÍNH MỚI ---
     public List<String> getImageList() {

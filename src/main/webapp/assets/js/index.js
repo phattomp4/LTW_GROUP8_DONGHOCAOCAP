@@ -28,9 +28,6 @@ function scrollToTop() {
 }
 
 
-
-
-
 // --- BỌC CODE SLIDESHOW ---
 // Chỉ chạy code slideshow nếu các phần tử tồn tại
 const dotsContainer = document.getElementsByClassName("dot");
@@ -53,8 +50,12 @@ if (dotsContainer.length > 0) {
         let i;
         let slides = document.getElementsByClassName("mySlides");
         let dots = document.getElementsByClassName("dot");
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length }
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
@@ -65,8 +66,6 @@ if (dotsContainer.length > 0) {
         dots[slideIndex - 1].className += " active";
     }
 }
-
-
 
 
 // --- BỌC CODE SWIPERJS ---
@@ -260,8 +259,80 @@ function searchByName(param) {
 }
 
 // Ẩn hộp gợi ý khi click ra ngoài
-window.addEventListener('click', function(e){
-    if (!document.querySelector('.search-bar').contains(e.target)){
+window.addEventListener('click', function (e) {
+    if (!document.querySelector('.search-bar').contains(e.target)) {
         document.getElementById("search-results").style.display = "none";
     }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    // Hàm cài đặt chức năng Xem thêm cho từng nhóm
+    function setupLoadMore(itemClass, btnId) {
+        const itemsPerPage = 8; // Số lượng hiện ban đầu
+        const items = document.querySelectorAll('.' + itemClass);
+        const btn = document.getElementById(btnId);
+
+        // 1. Nếu ít sản phẩm thì ẩn nút
+        if (items.length <= itemsPerPage) {
+            if(btn) btn.style.display = 'none';
+            return;
+        }
+
+        // 2. Ẩn các sản phẩm từ số 9 trở đi
+        for (let i = itemsPerPage; i < items.length; i++) {
+            items[i].classList.add('hidden-style');
+        }
+
+        // 3. Sự kiện bấm nút
+        if(btn) {
+            btn.addEventListener('click', function() {
+                const hiddenItems = document.querySelectorAll('.' + itemClass + '.hidden-style');
+
+                if (btn.innerText.includes("Xem thêm")) {
+                    // --- HIỆN THÊM ---
+                    let count = 0;
+                    for (let i = 0; i < hiddenItems.length; i++) {
+                        if (count < itemsPerPage) {
+                            hiddenItems[i].classList.remove('hidden-style');
+                            count++;
+                        }
+                    }
+                    // Nếu hiện hết thì đổi tên nút
+                    const remaining = document.querySelectorAll('.' + itemClass + '.hidden-style');
+                    if (remaining.length === 0) {
+                        btn.innerHTML = 'Ẩn bớt <i class="fa-solid fa-chevron-up"></i>';
+                    }
+                } else {
+                    // --- ẨN BỚT ---
+                    for (let i = itemsPerPage; i < items.length; i++) {
+                        items[i].classList.add('hidden-style');
+                    }
+                    // Cuộn nhẹ lên đầu danh sách của nút đó
+                    btn.parentElement.previousElementSibling.scrollIntoView({behavior: "smooth", block: "start"});
+                    btn.innerHTML = 'Xem thêm <i class="fa-solid fa-chevron-down"></i>';
+                }
+            });
+        }
+    }
+
+    // --- GỌI HÀM CHO 3 TAB ---
+    setupLoadMore('js-item-featured', 'btnNewLoadMore');  // Tab Nổi bật
+    setupLoadMore('js-item-men', 'btnLoadMoreMen');       // Tab Nam
+    setupLoadMore('js-item-women', 'btnLoadMoreWomen');   // Tab Nữ
+});
+
+// --- SCRIPT CHO SLIDER THƯƠNG HIỆU ---
+function scrollBrand(direction) {
+    const container = document.getElementById('brand-slider');
+
+    if (container) {
+        // Tính toán khoảng cách cuộn (cuộn 1 nửa chiều rộng container mỗi lần bấm)
+        const scrollAmount = container.clientWidth / 1.5;
+
+        container.scrollBy({
+            left: direction * scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+}

@@ -2,15 +2,22 @@
 
 .Product {
     position: relative;
-    /* Đặt chiều cao CỐ ĐỊNH để các sản phẩm trong 2 hàng Grid đồng đều */
-    height: 370px; /* Giới hạn chiều cao tổng thể của 1 sản phẩm */
-    padding: 10px; /* Giảm padding để tăng không gian cho nội dung */
+
+    /* SỬA DÒNG NÀY: Tăng chiều cao lên để chứa đủ nút */
+    height: 430px;
+
+    padding: 10px;
     width: 250px;
+
     /* Căn chỉnh nội dung */
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Nội dung bắt đầu từ trái */
-    /* Thiết kế */
+    align-items: flex-start;
+
+    /* THÊM DÒNG NÀY: Giúp dàn đều nội dung, đẩy nút xuống dưới cùng nếu còn trống */
+    justify-content: space-between;
+
+    /* Các thuộc tính khác giữ nguyên */
     border: 1px solid #eee;
     border-radius: 8px;
     background-color: #fff;
@@ -94,7 +101,7 @@
 
 .ViewMore-Container {
     text-align: center;
-    margin: 30px auto 60px auto;
+    margin: 30px auto 30px auto;
 }
 
 .ViewMore-Button {
@@ -199,4 +206,35 @@
 .Product:hover img {
     /* Phóng to ảnh lên 1.1 lần (10%) */
     transform: scale(1.1);
+}
+
+/* --- CSS CHO SẢN PHẨM HẾT HÀNG --- */
+
+/* Làm mờ sản phẩm khi hết hàng */
+.Product.out-of-stock .img-product {
+    opacity: 0.5; /* Làm mờ ảnh */
+    filter: grayscale(100%); /* Chuyển sang đen trắng (tuỳ chọn) */
+}
+
+/* Nhãn Hết hàng đè lên ảnh */
+.badge-out-of-stock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+/* Vô hiệu hóa hover hiệu ứng khi hết hàng */
+.Product.out-of-stock:hover {
+    cursor: not-allowed;
+    border-color: #eee; /* Không đổi màu viền */
+    box-shadow: none;
 }
