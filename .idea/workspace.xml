@@ -10,11 +10,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7f4887d-eaea-4edf-8d52-c8fde5a4825e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/CheckoutServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/dao/OrderDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/model/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/model/OrderDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/AddressServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/AdminDashboardServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/AdminOrderDetailServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/AdminUserDetailServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/CheckoutAddressServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/OrderDetailServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/OrderHistoryServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/ProductFormServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/ProductManagerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/UserManagerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/dao/AdminDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/dao/HomeDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/filter/AdminFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/model/Banner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/model/Brand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/model/ProductSpecification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/model/SmallBanner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/order-manager.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/product-form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/product-manager.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/user-detail.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/user-manager.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/user/order-detail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/controller/AddToCartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/AddToCartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/controller/CheckoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/CheckoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/controller/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/HomeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/dao/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/model/UserAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/model/UserAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/manageOrders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/dashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/manageProducts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/order-history.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/manageUsers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/order-detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/ProductCards.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/ProductCards.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/TrangChiTietSanPham.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/TrangChiTietSanPham.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/checkout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/profile.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,9 +305,23 @@
       <workItem from="1767280845625" duration="598000" />
       <workItem from="1767668023687" duration="1747000" />
       <workItem from="1767894022952" duration="2742000" />
-      <workItem from="1768064815306" duration="6110000" />
-      <workItem from="1768824878544" duration="1988000" />
-      <workItem from="1768913127870" duration="2636000" />
+      <workItem from="1768064815306" duration="7357000" />
+      <workItem from="1768699969874" duration="667000" />
+      <workItem from="1768752616766" duration="1367000" />
+      <workItem from="1768846902581" duration="2831000" />
+      <workItem from="1768849820236" duration="211000" />
+      <workItem from="1768850105020" duration="501000" />
+      <workItem from="1768851196496" duration="6974000" />
+      <workItem from="1768926226345" duration="946000" />
+      <workItem from="1768927206126" duration="4745000" />
+      <workItem from="1768932272957" duration="6421000" />
+      <workItem from="1769015972938" duration="3329000" />
+      <workItem from="1769098189820" duration="9062000" />
+      <workItem from="1769111703922" duration="322000" />
+      <workItem from="1769138166468" duration="2301000" />
+      <workItem from="1769156989155" duration="13488000" />
+      <workItem from="1769188924498" duration="12989000" />
+      <workItem from="1769272882529" duration="7216000" />
     </task>
     <task id="LOCAL-00001" summary="thay doi cau truc project thanh web dong">
       <option name="closed" value="true" />
