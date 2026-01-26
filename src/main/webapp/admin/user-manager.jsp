@@ -47,6 +47,7 @@
     <a href="user-manager" class="active"><i class="fa-solid fa-users"></i> Quản lý Khách hàng</a>
 
     <a href="interface-manager"><i class="fa-solid fa-paintbrush"></i> Quản lý Giao diện</a>
+    <a href="category-manager"><i class="fa-solid fa-paintbrush"></i> Danh mục & Menu</a>
     <a href="${pageContext.request.contextPath}/home"><i class="fa-solid fa-house"></i> Về trang chủ web</a>
 </div>
 

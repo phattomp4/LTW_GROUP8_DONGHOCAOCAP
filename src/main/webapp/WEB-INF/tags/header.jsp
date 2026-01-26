@@ -109,52 +109,59 @@
             <ul>
                 <li class="nav-item-has-dropdown">
                     <a href="category?type=search&keyword=" class="link-yellow">Đồng hồ<i class="fa-solid fa-chevron-down"></i></a>
-                    <div class="megamenu megamenu-dongho">
+                    <div class="megamenu megamenu-dongho" style="width: 900px; padding: 25px;">
+                        <div style="display: grid; grid-template-columns: 1fr 2.5fr 1fr; gap: 40px;">
 
-                        <div class="megamenu-column">
-                            <ul>
-                                <li><a href="category?type=price&min=0&max=1000000">Giá dưới 1 triệu</a></li>
-                                <li><a href="category?type=price&min=1000000&max=3000000">Giá từ 1 - 3 triệu</a></li>
-                                <li><a href="category?type=price&min=3000000&max=6000000">Giá từ 3 - 6 triệu</a></li>
-                                <li><a href="category?type=price&min=6000000&max=9000000">Giá từ 6 - 9 triệu</a></li>
-                                <li><a href="category?type=price&min=9000000&max=15000000">Giá từ 9 - 15 triệu</a></li>
-                                <li><a href="category?type=price&min=15000000&max=-1">Giá trên 15 triệu</a></li>
-                            </ul>
-                        </div>
+                            <div class="megamenu-column">
+                                <h4 style="color: #d0011b; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 15px; text-transform: uppercase;">
+                                    <i class="fa-solid fa-tags"></i> Theo Giá
+                                </h4>
+                                <ul style="list-style: none; padding: 0;">
+                                    <c:forEach items="${menuPrices}" var="p">
+                                        <li style="margin-bottom: 8px;">
+                                            <a href="${pageContext.request.contextPath}/category?type=price&min=${p.minPrice}&max=${p.maxPrice}"
+                                               style="color: #333; text-decoration: none; transition: 0.2s;">
+                                                    ${p.label}
+                                            </a>
+                                        </li>
+                                    </c:forEach>
+                                </ul>
+                            </div>
 
-                        <div class="megamenu-column">
-                            <ul>
-                                <li><a href="category?type=brand&name=Casio">Casio, G-Shock</a></li>
-                                <li><a href="category?type=brand&name=Olym Pianus">Olym Pianus</a></li>
-                                <li><a href="category?type=brand&name=Bentley">Bentley</a></li>
-                                <li><a href="category?type=brand&name=Carnival">Carnival</a></li>
-                                <li><a href="category?type=brand&name=Orient">Orient</a></li>
-                                <li><a href="category?type=brand&name=Tissot">Tissot</a></li>
-                                <li><a href="category?type=brand&name=Seiko">Seiko</a></li>
-                                <li><a href="category?type=brand&name=Citizen">Citizen</a></li>
-                            </ul>
-                        </div>
+                            <div class="megamenu-column">
+                                <h4 style="color: #1b6e76; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 15px; text-transform: uppercase;">
+                                    <i class="fa-solid fa-medal"></i> Thương Hiệu
+                                </h4>
 
-                        <div class="megamenu-column">
-                            <ul>
-                                <li><a href="category?type=brand&name=Frederique Constant">Frederique Constant</a></li>
-                                <li><a href="category?type=brand&name=Longines">Longines</a></li>
-                                <li><a href="category?type=brand&name=Omega">Omega</a></li>
-                                <li><a href="category?type=brand&name=Orient Star">Orient Star</a></li>
-                                <li><a href="category?type=brand&name=Certina">Certina</a></li>
-                                <li><a href="category?type=brand&name=Hublot">Hublot</a></li>
-                                <li><a href="category?type=brand&name=Movado">Movado</a></li>
-                            </ul>
-                        </div>
+                                <ul style="list-style: none; padding: 0; columns: 3; -webkit-columns: 3; gap: 20px;">
+                                    <c:forEach items="${menuBrands}" var="cat">
+                                        <li style="margin-bottom: 10px;">
+                                            <a href="${pageContext.request.contextPath}/category?type=brand&name=${cat.name}"
+                                               style="color: #555; text-decoration: none; font-weight: 500; display: block; padding: 2px 0;">
+                                                    ${cat.name}
+                                            </a>
+                                        </li>
+                                    </c:forEach>
+                                </ul>
+                            </div>
 
-                        <div class="megamenu-column">
-                            <ul>
-                                <li><a href="category?type=luxury">Đồng hồ Luxury</a></li>
+                            <div class="megamenu-column">
+                                <h4 style="color: #daa51e; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 15px; text-transform: uppercase;">
+                                    <i class="fa-solid fa-gem"></i> Bộ Sưu Tập
+                                </h4>
+                                <ul style="list-style: none; padding: 0;">
 
-                                <li><a href="category?type=origin&name=Nhat">Đồng hồ Nhật</a></li>
+                                    <c:forEach items="${menuCollections}" var="cat">
+                                        <li style="margin-bottom: 10px;">
+                                            <a href="${pageContext.request.contextPath}/category?type=collection&name=${cat.name}"
+                                               style="color: #333; text-decoration: none;">
+                                                    ${cat.name}
+                                            </a>
+                                        </li>
+                                    </c:forEach>
+                                </ul>
+                            </div>
 
-                                <li><a href="category?type=origin&name=Thuy">Đồng hồ Thụy Sỹ</a></li>
-                            </ul>
                         </div>
                     </div>
                 </li>
@@ -166,9 +173,17 @@
                     <a href="category?type=accessories">Phụ kiện<i class="fa-solid fa-chevron-down"></i></a>
                     <div class="megamenu megamenu-phukien">
                         <div class="megamenu-column-phukien">
-                            <ul>
-                                <li><a href="category?type=search&keyword=Day">Dây đồng hồ</a></li>
-                                <li><a href="category?type=search&keyword=Hop">Hộp xoay đồng hồ</a></li>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+
+                                <c:forEach items="${menuAccessories}" var="cat">
+                                    <li style="margin-bottom: 8px; border-bottom: 1px dashed #eee; padding-bottom: 5px;">
+                                        <a href="${pageContext.request.contextPath}/category?type=search&keyword=${cat.name}"
+                                           style="color: #333; text-decoration: none; font-size: 14px; display: block;">
+                                             ${cat.name}
+                                        </a>
+                                    </li>
+                                </c:forEach>
+
                             </ul>
                         </div>
                     </div>

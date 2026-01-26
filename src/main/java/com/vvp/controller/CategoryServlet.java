@@ -69,6 +69,34 @@ public class CategoryServlet extends HttpServlet {
             title = "Đồng hồ nữ";
         }
 
+        // XỬ LÝ BỘ SƯU TẬP (Logic thông minh)
+        else if ("collection".equals(type)) {
+            String name = request.getParameter("name"); // VD: "Đồng hồ Luxury"
+
+            if (name != null) {
+                if (name.toLowerCase().contains("luxury")) {
+                    // Nếu tên có chữ Luxury -> Gọi hàm lấy Luxury
+                    list = dao.getLuxuryProducts();
+                    title = "Bộ sưu tập Luxury";
+                }
+                else if (name.toLowerCase().contains("nhật")) {
+                    // Nếu tên có chữ Nhật -> Gọi hàm lấy theo xuất xứ Nhật
+                    list = dao.getProductsByOrigin("Nhật");
+                    title = "Đồng hồ Nhật Bản";
+                }
+                else if (name.toLowerCase().contains("thụy")) {
+                    // Nếu tên có chữ Thụy -> Gọi hàm lấy theo xuất xứ Thụy Sỹ
+                    list = dao.getProductsByOrigin("Thụy");
+                    title = "Đồng hồ Thụy Sỹ";
+                }
+                else {
+                    // Mặc định: Tìm kiếm theo tên bộ sưu tập
+                    list = dao.searchProducts(name);
+                    title = name;
+                }
+            }
+        }
+
         request.setAttribute("listProduct", list);
         request.setAttribute("pageTitle", title);
         request.getRequestDispatcher("product-list.jsp").forward(request, response);
