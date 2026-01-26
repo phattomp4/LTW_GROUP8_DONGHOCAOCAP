@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ page isELIgnored="false" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -26,7 +27,8 @@
 <body>
 
 <jsp:include page="WEB-INF/tags/header.jsp"></jsp:include>
-
+<c:set var="pName" value="${fn:toLowerCase(p.name)}" />
+<c:set var="isAccessory" value="${fn:contains(pName, 'dây') or fn:contains(pName, 'hộp') or fn:contains(pName, 'khóa') or fn:contains(pName, 'phụ kiện')}" />
 <div class="product-detail-container" style="margin-top: 5px; display: flex; gap: 30px; padding: 0 10%;">
 
     <div class="product-images" style="width: 50%;">
@@ -60,16 +62,31 @@
         <div class="specs-table" style="margin-top: 40px;">
             <h3 style="border-bottom: 2px solid #ddd; padding-bottom: 10px;">THÔNG SỐ KỸ THUẬT</h3>
             <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+
+                <c:if test="${not empty p.specifications['Thương hiệu']}">
                 <tr style="border-bottom: 1px solid #eee;"><td style="padding: 10px; font-weight: bold;">Thương hiệu</td><td>${p.specifications['Thương hiệu']}</td></tr>
+                </c:if>
+
+                <c:if test="${not empty p.specifications['Thương hiệu']}">
                 <tr style="border-bottom: 1px solid #eee;"><td style="padding: 10px; font-weight: bold;">Xuất xứ</td><td>${p.specifications['Xuất xứ']}</td></tr>
-                <tr style="border-bottom: 1px solid #eee;"><td style="padding: 10px; font-weight: bold;">Đối tượng</td><td>${p.specifications['Đối tượng']}</td></tr>
-                <tr style="border-bottom: 1px solid #eee;"><td style="padding: 10px; font-weight: bold;">Chống nước</td><td>${p.specifications['Chống nước']}</td></tr>
-                <tr style="border-bottom: 1px solid #eee;"><td style="padding: 10px; font-weight: bold;">Loại máy</td><td>${p.specifications['Loại máy']}</td></tr>
-                <tr style="border-bottom: 1px solid #eee;"><td style="padding: 10px; font-weight: bold;">Chất liệu kính</td><td>${p.specifications['Chất liệu kính']}</td></tr>
-                <tr style="border-bottom: 1px solid #eee;"><td style="padding: 10px; font-weight: bold;">Chất liệu dây</td><td>${p.specifications['Chất liệu dây']}</td></tr>
-                <tr style="border-bottom: 1px solid #eee;"><td style="padding: 10px; font-weight: bold;">Đường kính mặt</td><td>${p.specifications['Đường kính mặt']}</td></tr>
-                <tr style="border-bottom: 1px solid #eee;"><td style="padding: 10px; font-weight: bold;">Size mặt</td><td>${p.specifications['Size mặt']}</td></tr>
-                <tr style="border-bottom: 1px solid #eee;"><td style="padding: 10px; font-weight: bold;">Độ dày</td><td>${p.specifications['Độ dầy']}</td></tr>
+                </c:if>
+
+                <c:if test="${not empty p.specifications['Đối tượng']}">
+                    <tr style="border-bottom: 1px solid #eee;"><td style="padding: 10px; font-weight: bold;">Đối tượng</td><td>${p.specifications['Đối tượng']}</td></tr>
+                </c:if>
+
+                <c:if test="${not empty p.specifications['Chống nước']}">
+                    <tr style="border-bottom: 1px solid #eee;"><td style="padding: 10px; font-weight: bold;">Chống nước</td><td>${p.specifications['Chống nước']}</td></tr>
+                </c:if>
+
+                <c:if test="${not empty p.specifications['Loại máy']}">
+                    <tr style="border-bottom: 1px solid #eee;"><td style="padding: 10px; font-weight: bold;">Loại máy</td><td>${p.specifications['Loại máy']}</td></tr>
+                </c:if>
+
+                <c:if test="${not empty p.specifications['Chất liệu kính']}">
+                    <tr style="border-bottom: 1px solid #eee;"><td style="padding: 10px; font-weight: bold;">Chất liệu kính</td><td>${p.specifications['Chất liệu kính']}</td></tr>
+                </c:if>
+
             </table>
         </div>
 
