@@ -183,7 +183,7 @@
 
         <div class="luxury-cards">
             <div class="luxury-banner">
-                <a href="#"> <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/banner-dong-ho-cao-cap_1714020205.webp" width="285" height="350"></a>
+                <a href="category?type=luxury"> <img src="https://www.watchstore.vn/wp-content/uploads/2025/06/banner-dong-ho-cao-cap_1714020205.webp" width="285" height="350"></a>
             </div>
 
             <!-- Additional required wrapper -->
@@ -410,13 +410,8 @@
                 <p class="History3">${shopInfo.history3}</p>
             </div>
         </div>
-        <div class="btn-timhieuthem">
-            <a href="introduce.html">Tìm hiểu thêm</a>
-        </div>
     </section>
 
-
-    <!-- Vy -->
     <!-- Vy -->
     <!-- Phần slide show hình ảnh khách hàng tại cửa hàng -->
     <div class="slideshow-gallery-section">
@@ -429,17 +424,6 @@
         </div>
 
         <button class="gallery-button next-gallery" onclick="scrollSlider(1)">❯</button>
-    </div>
-
-
-
-    <!-- Nút lhtv -->
-    <div class="introduce-section container-button-lhtv">
-        <div class="button-introduce" style="text-align:center">
-            <a href="contact.html" class="button button-lhtv" style="border-radius:7px;">
-                <span style="color: #fff">LIÊN HỆ TƯ VẤN</span>
-            </a>
-        </div>
     </div>
 
 

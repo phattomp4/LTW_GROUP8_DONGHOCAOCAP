@@ -35,15 +35,11 @@
             </div>
 
             <div class="options-group">
-                <label>
-                    <input type="checkbox" name="remember"> Ghi nhớ đăng nhập
-                </label>
-                <a href="forgot_password.html" class="forgot-password">Quên mật khẩu?</a>
+                <a href="forgot_password.jsp" class="forgot-password">Quên mật khẩu?</a>
             </div>
 
-            <div class="login-button">
-                <button type="submit" style="width: 100%; padding: 10px; background-color: #000; color: #fff; border: none; cursor: pointer;">Đăng Nhập</button>
-            </div>
+                <button type="submit" class="login-button">Đăng Nhập</button>
+
         </form>
 
         <p class="register-link">

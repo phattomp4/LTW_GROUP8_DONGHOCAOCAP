@@ -89,15 +89,31 @@
                 <c:choose>
                     <c:when test="${p.stockQuantity > 0}">
                         <div class="action-buttons" style="margin-top: 20px; display: flex; gap: 10px;">
-                            <button type="button" onclick="addToCartAjax()" class="btn-add-cart"
-                                    style="background: #fff; border: 1px solid #d0011b; color: #d0011b; padding: 10px 20px; cursor: pointer;">
-                                <i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ
-                            </button>
 
-                            <button type="submit" name="action" value="buynow" class="btn-buy-now"
-                                    style="background: #d0011b; color: white; border: none; padding: 10px 30px; cursor: pointer;">
-                                Mua ngay
-                            </button>
+                                <%-- LOGIC HIỂN THỊ NÚT --%>
+                            <c:choose>
+                                <%-- TRƯỜNG HỢP 1: LÀ ADMIN -> Hiện nút Sửa --%>
+                                <c:when test="${sessionScope.acc != null && sessionScope.acc.role == 'Admin'}">
+                                    <a href="admin/product-form?id=${p.id}" class="btn-buy-now"
+                                       style="background: #343a40; color: white; border: none; padding: 10px 30px; cursor: pointer; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%;">
+                                        <i class="fa-solid fa-screwdriver-wrench"></i> QUẢN LÝ / SỬA SẢN PHẨM NÀY
+                                    </a>
+                                </c:when>
+
+                                <%-- TRƯỜNG HỢP 2: LÀ KHÁCH -> Hiện nút Mua --%>
+                                <c:otherwise>
+                                    <button type="button" onclick="addToCartAjax()" class="btn-add-cart"
+                                            style="background: #fff; border: 1px solid #d0011b; color: #d0011b; padding: 10px 20px; cursor: pointer;">
+                                        <i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ
+                                    </button>
+
+                                    <button type="submit" name="action" value="buynow" class="btn-buy-now"
+                                            style="background: #d0011b; color: white; border: none; padding: 10px 30px; cursor: pointer;">
+                                        Mua ngay
+                                    </button>
+                                </c:otherwise>
+                            </c:choose>
+
                         </div>
                         <p style="color: green; margin-top: 10px; font-size: 14px;">
                             <i class="fa-solid fa-check-circle"></i> Còn lại ${p.stockQuantity} sản phẩm

@@ -86,11 +86,11 @@ public class ProductDAO {
         return list;
     }
 
-    // 4. Phần Luxury: Lấy các sản phẩm giá > 15 triệu
+
     public List<Product> getLuxuryProducts() {
         List<Product> list = new ArrayList<>();
         // Chỉ lấy sản phẩm có IsLuxury = 1
-        String query = "SELECT * FROM Products WHERE IsLuxury = 1 ORDER BY CreatedAt DESC LIMIT 10";
+        String query = "SELECT * FROM Products WHERE IsLuxury = 1 ORDER BY CreatedAt DESC";
 
         try {
             conn = new DBContext().getConnection();
@@ -102,6 +102,20 @@ public class ProductDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return list;
+    }
+    // 2. LẤY SẢN PHẨM LUXURY
+    public List<Product> getLuxuryProducts1() {
+        List<Product> list = new ArrayList<>();
+        String query = "SELECT * FROM Products WHERE IsLuxury = 1";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(mapProduct(rs));
+            }
+        } catch (Exception e) { e.printStackTrace(); }
         return list;
     }
 
@@ -198,7 +212,7 @@ public class ProductDAO {
     public List<Product> searchProducts(String keyword) {
         List<Product> list = new ArrayList<>();
         // Tìm kiếm tương đối (LIKE) trong tên hoặc mô tả
-        String query = "SELECT * FROM Products WHERE Name LIKE ? OR Description LIKE ?";
+        String query = "SELECT * FROM Products WHERE Name LIKE ? OR SKU LIKE ?";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
@@ -213,6 +227,57 @@ public class ProductDAO {
             e.printStackTrace();
         }
         return list;
+    }
+
+    // 1. LẤY SẢN PHẨM THEO TÊN THƯƠNG HIỆU
+    public List<Product> getProductsByBrand(String brandName) {
+        List<Product> list = new ArrayList<>();
+        // Join bảng Products với Brands để tìm theo tên Brand
+        String query = "SELECT p.*, b.Name as BrandName FROM Products p " +
+                "JOIN Brands b ON p.BrandID = b.BrandID " +
+                "WHERE b.Name LIKE ? AND p.StockQuantity > 0";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, "%" + brandName + "%"); // Tìm gần đúng
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(mapProduct(rs)); // Giả sử bạn có hàm mapProduct để đỡ viết lại code set thuộc tính
+            }
+        } catch (Exception e) { e.printStackTrace(); }
+        return list;
+    }
+
+
+    // 3. LẤY SẢN PHẨM THEO XUẤT XỨ (Dựa vào bảng ProductSpecifications)
+    public List<Product> getProductsByOrigin(String origin) {
+        List<Product> list = new ArrayList<>();
+        // Tìm trong bảng thông số kỹ thuật (SpecName = 'Xuất xứ' và SpecValue chứa từ khóa)
+        String query = "SELECT p.* FROM Products p " +
+                "JOIN ProductSpecifications ps ON p.ProductID = ps.ProductID " +
+                "WHERE ps.SpecName = N'Xuất xứ' AND ps.SpecValue LIKE ? AND p.StockQuantity > 0";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, "%" + origin + "%");
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(mapProduct(rs));
+            }
+        } catch (Exception e) { e.printStackTrace(); }
+        return list;
+    }
+
+    // Hàm phụ để map dữ liệu
+    private Product mapProduct(ResultSet rs) throws SQLException {
+        Product p = new Product();
+        p.setId(rs.getInt("ProductID"));
+        p.setName(rs.getString("Name"));
+        p.setCurrentPrice(rs.getDouble("CurrentPrice"));
+        p.setOriginalPrice(rs.getDouble("OriginalPrice"));
+        p.setImageUrl(rs.getString("ImageURL"));
+        p.setSoldQuantity(rs.getInt("SoldQuantity"));
+        return p;
     }
 }
 

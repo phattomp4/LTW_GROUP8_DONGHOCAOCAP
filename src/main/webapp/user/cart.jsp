@@ -79,14 +79,6 @@
         </table>
 
         <div class="cart-summary">
-            <form action="cart" method="POST" style="margin-bottom: 20px;">
-                <input type="text" name="voucherCode" placeholder="Mã giảm giá (VD: GIAM10)" style="padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
-                <button type="submit" style="padding: 10px 20px; background: #333; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Áp dụng</button>
-                <c:if test="${not empty voucherMessage}">
-                    <p style="color: green; font-size: 14px; margin-top: 5px;"><i class="fa-solid fa-check-circle"></i> ${voucherMessage}</p>
-                </c:if>
-            </form>
-
             <div style="background: #fdfdfd; padding: 20px; border: 1px solid #eee; display: inline-block; min-width: 300px; text-align: right;">
                 <p>Tạm tính: <b><fmt:formatNumber value="${totalMoney}" type="currency" currencySymbol="₫"/></b></p>
                 <c:if test="${discount > 0}">

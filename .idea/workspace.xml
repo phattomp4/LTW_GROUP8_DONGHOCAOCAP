@@ -10,25 +10,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7f4887d-eaea-4edf-8d52-c8fde5a4825e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/dao/ShopDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/model/ShopInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/AdminInterfaceServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/ForgotPasswordServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/ResetPasswordServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/dao/InterfaceDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vvp/utils/EmailUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/interface-manager.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/reset_password.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/controller/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/HomeServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/controller/AddToCartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/AddToCartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/controller/CategoryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/CategoryServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/controller/ProductFormServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/controller/ProductFormServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/dao/AdminDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/dao/AdminDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/dao/ProductDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vvp/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vvp/model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/footer.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/manageOrders.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/ProductCards.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/ProductCards.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/TrangChiTietSanPham.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/TrangChiTietSanPham.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/dashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/order-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/order-detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/order-manager.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/forgot_password.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/product-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/product-form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/product-manager.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/product-manager.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/user-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/user-detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/user-manager.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/user-manager.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/footer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/contact.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/detail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/introduce.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/product-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/product/accessory.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/product/detail.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/product/list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/test/ProductDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/test/SearchServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/test/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/test/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/test/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/order-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/order-detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/order-history.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/order-history.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/wishlist.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/WEB-INF/web.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +66,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -113,7 +141,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -294,7 +322,8 @@
       <workItem from="1769156989155" duration="13488000" />
       <workItem from="1769188924498" duration="12989000" />
       <workItem from="1769272882529" duration="7216000" />
-      <workItem from="1769339518098" duration="4901000" />
+      <workItem from="1769339518098" duration="13732000" />
+      <workItem from="1769417690709" duration="10923000" />
     </task>
     <task id="LOCAL-00001" summary="thay doi cau truc project thanh web dong">
       <option name="closed" value="true" />

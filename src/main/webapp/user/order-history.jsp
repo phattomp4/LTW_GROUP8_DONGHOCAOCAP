@@ -15,7 +15,7 @@
     <style>
         .order-container {
             max-width: 1000px;
-            margin: 150px auto 50px;
+            margin: 5px auto 5px;
             padding: 20px;
             background: #fff;
             min-height: 500px;
@@ -73,7 +73,7 @@
 <jsp:include page="../WEB-INF/tags/header.jsp" />
 
 <div class="order-container">
-    <h2 style="border-left: 5px solid #d0011b; padding-left: 10px;">Lịch sử đơn hàng</h2>
+    <h2 style="border-left: 5px solid #1b6e76; padding-left: 10px;">Lịch sử đơn hàng</h2>
 
     <c:if test="${empty listOrders}">
         <div style="text-align: center; padding: 50px; color: #777;">
