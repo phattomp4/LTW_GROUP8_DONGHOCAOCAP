@@ -3,6 +3,7 @@ package com.vvp.controller;
 import com.vvp.dao.ProductDAO;
 import com.vvp.model.CartItem;
 import com.vvp.model.Product;
+import com.vvp.model.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -19,6 +20,24 @@ public class AddToCartServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
+            // --- 2. DI CHUYỂN SESSION LÊN ĐẦU ĐỂ KIỂM TRA QUYỀN TRƯỚC ---
+            HttpSession session = request.getSession();
+            User user = (User) session.getAttribute("acc");
+
+            // --- 3. LOGIC CHẶN ADMIN MUA HÀNG ---
+            if (user != null && "Admin".equals(user.getRole())) {
+                String ajax = request.getParameter("ajax");
+                if ("true".equals(ajax)) {
+                    // Nếu là Ajax (bấm nút Thêm vào giỏ), trả về lỗi 403
+                    response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+                    response.setCharacterEncoding("UTF-8");
+                    response.getWriter().write("Admin không được phép mua hàng! Vui lòng dùng tài khoản Khách.");
+                } else {
+                    // Nếu là request thường (bấm Mua ngay), chuyển về trang quản trị
+                    response.sendRedirect("admin/dashboard");
+                }
+                return; // Dừng xử lý ngay lập tức
+            }
             // 1. Lấy tham số và kiểm tra kỹ
             String pidRaw = request.getParameter("pid");
             String quantityRaw = request.getParameter("quantity");
@@ -66,8 +85,6 @@ public class AddToCartServlet extends HttpServlet {
             }
             // ---------------------------------------------------------
 
-            // --- KHỞI TẠO SESSION Ở ĐÂY (CHỈ 1 LẦN) ---
-            HttpSession session = request.getSession();
 
             // 2. Lấy giỏ hàng từ Session
             List<CartItem> cart = (List<CartItem>) session.getAttribute("cart");
@@ -114,8 +131,7 @@ public class AddToCartServlet extends HttpServlet {
             // TRƯỜNG HỢP 2: MUA NGAY (Yêu cầu Đăng nhập)
             else if ("buynow".equals(action)) {
 
-                // Kiểm tra biến "acc" (User đã đăng nhập)
-                Object user = session.getAttribute("acc");
+
 
                 if (user == null) {
                     // --- MỚI: LƯU LẠI MONG MUỐN CỦA KHÁCH ---

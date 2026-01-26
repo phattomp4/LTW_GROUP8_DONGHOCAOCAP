@@ -108,71 +108,67 @@
         <nav class="main-nav">
             <ul>
                 <li class="nav-item-has-dropdown">
-                    <a href="DongHo.html" class="link-yellow">Đồng hồ<i class="fa-solid fa-chevron-down"></i></a>
+                    <a href="category?type=search&keyword=" class="link-yellow">Đồng hồ<i class="fa-solid fa-chevron-down"></i></a>
                     <div class="megamenu megamenu-dongho">
+
                         <div class="megamenu-column">
                             <ul>
-                                <li><a href="category?type=search&keyword=Rolex">Giống Rolex, Hublot</a></li>
-                                <li><a href="DongHo.html">Giống Patek, Richard</a></li>
                                 <li><a href="category?type=price&min=0&max=1000000">Giá dưới 1 triệu</a></li>
                                 <li><a href="category?type=price&min=1000000&max=3000000">Giá từ 1 - 3 triệu</a></li>
-                                <li><a href="DongHo.html">Giá từ 3 - 6 triệu</a></li>
-                                <li><a href="DongHo.html">Giá từ 6 - 9 triệu</a></li>
-                                <li><a href="DongHo.html">Giá từ 9 - 15 triệu</a></li>
+                                <li><a href="category?type=price&min=3000000&max=6000000">Giá từ 3 - 6 triệu</a></li>
+                                <li><a href="category?type=price&min=6000000&max=9000000">Giá từ 6 - 9 triệu</a></li>
+                                <li><a href="category?type=price&min=9000000&max=15000000">Giá từ 9 - 15 triệu</a></li>
                                 <li><a href="category?type=price&min=15000000&max=-1">Giá trên 15 triệu</a></li>
                             </ul>
                         </div>
+
                         <div class="megamenu-column">
                             <ul>
-                                <li><a href="category?type=search&keyword=Casio">Casio, G-Shock</a></li>
-                                <li><a href="DongHo.html">Olym Pianus</a></li>
-                                <li><a href="DongHo.html">Bentley</a></li>
-                                <li><a href="DongHo.html">Carnival, I&W Carnival</a></li>
-                                <li><a href="category?type=search&keyword=Orient">Orient</a></li>
-                                <li><a href="DongHo.html">Tissot</a></li>
-                                <li><a href="DongHo.html">Seiko</a></li>
-                                <li><a href="DongHo.html">Citizen</a></li>
-                                <li><a href="DongHo.html">Bonest Gatti</a></li>
-                                <li><a href="DongHo.html">SRWatch</a></li>
-                                <li><a href="DongHo.html">Daniel Wellington</a></li>
-                                <li><a href="DongHo.html">Oblvlo</a></li>
+                                <li><a href="category?type=brand&name=Casio">Casio, G-Shock</a></li>
+                                <li><a href="category?type=brand&name=Olym Pianus">Olym Pianus</a></li>
+                                <li><a href="category?type=brand&name=Bentley">Bentley</a></li>
+                                <li><a href="category?type=brand&name=Carnival">Carnival</a></li>
+                                <li><a href="category?type=brand&name=Orient">Orient</a></li>
+                                <li><a href="category?type=brand&name=Tissot">Tissot</a></li>
+                                <li><a href="category?type=brand&name=Seiko">Seiko</a></li>
+                                <li><a href="category?type=brand&name=Citizen">Citizen</a></li>
                             </ul>
                         </div>
+
                         <div class="megamenu-column">
                             <ul>
-                                <li><a href="DongHo.html">Frederique Constant</a></li>
-                                <li><a href="DongHo.html">Longines</a></li>
-                                <li><a href="DongHo.html">Omega</a></li>
-                                <li><a href="DongHo.html">Orient Star</a></li>
-                                <li><a href="DongHo.html">Certina</a></li>
-                                <li><a href="DongHo.html">Maurice Lacroix</a></li>
-                                <li><a href="DongHo.html">Movado</a></li>
+                                <li><a href="category?type=brand&name=Frederique Constant">Frederique Constant</a></li>
+                                <li><a href="category?type=brand&name=Longines">Longines</a></li>
+                                <li><a href="category?type=brand&name=Omega">Omega</a></li>
+                                <li><a href="category?type=brand&name=Orient Star">Orient Star</a></li>
+                                <li><a href="category?type=brand&name=Certina">Certina</a></li>
+                                <li><a href="category?type=brand&name=Hublot">Hublot</a></li>
+                                <li><a href="category?type=brand&name=Movado">Movado</a></li>
                             </ul>
                         </div>
+
                         <div class="megamenu-column">
                             <ul>
-                                <li><a href="DongHo.html">Kiểu dáng công sở</a></li>
-                                <li><a href="DongHo.html">Đồng hồ quân đội</a></li>
-                                <li><a href="category?type=search&keyword=Automatic">Đồng hồ cơ/automatic</a></li>
-                                <li><a href="DongHo.html">Đồng hồ lướt 99%</a></li>
-                                <li><a href="DongHo.html">Đồng hồ Luxury</a></li>
-                                <li><a href="DongHo.html">Đồng hồ để bàn</a></li>
-                                <li><a href="DongHo.html">Đồng hồ treo tường</a></li>
-                                <li><a href="DongHo.html">Đồng hồ Nhật</a></li>
-                                <li><a href="DongHo.html">Đồng hồ Thụy Sỹ</a></li>
+                                <li><a href="category?type=luxury">Đồng hồ Luxury</a></li>
+
+                                <li><a href="category?type=origin&name=Nhat">Đồng hồ Nhật</a></li>
+
+                                <li><a href="category?type=origin&name=Thuy">Đồng hồ Thụy Sỹ</a></li>
                             </ul>
                         </div>
                     </div>
                 </li>
-                <li><a href="DongHo.html">Nam</a></li>
-                <li><a href="DongHo.html">Nữ</a></li>
+
+                <li><a href="category?type=nam">Nam</a></li>
+                <li><a href="category?type=nu">Nữ</a></li>
+
                 <li class="nav-item-has-dropdown">
-                    <a href="PhuKien.html">Phụ kiện<i class="fa-solid fa-chevron-down"></i></a>
+                    <a href="category?type=accessories">Phụ kiện<i class="fa-solid fa-chevron-down"></i></a>
                     <div class="megamenu megamenu-phukien">
                         <div class="megamenu-column-phukien">
                             <ul>
-                                <li><a href="PhuKien.html">Dây đồng hồ</a></li>
-                                <li><a href="PhuKien.html">Hộp xoay đồng hồ</a></li>
+                                <li><a href="category?type=search&keyword=Day">Dây đồng hồ</a></li>
+                                <li><a href="category?type=search&keyword=Hop">Hộp xoay đồng hồ</a></li>
                             </ul>
                         </div>
                     </div>

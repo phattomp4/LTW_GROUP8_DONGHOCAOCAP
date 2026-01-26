@@ -18,25 +18,57 @@ public class CategoryServlet extends HttpServlet {
         List<Product> list = null;
         String title = "Danh sách sản phẩm";
 
-        String type = request.getParameter("type"); // price hoặc search
+        String type = request.getParameter("type");
 
+        // 1. TÌM THEO GIÁ
         if ("price".equals(type)) {
-            // Lấy khoảng giá
             double min = Double.parseDouble(request.getParameter("min"));
             double max = Double.parseDouble(request.getParameter("max"));
             list = dao.getProductsByPriceRange(min, max);
-
             if (max == -1) title = "Giá trên " + (long)min + " đ";
             else title = "Giá từ " + (long)min + " đ - " + (long)max + " đ";
-
-        } else if ("search".equals(type)) {
-            // Lấy từ khóa (Brand, Style...)
+        }
+        // 2. TÌM THEO TỪ KHÓA
+        else if ("search".equals(type)) {
             String keyword = request.getParameter("keyword");
             list = dao.searchProducts(keyword);
-            title = "Kết quả cho: " + keyword;
+            title = "Kết quả tìm kiếm: " + keyword;
+        }
+        // 3. TÌM THEO THƯƠNG HIỆU
+        else if ("brand".equals(type)) {
+            String brandName = request.getParameter("name");
+            list = dao.getProductsByBrand(brandName);
+            title = "Thương hiệu: " + brandName;
+        }
+        // 4. SẢN PHẨM LUXURY
+        else if ("luxury".equals(type)) {
+            list = dao.getLuxuryProducts1();
+            title = "Bộ sưu tập Luxury";
+        }
+        // 5. TÌM THEO XUẤT XỨ
+        else if ("origin".equals(type)) {
+            String origin = request.getParameter("name"); // VD: Nhat Ban, Thuy Sy
+            list = dao.getProductsByOrigin(origin);
+            title = "Đồng hồ " + origin;
+        }
+        // 6. PHỤ KIỆN
+        else if ("accessories".equals(type)) {
+            // Giả sử phụ kiện có CategoryID = 2 hoặc 3 (Bạn tự check DB)
+            // Hoặc tìm theo tên danh mục
+            list = dao.searchProducts("Phụ kiện"); // Cách chữa cháy nếu chưa có hàm getByCategory
+            title = "Phụ kiện đồng hồ";
         }
 
-        // Đẩy dữ liệu sang JSP
+        else if ("nam".equals(type)) {
+            list = dao.getMenProducts();
+            title = "Đồng hồ nam";
+        }
+
+        else if ("nu".equals(type)) {
+            list = dao.getWomenProducts();
+            title = "Đồng hồ nữ";
+        }
+
         request.setAttribute("listProduct", list);
         request.setAttribute("pageTitle", title);
         request.getRequestDispatcher("product-list.jsp").forward(request, response);

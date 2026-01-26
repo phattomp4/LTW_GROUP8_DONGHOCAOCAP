@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-        .detail-container { max-width: 900px; margin: 150px auto 50px; padding: 20px; background: #fff; }
+        .detail-container { max-width: 900px; margin: 5px auto 5px; padding: 20px; background: #fff; }
         .info-box { background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: flex; justify-content: space-between; gap: 20px;}
         .info-col h4 { margin-top: 0; color: #1b6e76; border-bottom: 2px solid #ddd; display: inline-block; padding-bottom: 5px; }
         .item-row { display: flex; align-items: center; border-bottom: 1px solid #eee; padding: 15px 0; }

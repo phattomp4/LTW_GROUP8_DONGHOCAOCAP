@@ -5,15 +5,18 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Thêm sản phẩm mới | Admin</title>
+    <title>
+        ${empty product ? 'Thêm sản phẩm mới' : 'Cập nhật sản phẩm'} | Admin
+    </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         body { font-family: 'Segoe UI', sans-serif; display: flex; margin: 0; background: #f4f6f9; }
-        /* Sidebar giữ nguyên */
-        .sidebar { width: 250px; background: #343a40; color: white; min-height: 100vh; position: fixed; padding-top: 20px;}
-        .sidebar a { display: block; padding: 15px 20px; color: #c2c7d0; text-decoration: none; border-bottom: 1px solid #4b545c; }
-        .sidebar a:hover { background: #d0011b; color: white; }
-
+        /* Sidebar */
+        .sidebar { width: 250px; background: #343a40; color: white; min-height: 100vh; padding: 20px 0; position: fixed; }
+        .sidebar h2 { text-align: center; margin-bottom: 30px; color: #1b6e76; }
+        .sidebar a { display: block; padding: 15px 25px; color: #c2c7d0; text-decoration: none; border-bottom: 1px solid #4b545c; }
+        .sidebar a:hover, .sidebar a.active { background-image: linear-gradient(45deg, #1b6e76, #2c96a0, #0e3e43) ; color: white; padding-left: 25px;}
+        .sidebar i { margin-right: 10px; width: 20px; text-align: center; }
         .content { margin-left: 250px; padding: 30px; width: 100%; }
         .form-container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 900px; margin: 0 auto; }
 
@@ -32,15 +35,27 @@
 <body>
 
 <div class="sidebar">
-    <h2 style="text-align:center; color:#d0011b;">VVP ADMIN</h2>
+    <h2>VVP ADMIN</h2>
     <a href="dashboard"><i class="fa-solid fa-gauge"></i> Tổng quan</a>
     <a href="product-manager" class="active"><i class="fa-solid fa-box"></i> Quản lý Sản phẩm</a>
     <a href="user-manager"><i class="fa-solid fa-users"></i> Quản lý Khách hàng</a>
+
+    <a href="interface-manager"><i class="fa-solid fa-paintbrush"></i> Quản lý Giao diện</a>
+    <a href="${pageContext.request.contextPath}/home"><i class="fa-solid fa-house"></i> Về trang chủ web</a>
 </div>
 
 <div class="content">
     <div class="form-container">
-        <h2 style="margin-top: 0;">THÊM SẢN PHẨM MỚI</h2>
+        <h2 style="margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 20px; color: #333;">
+            <c:choose>
+                <c:when test="${empty product}">
+                    <i class="fa-solid fa-plus-circle" style="color: #28a745;"></i> THÊM SẢN PHẨM MỚI
+                </c:when>
+                <c:otherwise>
+                    <i class="fa-solid fa-pen-to-square" style="color: #007bff;"></i> CẬP NHẬT SẢN PHẨM: <span style="color: #d0011b;">#${product.id}</span>
+                </c:otherwise>
+            </c:choose>
+        </h2>
 
         <form action="product-form" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="id" value="${product.id}">

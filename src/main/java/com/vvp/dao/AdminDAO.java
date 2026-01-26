@@ -86,7 +86,7 @@ public class AdminDAO {
 
     // 9. THÊM SẢN PHẨM MỚI (Trả về ID vừa tạo)
     public void insertProduct(com.vvp.model.Product p, String imagePath) {
-        String sqlProduct = "INSERT INTO Products (ProductName, SKU, Description, OriginalPrice, CurrentPrice, StockQuantity, SoldQuantity, BrandID, CategoryID) VALUES (?, ?, ?, ?, ?, ?, 0, 1, 1)";
+        String sqlProduct = "INSERT INTO Products (Name, SKU, Description, OriginalPrice, CurrentPrice, StockQuantity, SoldQuantity, BrandID, CategoryID) VALUES (?, ?, ?, ?, ?, ?, 0, 1, 1)";
         // Lưu ý: BrandID và CategoryID tôi đang để cứng là 1, bạn có thể tạo combobox để chọn sau.
 
         try {
@@ -126,7 +126,7 @@ public class AdminDAO {
 
     // 10. CẬP NHẬT SẢN PHẨM
     public void updateProduct(com.vvp.model.Product p, String newImagePath) {
-        String sql = "UPDATE Products SET ProductName=?, SKU=?, Description=?, OriginalPrice=?, CurrentPrice=?, StockQuantity=? WHERE ProductID=?";
+        String sql = "UPDATE Products SET Name=?, SKU=?, Description=?, OriginalPrice=?, CurrentPrice=?, StockQuantity=? WHERE ProductID=?";
         try {
             conn = new DBContext().getConnection();
             conn.setAutoCommit(false);
@@ -266,8 +266,8 @@ public class AdminDAO {
     }
 
     public void insertFullProduct(com.vvp.model.Product p, List<String> detailImages, List<com.vvp.model.ProductSpecification> listSpecs) {
-        // SQL: Đổi cột 'Image' thành 'ImageURL' cho khớp với Database của bạn
-        String sqlProduct = "INSERT INTO Products (ProductName, SKU, Description, OriginalPrice, CurrentPrice, StockQuantity, SoldQuantity, BrandID, CategoryID, ImageURL, IsLuxury) VALUES (?, ?, ?, ?, ?, ?, 0, 1, 1, ?, ?)";
+        // Dựa vào file trước bạn gửi, cột tên là 'Name'.
+        String sqlProduct = "INSERT INTO Products (Name, SKU, Description, OriginalPrice, CurrentPrice, StockQuantity, SoldQuantity, BrandID, ImageURL, IsLuxury) VALUES (?, ?, ?, ?, ?, ?, 0, 1, ?, ?)";
 
         String sqlImg = "INSERT INTO ProductImages (ProductID, ImageURL) VALUES (?, ?)";
         String sqlSpec = "INSERT INTO ProductSpecifications (ProductID, SpecName, SpecValue) VALUES (?, ?, ?)";
@@ -276,7 +276,6 @@ public class AdminDAO {
             conn = new DBContext().getConnection();
             conn.setAutoCommit(false); // Bắt đầu Transaction
 
-            // 1. INSERT VÀO BẢNG PRODUCTS
             ps = conn.prepareStatement(sqlProduct, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, p.getName());
             ps.setString(2, p.getSku());
@@ -284,20 +283,19 @@ public class AdminDAO {
             ps.setDouble(4, p.getOriginalPrice());
             ps.setDouble(5, p.getCurrentPrice());
             ps.setInt(6, p.getStockQuantity());
-
-
-            // Lưu đường dẫn ảnh đại diện vào cột ImageURL
             ps.setString(7, p.getImageUrl());
+
+            // --- SỬA: THÊM DÒNG NÀY (Tham số số 8 cho dấu ? cuối cùng) ---
             ps.setBoolean(8, p.isLuxury());
+            // -------------------------------------------------------------
 
             ps.executeUpdate();
 
-            // Lấy ID vừa sinh ra
             rs = ps.getGeneratedKeys();
             int productId = 0;
             if (rs.next()) productId = rs.getInt(1);
 
-            // 2. INSERT ẢNH CHI TIẾT (Vào bảng ProductImages)
+            // ... (Phần thêm ảnh phụ và thông số giữ nguyên như cũ) ...
             if (detailImages != null && !detailImages.isEmpty()) {
                 PreparedStatement psImg = conn.prepareStatement(sqlImg);
                 for (String imgPath : detailImages) {
@@ -308,19 +306,103 @@ public class AdminDAO {
                 psImg.executeBatch();
             }
 
-            // 3. INSERT 10 THÔNG SỐ (Vào bảng ProductSpecifications)
             if (listSpecs != null && !listSpecs.isEmpty()) {
                 PreparedStatement psSpec = conn.prepareStatement(sqlSpec);
                 for (com.vvp.model.ProductSpecification spec : listSpecs) {
                     psSpec.setInt(1, productId);
-                    psSpec.setString(2, spec.getName()); // VD: Thương hiệu
-                    psSpec.setString(3, spec.getValue()); // VD: Casio
+                    psSpec.setString(2, spec.getName());
+                    psSpec.setString(3, spec.getValue());
                     psSpec.addBatch();
                 }
                 psSpec.executeBatch();
             }
 
-            conn.commit(); // Lưu tất cả
+            conn.commit();
+        } catch (Exception e) {
+            try { if (conn != null) conn.rollback(); } catch (SQLException ex) {}
+            e.printStackTrace(); // Nhớ xem log lỗi ở đây nếu vẫn không chạy
+        } finally {
+            try { if (conn != null) { conn.setAutoCommit(true); conn.close(); } } catch (SQLException e) {}
+        }
+    }
+
+    public void updateFullProduct(com.vvp.model.Product p, List<String> detailImages, List<com.vvp.model.ProductSpecification> listSpecs) {
+        // 1. Cập nhật thông tin cơ bản
+        String sqlUpdate = "UPDATE Products SET Name=?, SKU=?, Description=?, OriginalPrice=?, CurrentPrice=?, StockQuantity=?, IsLuxury=? WHERE ProductID=?";
+
+        // SQL cập nhật ảnh đại diện (chỉ chạy nếu có ảnh mới)
+        String sqlUpdateImg = "UPDATE Products SET ImageURL=? WHERE ProductID=?";
+
+        // SQL xóa và thêm lại ảnh phụ
+        String sqlDelImg = "DELETE FROM ProductImages WHERE ProductID=?";
+        String sqlInsImg = "INSERT INTO ProductImages (ProductID, ImageURL) VALUES (?, ?)";
+
+        // SQL xóa và thêm lại thông số
+        String sqlDelSpec = "DELETE FROM ProductSpecifications WHERE ProductID=?";
+        String sqlInsSpec = "INSERT INTO ProductSpecifications (ProductID, SpecName, SpecValue) VALUES (?, ?, ?)";
+
+        try {
+            conn = new DBContext().getConnection();
+            conn.setAutoCommit(false); // Bắt đầu Transaction
+
+            // A. CẬP NHẬT BẢNG PRODUCTS
+            ps = conn.prepareStatement(sqlUpdate);
+            ps.setString(1, p.getName());
+            ps.setString(2, p.getSku());
+            ps.setString(3, p.getDescription());
+            ps.setDouble(4, p.getOriginalPrice());
+            ps.setDouble(5, p.getCurrentPrice());
+            ps.setInt(6, p.getStockQuantity());
+            ps.setBoolean(7, p.isLuxury());
+            ps.setInt(8, p.getId()); // ID để WHERE
+            ps.executeUpdate();
+
+            // B. CẬP NHẬT ẢNH ĐẠI DIỆN (Nếu có upload ảnh mới)
+            if (p.getImageUrl() != null && !p.getImageUrl().isEmpty()) {
+                PreparedStatement psImgMain = conn.prepareStatement(sqlUpdateImg);
+                psImgMain.setString(1, p.getImageUrl());
+                psImgMain.setInt(2, p.getId());
+                psImgMain.executeUpdate();
+            }
+
+            // C. CẬP NHẬT ẢNH CHI TIẾT (Nếu có upload ảnh mới thì thay thế toàn bộ)
+            if (detailImages != null && !detailImages.isEmpty()) {
+                // 1. Xóa ảnh cũ
+                PreparedStatement psDelI = conn.prepareStatement(sqlDelImg);
+                psDelI.setInt(1, p.getId());
+                psDelI.executeUpdate();
+
+                // 2. Thêm ảnh mới
+                PreparedStatement psInsI = conn.prepareStatement(sqlInsImg);
+                for (String img : detailImages) {
+                    psInsI.setInt(1, p.getId());
+                    psInsI.setString(2, img);
+                    psInsI.addBatch();
+                }
+                psInsI.executeBatch();
+            }
+
+            // D. CẬP NHẬT THÔNG SỐ KỸ THUẬT (Xóa cũ điền mới)
+            if (listSpecs != null) { // Lưu ý: Spec luôn được cập nhật lại từ form
+                // 1. Xóa spec cũ
+                PreparedStatement psDelS = conn.prepareStatement(sqlDelSpec);
+                psDelS.setInt(1, p.getId());
+                psDelS.executeUpdate();
+
+                // 2. Thêm spec mới
+                if (!listSpecs.isEmpty()) {
+                    PreparedStatement psInsS = conn.prepareStatement(sqlInsSpec);
+                    for (com.vvp.model.ProductSpecification spec : listSpecs) {
+                        psInsS.setInt(1, p.getId());
+                        psInsS.setString(2, spec.getName());
+                        psInsS.setString(3, spec.getValue());
+                        psInsS.addBatch();
+                    }
+                    psInsS.executeBatch();
+                }
+            }
+
+            conn.commit(); // Lưu tất cả thay đổi
         } catch (Exception e) {
             try { if (conn != null) conn.rollback(); } catch (SQLException ex) {}
             e.printStackTrace();

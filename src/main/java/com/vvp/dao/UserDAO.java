@@ -305,5 +305,64 @@ public class UserDAO {
         return list;
     }
 
+    // A. KIỂM TRA EMAIL CÓ TỒN TẠI KHÔNG
+    public User checkEmailExist(String email) {
+        String query = "SELECT * FROM Users WHERE Email = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                User u = new User();
+                u.setId(rs.getInt("UserID"));
+                u.setUsername(rs.getString("Username"));
+                u.setEmail(rs.getString("Email"));
+                return u;
+            }
+        } catch (Exception e) { e.printStackTrace(); }
+        return null;
+    }
+
+    // B. LƯU TOKEN VÀO DB
+    public void updateResetToken(String email, String token) {
+        // Token hết hạn sau 15 phút
+        String query = "UPDATE Users SET ResetToken = ?, TokenExpiry = DATE_ADD(NOW(), INTERVAL 15 MINUTE) WHERE Email = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, token);
+            ps.setString(2, email);
+            ps.executeUpdate();
+        } catch (Exception e) { e.printStackTrace(); }
+    }
+
+    // C. KIỂM TRA TOKEN VÀ ĐỔI MẬT KHẨU
+    public boolean resetPassword(String token, String newPass) {
+        // 1. Kiểm tra Token có hợp lệ và chưa hết hạn không
+        String checkQuery = "SELECT * FROM Users WHERE ResetToken = ? AND TokenExpiry > NOW()";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(checkQuery);
+            ps.setString(1, token);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                // 2. Nếu token đúng -> Cập nhật mật khẩu mới + Xóa token cũ
+                String updateQuery = "UPDATE Users SET PasswordHash = ?, ResetToken = NULL, TokenExpiry = NULL WHERE ResetToken = ?";
+                PreparedStatement psUp = conn.prepareStatement(updateQuery);
+
+                // Mã hóa mật khẩu mới trước khi lưu
+                String hashedPass = BCrypt.hashpw(newPass, BCrypt.gensalt(12));
+
+                psUp.setString(1, hashedPass);
+                psUp.setString(2, token);
+                psUp.executeUpdate();
+                return true; // Thành công
+            }
+        } catch (Exception e) { e.printStackTrace(); }
+        return false; // Thất bại
+    }
+
 
 }

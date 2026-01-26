@@ -15,6 +15,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
+import java.util.Map;
 
 @WebServlet(name = "ProductFormServlet", urlPatterns = {"/admin/product-form"})
 @MultipartConfig(
@@ -83,26 +86,57 @@ public class ProductFormServlet extends HttpServlet {
             File uploadDir = new File(uploadPath);
             if (!uploadDir.exists()) uploadDir.mkdir();
 
-            // A. Ảnh Đại Diện (Lưu vào bảng Products)
+            // Cấu hình Cloudinary (Nên để 3 cái này ra file config riêng hoặc biến tĩnh)
+            Cloudinary cloudinary = new Cloudinary(ObjectUtils.asMap(
+                    "cloud_name", "dnrpxyuwo",
+                    "api_key", "261138144329333",
+                    "api_secret", "beBh1tv2UJYTuS8CWkVmKS48CO4"
+            ));
+
+// --- XỬ LÝ ẢNH ĐẠI DIỆN ---
             Part mainPart = request.getPart("mainImage");
             if (mainPart != null && mainPart.getSize() > 0) {
-                String fileName = getFileName(mainPart);
-                String saveName = System.currentTimeMillis() + "_main_" + fileName;
-                mainPart.write(uploadPath + File.separator + saveName);
+                try {
+                    // Lấy dữ liệu file
+                    byte[] fileBytes = mainPart.getInputStream().readAllBytes();
 
-                // Set đường dẫn ảnh cho đối tượng Product -> Để DAO lưu vào cột ImageURL
-                p.setImageUrl("assets/img/products/" + saveName);
+                    // Upload lên Cloudinary
+                    Map uploadResult = cloudinary.uploader().upload(fileBytes, ObjectUtils.asMap(
+                            "folder", "vvp_store_products" // Gom ảnh vào thư mục cho gọn
+                    ));
+
+                    // Lấy URL trả về (Đây chính là cái ta cần!)
+                    String secureUrl = (String) uploadResult.get("secure_url");
+
+                    // Lưu URL này vào đối tượng Product
+                    p.setImageUrl(secureUrl);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
 
-            // B. 5 Ảnh Chi Tiết (Lưu vào bảng ProductImages)
+            // B. 5 Ảnh Chi Tiết (Detail Images)
             List<String> detailImages = new ArrayList<>();
             Collection<Part> parts = request.getParts();
+
             for (Part part : parts) {
+                // Kiểm tra nếu part này là input có name="detailImages" và có dữ liệu
                 if (part.getName().equals("detailImages") && part.getSize() > 0) {
-                    String fileName = getFileName(part);
-                    String saveName = System.currentTimeMillis() + "_detail_" + fileName;
-                    part.write(uploadPath + File.separator + saveName);
-                    detailImages.add("assets/img/products/" + saveName);
+                    try {
+                        byte[] fileBytes = part.getInputStream().readAllBytes();
+
+                        // Upload từng ảnh lên Cloudinary
+                        Map uploadResult = cloudinary.uploader().upload(fileBytes, ObjectUtils.asMap(
+                                "folder", "vvp_store_products"
+                        ));
+
+                        // Lấy URL và thêm vào danh sách
+                        detailImages.add((String) uploadResult.get("secure_url"));
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             }
 
@@ -122,9 +156,22 @@ public class ProductFormServlet extends HttpServlet {
                 }
             }
 
-            // 4. LƯU VÀO DATABASE
+            // 4. LƯU VÀO DATABASE (LOGIC MỚI)
             AdminDAO dao = new AdminDAO();
-            dao.insertFullProduct(p, detailImages, listSpecs);
+
+            // Lấy ID từ form (được gửi từ input hidden name="id")
+            String idRaw = request.getParameter("id");
+
+            if (idRaw != null && !idRaw.trim().isEmpty() && !idRaw.equals("0")) {
+                // --- TRƯỜNG HỢP CẬP NHẬT (UPDATE) ---
+                int pid = Integer.parseInt(idRaw);
+                p.setId(pid); // Set ID vào đối tượng Product để DAO biết sửa dòng nào
+
+                dao.updateFullProduct(p, detailImages, listSpecs);
+            } else {
+                // --- TRƯỜNG HỢP THÊM MỚI (INSERT) ---
+                dao.insertFullProduct(p, detailImages, listSpecs);
+            }
 
             response.sendRedirect("product-manager");
 

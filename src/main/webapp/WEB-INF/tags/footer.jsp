@@ -17,9 +17,9 @@
             <div class="footer-col links">
                 <h3>Featured</h3>
                 <ul>
-                    <li><a href="#">ĐỒNG HỒ NAM CAO CẤP</a></li>
-                    <li><a href="#">ĐỒNG HỒ NỮ THỜI TRANG</a></li>
-                    <li><a href="#">BỘ SƯU TẬP LUXURY</a></li>
+                    <li><a href="category?type=nam">ĐỒNG HỒ NAM</a></li>
+                    <li><a href="category?type=nu">ĐỒNG HỒ NỮ</a></li>
+                    <li><a href="category?type=luxury">BỘ SƯU TẬP LUXURY</a></li>
                     <li><a href="#">PHỤ KIỆN ĐỒNG HỒ</a></li>
                 </ul>
             </div>

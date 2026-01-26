@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-        body { font-family: sans-serif; margin: 0; background: #f4f6f9; display: flex; }
+        body { font-family: 'Segoe UI', sans-serif; display: flex; margin: 0; background: #f4f6f9; }
 
         /* Sidebar */
         .sidebar { width: 250px; background: #343a40; color: white; min-height: 100vh; padding: 20px 0; position: fixed; }
-        .sidebar h2 { text-align: center; margin-bottom: 30px; color: #d0011b; }
+        .sidebar h2 { text-align: center; margin-bottom: 30px; color: #1b6e76; }
         .sidebar a { display: block; padding: 15px 25px; color: #c2c7d0; text-decoration: none; border-bottom: 1px solid #4b545c; }
-        .sidebar a:hover, .sidebar a.active { background: #d0011b; color: white; }
-
+        .sidebar a:hover, .sidebar a.active { background-image: linear-gradient(45deg, #1b6e76, #2c96a0, #0e3e43) ; color: white; padding-left: 25px;}
+        .sidebar i { margin-right: 10px; width: 20px; text-align: center; }
         /* Content */
         .content { margin-left: 250px; padding: 20px; width: 100%; }
 
@@ -41,10 +41,11 @@
 
 <div class="sidebar">
     <h2>VVP ADMIN</h2>
-    <a href="dashboard" class="active"><i class="fa-solid fa-gauge"></i> Tổng quan & Đơn hàng</a>
-    <a href="product-manager"><i class="fa-solid fa-box"></i> Quản lý Sản phẩm</a>
+    <a href="dashboard" class="active"><i class="fa-solid fa-gauge"></i> Tổng quan</a>
+    <a href="product-manager" ><i class="fa-solid fa-box"></i> Quản lý Sản phẩm</a>
     <a href="user-manager"><i class="fa-solid fa-users"></i> Quản lý Khách hàng</a>
-    <a href="${pageContext.request.contextPath}/home"><i class="fa-solid fa-arrow-left"></i> Về trang chủ</a>
+    <a href="interface-manager"><i class="fa-solid fa-paintbrush"></i> Quản lý Giao diện</a>
+    <a href="${pageContext.request.contextPath}/home"><i class="fa-solid fa-house"></i> Về trang chủ web</a>
 </div>
 
 <div class="content">
