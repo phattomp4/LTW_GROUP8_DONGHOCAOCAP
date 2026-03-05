@@ -147,34 +147,7 @@ public class OrderDAO {
         return 0;
     }
 
-    // 1. Lấy thông tin cơ bản của 1 đơn hàng
-    public Order getOrderById(int orderId) {
-        Connection conn = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        String query = "SELECT * FROM Orders WHERE OrderID = ?";
-        try {
-            conn = new DBContext().getConnection();
-            ps = conn.prepareStatement(query);
-            ps.setInt(1, orderId);
-            rs = ps.executeQuery();
-            if (rs.next()) {
-                com.vvp.model.Order o = new com.vvp.model.Order();
-                o.setOrderId(rs.getInt("OrderID"));
-                o.setUserId(rs.getInt("UserID"));
-                o.setShippingAddressId(rs.getInt("ShippingAddressID"));
-                o.setOrderDate(rs.getTimestamp("OrderDate"));
-                o.setTotalAmount(rs.getDouble("TotalAmount"));
-                o.setDiscountAmount(rs.getDouble("DiscountAmount"));
-                o.setStatus(rs.getString("Status"));
-                o.setPaymentMethod(rs.getString("PaymentMethod"));
-                return o;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
+
 
     // 2. Lấy danh sách sản phẩm trong đơn hàng (Kèm thông tin Product)
     // Lấy danh sách chi tiết đơn hàng (Kèm thông tin Tên & Ảnh sản phẩm)
@@ -231,6 +204,58 @@ public class OrderDAO {
             }
         }
         return list;
+    }
+    // 1. Hàm lấy thông tin 1 đơn hàng theo ID (Dùng để check trạng thái trước khi hủy)
+    public Order getOrderById(int orderId) {
+        String query = "SELECT * FROM orders WHERE OrderID = ?";
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, orderId);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                Order o = new Order();
+                o.setOrderId(rs.getInt("OrderID"));
+                o.setUserId(rs.getInt("UserID"));
+                o.setShippingAddressId(rs.getInt("ShippingAddressID"));
+                o.setTotalAmount(rs.getDouble("TotalAmount"));
+                o.setStatus(rs.getString("Status"));
+                o.setPaymentMethod(rs.getString("PaymentMethod"));
+                o.setPaymentStatus(rs.getString("PaymentStatus"));
+                o.setOrderDate(Timestamp.valueOf(rs.getTimestamp("OrderDate").toLocalDateTime()));
+                return o;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // Đóng kết nối (bạn tự thêm phần close giống các hàm khác)
+        }
+        return null;
+    }
+
+    // 2. Hàm cập nhật trạng thái đơn hàng (Đã có trong file bạn gửi nhưng cần đảm bảo đóng kết nối)
+    public void updateOrderStatus(int orderId, String status) {
+        String query = "UPDATE orders SET Status = ? WHERE OrderID = ?";
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, status);
+            ps.setInt(2, orderId);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (ps != null) ps.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) { e.printStackTrace(); }
+        }
     }
 
 }

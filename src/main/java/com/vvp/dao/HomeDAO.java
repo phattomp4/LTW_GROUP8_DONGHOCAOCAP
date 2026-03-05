@@ -51,7 +51,6 @@ public class HomeDAO {
         return list;
     }
 
-    // MỚI: Hàm lấy danh sách Slideshow lớn
     public List<Banner> getSlideshowBanners() {
         List<Banner> list = new ArrayList<>();
         String query = "SELECT * FROM banners WHERE IsActive = 1 ORDER BY SortOrder ASC";
@@ -68,14 +67,14 @@ public class HomeDAO {
                 list.add(b);
             }
         } catch (Exception e) { e.printStackTrace(); }
-        // Nhớ đóng kết nối ở finally nếu cần thiết (hoặc dùng try-with-resources)
+
         return list;
     }
 
-    // MỚI: Hàm lấy danh sách Thương hiệu
+
     public List<Brand> getFeaturedBrands() {
         List<Brand> list = new ArrayList<>();
-        // Sắp xếp theo SortOrder
+
         String query = "SELECT * FROM brands WHERE IsActive = 1 ORDER BY SortOrder ASC";
         try {
             conn = new DBContext().getConnection();

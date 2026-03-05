@@ -19,11 +19,10 @@ public class AdminFilter implements Filter {
 
         User acc = (User) session.getAttribute("acc");
 
-        // Nếu chưa đăng nhập HOẶC Role không phải Admin -> Đuổi về trang chủ
+
         if (acc == null || !"Admin".equals(acc.getRole())) {
             res.sendRedirect(req.getContextPath() + "/home");
         } else {
-            // Cho phép đi tiếp
             chain.doFilter(request, response);
         }
     }

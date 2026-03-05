@@ -23,23 +23,23 @@ public class AdminOrderDetailServlet extends HttpServlet {
             OrderDAO orderDAO = new OrderDAO();
             UserDAO userDAO = new UserDAO();
 
-            // 1. Lấy Order
+
             Order order = orderDAO.getOrderById(orderId);
             if (order == null) {
                 response.sendRedirect("dashboard");
                 return;
             }
 
-            // 2. Lấy địa chỉ giao hàng
+
             UserAddress address = userDAO.getAddressById(order.getShippingAddressId());
 
-            // 3. Lấy danh sách sản phẩm
+
             List<OrderDetail> details = orderDAO.getOrderDetails(orderId);
 
-            // --- 4. (MỚI) LẤY THÔNG TIN TÀI KHOẢN ĐẶT HÀNG ---
+
             User customer = userDAO.getUserById(order.getUserId());
             request.setAttribute("customer", customer);
-            // -------------------------------------------------
+
 
             request.setAttribute("order", order);
             request.setAttribute("address", address);

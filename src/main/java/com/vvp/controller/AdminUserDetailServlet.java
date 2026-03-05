@@ -25,13 +25,12 @@ public class AdminUserDetailServlet extends HttpServlet {
                 UserDAO userDAO = new UserDAO();
                 OrderDAO orderDAO = new OrderDAO();
 
-                // 1. Lấy thông tin User
                 User user = userDAO.getUserById(userId);
 
-                // 2. Lấy danh sách Đơn hàng
+
                 List<Order> userOrders = orderDAO.getOrdersByUserId(userId);
 
-                // 3. (MỚI) Lấy danh sách Địa chỉ
+
                 List<UserAddress> listAddress = userDAO.getListAddress(userId);
 
                 request.setAttribute("user", user);
