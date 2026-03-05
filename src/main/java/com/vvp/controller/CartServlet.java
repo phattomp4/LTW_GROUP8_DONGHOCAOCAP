@@ -24,12 +24,12 @@ public class CartServlet extends HttpServlet {
             session.setAttribute("cart", cart);
         }
 
-        // --- XỬ LÝ CÁC HÀNH ĐỘNG (THÊM, BỚT, XÓA) ---
+
         String action = request.getParameter("action");
         if (action != null) {
             int pid = Integer.parseInt(request.getParameter("pid"));
 
-            // Tìm sản phẩm trong giỏ
+
             CartItem target = null;
             for (CartItem item : cart) {
                 if (item.getProduct().getId() == pid) {
@@ -47,28 +47,28 @@ public class CartServlet extends HttpServlet {
                     if (target.getQuantity() > 1) {
                         target.setQuantity(target.getQuantity() - 1);
                     } else {
-                        cart.remove(target); // Giảm về 0 thì xóa luôn
+                        cart.remove(target);
                     }
                 }
             }
 
-            // Cập nhật lại số lượng trên icon
+
             int totalCount = 0;
             for (CartItem item : cart) totalCount += item.getQuantity();
             session.setAttribute("cartCount", totalCount);
 
-            // Chuyển hướng để tránh lỗi resubmit form
+
             response.sendRedirect("cart");
             return;
         }
 
-        // --- TÍNH TOÁN TIỀN ---
+
         double totalMoney = 0;
         for (CartItem item : cart) {
             totalMoney += item.getTotalPrice();
         }
 
-        // Xử lý Voucher (Giả lập)
+
         String voucher = request.getParameter("voucherCode");
         double discount = 0;
         if ("GIAM10".equals(voucher)) {
@@ -78,12 +78,12 @@ public class CartServlet extends HttpServlet {
             request.setAttribute("voucherMessage", "Mã giảm giá không hợp lệ.");
         }
 
-        // Đẩy dữ liệu sang JSP
+
         request.setAttribute("totalMoney", totalMoney);
         request.setAttribute("discount", discount);
         request.setAttribute("finalTotal", totalMoney - discount);
 
-        // Lưu ý: List cart đã nằm trong Session nên JSP tự lấy được qua ${sessionScope.cart}
+
         request.getRequestDispatcher("user/cart.jsp").forward(request, response);
     }
 

@@ -28,18 +28,18 @@ public class AddressServlet extends HttpServlet {
         UserDAO dao = new UserDAO();
 
         try {
-            // --- CHỨC NĂNG 1: ĐẶT LÀM MẶC ĐỊNH ---
+
             if ("set-default".equals(action)) {
                 int addressId = Integer.parseInt(request.getParameter("id"));
 
-                // Gọi hàm DAO đã viết ở bước trước
+
                 dao.setDefaultAddress(acc.getId(), addressId);
 
-                // Xử lý xong thì quay lại trang hồ sơ
+
                 response.sendRedirect("profile");
             }
 
-            // --- CHỨC NĂNG 2: XÓA ĐỊA CHỈ (Chuyển từ ProfileServlet sang đây nếu muốn) ---
+
             else if ("delete".equals(action)) {
                 int addressId = Integer.parseInt(request.getParameter("id"));
                 dao.deleteAddress(addressId); // Đảm bảo UserDAO có hàm deleteAddress

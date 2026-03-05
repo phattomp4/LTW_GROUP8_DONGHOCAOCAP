@@ -97,19 +97,44 @@
                             </span>
                 </td>
                 <td>
-                    <form action="dashboard" method="POST" style="display: flex; gap: 5px;">
-                        <input type="hidden" name="action" value="update_status">
-                        <input type="hidden" name="orderId" value="${o.orderId}">
+                    <c:choose>
+                        <%-- TRƯỜNG HỢP 1: Đơn đang yêu cầu hủy -> Hiện nút Duyệt/Từ chối --%>
+                        <c:when test="${o.status == 'Request Cancel'}">
+                            <div style="display: flex; gap: 5px; margin-bottom: 5px;">
+                                <a href="${pageContext.request.contextPath}/admin/dashboard?action=approveCancel&id=${o.orderId}"
+                                   class="btn-update"
+                                   style="background: #28a745; text-decoration: none; padding: 5px 10px; color: white; border-radius: 4px;"
+                                   onclick="return confirm('Xác nhận hủy đơn và hoàn kho?');">
+                                    <i class="fa-solid fa-check"></i> Duyệt
+                                </a>
 
-                        <select name="status">
-                            <option value="Pending" ${o.status == 'Pending' ? 'selected' : ''}>Chờ duyệt</option>
-                            <option value="Processing" ${o.status == 'Processing' ? 'selected' : ''}>Đang chuẩn bị</option>
-                            <option value="Shipping" ${o.status == 'Shipping' ? 'selected' : ''}>Đang giao</option>
-                            <option value="Completed" ${o.status == 'Completed' ? 'selected' : ''}>Hoàn thành</option>
-                            <option value="Cancelled" ${o.status == 'Cancelled' ? 'selected' : ''}>Hủy đơn</option>
-                        </select>
-                        <button type="submit" class="btn-update"><i class="fa-solid fa-check"></i></button>
-                    </form>
+                                <a href="${pageContext.request.contextPath}/admin/dashboard?action=rejectCancel&id=${o.orderId}"
+                                   class="btn-update"
+                                   style="background: #dc3545; text-decoration: none; padding: 5px 10px; color: white; border-radius: 4px;"
+                                   onclick="return confirm('Từ chối hủy yêu cầu này?');">
+                                    <i class="fa-solid fa-xmark"></i> Từ chối
+                                </a>
+                            </div>
+                            <span style="font-size: 12px; color: orange;">Khách yêu cầu hủy</span>
+                        </c:when>
+
+                        <%-- TRƯỜNG HỢP 2: Các trạng thái khác -> Hiện Dropdown như cũ --%>
+                        <c:otherwise>
+                            <form action="dashboard" method="POST" style="display: flex; gap: 5px;">
+                                <input type="hidden" name="action" value="update_status">
+                                <input type="hidden" name="orderId" value="${o.orderId}">
+
+                                <select name="status" style="padding: 5px; border-radius: 4px; border: 1px solid #ddd;">
+                                    <option value="Pending" ${o.status == 'Pending' ? 'selected' : ''}>Chờ duyệt</option>
+                                    <option value="Processing" ${o.status == 'Processing' ? 'selected' : ''}>Đang chuẩn bị</option>
+                                    <option value="Shipping" ${o.status == 'Shipping' ? 'selected' : ''}>Đang giao</option>
+                                    <option value="Completed" ${o.status == 'Completed' ? 'selected' : ''}>Hoàn thành</option>
+                                    <option value="Cancelled" ${o.status == 'Cancelled' ? 'selected' : ''}>Hủy đơn</option>
+                                </select>
+                                <button type="submit" class="btn-update"><i class="fa-solid fa-floppy-disk"></i></button>
+                            </form>
+                        </c:otherwise>
+                    </c:choose>
 
                     <a href="order-detail?id=${o.orderId}" style="display: block; margin-top: 5px; text-decoration: none; color: #007bff; font-size: 13px;">
                         <i class="fa-solid fa-eye"></i> Xem chi tiết

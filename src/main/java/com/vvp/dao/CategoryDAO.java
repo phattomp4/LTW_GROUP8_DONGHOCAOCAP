@@ -60,7 +60,7 @@ public class CategoryDAO {
         } catch (Exception e) { e.printStackTrace(); }
     }
 
-    // 4. XÓA DANH MỤC (Admin)
+    // 4. XÓA DANH MỤC
     public void deleteCategory(int id) {
         String query = "DELETE FROM categories WHERE CategoryID = ?";
         try {
@@ -91,7 +91,7 @@ public class CategoryDAO {
         return list;
     }
 
-    // 2. THÊM KHOẢNG GIÁ (Cho Admin)
+    // 2. THÊM KHOẢNG GIÁ
     public void addPriceRange(String label, double min, double max) {
         String query = "INSERT INTO PriceRanges (Label, MinPrice, MaxPrice) VALUES (?, ?, ?)";
         try {
@@ -115,7 +115,7 @@ public class CategoryDAO {
         } catch (Exception e) { e.printStackTrace(); }
     }
 
-    // 4. CẬP NHẬT KHOẢNG GIÁ (MỚI)
+    // 4. CẬP NHẬT KHOẢNG GIÁ
     public void updatePriceRange(int id, String label, double min, double max) {
         String query = "UPDATE PriceRanges SET Label = ?, MinPrice = ?, MaxPrice = ? WHERE ID = ?";
         try {

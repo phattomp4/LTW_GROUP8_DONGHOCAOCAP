@@ -16,35 +16,27 @@ public class LoginServlet extends HttpServlet {
         String u = request.getParameter("username");
         String p = request.getParameter("password");
 
-        // 2. Gọi DAO để kiểm tra trong Database
         UserDAO dao = new UserDAO();
-        User user = dao.login(u, p); // Hàm này đã check password hash BCrypt
+        User user = dao.login(u, p);
 
         if (user == null) {
-            // A. Đăng nhập thất bại
             request.setAttribute("mess", "Sai tên đăng nhập hoặc mật khẩu!");
-            // Giữ nguyên thông tin user vừa nhập để họ đỡ phải gõ lại
             request.setAttribute("username", u);
             request.getRequestDispatcher("login.jsp").forward(request, response);
         } else {
-            // B. Đăng nhập thành công
             HttpSession session = request.getSession();
-            session.setAttribute("acc", user); // Lưu toàn bộ object User vào session
-            session.setMaxInactiveInterval(60 * 60); // Phiên đăng nhập tồn tại 1 tiếng
+            session.setAttribute("acc", user);
+            session.setMaxInactiveInterval(60 * 60);
 
-            // --- ĐOẠN CODE MỚI: XỬ LÝ CHUYỂN HƯỚNG THÔNG MINH ---
 
-            // Kiểm tra xem trước đó khách có đang bấm "Mua ngay" không?
+
+
             String redirectUrl = (String) session.getAttribute("redirectAfterLogin");
 
             if (redirectUrl != null) {
-                // Nếu có (ví dụ: "checkout"), xóa nó đi để không bị lặp lại lần sau
                 session.removeAttribute("redirectAfterLogin");
-
-                // Chuyển hướng đến trang khách đang muốn vào (Trang thanh toán)
                 response.sendRedirect(redirectUrl);
             } else {
-                // Nếu không có yêu cầu đặc biệt nào, về trang chủ như bình thường
                 response.sendRedirect("home");
             }
             // ----------------------------------------------------

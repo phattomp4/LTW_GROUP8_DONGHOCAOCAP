@@ -279,6 +279,25 @@ public class ProductDAO {
         p.setSoldQuantity(rs.getInt("SoldQuantity"));
         return p;
     }
+
+    public void updateStock(int productId, int quantity) {
+        // Dấu + ? ở đây cho phép cộng dồn (hoặc trừ đi nếu quantity là số âm)
+        String query = "UPDATE products SET StockQuantity = StockQuantity + ? WHERE ProductID = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, quantity); // Số lượng hoàn lại
+            ps.setInt(2, productId);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (ps != null) ps.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) { e.printStackTrace(); }
+        }
+    }
 }
 
 

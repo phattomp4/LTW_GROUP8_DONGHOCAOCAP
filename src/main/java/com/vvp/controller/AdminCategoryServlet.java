@@ -14,21 +14,21 @@ public class AdminCategoryServlet extends HttpServlet {
         String action = request.getParameter("action");
         CategoryDAO dao = new CategoryDAO();
 
-        // 1. XÓA DANH MỤC
+
         if ("delete".equals(action)) {
             int id = Integer.parseInt(request.getParameter("id"));
             dao.deleteCategory(id);
             clearMenuCache(request); // Xóa cache
             response.sendRedirect("category-manager");
         }
-        // 2. XÓA KHOẢNG GIÁ (MỚI - SỬA LỖI)
+
         else if ("deletePrice".equals(action)) {
             int id = Integer.parseInt(request.getParameter("id"));
             dao.deletePriceRange(id);
             clearMenuCache(request); // Xóa cache
             response.sendRedirect("category-manager");
         }
-        // 3. LOAD DỮ LIỆU
+
         else {
             request.setAttribute("listCats", dao.getAllCategories());
             request.setAttribute("menuPrices", dao.getAllPriceRanges()); // Load danh sách giá
@@ -42,7 +42,6 @@ public class AdminCategoryServlet extends HttpServlet {
         String action = request.getParameter("action");
         CategoryDAO dao = new CategoryDAO();
 
-        // --- XỬ LÝ DANH MỤC ---
         if ("add".equals(action)) {
             String name = request.getParameter("name");
             int parentId = Integer.parseInt(request.getParameter("parentId"));
@@ -54,7 +53,7 @@ public class AdminCategoryServlet extends HttpServlet {
             dao.updateCategory(id, name, parentId);
         }
 
-        // --- XỬ LÝ KHOẢNG GIÁ (MỚI - SỬA LỖI) ---
+
         else if ("addPrice".equals(action)) {
             String label = request.getParameter("label");
             double min = Double.parseDouble(request.getParameter("min"));
@@ -69,11 +68,11 @@ public class AdminCategoryServlet extends HttpServlet {
             dao.updatePriceRange(id, label, min, max);
         }
 
-        clearMenuCache(request); // Xóa cache để menu trang chủ cập nhật ngay
+        clearMenuCache(request);
         response.sendRedirect("category-manager");
     }
 
-    // Hàm phụ để xóa cache menu
+
     private void clearMenuCache(HttpServletRequest request) {
         request.getServletContext().removeAttribute("menuBrands");
         request.getServletContext().removeAttribute("menuCollections");

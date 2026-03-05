@@ -21,7 +21,7 @@ import java.util.Map;
 )
 public class AdminInterfaceServlet extends HttpServlet {
 
-    // Cấu hình Cloudinary (Dùng chung)
+
     private Cloudinary getCloudinary() {
         return new Cloudinary(ObjectUtils.asMap(
                 "cloud_name", "dnrpxyuwo", // Thay bằng tên cloud của bạn
@@ -35,7 +35,7 @@ public class AdminInterfaceServlet extends HttpServlet {
         ShopDAO shopDao = new ShopDAO();
         HomeDAO homeDao = new HomeDAO();
 
-        // Load toàn bộ dữ liệu ra trang Admin
+
         request.setAttribute("shopInfo", shopDao.getShopInfo());
         request.setAttribute("listSlideshow", homeDao.getSlideshowBanners());
         request.setAttribute("listSmallBanners", homeDao.getSmallBanners());
@@ -52,7 +52,7 @@ public class AdminInterfaceServlet extends HttpServlet {
         Cloudinary cloudinary = getCloudinary();
 
         try {
-            // 1. CẬP NHẬT SHOP INFO
+
             if ("updateInfo".equals(action)) {
                 ShopInfo info = new ShopInfo();
                 info.setBrandName(request.getParameter("brandName"));
@@ -66,7 +66,6 @@ public class AdminInterfaceServlet extends HttpServlet {
                 info.setEmail(request.getParameter("email"));
                 info.setCopyright(request.getParameter("copyright"));
 
-                // Xử lý ảnh Main Image (Giới thiệu)
                 Part filePart = request.getPart("mainImage");
                 String oldImg = request.getParameter("oldMainImage");
                 if (filePart != null && filePart.getSize() > 0) {
@@ -80,7 +79,7 @@ public class AdminInterfaceServlet extends HttpServlet {
                 request.getSession().setAttribute("shopInfo", info); // Cập nhật lại session
             }
 
-            // 2. QUẢN LÝ BANNER (SLIDESHOW)
+
             else if ("addBanner".equals(action)) {
                 Part filePart = request.getPart("bannerImage");
                 int sortOrder = Integer.parseInt(request.getParameter("sortOrder"));
@@ -93,7 +92,7 @@ public class AdminInterfaceServlet extends HttpServlet {
                 dao.deleteBanner(Integer.parseInt(request.getParameter("id")));
             }
 
-            // 3. QUẢN LÝ SMALL BANNER
+
             else if ("addSmallBanner".equals(action)) {
                 Part filePart = request.getPart("smallImage");
                 int sortOrder = Integer.parseInt(request.getParameter("sortOrder"));
@@ -106,7 +105,7 @@ public class AdminInterfaceServlet extends HttpServlet {
                 dao.deleteSmallBanner(Integer.parseInt(request.getParameter("id")));
             }
 
-            // 4. QUẢN LÝ BRAND
+
             else if ("addBrand".equals(action)) {
                 String name = request.getParameter("brandName");
                 int sortOrder = Integer.parseInt(request.getParameter("sortOrder"));

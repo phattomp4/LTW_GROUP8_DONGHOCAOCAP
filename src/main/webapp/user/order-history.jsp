@@ -125,6 +125,21 @@
                         </c:choose>
                     </td>
                     <td>
+                        <c:if test="${o.status == 'Pending' || o.status == 'Processing'}">
+                            <a href="order-history?action=requestCancel&id=${o.orderId}"
+                               class="btn-view"
+                               style="margin-right: 5px; text-decoration: none;"
+                               onclick="return confirm('Bạn có chắc muốn yêu cầu hủy đơn này?');">
+                                Hủy đơn
+                            </a>
+                        </c:if>
+
+                        <c:if test="${o.status == 'Request Cancel'}">
+        <span style="color: #e67e22; font-size: 13px; font-weight: bold; margin-right: 5px;">
+            <i class="fa-regular fa-clock"></i> Đang chờ duyệt hủy
+        </span>
+                        </c:if>
+
                         <a href="order-detail?id=${o.orderId}" class="btn-view">Chi tiết</a>
                     </td>
                 </tr>
